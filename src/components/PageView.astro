@@ -27,8 +27,21 @@ const breadcrumbItems = [{ href: '/', label: 'Startseite' }];
 if (parts.length > 1) breadcrumbItems.push({ href: `/${parts[0]}/`, label: labels[parts[0]] ?? parts[0] });
 if (entry.data.slug !== '/') breadcrumbItems.push({ href: entry.data.slug, label: entry.data.title });
 
-const title = entry.data.meta_title ?? (entry.data.slug === '/' ? entry.data.title : `${entry.data.title} | BierDurst.org`);
+const brand = 'BierDurst.org';
+const brandedTitle = `${entry.data.title} | ${brand}`;
+const legacyTitle = entry.data.meta_title?.trim();
+const legacyTitleIsUsable = Boolean(legacyTitle && !legacyTitle.includes('…') && legacyTitle.length <= 60);
+const title = entry.data.seo_title
+  ?? (legacyTitleIsUsable ? legacyTitle : undefined)
+  ?? (entry.data.slug === '/' ? entry.data.title : (brandedTitle.length <= 60 ? brandedTitle : entry.data.title));
 const updated = entry.data.last_updated.toISOString().slice(0, 10);
+const reviewCycleLabels: Record<string, string> = {
+  '6 months': 'alle 6 Monate',
+  '12 months': 'alle 12 Monate',
+  '18 months': 'alle 18 Monate',
+  'before and during each Oktoberfest season': 'vor und während jeder Wiesn'
+};
+const reviewCycle = entry.data.review_cycle ? (reviewCycleLabels[entry.data.review_cycle] ?? entry.data.review_cycle) : undefined;
 const articleTypes = new Set(['article', 'comparison', 'tool', 'pillar']);
 const schemas = [];
 if (entry.data.slug === '/') {
@@ -52,7 +65,7 @@ const isTool = entry.data.page_type === 'tool' && entry.data.tool_id;
         <p class="eyebrow">{isHome ? 'Dein Wegweiser durch die Bierwelt' : (entry.data.category ?? labels[entry.data.cluster] ?? 'Bierwissen')}</p>
         <h1>{entry.data.title}</h1>
         <p>{entry.data.meta_description}</p>
-        {!isHome && <div class="page-meta"><span>Aktualisiert am <time datetime={updated}>{entry.data.last_updated.toLocaleDateString('de-DE')}</time></span><span>{entry.data.review_cycle ? `Prüfrhythmus: ${entry.data.review_cycle}` : 'Redaktionell eingeordnet'}</span></div>}
+        {!isHome && <div class="page-meta"><span>Aktualisiert am <time datetime={updated}>{entry.data.last_updated.toLocaleDateString('de-DE')}</time></span><span>{reviewCycle ? `Prüfrhythmus: ${reviewCycle}` : 'Redaktionell eingeordnet'}</span></div>}
       </div>
       <div class="beer-scene" aria-hidden="true"><span class="sun"></span><span class="glass"><i></i><i></i><i></i></span><span class="barley">⌇</span></div>
     </header>

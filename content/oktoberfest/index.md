@@ -1,5 +1,6 @@
 ---
 title: 'Oktoberfest 2026: Bier, Festzelte und die wichtigsten Informationen'
+seo_title: 'Oktoberfest 2026: Bier, Festzelte & wichtige Infos'
 slug: /oktoberfest/
 canonical: https://bierdurst.org/oktoberfest/
 meta_title: 'Oktoberfest 2026: Bier, Festzelte und die w… | BierDurst.org'

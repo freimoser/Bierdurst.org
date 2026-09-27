@@ -8,6 +8,7 @@ const pages = defineCollection({
     title: z.string(),
     slug: z.string().regex(/^\/.+|^\/$/),
     canonical: z.url(),
+    seo_title: z.string().max(60).optional(),
     meta_title: z.string().optional(),
     meta_description: z.string(),
     page_type: z.string(),

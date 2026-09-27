@@ -1,12 +1,13 @@
 ---
-title: Welches Bier gibt es in welchem Festzelt?
+title: Welches Bier gibt es in welchem Wiesn-Zelt?
+seo_title: 'Welches Bier in welchem Wiesn-Zelt? Alle 14 Zelte 2026'
 slug: /oktoberfest/bier-in-welchem-festzelt/
 canonical: https://bierdurst.org/oktoberfest/bier-in-welchem-festzelt/
 meta_title: Welches Bier gibt es in welchem Festzelt? | BierDurst.org
-meta_description: Welches Bier gibt es in welchem Oktoberfestzelt? Tabelle aller 14 großen Festzelte und ihrer Münchner Brauereien.
+meta_description: 'Armbrustschützenzelt: Paulaner. Schottenhamel: Spaten. Schützen-Festzelt: Löwenbräu. Alle 14 großen Oktoberfestzelte und ihr Bier in einer Tabelle.'
 category: Oktoberfest
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-09-27'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Bier Festzelt Oktoberfest
@@ -27,52 +28,88 @@ review_cycle: before and during each Oktoberfest season
 index: true
 ---
 
-# Welches Bier gibt es in welchem Festzelt?
+# Welches Bier gibt es in welchem Wiesn-Zelt?
 
 **Kurz gesagt:** Auf dem Oktoberfest ist jedes Festzelt einer bestimmten Münchner Brauerei zugeordnet. Wer ein bestimmtes Wiesnbier trinken möchte, sollte daher vorab das passende Zelt auswählen.
 
 ## Die 14 großen Festzelte und ihr Bier
 
+Direkt zum Zelt: [Armbrustschützenzelt](#armbrustschuetzenzelt) · [Augustiner-Festhalle](#augustiner-festhalle) · [Bräurosl](#braeurosl) · [Fischer-Vroni](#fischer-vroni) · [Hacker-Festzelt](#hacker-festzelt) · [Hofbräu-Festzelt](#hofbraeu-festzelt) · [Käfer Wiesn-Schänke](#kaefer-wiesn-schaenke) · [Löwenbräu-Festzelt](#loewenbraeu-festzelt) · [Marstall](#marstall) · [Ochsenbraterei](#ochsenbraterei) · [Paulaner-Festzelt](#paulaner-festzelt) · [Schottenhamel](#schottenhamel) · [Schützen-Festzelt](#schuetzen-festzelt) · [Kufflers Weinzelt](#kufflers-weinzelt).
+
 | Festzelt | Ausgeschenktes Bier | Besonderheit |
 |---|---|---|
-| Armbrustschützenzelt | Paulaner Oktoberfestbier | Schützen- und Armbrusttradition |
-| Augustiner-Festhalle | Augustiner Wiesnbier | Ausschank aus Holzfässern |
-| Bräurosl | Hacker-Pschorr Oktoberfestbier | traditionsreiches Zelt mit eigener Bräurosl |
-| Fischer-Vroni | Augustiner Wiesnbier | bekannt für Steckerlfisch |
-| Hacker-Festzelt | Hacker-Pschorr Oktoberfestbier | „Himmel der Bayern“ |
-| Hofbräu-Festzelt | Hofbräu Oktoberfestbier | großer Stehbereich und internationales Publikum |
-| Käfer Wiesn-Schänke | Paulaner Oktoberfestbier | kleiner, gastronomisch und abends prominent |
-| Löwenbräu-Festzelt | Löwenbräu Oktoberfestbier | markanter Löwe am Zeltturm |
-| Marstall | Spaten Oktoberfestbier | Pferde- und Kutschenmotiv, vergleichsweise modernes Ambiente |
-| Ochsenbraterei | Spaten Oktoberfestbier | Ochsenfleisch als kulinarischer Schwerpunkt |
-| Paulaner-Festzelt | Paulaner Oktoberfestbier | großer Maßkrug auf dem Turm |
-| Schottenhamel | Spaten Oktoberfestbier | hier wird das erste Fass offiziell angezapft |
-| Schützen-Festzelt | Löwenbräu Oktoberfestbier | Schießsporttradition und Balkon |
-| Kufflers Weinzelt | Paulaner Weißbier bis zum Abend; außerdem Wein und Sekt | kein klassisches reines Bierfestzelt |
+| [Armbrustschützenzelt](#armbrustschuetzenzelt) | Paulaner Oktoberfestbier | Schützen- und Armbrusttradition |
+| [Augustiner-Festhalle](#augustiner-festhalle) | Augustiner Wiesnbier | Ausschank aus Holzfässern |
+| [Bräurosl](#braeurosl) | Hacker-Pschorr Oktoberfestbier | traditionsreiches Zelt mit eigener Bräurosl |
+| [Fischer-Vroni](#fischer-vroni) | Augustiner Wiesnbier | bekannt für Steckerlfisch |
+| [Hacker-Festzelt](#hacker-festzelt) | Hacker-Pschorr Oktoberfestbier | „Himmel der Bayern“ |
+| [Hofbräu-Festzelt](#hofbraeu-festzelt) | Hofbräu Oktoberfestbier | großer Stehbereich und internationales Publikum |
+| [Käfer Wiesn-Schänke](#kaefer-wiesn-schaenke) | Paulaner Oktoberfestbier | kleiner, gastronomisch und abends prominent |
+| [Löwenbräu-Festzelt](#loewenbraeu-festzelt) | Löwenbräu Oktoberfestbier | markanter Löwe am Zeltturm |
+| [Marstall](#marstall) | Spaten Oktoberfestbier | Pferde- und Kutschenmotiv, vergleichsweise modernes Ambiente |
+| [Ochsenbraterei](#ochsenbraterei) | Spaten Oktoberfestbier | Ochsenfleisch als kulinarischer Schwerpunkt |
+| [Paulaner-Festzelt](#paulaner-festzelt) | Paulaner Oktoberfestbier | großer Maßkrug auf dem Turm |
+| [Schottenhamel](#schottenhamel) | Spaten Oktoberfestbier | hier wird das erste Fass offiziell angezapft |
+| [Schützen-Festzelt](#schuetzen-festzelt) | Löwenbräu Oktoberfestbier | Schießsporttradition und Balkon |
+| [Kufflers Weinzelt](#kufflers-weinzelt) | Paulaner Weißbier bis zum Abend; außerdem Wein und Sekt | kein klassisches reines Bierfestzelt |
 
-## Augustiner-Zelte
+## Welches Bier gibt es in den einzelnen Festzelten?
 
-Augustiner wird in der Augustiner-Festhalle und der Fischer-Vroni ausgeschenkt. Die Festhalle ist besonders wegen der traditionellen Holzfässer bekannt. Auch auf der Oidn Wiesn und in verschiedenen kleinen Betrieben findet man Augustiner.
+<h3 id="armbrustschuetzenzelt">Welches Bier gibt es im Armbrustschützenzelt?</h3>
 
-## Hacker-Pschorr-Zelte
+Im Armbrustschützenzelt wird Paulaner Oktoberfestbier ausgeschenkt. Das Zelt verbindet den Ausschank mit seiner Schützen- und Armbrusttradition.
 
-Hacker-Pschorr ist die Brauerei des Hacker-Festzelts und der Bräurosl. Beide Zelte sind groß, unterscheiden sich aber in Gestaltung, Musik und Publikum. Wer ein bestimmtes Erlebnis sucht, sollte daher nicht nur nach der Biermarke entscheiden.
+<h3 id="augustiner-festhalle">Welches Bier gibt es in der Augustiner-Festhalle?</h3>
 
-## Paulaner-Zelte
+In der Augustiner-Festhalle wird Augustiner Wiesnbier ausgeschenkt. Besonders bekannt ist dort der Ausschank aus traditionellen Holzfässern.
 
-Paulaner ist im Armbrustschützenzelt, im Paulaner-Festzelt und in Käfers Wiesn-Schänke vertreten. Im Weinzelt gibt es Paulaner Weißbier, während Wein und Sekt das Angebot prägen.
+<h3 id="braeurosl">Welches Bier gibt es in der Bräurosl?</h3>
 
-## Spaten-Zelte
+In der Bräurosl wird Hacker-Pschorr Oktoberfestbier ausgeschenkt. Sie gehört damit gemeinsam mit dem Hacker-Festzelt zu den großen Hacker-Pschorr-Zelten.
 
-Spaten wird im Schottenhamel, Marstall und in der Ochsenbraterei ausgeschenkt. Das Schottenhamel ist für die offizielle Eröffnung mit dem Anstich des ersten Fasses besonders wichtig.
+<h3 id="fischer-vroni">Welches Bier gibt es in der Fischer-Vroni?</h3>
 
-## Löwenbräu-Zelte
+In der Fischer-Vroni wird Augustiner Wiesnbier ausgeschenkt. Kulinarisch ist das Zelt besonders für Steckerlfisch bekannt.
 
-Löwenbräu wird im Löwenbräu-Festzelt und im Schützen-Festzelt ausgeschenkt. Beide Zelte unterscheiden sich in Stimmung und kulinarischer Ausrichtung, obwohl das Festbier von derselben Brauerei stammt.
+<h3 id="hacker-festzelt">Welches Bier gibt es im Hacker-Festzelt?</h3>
 
-## Hofbräu-Zelt
+Im Hacker-Festzelt wird Hacker-Pschorr Oktoberfestbier ausgeschenkt. Das Zelt ist durch seine Gestaltung als „Himmel der Bayern“ bekannt.
 
-Hofbräu Oktoberfestbier wird im Hofbräu-Festzelt ausgeschenkt. Das Zelt ist besonders bei internationalen Gästen bekannt und besitzt einen ungewöhnlich großen Stehbereich.
+<h3 id="hofbraeu-festzelt">Welches Bier gibt es im Hofbräu-Festzelt?</h3>
+
+Im Hofbräu-Festzelt wird Hofbräu Oktoberfestbier ausgeschenkt. Zum Zelt gehören neben Sitzplätzen auch ein großer Stehbereich und internationales Publikum.
+
+<h3 id="kaefer-wiesn-schaenke">Welches Bier gibt es in Käfers Wiesn-Schänke?</h3>
+
+In Käfers Wiesn-Schänke wird Paulaner Oktoberfestbier ausgeschenkt. Das kleinere Zelt ist gastronomisch geprägt und besonders am Abend gefragt.
+
+<h3 id="loewenbraeu-festzelt">Welches Bier gibt es im Löwenbräu-Festzelt?</h3>
+
+Im Löwenbräu-Festzelt wird Löwenbräu Oktoberfestbier ausgeschenkt. Ein markanter Löwe am Zeltturm macht das Zelt leicht erkennbar.
+
+<h3 id="marstall">Welches Bier gibt es im Marstall?</h3>
+
+Im Marstall wird Spaten Oktoberfestbier ausgeschenkt. Die Gestaltung greift Pferde- und Kutschenmotive auf.
+
+<h3 id="ochsenbraterei">Welches Bier gibt es in der Ochsenbraterei?</h3>
+
+In der Ochsenbraterei wird Spaten Oktoberfestbier ausgeschenkt. Der kulinarische Schwerpunkt des Zelts liegt auf Ochsenfleisch.
+
+<h3 id="paulaner-festzelt">Welches Bier gibt es im Paulaner-Festzelt?</h3>
+
+Im Paulaner-Festzelt wird Paulaner Oktoberfestbier ausgeschenkt. Der große Maßkrug auf dem Turm ist ein markantes Erkennungszeichen.
+
+<h3 id="schottenhamel">Welches Bier gibt es im Schottenhamel?</h3>
+
+Im Schottenhamel wird Spaten Oktoberfestbier ausgeschenkt. In diesem Zelt wird das erste Fass des Oktoberfests offiziell angezapft.
+
+<h3 id="schuetzen-festzelt">Welches Bier gibt es im Schützen-Festzelt?</h3>
+
+Im Schützen-Festzelt wird Löwenbräu Oktoberfestbier ausgeschenkt. Das Zelt verbindet den Ausschank mit Schießsporttradition und einem Balkon.
+
+<h3 id="kufflers-weinzelt">Welches Bier gibt es in Kufflers Weinzelt?</h3>
+
+In Kufflers Weinzelt wird bis zum Abend Paulaner Weißbier ausgeschenkt. Der Schwerpunkt liegt ansonsten auf Wein und Sekt, weshalb es kein klassisches reines Bierfestzelt ist.
 
 ## Kleine Festzelte
 

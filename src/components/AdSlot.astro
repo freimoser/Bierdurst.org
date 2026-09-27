@@ -1,7 +1,9 @@
 ---
 const { position = 'article' } = Astro.props;
+const publisherId = import.meta.env.PUBLIC_ADSENSE_PUBLISHER_ID ?? '';
+const cmpUrl = import.meta.env.PUBLIC_CMP_SCRIPT_URL ?? '';
+const adsConfigured = /^ca-pub-\d{16}$/.test(publisherId) && /^https:\/\//.test(cmpUrl);
 ---
-<aside class="ad-slot" data-ad-slot={position} aria-label="Werbefläche">
-  <span>Werbefläche</span>
-  <small>derzeit deaktiviert</small>
-</aside>
+{adsConfigured && (
+  <aside class="ad-slot" data-ad-slot={position} aria-label="Werbefläche"></aside>
+)}

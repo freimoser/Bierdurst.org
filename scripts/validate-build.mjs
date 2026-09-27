@@ -29,12 +29,18 @@ for (const file of htmlFiles) {
   if (path !== '/404/' && !sitemapPaths.has(path) && !isNoIndex) errors.push(`Indexierbares HTML außerhalb der Launch-Sitemap: ${path}`);
   if (sitemapPaths.has(path) && isNoIndex) errors.push(`Noindex-URL in der Launch-Sitemap: ${path}`);
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
+  const ogTitle = html.match(/<meta property="og:title" content="([^"]+)"/)?.[1];
+  const twitterTitle = html.match(/<meta name="twitter:title" content="([^"]+)"/)?.[1];
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   const descriptions = [...html.matchAll(/<meta name="description" content="([^"]+)"/g)];
   const h1s = [...html.matchAll(/<h1(?:\s|>)/g)];
   if (!title || descriptions.length !== 1 || !canonical || h1s.length !== 1) errors.push(`SEO-Grunddaten unvollständig in ${path}`);
+  if (title?.includes('…')) errors.push(`Abgeschnittener Titel in ${path}: ${title}`);
+  if (title && title.length > 60) errors.push(`Titel über 60 Zeichen in ${path}: ${title.length}`);
+  if (title && (ogTitle !== title || twitterTitle !== title)) errors.push(`Social-Titel weicht in ${path} vom Seitentitel ab`);
   if (path !== '/404/' && canonical !== `https://bierdurst.org${path}`) errors.push(`Falscher Canonical in ${path}: ${canonical}`);
   if (/lorem ipsum/i.test(html)) errors.push(`Lorem Ipsum in ${path}`);
+  if (/Werbefläche|derzeit deaktiviert|Für das MVP|Prüfrhythmus: (?:6|12|18) months|before and during each Oktoberfest season/i.test(html)) errors.push(`Sichtbarer Baustellen- oder englischer Redaktionstext in ${path}`);
   if (path !== '/404/') {
     if (titles.has(title)) errors.push(`Doppelter Titel: ${title}`); else titles.set(title, path);
     if (canonicals.has(canonical)) errors.push(`Doppelter Canonical: ${canonical}`); else canonicals.set(canonical, path);

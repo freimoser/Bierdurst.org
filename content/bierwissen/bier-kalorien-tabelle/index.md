@@ -66,7 +66,7 @@ Zwei Pilsbiere können unterschiedliche Alkohol- und Restextraktwerte besitzen. 
 
 ## Etikett vor Datenbank
 
-Für Kauf- oder Ernährungsentscheidungen gilt immer die aktuelle Angabe auf Flasche, Dose oder Herstellerseite. Rezepturen können sich ändern. Eine spätere Produktdatenbank sollte Werte deshalb mit Quelle und Prüfdatum speichern. Für das MVP verzichten wir bewusst auf eine solche Datenbank.
+Für Kauf- oder Ernährungsentscheidungen gilt immer die aktuelle Angabe auf Flasche, Dose oder Herstellerseite. Rezepturen können sich ändern. Deshalb zeigen wir hier belastbare Bereiche statt scheinbar exakter Produktwerte ohne aktuelles Prüfdatum.
 
 ## Alkohol als Energieträger
 

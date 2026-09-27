@@ -8,7 +8,7 @@ import marketStatistics from '../../../data/beer-market-statistics.json';
 const families = [...new Set(beerStyles.map((beer) => beer.family))].sort((a, b) => a.localeCompare(b, 'de'));
 const brandProfiles = beerBrands.map((brand) => ({ ...brand, styleData: beerStyles.find((style) => style.slug === brand.style)! }));
 ---
-<BaseLayout title="Bierkompendium: echte Biermarken und Bierstile | BierDurst.org" description={`${beerBrands.length} verifizierte Biermarken und ${beerStyles.length} Bierstile mit Brauerei, Herkunft, Stilwerten und belegten Unternehmenskennzahlen.`} canonical="https://bierdurst.org/bierkompendium/" robots="noindex, follow">
+<BaseLayout title="Bierkompendium: Biermarken & Bierstile | BierDurst.org" description={`${beerBrands.length} verifizierte Biermarken und ${beerStyles.length} Bierstile mit Brauerei, Herkunft, Stilwerten und belegten Unternehmenskennzahlen.`} canonical="https://bierdurst.org/bierkompendium/" robots="noindex, follow">
   <main id="inhalt">
     <div class="page-width"><Breadcrumbs items={[{ href: '/', label: 'Startseite' }, { href: '/bierkompendium/', label: 'Bierkompendium' }]} /></div>
     <ExperienceHero eyebrow="Echte Marken · echte Quellen" title="Bierkompendium" description={`${beerBrands.length} einzeln verifizierte deutsche Biermarken und ${beerStyles.length} Bierstile – als gemeinsamer Datenbestand für Vergleiche, Spiele und das geplante Bierquartett.`} />

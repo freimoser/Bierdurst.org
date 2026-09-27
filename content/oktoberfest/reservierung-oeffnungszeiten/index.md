@@ -1,5 +1,6 @@
 ---
 title: 'Oktoberfest-Festzelt reservieren: Regeln und Öffnungszeiten 2026'
+seo_title: 'Wiesn-Zelt reservieren: Regeln & Zeiten 2026'
 slug: /oktoberfest/reservierung-oeffnungszeiten/
 canonical: https://bierdurst.org/oktoberfest/reservierung-oeffnungszeiten/
 meta_title: 'Oktoberfest-Festzelt reservieren: Regeln un… | BierDurst.org'

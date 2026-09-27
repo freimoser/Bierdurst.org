@@ -1,12 +1,13 @@
 ---
-title: Die sechs Münchner Oktoberfestbrauereien
+title: 'Oktoberfest-Brauereien 2026: die 6 Münchner Brauereien'
+seo_title: 'Oktoberfest-Brauereien 2026: die 6 Münchner Brauereien'
 slug: /oktoberfest/sechs-oktoberfestbrauereien/
 canonical: https://bierdurst.org/oktoberfest/sechs-oktoberfestbrauereien/
 meta_title: Die sechs Münchner Oktoberfestbrauereien | BierDurst.org
-meta_description: 'Die sechs Oktoberfestbrauereien: Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten im Überblick.'
+meta_description: 'Welche Brauereien schenken auf der Wiesn aus? Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten – mit ihren Festzelten.'
 category: Oktoberfest
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-09-27'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Oktoberfestbrauereien
@@ -27,9 +28,11 @@ review_cycle: before and during each Oktoberfest season
 index: true
 ---
 
-# Die sechs Münchner Oktoberfestbrauereien
+# Oktoberfest-Brauereien 2026: die 6 Münchner Brauereien
 
 **Kurz gesagt:** Das offizielle Wiesnbier kommt von sechs Münchner Traditionsbrauereien: **Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten**. Sie beliefern jeweils fest zugeordnete große und kleine Festzelte.
+
+Hier stehen die **Brauereien**, ihre Geschichte und ihre Festzelte im Mittelpunkt. Für Stil, Alkoholgehalt und Geschmack der Biere gibt es den separaten [Vergleich der sechs Wiesnbiere](/oktoberfest/welches-bier-gibt-es/). Welche Marke in welchem Zelt ausgeschenkt wird, zeigt die Übersicht [Bier in welchem Festzelt?](/oktoberfest/bier-in-welchem-festzelt/).
 
 ## Augustiner-Bräu
 
