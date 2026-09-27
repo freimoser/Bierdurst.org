@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "prebuild": "node scripts/generate-sitemap.mjs",
+    "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-og-images.mjs",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/prepare-dist.mjs && node scripts/validate-build.mjs",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && node scripts/test-calculators.mjs && node scripts/test-beer-data.mjs",
@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.1",
-    "astro": "7.3.5"
+    "@astrojs/rss": "4.0.19",
+    "astro": "7.3.5",
+    "sharp": "0.35.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",

@@ -4,8 +4,8 @@ import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import '../styles/global.css';
 
-interface Props { title: string; description: string; canonical: string; robots?: string; structuredData?: Record<string, unknown>[]; pageType?: string }
-const { title, description, canonical, robots = 'index, follow', structuredData = [], pageType = 'article' } = Astro.props as Props;
+interface Props { title: string; description: string; canonical: string; robots?: string; structuredData?: Record<string, unknown>[]; pageType?: string; ogImage?: string; ogImageAlt?: string }
+const { title, description, canonical, robots = 'index, follow', structuredData = [], pageType = 'article', ogImage = 'https://bierdurst.org/og.png', ogImageAlt = title } = Astro.props as Props;
 const publisherId = import.meta.env.PUBLIC_ADSENSE_PUBLISHER_ID ?? '';
 const cmpUrl = import.meta.env.PUBLIC_CMP_SCRIPT_URL ?? '';
 const adsConfigured = /^ca-pub-\d{16}$/.test(publisherId) && /^https:\/\//.test(cmpUrl);
@@ -22,20 +22,23 @@ const adsConfigured = /^ca-pub-\d{16}$/.test(publisherId) && /^https:\/\//.test(
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com; upgrade-insecure-requests" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="BierDurst.org RSS" href="https://bierdurst.org/rss.xml" />
     <meta property="og:type" content={pageType === 'home' ? 'website' : 'article'} />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:site_name" content="BierDurst.org" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://bierdurst.org/og.png" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="BierDurst.org – Bierwissen, Vergleiche und Rechner" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://bierdurst.org/og.png" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="theme-color" content="#f3a712" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {structuredData.map((schema) => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />)}

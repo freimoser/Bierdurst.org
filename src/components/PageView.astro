@@ -9,6 +9,7 @@ import ResponsibleNotice from './ResponsibleNotice.astro';
 import HomeFeatures from './HomeFeatures.astro';
 import SourcesList from './SourcesList.astro';
 import RelatedArticles from './RelatedArticles.astro';
+import { extractFaqItems } from '../utils/structured-data';
 import manifest from '../../data/url-manifest.json';
 
 const { entry } = Astro.props as { entry: CollectionEntry<'pages'> };
@@ -43,21 +44,29 @@ const reviewCycleLabels: Record<string, string> = {
 };
 const reviewCycle = entry.data.review_cycle ? (reviewCycleLabels[entry.data.review_cycle] ?? entry.data.review_cycle) : undefined;
 const articleTypes = new Set(['article', 'comparison', 'tool', 'pillar']);
+const isHome = entry.data.slug === '/';
+const isTool = entry.data.page_type === 'tool' && entry.data.tool_id;
+const ogImage = new URL(`/og${entry.data.slug}index.png`, 'https://bierdurst.org').href;
+const faqItems = extractFaqItems(entry.body);
 const schemas = [];
 if (entry.data.slug === '/') {
-  schemas.push({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'BierDurst.org', url: 'https://bierdurst.org/', inLanguage: 'de-DE', description: entry.data.meta_description, publisher: { '@type': 'Organization', name: 'BierDurst.org', url: 'https://bierdurst.org/' } });
+  schemas.push({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'BierDurst.org', url: 'https://bierdurst.org/', inLanguage: 'de-DE', description: entry.data.meta_description, publisher: { '@type': 'Organization', name: 'BierDurst.org', url: 'https://bierdurst.org/', logo: 'https://bierdurst.org/favicon.svg' } });
 }
 if (articleTypes.has(entry.data.page_type)) {
-  schemas.push({ '@context': 'https://schema.org', '@type': 'Article', headline: entry.data.title, description: entry.data.meta_description, dateModified: updated, inLanguage: 'de-DE', mainEntityOfPage: entry.data.canonical, publisher: { '@type': 'Organization', name: 'BierDurst.org', url: 'https://bierdurst.org/' } });
+  schemas.push({ '@context': 'https://schema.org', '@type': 'Article', headline: entry.data.title, description: entry.data.meta_description, dateModified: updated, image: ogImage, inLanguage: 'de-DE', mainEntityOfPage: entry.data.canonical, author: { '@type': 'Organization', name: 'Redaktion BierDurst.org', url: 'https://bierdurst.org/ueber-uns/' }, publisher: { '@type': 'Organization', name: 'BierDurst.org', url: 'https://bierdurst.org/', logo: { '@type': 'ImageObject', url: 'https://bierdurst.org/favicon.svg' } } });
+}
+if (faqItems.length) {
+  schemas.push({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) });
+}
+if (isTool) {
+  schemas.push({ '@context': 'https://schema.org', '@type': 'WebApplication', name: entry.data.title, description: entry.data.meta_description, url: entry.data.canonical, applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' } });
 }
 if (breadcrumbItems.length > 1) {
   schemas.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbItems.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.label, item: new URL(item.href, 'https://bierdurst.org').href })) });
 }
 const pageHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
-const isHome = entry.data.slug === '/';
-const isTool = entry.data.page_type === 'tool' && entry.data.tool_id;
 ---
-<BaseLayout title={title} description={entry.data.meta_description} canonical={entry.data.canonical} robots={entry.data.launch_status === 'queue' ? 'noindex, nofollow' : (entry.data.index ? 'index, follow' : 'noindex, follow')} structuredData={schemas} pageType={isHome ? 'home' : 'article'}>
+<BaseLayout title={title} description={entry.data.meta_description} canonical={entry.data.canonical} robots={entry.data.launch_status === 'queue' ? 'noindex, nofollow' : (entry.data.index ? 'index, follow' : 'noindex, follow')} structuredData={schemas} pageType={isHome ? 'home' : 'article'} ogImage={ogImage} ogImageAlt={entry.data.title}>
   <main id="inhalt">
     {!isHome && <div class="page-width"><Breadcrumbs items={breadcrumbItems} /></div>}
     <header class:list={['page-hero', { 'home-hero': isHome }]}>

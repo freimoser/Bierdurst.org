@@ -1,4 +1,4 @@
-import { readdir, readFile } from 'node:fs/promises';
+import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative, sep } from 'node:path';
 
 async function files(dir) {
@@ -13,6 +13,16 @@ const sitemapPaths = new Set([...sitemap.matchAll(/<loc>https:\/\/bierdurst\.org
 const expectedFiles = new Map([...sitemapPaths].map((path) => [path, path === '/' ? 'dist/index.html' : `dist${path}index.html`]));
 const errors = [];
 const incoming = new Map([...sitemapPaths].map((path) => [path, 0]));
+
+if (!allFiles.includes('dist/llms.txt')) errors.push('llms.txt fehlt im Build.');
+if (!allFiles.includes('dist/rss.xml')) errors.push('rss.xml fehlt im Build.');
+if (allFiles.includes('dist/llms.txt')) {
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  for (const path of sitemapPaths) {
+    if (!llms.includes(`https://bierdurst.org${path}`)) errors.push(`llms.txt enthält ${path} nicht.`);
+  }
+}
+if (allFiles.includes('dist/og.png') && (await stat('dist/og.png')).size >= 200_000) errors.push('Standard-OG-Bild ist größer als 200 KB.');
 
 for (const [path, file] of expectedFiles) {
   if (!htmlFiles.includes(file)) errors.push(`Sitemap-URL ohne HTML: ${path}`);
@@ -32,6 +42,7 @@ for (const file of htmlFiles) {
   const ogTitle = html.match(/<meta property="og:title" content="([^"]+)"/)?.[1];
   const twitterTitle = html.match(/<meta name="twitter:title" content="([^"]+)"/)?.[1];
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+  const ogImage = html.match(/<meta property="og:image" content="([^"]+)"/)?.[1];
   const descriptions = [...html.matchAll(/<meta name="description" content="([^"]+)"/g)];
   const h1s = [...html.matchAll(/<h1(?:\s|>)/g)];
   if (!title || descriptions.length !== 1 || !canonical || h1s.length !== 1) errors.push(`SEO-Grunddaten unvollständig in ${path}`);
@@ -39,8 +50,17 @@ for (const file of htmlFiles) {
   if (title && title.length > 60) errors.push(`Titel über 60 Zeichen in ${path}: ${title.length}`);
   if (title && (ogTitle !== title || twitterTitle !== title)) errors.push(`Social-Titel weicht in ${path} vom Seitentitel ab`);
   if (path !== '/404/' && canonical !== `https://bierdurst.org${path}`) errors.push(`Falscher Canonical in ${path}: ${canonical}`);
+  if (sitemapPaths.has(path)) {
+    const expectedOgImage = `https://bierdurst.org/og${path}index.png`;
+    if (ogImage !== expectedOgImage) errors.push(`Falsches OG-Bild in ${path}: ${ogImage}`);
+    if (!allFiles.includes(`dist/og${path}index.png`)) errors.push(`OG-Bild fehlt für ${path}`);
+  }
   if (/lorem ipsum/i.test(html)) errors.push(`Lorem Ipsum in ${path}`);
   if (/Werbefläche|derzeit deaktiviert|Für das MVP|Prüfrhythmus: (?:6|12|18) months|before and during each Oktoberfest season/i.test(html)) errors.push(`Sichtbarer Baustellen- oder englischer Redaktionstext in ${path}`);
+  const hasVisibleFaq = />Häufige Fragen<\/h2>/.test(html) || html.includes('class="stat-faq"');
+  const hasFaqSchema = html.includes('"@type":"FAQPage"');
+  if (hasVisibleFaq !== hasFaqSchema) errors.push(`FAQ-Inhalt und FAQPage-Schema stimmen in ${path} nicht überein.`);
+  if (html.includes('data-calculator') && !html.includes('"@type":"WebApplication"')) errors.push(`WebApplication-Schema fehlt in ${path}.`);
   if (path !== '/404/') {
     if (titles.has(title)) errors.push(`Doppelter Titel: ${title}`); else titles.set(title, path);
     if (canonicals.has(canonical)) errors.push(`Doppelter Canonical: ${canonical}`); else canonicals.set(canonical, path);
