@@ -2,12 +2,12 @@
 title: 'Pils oder Helles: Was ist der Unterschied?'
 slug: /biervergleich/pils-oder-helles/
 canonical: https://bierdurst.org/biervergleich/pils-oder-helles/
-seo_title: 'Pils vs. Helles: Der Unterschied in 30 Sekunden erklärt'
+seo_title: 'Pils oder Helles: Der Unterschied bei Geschmack und Alkohol'
 meta_title: 'Pils oder Helles: Was ist der Unterschied? | BierDurst.org'
-meta_description: 'Pils ist herber und hopfiger, Helles malziger und milder. Unterschied bei Geschmack, Alkohol, Bittere und Herkunft – mit Vergleichstabelle.'
+meta_description: 'Pils oder Helles? Der Unterschied zwischen Pils und Helles: Pils ist herber und hopfiger, Helles malziger und milder. Mit Tabelle zu Alkohol und Herkunft.'
 category: Biervergleich
 language: de
-last_updated: '2026-10-18'
+last_updated: '2026-10-26'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Pils oder Helles
@@ -29,7 +29,7 @@ index: true
 
 # Pils oder Helles: Was ist der Unterschied?
 
-**Kurz gesagt:** Pils und Helles unterscheiden sich vor allem bei Einordnung, Geschmack und regionaler Tradition. Pils ist untergäriges Vollbier und schmeckt typischerweise schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten. Helles ist untergäriges helles Lagerbier und wirkt eher weich, rund und ausgewogen mit einer leichten Malzsüße und zurückhaltender Hopfenbittere.
+**Kurz gesagt:** Der Unterschied zwischen Pils und Helles liegt vor allem im Geschmack: Pils ist herber und hopfiger, Helles milder und malziger. Dazu kommen Einordnung und regionale Tradition. Pils ist untergäriges Vollbier und schmeckt typischerweise schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten. Helles ist untergäriges helles Lagerbier und wirkt eher weich, rund und ausgewogen mit einer leichten Malzsüße und zurückhaltender Hopfenbittere.
 
 ## Pils und Helles im direkten Vergleich
 
@@ -66,9 +66,13 @@ Wähle **Helles**, wenn Du ein mildes, rundes und sehr zugängliches Bier ohne s
 
 ## Häufige Fragen
 
+### Was ist der Unterschied zwischen Pils und Helles?
+
+Pils ist deutlich bis kräftig hopfenherb, trocken und spritzig. Helles ist mild bis moderat in der Bittere, weich, rund und leicht malzsüß. Beim Alkohol liegen beide nah beieinander: Pils meist etwa 4,5 bis 5,2 % vol, Helles meist etwa 4,7 bis 5,4 % vol. Alle Merkmale stehen in der Tabelle oben.
+
 ### Gehören Pils und Helles zur gleichen Bierfamilie?
 
-Pils wird als untergäriges Vollbier eingeordnet. Helles ist untergäriges helles Lagerbier. Ob beide zur gleichen großen Familie gehören, hängt vor allem von der Gärungsart und davon ab, ob einer der Begriffe ein Oberbegriff ist.
+Ja, beide sind untergärig. Pils wird als untergäriges Vollbier eingeordnet, Helles als untergäriges helles Lagerbier. Unterschiede gibt es vor allem bei Hopfenbittere, Malzsüße und regionaler Tradition.
 
 ### Welches Bier hat mehr Kalorien?
 
