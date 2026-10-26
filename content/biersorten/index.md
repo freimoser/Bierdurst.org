@@ -2,11 +2,12 @@
 title: 'Biersorten in Deutschland: die große Übersicht'
 slug: /biersorten/
 canonical: https://bierdurst.org/biersorten/
+seo_title: 'Biersorten in Deutschland: Alle Bierarten im Überblick'
 meta_title: 'Biersorten in Deutschland: die große Übersi… | BierDurst.org'
-meta_description: Alle wichtigen Biersorten Deutschlands mit Gärung, Geschmack, Alkoholgehalt, Regionen und passenden Detailartikeln.
+meta_description: 'Alle wichtigen Biersorten Deutschlands im Überblick: Pils, Helles, Weizen, Kölsch, Alt und mehr, mit Geschmack, Alkoholgehalt und Regionen.'
 category: Biersorten
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-10-26'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Biersorten Deutschland
@@ -31,7 +32,7 @@ index: true
 
 **Kurz gesagt:** Deutschland kennt weit mehr als Pils und Weizen. Neben weit verbreiteten Sorten wie Hellem, Export, Kölsch oder Altbier gibt es regionale Spezialitäten wie Rauchbier, Zoigl, Gose und Berliner Weisse. Hinzu kommen internationale Bierstile, die heute auch von deutschen Brauereien gebraut werden.
 
-Der Begriff **Biersorte** wird im Alltag oft für drei verschiedene Dinge benutzt: einen Bierstil, eine einzelne Marke oder eine konkrete Produktvariante. Ein Pils ist ein Stil. „Marke X Pils“ wäre ein einzelnes Bier dieses Stils. Diese Unterscheidung erklärt, warum es keine einfache, allgemein verbindliche Zahl aller Biersorten gibt.
+Der Begriff **Biersorte** wird im Alltag oft für drei verschiedene Dinge benutzt: einen Bierstil, eine einzelne Marke oder eine konkrete Produktvariante. Ein Pils ist ein Stil. „Marke X Pils“ wäre ein einzelnes Bier dieses Stils. Diese Unterscheidung erklärt, warum es keine einfache, allgemein verbindliche Zahl aller Biersorten gibt. Mehr dazu im Artikel [Wie viele Biersorten gibt es?](/bierwissen/wie-viele-biersorten-gibt-es/).
 
 ## Welche Biersorten gibt es in Deutschland?
 
@@ -83,7 +84,7 @@ Obergärige Hefe arbeitet wärmer und erzeugt oft mehr Frucht- und Gewürzaromen
 
 ## Welche Biersorte ist in Deutschland am beliebtesten?
 
-Pils bleibt mit knapp der Hälfte des Marktes die klare Nummer eins. Dahinter folgen Helles und alkoholfreie Biere. Die bundesweite Statistik verdeckt allerdings starke regionale Unterschiede: In Köln dominiert Kölsch, in Düsseldorf Alt, in Bayern Helles und Weizen, in Teilen Mitteldeutschlands Schwarzbier.
+Pils bleibt mit knapp der Hälfte des Marktes die klare Nummer eins. Dahinter folgen Helles und alkoholfreie Biere. Worin sich Pils und Helles unterscheiden, erklärt [Pils oder Helles: der Unterschied](/biervergleich/pils-oder-helles/). Die bundesweite Statistik verdeckt allerdings starke regionale Unterschiede: In Köln dominiert Kölsch, in Düsseldorf Alt, in Bayern Helles und Weizen, in Teilen Mitteldeutschlands Schwarzbier.
 
 ## Wie findet man die passende Biersorte?
 

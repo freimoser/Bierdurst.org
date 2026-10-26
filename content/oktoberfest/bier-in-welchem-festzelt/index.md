@@ -1,13 +1,13 @@
 ---
 title: Welches Bier gibt es in welchem Wiesn-Zelt?
-seo_title: 'Welches Bier in welchem Wiesn-Zelt? Alle 14 Zelte 2026'
+seo_title: 'Welches Bier im Armbrustschützenzelt, Schottenhamel und Co.?'
 slug: /oktoberfest/bier-in-welchem-festzelt/
 canonical: https://bierdurst.org/oktoberfest/bier-in-welchem-festzelt/
 meta_title: Welches Bier gibt es in welchem Festzelt? | BierDurst.org
-meta_description: 'Armbrustschützenzelt: Paulaner. Schottenhamel: Spaten. Schützen-Festzelt: Löwenbräu. Alle 14 großen Oktoberfestzelte und ihr Bier in einer Tabelle.'
+meta_description: 'Armbrustschützenzelt: Paulaner. Schottenhamel: Spaten. Schützenzelt: Löwenbräu. Alle 14 großen Wiesn-Zelte mit Bier und Brauerei auf einen Blick.'
 category: Oktoberfest
 language: de
-last_updated: '2026-09-27'
+last_updated: '2026-10-18'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Bier Festzelt Oktoberfest
@@ -136,6 +136,14 @@ Wer ausschließlich nach der Marke entscheidet, nutzt die Tabelle oben. Wer zus�
 - **Spaten:** traditionelle Eröffnung, Ochsenküche und verschiedene Atmosphären
 
 ## Häufige Fragen
+
+### Welche Brauerei schenkt im Armbrustschützenzelt aus?
+
+Paulaner. Im Armbrustschützenzelt gibt es Paulaner Oktoberfestbier.
+
+### Welches Bier gibt es im Schützenzelt?
+
+Im Schützen-Festzelt, kurz Schützenzelt, wird Löwenbräu Oktoberfestbier ausgeschenkt.
 
 ### Kann ich im Schottenhamel Augustiner bestellen?
 

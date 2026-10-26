@@ -2,11 +2,12 @@
 title: Wie viele Biersorten gibt es?
 slug: /bierwissen/wie-viele-biersorten-gibt-es/
 canonical: https://bierdurst.org/bierwissen/wie-viele-biersorten-gibt-es/
+seo_title: 'Wie viele Biersorten gibt es weltweit? Über 100 Bierstile'
 meta_title: Wie viele Biersorten gibt es? | BierDurst.org
-meta_description: Wie viele Biersorten es weltweit und in Deutschland gibt, warum Zahlen abweichen und wie sich Stil, Marke und Variante unterscheiden.
+meta_description: 'Weltweit unterscheiden Stilführer weit über 100 Bierstile, allein in Deutschland gibt es mehr als 7.500 Biermarken. Hier die Zahlen und warum sie abweichen.'
 category: Bierwissen
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-10-18'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Wie viele Biersorten gibt es?
@@ -28,7 +29,7 @@ index: true
 
 # Wie viele Biersorten gibt es?
 
-**Kurz gesagt:** Eine exakte Zahl gibt es nicht. Je nach Stilführer werden weltweit weit über hundert Bierstile und Unterstile unterschieden. Im deutschen Alltag sind einige Dutzend besonders relevant.
+**Kurz gesagt:** Weltweit gibt es weit über 100 Bierstile und Unterstile, eine exakte Zahl aber nicht, weil jeder Stilführer anders zählt. Im deutschen Alltag sind einige Dutzend besonders relevant. Biermarken gibt es deutlich mehr: Allein in Deutschland sind es laut Deutschem Brauer-Bund über 7.500.
 
 ## Warum die Zahlen so unterschiedlich sind
 
@@ -36,9 +37,13 @@ Manche Übersichten zählen Pils als einen Stil. Andere trennen deutsches Pils, 
 ## Biersorte ist nicht Biermarke
 
 Deutschland hat mehr als 7.500 Biermarken, aber nicht 7.500 grundlegend verschiedene Stile. Viele Marken bieten ein Pils, Helles, Weizen und alkoholfreie Varianten an. Umgekehrt kann ein einzelner Stil unzählige Marken umfassen.
+## Wie viele Biermarken gibt es weltweit?
+
+Eine verlässliche weltweite Zahl gibt es nicht. Kein Verband und keine Behörde erfasst alle Marken aller Länder, und viele Brauereien führen ihre Biere nur regional. Gut belegt ist die Zahl für Deutschland: Der Deutsche Brauer-Bund nennt mehr als 7.500 Biermarken. Weltweit liegt die Zahl entsprechend deutlich höher. Mehr dazu im Artikel [Wie viele Biermarken gibt es?](/bierwissen/wie-viele-biermarken-gibt-es/).
+
 ## Die wichtigsten deutschen Sorten
 
-Für einen guten Überblick reichen zunächst Pils, Helles, Lager, Export, Weizen, Kölsch, Alt, Dunkel, Schwarzbier, Kellerbier, Märzen, Festbier, Bock und alkoholfreies Bier. Danach lohnen sich regionale Stile wie Rauchbier, Zoigl, Gose und Berliner Weisse.
+Für einen guten Überblick reichen zunächst Pils, Helles ([Pils oder Helles: der Unterschied](/biervergleich/pils-oder-helles/)), Lager, Export, Weizen, Kölsch, Alt, Dunkel, Schwarzbier, Kellerbier, Märzen, Festbier, Bock und alkoholfreies Bier. Danach lohnen sich regionale Stile wie Rauchbier, Zoigl, Gose und Berliner Weisse.
 ## Wie BierDurst.org zählt
 
 Wir fassen sehr ähnliche Unterarten auf gemeinsamen Übersichtsseiten zusammen und erstellen eigene Seiten dort, wo Nutzer tatsächlich einen klaren Unterschied suchen. Dadurch bleibt die Navigation verständlich, ohne die Vielfalt künstlich kleinzurechnen.

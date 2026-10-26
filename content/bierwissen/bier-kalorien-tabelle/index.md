@@ -2,11 +2,12 @@
 title: 'Bier-Kalorien-Tabelle: Pils, Helles, Weizen und alkoholfrei'
 slug: /bierwissen/bier-kalorien-tabelle/
 canonical: https://bierdurst.org/bierwissen/bier-kalorien-tabelle/
+seo_title: 'Bier-Kalorien-Tabelle: Pils, Helles, Weizen & Maß (1 l)'
 meta_title: 'Bier-Kalorien-Tabelle: Pils, Helles, Weizen und… | BierDurst.org'
-meta_description: Typische Kalorienbereiche je 100 ml, 0,33 l und 0,5 l. Konkrete Werte unterscheiden sich nach Produkt.
+meta_description: 'Eine Maß Bier (1 l) hat je nach Sorte ca. 350–500 kcal. Weizen hat meist etwas mehr Kalorien als Pils oder Helles. Werte je 100 ml, 0,33 l, 0,5 l und 1 l.'
 category: Bierwissen
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-10-18'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Bier Kalorien Tabelle
@@ -30,13 +31,13 @@ index: true
 
 Die Kalorien eines Bieres stammen vor allem aus Alkohol und verwertbaren Kohlenhydraten. Werte unterscheiden sich nach Rezeptur. Die folgende Tabelle zeigt deshalb **typische Bereiche**, keine verbindlichen Produktangaben.
 
-| Bierart | je 100 ml | je 0,33 l | je 0,5 l |
-|---|---:|---:|---:|
-| alkoholfreies Bier | ca. 15–30 kcal | ca. 50–100 kcal | ca. 75–150 kcal |
-| Pils | ca. 35–45 kcal | ca. 115–150 kcal | ca. 175–225 kcal |
-| Helles oder Lager | ca. 38–46 kcal | ca. 125–150 kcal | ca. 190–230 kcal |
-| Weizenbier | ca. 40–50 kcal | ca. 130–165 kcal | ca. 200–250 kcal |
-| Starkbier | häufig über 50 kcal | häufig über 165 kcal | häufig über 250 kcal |
+| Bierart | je 100 ml | je 0,33 l | je 0,5 l | je Maß (1 l) |
+|---|---:|---:|---:|---:|
+| alkoholfreies Bier | ca. 15–30 kcal | ca. 50–100 kcal | ca. 75–150 kcal | ca. 150–300 kcal |
+| Pils | ca. 35–45 kcal | ca. 115–150 kcal | ca. 175–225 kcal | ca. 350–450 kcal |
+| Helles oder Lager | ca. 38–46 kcal | ca. 125–150 kcal | ca. 190–230 kcal | ca. 380–460 kcal |
+| Weizenbier | ca. 40–50 kcal | ca. 130–165 kcal | ca. 200–250 kcal | ca. 400–500 kcal |
+| Starkbier | häufig über 50 kcal | häufig über 165 kcal | häufig über 250 kcal | häufig über 500 kcal |
 
 ## Warum alkoholfrei nicht kalorienfrei bedeutet
 
@@ -72,8 +73,19 @@ Für Kauf- oder Ernährungsentscheidungen gilt immer die aktuelle Angabe auf Fla
 
 Ein Teil der Energie kommt direkt aus Alkohol. Deshalb sinkt der Kalorienwert bei alkoholfreien Varianten häufig, aber nicht zwingend proportional: Verbleibende Kohlenhydrate können einen Teil ausgleichen.
 
+## Häufige Fragen
+
+### Hat Weizen mehr Kalorien als Pils?
+
+Meist etwas mehr. Ein Weizenbier liegt typischerweise bei 40 bis 50 kcal je 100 ml, ein Pils bei 35 bis 45 kcal. Die Bereiche überschneiden sich, deshalb kann ein leichtes Weizen auch unter einem kräftigen Pils liegen. Entscheidend sind Alkohol und Restextrakt.
+
+### Wie viele Kalorien hat eine Maß Bier?
+
+Eine Maß (1 Liter) Pils oder Helles hat etwa 350 bis 460 kcal, eine Maß Weizenbier etwa 400 bis 500 kcal. Stärkere Biere wie Festbier oder Bock können darüber liegen.
+
 ## Das könnte dich auch interessieren
 
+- [Pils oder Helles: Was ist der Unterschied?](/biervergleich/pils-oder-helles/)
 - [Bierwissen](/bierwissen/)
 - [Wie lange ist Dosenbier haltbar?](/bierwissen/dosenbier-haltbarkeit/)
 - [Wie viele Kohlenhydrate hat Bier?](/bierwissen/kohlenhydrate-bier/)
