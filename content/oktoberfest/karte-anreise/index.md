@@ -6,7 +6,7 @@ meta_title: Oktoberfest-Karte, Anreise und Orientierung… | BierDurst.org
 meta_description: 'Oktoberfest-Karte und Anreise: U-Bahn, S-Bahn, wichtige Eingänge, Festzelte, Oide Wiesn und Orientierung auf dem Gelände.'
 category: Oktoberfest
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Oktoberfest Karte
@@ -126,8 +126,8 @@ Nur im Rahmen der jeweils geltenden Nutzungsbedingungen. Sicherer ist ein Link o
 - [Alle Festzelte](/oktoberfest/festzelte/)
 - [Reservierung und Öffnungszeiten](/oktoberfest/reservierung-oeffnungszeiten/)
 - [Bier in welchem Festzelt?](/oktoberfest/bier-in-welchem-festzelt/)
-- [Oktoberfest 2026 im Überblick](/oktoberfest/)
+- [Oktoberfest im Überblick](/oktoberfest/)
 
 ## Das könnte dich auch interessieren
 
-- [Welche Bands spielen auf dem Oktoberfest 2026?](/oktoberfest/bands-musik/)
+- [Welche Bands spielen auf dem Oktoberfest?](/oktoberfest/bands-musik/)

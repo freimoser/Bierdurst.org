@@ -30,29 +30,31 @@ tool_id: pure-alcohol-calculator
 
 Der Rechner zeigt ausschließlich, wie viele Gramm reiner Alkohol in einer angegebenen Biermenge stecken. Er berechnet **keine Promille**, keine Fahrtüchtigkeit und keinen sicheren Konsum.
 
-## Eingaben
+## Was du eingibst
 
 - Biermenge in Millilitern
 - Alkoholgehalt in Volumenprozent
-- optional Anzahl gleicher Flaschen oder Gläser
+- optional die Anzahl gleicher Flaschen oder Gläser
 
-## Formel
+## So wird gerechnet
 
 `Gramm Alkohol = ml × Vol.-% / 100 × 0,789`
 
-## Ausgabe
+Der Faktor 0,789 ist die Dichte von Ethanol in Gramm je Milliliter bei Raumtemperatur.
 
-- Gesamtmenge reiner Alkohol in Gramm
-- Umrechnung pro Flasche und insgesamt
-- deutlicher Sicherheitshinweis
+## Was du zurückbekommst
 
-## Vorgaben für die Programmierung
+- die Gesamtmenge reinen Alkohols in Gramm
+- die Umrechnung pro Flasche und insgesamt
+- jedes Ergebnis als „ungefähr“ gekennzeichnet
 
-- Keine Aussage wie „du kannst noch fahren“.
-- Keine personalisierte Promilleschätzung.
-- Kein spielerischer oder wettbewerblicher Text.
-- Ergebnis mit „ungefähr“ kennzeichnen.
-- Link zu verantwortungsvollem Umgang mit Alkohol anzeigen.
+## Was dieser Rechner bewusst nicht tut
+
+- Er schätzt keine Promille und berücksichtigt weder Körpergewicht noch Geschlecht oder Abbaurate.
+- Er trifft keine Aussage zur Fahrtüchtigkeit.
+- Er definiert keine unbedenkliche Menge.
+
+Wer wissen will, wie Alkohol wirkt und welche Grenzen gelten, findet das unter [verantwortungsvoller Alkoholkonsum](/verantwortungsvoller-alkoholkonsum/).
 
 ## Das könnte dich auch interessieren
 

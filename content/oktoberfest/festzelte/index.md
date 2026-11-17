@@ -6,7 +6,7 @@ meta_title: Alle großen und kleinen Oktoberfestzelte im… | BierDurst.org
 meta_description: 'Alle Oktoberfestzelte im Überblick: 14 große Zelte, kleine Zelte, Schwerpunkte, Bier, Größe und Entscheidungshilfe.'
 category: Oktoberfest
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Oktoberfest Zelte Übersicht
@@ -140,5 +140,5 @@ Ja, solange die Zelte geöffnet und nicht wegen Überfüllung geschlossen sind. 
 ## Das könnte dich auch interessieren
 
 - [Oktoberfest](/oktoberfest/)
-- [Wie viel kostet eine Maß Bier auf dem Oktoberfest 2026?](/oktoberfest/bierpreise/)
+- [Wie viel kostet eine Maß Bier auf dem Oktoberfest?](/oktoberfest/bierpreise/)
 - [Die sechs Münchner Oktoberfestbrauereien](/oktoberfest/sechs-oktoberfestbrauereien/)

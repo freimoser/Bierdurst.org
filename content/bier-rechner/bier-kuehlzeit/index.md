@@ -6,7 +6,7 @@ meta_title: Bier-Kühlzeit-Rechner | BierDurst.org
 meta_description: Schätze die Kühlzeit für Flasche oder Dose nach Starttemperatur, Zieltemperatur und Kühlmethode.
 category: Bierrechner
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Bier Kühlzeit Rechner
@@ -28,9 +28,9 @@ tool_id: beer-cooling-time-calculator
 
 # Bier-Kühlzeit-Rechner
 
-Der Rechner liefert eine **grobe Schätzung**, wie lange Bier bis zur gewünschten Trinktemperatur braucht. Reale Zeiten hängen stark von Kühlschrank, Luftbewegung, Gebinde und Beladung ab. Deshalb darf das Ergebnis nicht als exakte physikalische Messung dargestellt werden.
+Der Rechner liefert eine **grobe Schätzung**, wie lange Bier bis zur gewünschten Trinktemperatur braucht. Reale Zeiten hängen stark von Kühlschrank, Luftbewegung, Gebinde und Beladung ab. Das Ergebnis ist deshalb bewusst ein Zeitbereich und keine physikalische Messung.
 
-## Eingaben
+## Was du eingibst
 
 - Starttemperatur
 - Zieltemperatur
@@ -38,21 +38,15 @@ Der Rechner liefert eine **grobe Schätzung**, wie lange Bier bis zur gewünscht
 - Methode: Kühlschrank, Eiswasser oder Eiswasser mit Salz
 - Anzahl der Gebinde
 
-## Ausgabe
+## Was du zurückbekommst
 
-- geschätzter Zeitbereich statt einer Scheingenauigkeit
-- Sicherheitshinweis beim Gefrierfach
-- empfohlene Trinktemperatur nach Bierstil
+- einen geschätzten Zeitbereich statt einer Scheingenauigkeit
+- einen Sicherheitshinweis, falls du ans Gefrierfach denkst
+- die empfohlene Trinktemperatur für deinen Bierstil
 
-## Logik
+## Worauf die Schätzung beruht
 
-Die erste Version verwendet konservative, redaktionell hinterlegte Zeitbereiche. Keine komplexe Simulation ist nötig. Bei einem ganzen Kasten wird ein Aufschlag berechnet. Das Gefrierfach wird nicht als Standardmethode angeboten; stattdessen führt ein Hinweis zu [Bier schnell kühlen](/bierwissen/bier-schnell-kuehlen/).
-
-## Verwandte Seiten
-
-- [Bier im Kühlschrank kühlen](/bierwissen/bier-im-kuehlschrank-kuehlen/)
-- [Optimale Trinktemperatur](/bierwissen/optimale-trinktemperatur-bier/)
-- [Wann gefriert Bier?](/bierwissen/gefriertemperatur-bier/)
+Hinter dem Rechner stehen konservativ gewählte, redaktionell hinterlegte Zeitbereiche statt einer physikalischen Simulation. Für einen ganzen Kasten kommt ein Aufschlag dazu, weil sich die Gebinde gegenseitig wärmen. Das Gefrierfach bieten wir bewusst nicht als Standardmethode an — wie es schneller geht, steht unter [Bier schnell kühlen](/bierwissen/bier-schnell-kuehlen/).
 
 ## Zeitbereiche statt Scheingenauigkeit
 
@@ -64,22 +58,27 @@ Die erste Version verwendet konservative, redaktionell hinterlegte Zeitbereiche.
 
 Der Rechner gibt beispielsweise „ungefähr 2 bis 4 Stunden“ statt „2 Stunden 17 Minuten“ aus. Ohne Messung der tatsächlichen Wärmeübertragung wäre eine minutengenaue Zahl irreführend.
 
-## Berechnungsfaktoren
+## Was in die Schätzung einfließt
 
-- Temperaturdifferenz zwischen Start und Ziel
-- Gebindevolumen
-- Material: Dose oder Glas
+- die Temperaturdifferenz zwischen Start und Ziel
+- das Gebindevolumen
+- das Material: Dose oder Glas
 - einzelne Flasche oder ganzer Kasten
-- gewählte Kühlmethode
+- die gewählte Kühlmethode
 
-Für die erste Version reichen redaktionell festgelegte Faktoren. Später können reale Messreihen ergänzt werden, wenn sie transparent dokumentiert werden.
+Die Faktoren sind redaktionell festgelegt. Sollten wir später eigene Messreihen erheben, ersetzen wir sie und dokumentieren das offen.
 
-## UX-Anforderungen
+## Wo der Rechner nachfragt
 
-- Zieltemperatur darf nicht über Starttemperatur liegen, sonst ist keine Kühlung nötig.
-- Bei Zieltemperaturen unter dem wahrscheinlichen Gefrierpunkt erscheint eine Warnung.
-- Ein Timer kann lokal im Browser angeboten werden, ohne Benachrichtigungszwang.
-- Das Ergebnis verlinkt zur passenden Trinktemperatur des gewählten Bierstils.
+- Liegt die Zieltemperatur über der Starttemperatur, ist keine Kühlung nötig — der Rechner weist darauf hin.
+- Bei Zieltemperaturen unterhalb des wahrscheinlichen Gefrierpunkts erscheint eine Warnung.
+- Das Ergebnis verlinkt auf die passende Trinktemperatur des gewählten Bierstils.
+
+## Verwandte Seiten
+
+- [Bier im Kühlschrank kühlen](/bierwissen/bier-im-kuehlschrank-kuehlen/)
+- [Optimale Trinktemperatur](/bierwissen/optimale-trinktemperatur-bier/)
+- [Wann gefriert Bier?](/bierwissen/gefriertemperatur-bier/)
 
 ## Häufige Fragen
 

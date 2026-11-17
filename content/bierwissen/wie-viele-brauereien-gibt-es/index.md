@@ -6,16 +6,17 @@ meta_title: Wie viele Brauereien gibt es in Deutschland? | BierDurst.org
 meta_description: Aktuelle Zahl der Braustätten in Deutschland, regionale Verteilung und Unterschied zwischen Brauerei, Marke und Brauereigruppe.
 category: Bierwissen
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Wie viele Brauereien gibt es in Deutschland?
+- Brauereien Bayern
 - Bierwissen
-- Bier erklärt
 sources:
 - https://genesis.destatis.de/datenbank/online/statistic/73421/table/73421-0001
 - https://brauer-bund.de/pressemitteilungen/deutscher-brauer-bund-zieht-bilanz-zum-tag-des-deutschen-bieres/
 - https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/02/PD26_037_73.html
+- https://www.destatis.de/DE/Presse/Pressemitteilungen/Zahl-der-Woche/2026/PD26_32_p002.html
 article_id: 58
 page_type: article
 cluster: bierwissen
@@ -36,7 +37,7 @@ index: true
 Die amtliche Brauwirtschaftsstatistik erfasst betriebene Braustätten. Eine Unternehmensgruppe kann mehrere Standorte betreiben, während eine kleine Gasthausbrauerei nur an einem Ort produziert. Deshalb ist „Braustätte“ präziser als eine bloße Zahl von Marken oder Unternehmen.
 ## Wo gibt es besonders viele Brauereien?
 
-Bayern besitzt traditionell die höchste Dichte und eine große Zahl kleiner und mittlerer Betriebe. Franken gilt innerhalb Bayerns als besonders brauereireich. Auch Baden-Württemberg und Nordrhein-Westfalen haben starke regionale Strukturen.
+Bayern besitzt traditionell die höchste Dichte und eine große Zahl kleiner und mittlerer Betriebe. Für 2025 nennt das Statistische Bundesamt 588 bayerische Braustätten — 41,6 Prozent aller deutschen — vor Baden-Württemberg mit 190 und Nordrhein-Westfalen mit 131. Franken gilt innerhalb Bayerns als besonders brauereireich.
 ## Warum sinkt die Zahl?
 
 Der Biermarkt schrumpft, während Energie, Personal, Logistik und Verpackung teuer bleiben. Besonders kleine Betriebe stehen unter Druck. Gleichzeitig entstehen weiterhin neue Spezialitäten- und Gasthausbrauereien, sodass die Entwicklung regional unterschiedlich ist.
@@ -56,7 +57,7 @@ Je nach Statistik werden Betriebsstätten, rechtlich selbstständige Unternehmen
 Deutschland gehört zu den Ländern mit besonders großer Brauereidichte und Vielfalt. Ein weltweiter Vergleich hängt jedoch stark von Definition und Erfassungsmethode ab.
 ### Wie viele Brauereien gibt es in Bayern?
 
-Die Zahl verändert sich laufend und sollte für einen aktuellen Artikel direkt aus der regionalen Statistik übernommen werden.
+Für 2025 weist das Statistische Bundesamt **588 Braustätten in Bayern** aus. Das sind 41,6 Prozent aller deutschen Braustätten und mit Abstand der höchste Wert aller Bundesländer. Es folgen Baden-Württemberg mit 190 und Nordrhein-Westfalen mit 131 Braustätten.
 ### Was ist eine Braustätte?
 
 Ein Ort, an dem Bier gewerblich gebraut wird. Ein Unternehmen kann mehrere Braustätten betreiben.

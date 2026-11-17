@@ -1,13 +1,13 @@
 ---
-title: 'Oktoberfest-Brauereien 2026: die 6 Münchner Brauereien'
-seo_title: 'Oktoberfest-Brauereien 2026: die 6 Münchner Brauereien'
+title: 'Oktoberfest-Brauereien: die 6 Münchner Brauereien'
+seo_title: 'Oktoberfest-Brauereien: die 6 Münchner Brauereien'
 slug: /oktoberfest/sechs-oktoberfestbrauereien/
 canonical: https://bierdurst.org/oktoberfest/sechs-oktoberfestbrauereien/
-meta_title: Die sechs Münchner Oktoberfestbrauereien | BierDurst.org
-meta_description: 'Welche Brauereien schenken auf der Wiesn aus? Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten – mit ihren Festzelten.'
+meta_title: 'Oktoberfest-Brauereien: die 6 Münchner Brauereien'
+meta_description: 'Die Oktoberfest-Brauereien sind Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten. Tabelle mit ihren großen Wiesn-Zelten.'
 category: Oktoberfest
 language: de
-last_updated: '2026-09-27'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Oktoberfestbrauereien
@@ -16,7 +16,6 @@ keywords:
 - Oktoberfest Biermarken
 sources:
 - https://www.oktoberfest.de/magazin/essen-und-trinken/die-sechs-muenchner-brauereien-auf-der-wiesn
-- https://www.oktoberfest.de/bierzelte
 article_id: 94
 page_type: article
 cluster: oktoberfest
@@ -28,15 +27,28 @@ review_cycle: before and during each Oktoberfest season
 index: true
 ---
 
-# Oktoberfest-Brauereien 2026: die 6 Münchner Brauereien
+# Oktoberfest-Brauereien: die 6 Münchner Brauereien
 
 **Kurz gesagt:** Das offizielle Wiesnbier kommt von sechs Münchner Traditionsbrauereien: **Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten**. Sie beliefern jeweils fest zugeordnete große und kleine Festzelte.
 
 Hier stehen die **Brauereien**, ihre Geschichte und ihre Festzelte im Mittelpunkt. Für Stil, Alkoholgehalt und Geschmack der Biere gibt es den separaten [Vergleich der sechs Wiesnbiere](/oktoberfest/welches-bier-gibt-es/). Welche Marke in welchem Zelt ausgeschenkt wird, zeigt die Übersicht [Bier in welchem Festzelt?](/oktoberfest/bier-in-welchem-festzelt/).
 
+## Die sechs Oktoberfestbrauereien im Überblick
+
+| Brauerei | Große Wiesn-Zelte |
+|---|---|
+| Augustiner | Augustiner-Festhalle, Fischer-Vroni |
+| Hacker-Pschorr | Hacker-Festzelt, Bräurosl |
+| Hofbräu | Hofbräu-Festzelt |
+| Löwenbräu | Löwenbräu-Festzelt, Schützen-Festzelt |
+| Paulaner | Paulaner-Festzelt, Armbrustschützenzelt, Käfer Wiesn-Schänke; Weißbier in Kufflers Weinzelt bis 21 Uhr |
+| Spaten | Schottenhamel, Marstall, Ochsenbraterei |
+
+Die Zuordnungen folgen der [offiziellen Brauereiübersicht von Oktoberfest.de](https://www.oktoberfest.de/magazin/essen-und-trinken/die-sechs-muenchner-brauereien-auf-der-wiesn) (geprüft am 29. September 2026).
+
 ## Augustiner-Bräu
 
-Augustiner wurde 1328 gegründet und ist die älteste noch bestehende Brauerei Münchens. Auf dem Oktoberfest fällt besonders der Ausschank aus traditionellen Holzfässern auf. Das Augustiner Wiesnbier gilt als malzbetont, weich und rund.
+Augustiner wurde 1328 gegründet und ist die älteste noch bestehende Brauerei Münchens. Auf dem Oktoberfest fällt besonders der Ausschank aus traditionellen Holzfässern auf.
 
 **Bekannte Ausschankorte:**
 
@@ -47,7 +59,7 @@ Augustiner wurde 1328 gegründet und ist die älteste noch bestehende Brauerei M
 
 ## Hacker-Pschorr
 
-Hacker-Pschorr verbindet zwei historische Münchner Brauereinamen. Das Oktoberfestbier wird als goldfarbenes, ausgewogenes Festbier angeboten. Die bekannteste visuelle Heimat ist das Hacker-Festzelt mit seinem „Himmel der Bayern“.
+Hacker-Pschorr verbindet zwei historische Münchner Brauereinamen.  Die bekannteste visuelle Heimat ist das Hacker-Festzelt mit seinem „Himmel der Bayern“.
 
 **Bekannte Ausschankorte:**
 
@@ -66,7 +78,7 @@ Das Staatliche Hofbräuhaus in München geht auf das Jahr 1589 zurück. Sein Okt
 
 ## Löwenbräu
 
-Löwenbräu ist eine der großen historischen Münchner Biermarken. Das Festzelt ist an seinem weithin sichtbaren Löwen bekannt. Das Wiesnbier wird als vollmundig und würzig beschrieben.
+Löwenbräu ist eine der großen historischen Münchner Biermarken. Das Festzelt ist an seinem weithin sichtbaren Löwen bekannt.
 
 **Bekannte Ausschankorte:**
 
@@ -97,36 +109,15 @@ Spaten ist eng mit der Entwicklung des Münchner Hellen verbunden. Auf dem Oktob
 - Ochsenbraterei
 - verschiedene kleinere Betriebe wie Kalbsbraterei, Wildstuben und Wirtshaus im Schichtl
 
-## Welche Brauerei gehört zu welchem Zelt?
-
-Die einfache Zuordnung lautet:
-
-| Großes Festzelt | Brauerei |
-|---|---|
-| Armbrustschützenzelt | Paulaner |
-| Augustiner-Festhalle | Augustiner |
-| Bräurosl | Hacker-Pschorr |
-| Fischer-Vroni | Augustiner |
-| Hacker-Festzelt | Hacker-Pschorr |
-| Hofbräu-Festzelt | Hofbräu |
-| Käfer Wiesn-Schänke | Paulaner |
-| Löwenbräu-Festzelt | Löwenbräu |
-| Marstall | Spaten |
-| Ochsenbraterei | Spaten |
-| Paulaner-Festzelt | Paulaner |
-| Schottenhamel | Spaten |
-| Schützen-Festzelt | Löwenbräu |
-| Kufflers Weinzelt | Paulaner Weißbier; Schwerpunkt Wein und Sekt |
-
 ## Häufige Fragen
 
-### Warum darf keine siebte Brauerei Wiesnbier liefern?
+### Welche Brauereien schenken auf dem Oktoberfest aus?
 
-Die Zulassung ist an Münchner Brautradition, Herkunft und die offiziellen Vorgaben des Oktoberfests gebunden. Die sechs genannten Betriebe bilden den etablierten Kreis der Oktoberfestbrauereien.
+Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten sind die sechs offiziellen Oktoberfestbrauereien.
 
-### Gehören manche Brauereien wirtschaftlich zusammen?
+### Welche Brauerei beliefert das Schottenhamel?
 
-Ja. Hinter einzelnen historischen Marken stehen heute größere Unternehmensgruppen. Für die Wiesn bleiben die traditionellen Markennamen und ihre jeweiligen Festbiere entscheidend.
+Im Schottenhamel wird Spaten Oktoberfestbier ausgeschenkt.
 
 ### Welche ist die älteste Oktoberfestbrauerei?
 

@@ -6,7 +6,7 @@ meta_title: 'Fassbier-Rechner: Gläser und Maß pro Fass | BierDurst.org'
 meta_description: Berechne die Zahl der Gläser aus einem Bierfass nach Fassgröße, Glasgröße und Ausschankverlust.
 category: Bierrechner
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Fassbier Rechner
@@ -30,50 +30,40 @@ tool_id: keg-servings-calculator
 
 Mit diesem Rechner lässt sich ein Fass in Gläser, Halbe oder Maß umrechnen. Er ist für Veranstaltungsplanung und Gastronomie-Kalkulation gedacht.
 
-## Eingaben
+## Was du eingibst
 
 - Fassgröße in Litern
 - Glasgröße in Litern
 - erwarteter Ausschankverlust in Prozent
-- optional Zahl der Gäste
+- optional die Zahl der Gäste
 
-## Ergebnisse
+Für die gängigen Größen gibt es Schnellauswahl-Buttons: 5, 10, 20, 30 und 50 Liter Fassgröße sowie 0,2, 0,3, 0,4, 0,5 und 1,0 Liter Glasgröße, dazu 0, 5 oder 10 Prozent Verlust. Eigene Werte kannst du jederzeit eintragen.
 
-- theoretische Glaszahl
-- realistische Glaszahl nach Verlust
-- Liter pro Gast, falls eine Gästezahl angegeben wurde
+## Was du zurückbekommst
 
-## Formel
+- die theoretische Glaszahl
+- die realistische Glaszahl nach Ausschankverlust
+- Liter pro Gast, falls du eine Gästezahl angegeben hast
+
+## So wird gerechnet
 
 `nutzbare Liter = Fassgröße × (1 − Verlust / 100)`
 
 `Gläser = abrunden(nutzbare Liter / Glasgröße)`
 
-Der Rechner muss deutlich zwischen theoretischer und realistischer Menge unterscheiden. Bei einer Maß wird mit einem Liter gerechnet; der tatsächliche Füllstrich des verwendeten Glases ist maßgeblich.
+Theoretische und realistische Menge werden getrennt ausgewiesen. Bei einer Maß rechnen wir mit einem Liter; maßgeblich ist am Ende der Füllstrich des Glases, das tatsächlich verwendet wird.
 
-## Beispiel
+Die Glaszahl wird immer abgerundet, weil ein Rest kein volles Getränk ergibt; der verbleibende Rest lässt sich zusätzlich in Litern anzeigen. Gibst du eine Gästezahl an, erscheinen „rechnerische Gläser je Gast“ ausschließlich als Logistikgröße — das ist keine empfohlene Trinkmenge.
+
+## Beispiele
 
 Ein 30-Liter-Fass mit fünf Prozent Verlust liefert 28,5 nutzbare Liter. Bei 0,5-Liter-Gläsern sind das 57 volle Gläser.
 
-## Passende Artikel
-
-- [Wie viele Gläser aus einem Fass?](/bierwissen/wie-viele-glaeser-aus-bierfass/)
-- [Wie viel ist eine Maß?](/bierwissen/wie-viel-ist-eine-mass/)
-- [Biermenge für eine Feier](/bierwissen/wie-viel-bier-pro-person/)
-
-## Voreinstellungen
-
-Biete Buttons für 5, 10, 20, 30 und 50 Liter sowie 0,2, 0,3, 0,4, 0,5 und 1,0 Liter Glasgröße. Freie Eingaben bleiben möglich. Als Verlustwert können 0, 5 oder 10 Prozent gewählt werden.
-
-## Drei Beispielrechnungen
-
-- 20 Liter, 0,5-Liter-Gläser, 5 Prozent Verlust: 38 Gläser
-- 30 Liter, 0,3-Liter-Gläser, 10 Prozent Verlust: 90 Gläser
-- 50 Liter, ein Liter pro Maß, 5 Prozent Verlust: 47 volle Maß
-
-## Technische Hinweise für das Ergebnis
-
-Die Glaszahl wird immer abgerundet, weil ein Rest kein volles Getränk ergibt. Zusätzlich kann der Rest in Litern angezeigt werden. Bei Eingabe einer Gästezahl zeigt der Rechner nur „rechnerische Gläser je Gast“ zur Logistik, nicht als empfohlene Trinkmenge.
+| Fass | Glas | Verlust | Ergebnis |
+|---|---|---:|---:|
+| 20 l | 0,5 l | 5 % | 38 Gläser |
+| 30 l | 0,3 l | 10 % | 90 Gläser |
+| 50 l | 1,0 l (Maß) | 5 % | 47 volle Maß |
 
 ## Zapfen beeinflusst das Ergebnis
 
@@ -88,6 +78,12 @@ Volle Gläser werden abgerundet. Für die Zahl benötigter Fässer wird dagegen 
 ### Kann ich eigene Fassgrößen eingeben?
 
 Ja. Der Rechner akzeptiert positive Dezimalwerte.
+
+## Passende Artikel
+
+- [Wie viele Gläser aus einem Fass?](/bierwissen/wie-viele-glaeser-aus-bierfass/)
+- [Wie viel ist eine Maß?](/bierwissen/wie-viel-ist-eine-mass/)
+- [Biermenge für eine Feier](/bierwissen/wie-viel-bier-pro-person/)
 
 ## Das könnte dich auch interessieren
 

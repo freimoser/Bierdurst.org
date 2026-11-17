@@ -6,7 +6,7 @@ meta_title: Biermengen-Rechner für Party und Feier | BierDurst.org
 meta_description: Berechne Liter, Flaschen und Kästen für eine Feier – nach Gästezahl, Biertrinkern, Dauer und Flaschengröße.
 category: Bierrechner
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Bierrechner Party
@@ -30,7 +30,7 @@ tool_id: party-beer-calculator
 
 Der Rechner schätzt, wie viele Liter, Flaschen und Kästen für eine Veranstaltung bereitstehen könnten. Er richtet sich nur an die Einkaufsplanung für erwachsene Gäste und ist kein Konsumziel. Stelle immer ausreichend Wasser und alkoholfreie Getränke bereit.
 
-## Eingaben
+## Was du eingibst
 
 - Gesamtzahl der Gäste
 - Anteil beziehungsweise Zahl der erwachsenen Biertrinker
@@ -40,50 +40,41 @@ Der Rechner schätzt, wie viele Liter, Flaschen und Kästen für eine Veranstalt
 - Flaschen je Kasten
 - gewünschte Reserve in Prozent
 
-## Ausgabe
+## Was du zurückbekommst
 
-- geschätzte Gesamtmenge in Litern
-- Anzahl Flaschen
-- aufgerundete Zahl der Kästen
-- alkoholfreie Reserve als eigener Hinweis
+- die geschätzte Gesamtmenge in Litern
+- die Anzahl Flaschen
+- die aufgerundete Zahl der Kästen
+- die alkoholfreie Reserve als eigenen Hinweis
 
-## Berechnungslogik für die Programmierung
+## So wird gerechnet
 
 `Liter = Biertrinker × Planungsfaktor × Dauerfaktor × (1 + Reserve)`
 
-Die Faktoren müssen im Interface transparent erklärt werden. Das Ergebnis wird immer auf ganze Flaschen und anschließend auf ganze Kästen aufgerundet. Ein Button darf nur „Berechnen“ heißen, nicht zum Trinken auffordern.
+Der Planungsfaktor bestimmt, mit wie viel Bier je Person gerechnet wird, der Dauerfaktor berücksichtigt die Länge der Feier. Das Ergebnis wird immer auf ganze Flaschen und anschließend auf ganze Kästen aufgerundet — angebrochene Kästen gibt es im Getränkemarkt nicht.
 
-## Beispiel
+## Drei Szenarien statt einer Zahl
 
-20 Biertrinker, normaler Planungsfaktor und 10 Prozent Reserve können je nach gewählter Dauer beispielsweise rund 30 bis 35 Liter ergeben. Der Rechner zeigt zusätzlich, wie stark sich das Ergebnis verändert, wenn weniger Gäste Bier trinken.
+Du bekommst nicht eine einzelne Zahl, sondern drei:
 
-## Weiterführend
-
-- [Wie viel Bier pro Person?](/bierwissen/wie-viel-bier-pro-person/)
-- [Wie viele Liter hat ein Bierkasten?](/bierwissen/wie-viele-liter-bierkasten/)
-- [Bierpreis pro Liter berechnen](/bier-rechner/bierpreis-pro-liter/)
-
-## Empfohlene Ergebnisdarstellung
-
-Der Rechner soll nicht nur eine einzelne Zahl ausgeben, sondern drei Szenarien:
-
-- **knapp geplant:** wenig Reserve, viele andere Getränke
+- **knapp geplant:** wenig Reserve, viele andere Getränke im Angebot
 - **normal geplant:** ausgewogene Annahme
 - **großzügig geplant:** längere Veranstaltung oder unsichere Gästezahl
 
-So sieht der Nutzer, dass es sich um eine Schätzung handelt. Das mittlere Szenario wird nicht als „richtige Trinkmenge“ bezeichnet.
+Das macht sichtbar, dass es sich um eine Schätzung handelt. Das mittlere Szenario ist ausdrücklich keine „richtige Trinkmenge“, sondern ein Einkaufsvorschlag.
 
-## Plausibilitätsprüfungen
+## Ein Beispiel
 
-- Biertrinker dürfen nicht größer als die Gesamtzahl der Gäste sein.
+20 Biertrinker, normaler Planungsfaktor und 10 Prozent Reserve ergeben je nach gewählter Dauer rund 30 bis 35 Liter. Bei 50 Gästen, davon 22 erwachsene Biertrinker, erhältst du Liter, 0,5-Liter-Flaschen und 20er-Kästen für alle drei Szenarien. Der Rechner zeigt zusätzlich, wie stark sich das Ergebnis verändert, wenn weniger Gäste Bier trinken.
+
+## Wo der Rechner nachfragt
+
+- Es können nicht mehr Biertrinker als Gäste sein.
 - Negative Werte und unrealistische Flaschengrößen werden abgelehnt.
-- Bei sehr hohen Ergebnissen erscheint ein Hinweis, Eingaben und Veranstaltungsdauer zu prüfen.
+- Bei sehr hohen Ergebnissen erscheint ein Hinweis, Eingaben und Veranstaltungsdauer noch einmal zu prüfen.
 - Für Minderjährige wird keine Biermenge berechnet.
-- Die Reserve wird separat angezeigt, damit sie nachvollziehbar bleibt.
-
-## Beispielausgabe
-
-Bei 50 Gästen, davon 22 erwachsene Biertrinker, zeigt der Rechner beispielsweise Liter, 0,5-Liter-Flaschen und 20er-Kästen für drei Szenarien. Zusätzlich erscheint ein eigener Block: „Alkoholfreie Getränke separat und großzügig einplanen.“
+- Die Reserve wird separat ausgewiesen, damit nachvollziehbar bleibt, woher die Menge kommt.
+- Alkoholfreie Getränke werden immer als eigener Posten empfohlen, nicht in die Biermenge eingerechnet.
 
 ## Häufige Fragen
 
@@ -94,6 +85,12 @@ Nein. Die Berechnung läuft ausschließlich im Browser.
 ### Ist das Ergebnis eine Konsumempfehlung?
 
 Nein. Es ist eine Einkaufs- und Logistikschätzung für eine Veranstaltung.
+
+## Weiterführend
+
+- [Wie viel Bier pro Person?](/bierwissen/wie-viel-bier-pro-person/)
+- [Wie viele Liter hat ein Bierkasten?](/bierwissen/wie-viele-liter-bierkasten/)
+- [Bierpreis pro Liter berechnen](/bier-rechner/bierpreis-pro-liter/)
 
 ## Das könnte dich auch interessieren
 

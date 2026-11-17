@@ -6,7 +6,7 @@ meta_title: Bierpreis-pro-Liter-Rechner | BierDurst.org
 meta_description: Vergleiche Bierpreise fair nach Litern – für Kasten, Sixpack, Einzelflasche oder Fass.
 category: Bierrechner
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-11'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Bier Preis pro Liter Rechner
@@ -30,15 +30,25 @@ tool_id: beer-unit-price-calculator
 
 Kastenpreise sind schwer vergleichbar, weil Flaschenzahl und Flaschengröße variieren. Der Rechner ermittelt deshalb den reinen Getränkepreis je Liter. Pfand wird separat ausgewiesen und nicht als Verbrauchskosten behandelt.
 
-## Eingaben
+## Was du eingibst
 
-- Verkaufspreis inklusive Pfand oder ohne Pfand
-- Pfandbetrag, falls im Preis enthalten
+- Verkaufspreis, wahlweise inklusive oder ohne Pfand
+- Pfandbetrag, falls er im Preis enthalten ist
 - Anzahl der Flaschen
 - Inhalt je Flasche in Litern
-- alternativ direkte Gesamtmenge
+- alternativ direkt die Gesamtmenge
 
-## Formeln
+Du kannst entweder Flaschenzahl und Flaschengröße angeben oder gleich die Gesamtmenge — ein Umschalter sorgt dafür, dass sich beide Angaben nicht widersprechen. Als Dezimaltrennzeichen funktionieren Komma und Punkt.
+
+## Was du zurückbekommst
+
+- den Getränkepreis insgesamt
+- das Pfand getrennt ausgewiesen
+- die Gesamtmenge in Litern
+- den Preis je Liter
+- auf Wunsch den Preis je 0,5 Liter und je 0,33 Liter
+
+## So wird gerechnet
 
 `Getränkepreis = Gesamtpreis − Pfand`
 
@@ -46,18 +56,11 @@ Kastenpreise sind schwer vergleichbar, weil Flaschenzahl und Flaschengröße var
 
 `Preis je Liter = Getränkepreis ÷ Gesamtliter`
 
-## Beispiel
-
 Ein Kasten kostet 18 Euro zuzüglich 3,10 Euro Pfand und enthält 20 Flaschen à 0,5 Liter. Die Getränkemenge beträgt zehn Liter, der Preis je Liter somit 1,80 Euro.
 
-## Vorgaben für die Programmierung
+Die Seite ruft keine Händlerpreise ab und arbeitet vollständig im Browser.
 
-- Schalter „Pfand bereits enthalten“.
-- Ergebnis für Getränkepreis und Pfand getrennt darstellen.
-- Eingabefehler wie null Liter abfangen.
-- Keine Händlerpreise automatisch abrufen; die Seite bleibt vollständig statisch.
-
-## Beispiele
+## Drei Angebote im Vergleich
 
 | Angebot | Getränkepreis ohne Pfand | Menge | Preis je Liter |
 |---|---:|---:|---:|
@@ -67,19 +70,7 @@ Ein Kasten kostet 18 Euro zuzüglich 3,10 Euro Pfand und enthält 20 Flaschen à
 
 Die Tabelle ignoriert Pfand, weil es bei Rückgabe erstattet wird. Wird ein Gebinde nicht zurückgegeben, entstehen faktisch zusätzliche Kosten.
 
-## Ergebnisfelder
-
-- Getränkepreis insgesamt
-- Pfand separat
-- Gesamtmenge in Litern
-- Preis je Liter
-- optional Preis je 0,5 Liter und je 0,33 Liter
-
-## Eingabemodi
-
-Der Nutzer kann entweder Flaschenzahl und Flaschengröße eingeben oder direkt die Gesamtmenge. Ein Umschalter verhindert gleichzeitig widersprüchliche Werte. Dezimaltrennzeichen Komma und Punkt werden akzeptiert.
-
-## Typische Fehler verhindern
+## Typische Fehler, die der Rechner vermeidet
 
 - Pfand doppelt abziehen
 - 33 Milliliter statt 0,33 Liter eingeben
