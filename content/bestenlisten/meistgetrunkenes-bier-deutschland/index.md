@@ -2,7 +2,6 @@
 title: Welches Bier wird in Deutschland am meisten getrunken?
 slug: /bestenlisten/meistgetrunkenes-bier-deutschland/
 canonical: https://bierdurst.org/bestenlisten/meistgetrunkenes-bier-deutschland/
-meta_title: Welches Bier wird in Deutschland am meisten… | BierDurst.org
 meta_description: 'Welches Bier in Deutschland am meisten getrunken wird: Pils als Sorte, Krombacher als führende Pilsmarke und wichtige Einschränkungen.'
 category: Bestenlisten und Zahlen
 language: de

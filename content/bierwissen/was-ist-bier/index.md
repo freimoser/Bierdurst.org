@@ -2,7 +2,6 @@
 title: Was ist Bier? Definition, Zutaten und Bierarten
 slug: /bierwissen/was-ist-bier/
 canonical: https://bierdurst.org/bierwissen/was-ist-bier/
-meta_title: Was ist Bier? Definition, Zutaten und Biera… | BierDurst.org
 meta_description: Was Bier ist, woraus es besteht, wie Alkohol und Kohlensäure entstehen und welche Bierarten es in Deutschland gibt.
 category: Bierwissen
 language: de

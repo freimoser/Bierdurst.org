@@ -2,7 +2,6 @@
 title: 'Bier in Berlin: Berliner Weisse und moderne Brauszene'
 slug: /bierregionen/bier-in-berlin/
 canonical: https://bierdurst.org/bierregionen/bier-in-berlin/
-meta_title: 'Bier in Berlin: Berliner Weisse und moderne… | BierDurst.org'
 meta_description: 'Berliner Bierkultur: Berliner Weisse, Pils, historische Brauereien, Craftbier und warum Sirup nicht die einzige Trinkweise ist.'
 category: Bierregionen
 language: de

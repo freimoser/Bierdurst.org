@@ -2,7 +2,6 @@
 title: 'Bierregionen in Deutschland: die große Übersicht'
 slug: /bierregionen/
 canonical: https://bierdurst.org/bierregionen/
-meta_title: 'Bierregionen in Deutschland: die große Über… | BierDurst.org'
 meta_description: 'Deutschlands Bierregionen im Überblick: Bayern, Franken, Köln, Düsseldorf, Berlin, Baden-Württemberg, Sachsen und Thüringen.'
 category: Bierregionen
 language: de

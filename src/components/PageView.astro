@@ -11,6 +11,8 @@ import SourcesList from './SourcesList.astro';
 import RelatedArticles from './RelatedArticles.astro';
 import { extractFaqItems } from '../utils/structured-data';
 import manifest from '../../data/url-manifest.json';
+// Von scripts/generate-sitemap.mjs im prebuild aus der Git-Historie erzeugt.
+import pageDates from '../../data/page-dates.json';
 
 const { entry } = Astro.props as { entry: CollectionEntry<'pages'> };
 const { Content, headings } = await render(entry);
@@ -35,25 +37,77 @@ const legacyTitleIsUsable = Boolean(legacyTitle && !legacyTitle.includes('…') 
 const title = entry.data.seo_title
   ?? (legacyTitleIsUsable ? legacyTitle : undefined)
   ?? (entry.data.slug === '/' ? entry.data.title : (brandedTitle.length <= 60 ? brandedTitle : entry.data.title));
-const updated = entry.data.last_updated.toISOString().slice(0, 10);
-const reviewCycleLabels: Record<string, string> = {
-  '6 months': 'alle 6 Monate',
-  '12 months': 'alle 12 Monate',
-  '18 months': 'alle 18 Monate',
-  'before and during each Oktoberfest season': 'vor und während jeder Wiesn'
-};
-const reviewCycle = entry.data.review_cycle ? (reviewCycleLabels[entry.data.review_cycle] ?? entry.data.review_cycle) : undefined;
+// Eine einzige Datumsquelle fuer sichtbares Datum, dateModified und Sitemap:
+// das spaetere aus Frontmatter und Git-Historie, vorberechnet im prebuild.
+// Das Frontmatter allein liefert auf 68 Seiten den 3.8.2026 -- 20 Tage vor der
+// Registrierung der Domain, und damit auch vor jedem datePublished.
+const dates = (pageDates as Record<string, { modified?: string; published?: string }>)[entry.data.slug];
+const updated = dates?.modified ?? entry.data.last_updated.toISOString().slice(0, 10);
+const updatedLabel = new Date(`${updated}T00:00:00Z`).toLocaleDateString('de-DE', { timeZone: 'UTC' });
 const articleTypes = new Set(['article', 'comparison', 'tool', 'pillar']);
 const isHome = entry.data.slug === '/';
 const isTool = entry.data.page_type === 'tool' && entry.data.tool_id;
+// Ein Rechner darf auch auf einem Artikel stehen, wenn die Suchanfrage dort
+// landet. tool_id entscheidet ueber die Einbettung, page_type ueber das Schema.
+const hasCalculator = Boolean(entry.data.tool_id);
+const isLegalOrStatic = ['legal', 'static'].includes(entry.data.page_type);
+// Sektions-Hub: eine Ebene unter der Startseite, die Kinder auflisten soll.
+const isSectionHub = parts.length === 1 && ['hub', 'pillar'].includes(entry.data.page_type);
+const children = isSectionHub
+  ? allEntries
+      .filter((candidate) => candidate.data.slug !== entry.data.slug && candidate.data.slug.startsWith(entry.data.slug))
+      .sort((a, b) => a.data.title.localeCompare(b.data.title, 'de'))
+  : [];
 const ogImage = new URL(`/og${entry.data.slug}index.png`, 'https://bierdurst.org').href;
 const faqItems = extractFaqItems(entry.body);
+
+const ORG_ID = 'https://bierdurst.org/#organization';
+const orgRef = { '@id': ORG_ID };
+const organization = {
+  '@type': 'Organization',
+  '@id': ORG_ID,
+  name: 'BierDurst.org',
+  url: 'https://bierdurst.org/',
+  logo: { '@type': 'ImageObject', '@id': 'https://bierdurst.org/#logo', url: 'https://bierdurst.org/logo-512.png', width: 512, height: 512 },
+  publishingPrinciples: 'https://bierdurst.org/redaktionsrichtlinien/',
+  ethicsPolicy: 'https://bierdurst.org/quellen-methodik/'
+};
+// Erstveroeffentlichung aus der Git-Historie, sonst aus dem Frontmatter.
+// Kein Datum wird geraten: fehlt beides, bleibt datePublished weg.
+const published = dates?.published
+  ?? (entry.data.date_published ? entry.data.date_published.toISOString().slice(0, 10) : undefined);
+
 const schemas = [];
+// Eine einzige Organization-Node mit @id, auf die alles andere verweist,
+// statt sie in jedem Schema erneut inline zu deklarieren.
+schemas.push({ '@context': 'https://schema.org', '@graph': [organization] });
 if (entry.data.slug === '/') {
-  schemas.push({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'BierDurst.org', url: 'https://bierdurst.org/', inLanguage: 'de-DE', description: entry.data.meta_description, publisher: { '@type': 'Organization', name: 'BierDurst.org', url: 'https://bierdurst.org/', logo: 'https://bierdurst.org/favicon.svg' } });
+  schemas.push({ '@context': 'https://schema.org', '@type': 'WebSite', '@id': 'https://bierdurst.org/#website', name: 'BierDurst.org', url: 'https://bierdurst.org/', inLanguage: 'de-DE', description: entry.data.meta_description, publisher: orgRef });
 }
 if (articleTypes.has(entry.data.page_type)) {
-  schemas.push({ '@context': 'https://schema.org', '@type': 'Article', headline: entry.data.title, description: entry.data.meta_description, dateModified: updated, image: ogImage, inLanguage: 'de-DE', mainEntityOfPage: entry.data.canonical, author: { '@type': 'Organization', name: 'Redaktion BierDurst.org', url: 'https://bierdurst.org/ueber-uns/' }, publisher: { '@type': 'Organization', name: 'BierDurst.org', url: 'https://bierdurst.org/', logo: { '@type': 'ImageObject', url: 'https://bierdurst.org/favicon.svg' } } });
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${entry.data.canonical}#article`,
+    headline: entry.data.title,
+    description: entry.data.meta_description,
+    ...(published ? { datePublished: published } : {}),
+    dateModified: updated,
+    image: { '@type': 'ImageObject', url: ogImage, width: 1200, height: 630 },
+    inLanguage: 'de-DE',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': entry.data.canonical },
+    author: { '@type': 'Organization', name: 'Redaktion BierDurst.org', url: 'https://bierdurst.org/ueber-uns/' },
+    publisher: orgRef,
+    ...(entry.data.sources?.length ? { citation: entry.data.sources } : {})
+  });
+}
+if (isSectionHub && children.length) {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: entry.data.title,
+    itemListElement: children.map((child, index) => ({ '@type': 'ListItem', position: index + 1, name: child.data.title, url: new URL(child.data.slug, 'https://bierdurst.org').href }))
+  });
 }
 if (faqItems.length) {
   schemas.push({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) });
@@ -73,8 +127,8 @@ const pageHeadings = headings.filter((heading) => heading.depth === 2 || heading
       <div class="hero-copy">
         <p class="eyebrow">{isHome ? 'Dein Wegweiser durch die Bierwelt' : (entry.data.category ?? labels[entry.data.cluster] ?? 'Bierwissen')}</p>
         <h1>{entry.data.title}</h1>
-        <p>{entry.data.meta_description}</p>
-        {!isHome && <div class="page-meta"><span>Aktualisiert am <time datetime={updated}>{entry.data.last_updated.toLocaleDateString('de-DE')}</time></span><span>{reviewCycle ? `Prüfrhythmus: ${reviewCycle}` : 'Redaktionell eingeordnet'}</span></div>}
+        {isHome && <p>{entry.data.meta_description}</p>}
+        {!isHome && <div class="page-meta"><span>Aktualisiert am <time datetime={updated}>{updatedLabel}</time></span><span>Redaktionell eingeordnet</span></div>}
       </div>
       <div class="beer-scene" aria-hidden="true"><span class="sun"></span><span class="glass"><i></i><i></i><i></i></span><span class="barley">⌇</span></div>
     </header>
@@ -83,12 +137,19 @@ const pageHeadings = headings.filter((heading) => heading.depth === 2 || heading
 
     <div class:list={['content-layout', { 'home-content': isHome }] }>
       <article class="article-card">
-        {isTool && <Calculator toolId={entry.data.tool_id} />}
-        {isTool && <ResponsibleNotice />}
+        {hasCalculator && <Calculator toolId={entry.data.tool_id} />}
+        {hasCalculator && <ResponsibleNotice variant="tool" />}
         {!isHome && !isTool && <AdSlot position="after-introduction" />}
         <div class="prose"><Content /></div>
+        {isSectionHub && children.length > 0 && (
+          <nav class="section-index" aria-labelledby="section-index-heading">
+            <h2 id="section-index-heading">Alle Seiten in diesem Bereich</h2>
+            <ul>{children.map((child) => <li><a href={child.data.slug}>{child.data.title}</a></li>)}</ul>
+          </nav>
+        )}
         {isHome && <AdSlot position="homepage" />}
-        {!isHome && <SourcesList sources={entry.data.sources} />}
+        {!isHome && !hasCalculator && !isLegalOrStatic && <ResponsibleNotice />}
+        {!isHome && <SourcesList sources={entry.data.sources} updated={updatedLabel} />}
         {!isHome && !isTool && <AdSlot position="after-content" />}
       </article>
       {!isHome && <div class="article-aside"><TableOfContents headings={pageHeadings} />{!isTool && <div class="aside-note"><span>Unabhängig erklärt</span><p>Keine erfundenen Bewertungen, keine Community-Zahlen, keine bezahlten Ranglisten.</p><a href="/quellen-methodik/">So arbeiten wir</a></div>}</div>}

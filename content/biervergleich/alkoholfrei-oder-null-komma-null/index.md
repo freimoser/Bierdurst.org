@@ -2,7 +2,6 @@
 title: 'Alkoholfrei oder 0,0 Prozent: Was ist der Unterschied?'
 slug: /biervergleich/alkoholfrei-oder-null-komma-null/
 canonical: https://bierdurst.org/biervergleich/alkoholfrei-oder-null-komma-null/
-meta_title: 'Alkoholfrei oder 0,0 Prozent: Was ist der U… | BierDurst.org'
 meta_description: 'Alkoholfrei oder 0,0 Prozent: Was ist der Unterschied? Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Verglei'
 category: Biervergleich
 language: de

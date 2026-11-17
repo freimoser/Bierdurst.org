@@ -2,7 +2,6 @@
 title: 'Bier richtig lagern: Temperatur, Licht und Position'
 slug: /bierwissen/bier-richtig-lagern/
 canonical: https://bierdurst.org/bierwissen/bier-richtig-lagern/
-meta_title: 'Bier richtig lagern: Temperatur, Licht und… | BierDurst.org'
 meta_description: 'Bier richtig lagern: kühl, dunkel, stehend und ohne Temperaturschwankungen. Tipps für Flaschen, Dosen und besondere Biere.'
 category: Bierwissen
 language: de

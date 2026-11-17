@@ -2,7 +2,6 @@
 title: 'Bier in Sachsen und Thüringen: Schwarzbier, Pils und Gose'
 slug: /bierregionen/bier-in-sachsen-und-thueringen/
 canonical: https://bierdurst.org/bierregionen/bier-in-sachsen-und-thueringen/
-meta_title: 'Bier in Sachsen und Thüringen: Schwarzbier… | BierDurst.org'
 meta_description: 'Bier in Sachsen und Thüringen: Schwarzbier, Pils, Leipziger Gose, regionale Marken und passende Speisen.'
 category: Bierregionen
 language: de

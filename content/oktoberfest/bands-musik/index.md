@@ -2,7 +2,6 @@
 title: Welche Bands spielen auf dem Oktoberfest?
 slug: /oktoberfest/bands-musik/
 canonical: https://bierdurst.org/oktoberfest/bands-musik/
-meta_title: Welche Bands spielen auf dem Oktoberfest 20… | BierDurst.org
 meta_description: 'Bands und Musik auf dem Oktoberfest: Festzeltkapellen, Musikzeiten, bekannte Bands und wo das Programm für 2027 veröffentlicht wird.'
 category: Oktoberfest
 language: de

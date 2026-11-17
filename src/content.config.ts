@@ -17,6 +17,7 @@ const pages = defineCollection({
     launch_status: z.enum(['publish', 'queue']),
     index: z.boolean(),
     last_updated: z.coerce.date(),
+    date_published: z.coerce.date().optional(),
     category: z.string().optional(),
     sources: z.array(z.url()).optional(),
     tool_id: z.string().optional(),

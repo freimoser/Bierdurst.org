@@ -2,7 +2,6 @@
 title: Wie wird Bier gebraut? Der Brauprozess einfach erklärt
 slug: /bierwissen/wie-wird-bier-gebraut/
 canonical: https://bierdurst.org/bierwissen/wie-wird-bier-gebraut/
-meta_title: Wie wird Bier gebraut? Der Brauprozess einf… | BierDurst.org
 meta_description: 'Bierbrauen Schritt für Schritt: Schroten, Maischen, Läutern, Würzekochen, Kühlen, Gärung, Lagerung und Abfüllung.'
 category: Bierwissen
 language: de

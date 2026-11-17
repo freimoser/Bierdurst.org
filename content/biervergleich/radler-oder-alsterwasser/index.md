@@ -2,7 +2,6 @@
 title: 'Radler oder Alsterwasser: Was ist der Unterschied?'
 slug: /biervergleich/radler-oder-alsterwasser/
 canonical: https://bierdurst.org/biervergleich/radler-oder-alsterwasser/
-meta_title: 'Radler oder Alsterwasser: Was ist der Unter… | BierDurst.org'
 meta_description: 'Radler oder Alsterwasser: Was ist der Unterschied? Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Vergleich.'
 category: Biervergleich
 language: de

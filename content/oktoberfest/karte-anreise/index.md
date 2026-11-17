@@ -2,7 +2,6 @@
 title: Oktoberfest-Karte, Anreise und Orientierung auf der Wiesn
 slug: /oktoberfest/karte-anreise/
 canonical: https://bierdurst.org/oktoberfest/karte-anreise/
-meta_title: Oktoberfest-Karte, Anreise und Orientierung… | BierDurst.org
 meta_description: 'Oktoberfest-Karte und Anreise: U-Bahn, S-Bahn, wichtige Eingänge, Festzelte, Oide Wiesn und Orientierung auf dem Gelände.'
 category: Oktoberfest
 language: de

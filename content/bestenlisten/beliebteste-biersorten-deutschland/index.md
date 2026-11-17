@@ -2,11 +2,10 @@
 title: Was ist die beliebteste Biersorte Deutschlands?
 slug: /bestenlisten/beliebteste-biersorten-deutschland/
 canonical: https://bierdurst.org/bestenlisten/beliebteste-biersorten-deutschland/
-meta_title: Was ist die beliebteste Biersorte Deutschla… | BierDurst.org
 meta_description: 'Pils, Helles und alkoholfreies Bier: die beliebtesten Biersorten Deutschlands mit aktuellen Marktanteilen und regionalen Unterschieden.'
 category: Bestenlisten und Zahlen
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-17'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Was ist die beliebteste Biersorte Deutschlands?
@@ -28,7 +27,9 @@ index: true
 
 # Was ist die beliebteste Biersorte Deutschlands?
 
-**Kurz gesagt:** Pils ist weiterhin die mit Abstand beliebteste Biersorte in Deutschland. Nach Angaben des Deutschen Brauer-Bundes lag der Marktanteil zuletzt bei knapp 50 Prozent. Helles folgt mit ungefähr 12 Prozent, alkoholfreies Bier mit etwa 9,5 Prozent.
+**Kurz gesagt:** Pils ist weiterhin die mit Abstand beliebteste Biersorte in Deutschland. Nach Angaben des Deutschen Brauer-Bundes (Stand: Februar 2026) liegt der Marktanteil bei knapp 50 Prozent. Helles folgt mit ungefähr 12 Prozent, alkoholfreies Bier mit 9,5 Prozent auf Platz 3.
+
+Eine Zahl wird dabei oft verwechselt: Alkoholfreie Biere und Biermischgetränke haben 2025 erstmals **beim Umsatz im Handel** die 10-Prozent-Marke überschritten. Das ist nicht dasselbe wie der Marktanteil, der bei 9,5 Prozent liegt. Der Brauer-Bund hält es für möglich, dass auch der Marktanteil die Schwelle bald erreicht.
 
 ## Die drei größten Kategorien
 
@@ -36,7 +37,7 @@ index: true
 |---:|---|---:|---|
 | 1 | [Pils](/biersorten/pils/) | knapp 50 % | weiterhin klar führend |
 | 2 | [Helles](/biersorten/helles/) | etwa 12 % | wächst bundesweit |
-| 3 | [Alkoholfreies Bier](/biersorten/alkoholfreies-bier/) | etwa 9,5 % | stark wachsend |
+| 3 | [Alkoholfreies Bier](/biersorten/alkoholfreies-bier/) | 9,5 % | stark wachsend; über 10 % Umsatzanteil im Handel |
 
 Die Werte beziehen sich auf Marktdaten und können je nach Absatz, Umsatz, Handelskanal und Erhebungsmethode leicht voneinander abweichen.
 

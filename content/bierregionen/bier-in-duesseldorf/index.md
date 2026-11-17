@@ -2,7 +2,6 @@
 title: 'Bier in Düsseldorf: Altbier und Hausbrauereien'
 slug: /bierregionen/bier-in-duesseldorf/
 canonical: https://bierdurst.org/bierregionen/bier-in-duesseldorf/
-meta_title: 'Bier in Düsseldorf: Altbier und Hausbrauere… | BierDurst.org'
 meta_description: 'Düsseldorfer Bierkultur: Altbier, Hausbrauereien, Altglas, Köbes und der Unterschied zu Kölsch und Pils.'
 category: Bierregionen
 language: de

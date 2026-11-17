@@ -2,7 +2,6 @@
 title: 'Bieretikett lesen: Alkohol, Zutaten, MHD und Nährwerte'
 slug: /bierwissen/bieretikett-lesen/
 canonical: https://bierdurst.org/bierwissen/bieretikett-lesen/
-meta_title: 'Bieretikett lesen: Alkohol, Zutaten, MHD und Nä… | BierDurst.org'
 meta_description: Welche Angaben auf einem Bieretikett stehen und was Alkoholgehalt, Zutaten, Mindesthaltbarkeit und Nährwerte bedeuten.
 category: Bierwissen
 language: de

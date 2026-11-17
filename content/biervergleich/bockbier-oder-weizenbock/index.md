@@ -2,7 +2,6 @@
 title: 'Bockbier oder Weizenbock: Was ist der Unterschied?'
 slug: /biervergleich/bockbier-oder-weizenbock/
 canonical: https://bierdurst.org/biervergleich/bockbier-oder-weizenbock/
-meta_title: 'Bockbier oder Weizenbock: Was ist der Unter… | BierDurst.org'
 meta_description: 'Bockbier oder Weizenbock: Was ist der Unterschied? Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Vergleich.'
 category: Biervergleich
 language: de

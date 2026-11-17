@@ -2,7 +2,6 @@
 title: 'Bier in Baden-Württemberg: Export, Pils und Kristallweizen'
 slug: /bierregionen/bier-in-baden-wuerttemberg/
 canonical: https://bierdurst.org/bierregionen/bier-in-baden-wuerttemberg/
-meta_title: 'Bier in Baden-Württemberg: Export, Pils und… | BierDurst.org'
 meta_description: 'Bier in Baden-Württemberg: Export, Pils, Kristallweizen, regionale Brauereien und Unterschiede zwischen Baden und Württemberg.'
 category: Bierregionen
 language: de

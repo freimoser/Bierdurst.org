@@ -2,7 +2,6 @@
 title: 'Bier warm geworden und wieder gekühlt: Ist das schlimm?'
 slug: /bierwissen/bier-warm-und-wieder-kalt/
 canonical: https://bierdurst.org/bierwissen/bier-warm-und-wieder-kalt/
-meta_title: 'Bier warm geworden und wieder gekühlt: Ist das… | BierDurst.org'
 meta_description: Was Temperaturschwankungen mit Geschmack und Haltbarkeit von Bier machen.
 category: Bierwissen
 language: de

@@ -2,7 +2,6 @@
 title: 'Bier richtig einschenken: So entsteht eine gute Schaumkrone'
 slug: /bierwissen/bier-richtig-einschenken/
 canonical: https://bierdurst.org/bierwissen/bier-richtig-einschenken/
-meta_title: 'Bier richtig einschenken: So entsteht eine… | BierDurst.org'
 meta_description: 'Bier richtig einschenken: Glas halten, Winkel ändern, Schaum aufbauen und typische Fehler bei Pils und Weizen vermeiden.'
 category: Bierwissen
 language: de

@@ -1,20 +1,74 @@
 ---
-const { sources = [] } = Astro.props as { sources?: string[] };
-const label = (source: string) => {
+const { sources = [], updated } = Astro.props as { sources?: string[]; updated?: string };
+
+// Herausgebername je Host. Ein aus dem URL-Pfad abgeleitetes Label macht aus
+// einer Destatis-Pressemitteilung "PD26 037 73.html" und nennt den Herausgeber
+// gar nicht -- fuer eine Seite, die mit belegten Zahlen wirbt, zu wenig.
+const publishers: Record<string, string> = {
+  'destatis.de': 'Statistisches Bundesamt (Destatis)',
+  'genesis.destatis.de': 'Statistisches Bundesamt, GENESIS-Datenbank',
+  'brauer-bund.de': 'Deutscher Brauer-Bund',
+  'gesetze-im-internet.de': 'Bundesamt für Justiz, Gesetze im Internet',
+  'muenchen.de': 'Landeshauptstadt München',
+  'oktoberfest.de': 'oktoberfest.de',
+  'lebensmittelklarheit.de': 'Lebensmittelklarheit, Verbraucherzentrale',
+  'de.statista.com': 'Statista',
+  'barthhaas.com': 'BarthHaas',
+  'paulaner.de': 'Paulaner Brauerei',
+  'paulaner.com': 'Paulaner Brauerei',
+  'krombacher.de': 'Krombacher Brauerei',
+  'bitburger.com': 'Bitburger Braugruppe',
+  'weihenstephaner.de': 'Staatsbrauerei Weihenstephan',
+  'weltenburger.de': 'Klosterbrauerei Weltenburg',
+  'bolten-brauerei.de': 'Bolten Brauerei',
+  'augustiner-braeu.de': 'Augustiner-Bräu München',
+  'coronadobrewing.com': 'Coronado Brewing Company'
+};
+
+// Hersteller- und Verbandsangaben sind Primaerquellen in eigener Sache und
+// werden als solche gekennzeichnet.
+const interested = new Set([
+  'paulaner.de', 'paulaner.com', 'krombacher.de', 'bitburger.com', 'weihenstephaner.de',
+  'weltenburger.de', 'bolten-brauerei.de', 'augustiner-braeu.de', 'coronadobrewing.com',
+  'brauer-bund.de', 'oktoberfest.de'
+]);
+
+const describe = (source: string) => {
   try {
     const url = new URL(source);
     const host = url.hostname.replace(/^www\./, '');
     const parts = url.pathname.split('/').filter(Boolean);
-    if (parts.length === 0) return `${host} – Startseite`;
-
-    const page = parts.at(-1)!
-      .replace(/[-_]+/g, ' ')
-      .replace(/\b\w/g, (character) => character.toUpperCase());
-    return `${host} – ${page}`;
+    const publisher = publishers[host] ?? host;
+    const raw = parts.length ? parts.at(-1)!.replace(/\.[a-z]+$/i, '') : '';
+    // Aktenzeichen wie "PD26_037_73" oder "73421-0001" sagen dem Leser nichts.
+    // Lieber nur den Herausgeber nennen als eine Dateinummer als Titel ausgeben.
+    const opaque = !raw || /^\d/.test(raw) || !/[a-z]{4}/i.test(raw.replace(/[^a-z]/gi, ''));
+    const document = opaque ? '' : raw.replace(/[-_]+/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
+    return { publisher, document, host, selfInterested: interested.has(host) };
   } catch {
-    return source;
+    return { publisher: source, document: '', host: '', selfInterested: false };
   }
 };
+
 const uniqueSources = [...new Set(sources)];
 ---
-{uniqueSources.length > 0 && <section class="sources" aria-labelledby="sources-heading"><h2 id="sources-heading">Quellen und Einordnung</h2><p>Die Inhalte stützen sich auf die folgenden Ausgangsquellen. Abruf und redaktionelle Einordnung entsprechen dem angegebenen Aktualisierungsstand.</p><ul>{uniqueSources.map((source) => <li><a href={source} rel="noopener noreferrer">{label(source)}</a></li>)}</ul></section>}
+{uniqueSources.length > 0 && (
+  <section class="sources" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">Quellen und Einordnung</h2>
+    <p>
+      Die Inhalte stützen sich auf die folgenden Ausgangsquellen.
+      {updated ? ` Redaktionell geprüft zum Stand ${updated}.` : ''}
+    </p>
+    <ul>
+      {uniqueSources.map((source) => {
+        const { publisher, document, selfInterested } = describe(source);
+        return (
+          <li>
+            <a href={source} rel="noopener noreferrer"><strong>{publisher}</strong>{document ? `: ${document}` : ''}</a>
+            {selfInterested && <span class="source-note"> — Angabe des Herausgebers in eigener Sache</span>}
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+)}

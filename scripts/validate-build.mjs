@@ -60,7 +60,9 @@ for (const file of htmlFiles) {
   const hasVisibleFaq = />Häufige Fragen<\/h2>/.test(html) || html.includes('class="stat-faq"');
   const hasFaqSchema = html.includes('"@type":"FAQPage"');
   if (hasVisibleFaq !== hasFaqSchema) errors.push(`FAQ-Inhalt und FAQPage-Schema stimmen in ${path} nicht überein.`);
-  if (html.includes('data-calculator') && !html.includes('"@type":"WebApplication"')) errors.push(`WebApplication-Schema fehlt in ${path}.`);
+  // WebApplication gehoert auf die Rechnerseite selbst. Ein Artikel darf den
+  // Rechner einbetten, ohne die Anwendung ein zweites Mal zu deklarieren.
+  if (path.startsWith('/bier-rechner/') && html.includes('data-calculator') && !html.includes('"@type":"WebApplication"')) errors.push(`WebApplication-Schema fehlt in ${path}.`);
   if (path !== '/404/') {
     if (titles.has(title)) errors.push(`Doppelter Titel: ${title}`); else titles.set(title, path);
     if (canonicals.has(canonical)) errors.push(`Doppelter Canonical: ${canonical}`); else canonicals.set(canonical, path);
@@ -85,6 +87,14 @@ for (const [path, count] of incoming) {
 }
 
 if (allFiles.includes('dist/sitemap-full.xml') || allFiles.includes('dist/ads.txt.template')) errors.push('Roadmap- oder Template-Datei wurde versehentlich veröffentlicht.');
+
+// macOS und iCloud legen beim Synchronisieren Kopien wie "index 2.html" an.
+// Die landen sonst als doppelter Titel und doppelter Canonical in der Pruefung
+// und erzeugen dort Dutzende Folgefehler, die die echte Ursache verdecken.
+const strayCopies = allFiles.filter((file) => / \d+\.[a-z0-9]+$/i.test(file));
+if (strayCopies.length) {
+  errors.unshift(`${strayCopies.length} Dubletten-Dateien in dist/ (z. B. ${relative('dist', strayCopies[0]).split(sep).join('/')}). Vor dem Build entfernen: find dist -name "* [0-9].*" -delete`);
+}
 if (errors.length) {
   console.error(errors.slice(0, 80).join('\n'));
   process.exit(1);

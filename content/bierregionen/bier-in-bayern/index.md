@@ -2,7 +2,6 @@
 title: 'Bier in Bayern: Sorten, Regionen und Braukultur'
 slug: /bierregionen/bier-in-bayern/
 canonical: https://bierdurst.org/bierregionen/bier-in-bayern/
-meta_title: 'Bier in Bayern: Sorten, Regionen und Brauku… | BierDurst.org'
 meta_description: 'Bier in Bayern: Helles, Weizen, Dunkel, Bock, Kellerbier, Zoigl, Rauchbier, Biergärten und wichtige Teilregionen.'
 category: Bierregionen
 language: de

@@ -2,7 +2,6 @@
 title: 'Bier in München: Brauereien, Helles und Oktoberfest'
 slug: /bierregionen/bier-in-muenchen/
 canonical: https://bierdurst.org/bierregionen/bier-in-muenchen/
-meta_title: 'Bier in München: Brauereien, Helles und Okt… | BierDurst.org'
 meta_description: 'Münchner Bier erklärt: Helles, Dunkel, Weißbier, sechs Oktoberfestbrauereien, Biergärten und wichtige Regeln.'
 category: Bierregionen
 language: de

@@ -2,7 +2,6 @@
 title: 'Die besten Pilsbiere Deutschlands: 10 bekannte Vertreter'
 slug: /bestenlisten/beste-pilsbiere-deutschland/
 canonical: https://bierdurst.org/bestenlisten/beste-pilsbiere-deutschland/
-meta_title: 'Die besten Pilsbiere Deutschlands: 10 bekan… | BierDurst.org'
 meta_description: Zehn bekannte deutsche Pilsbiere als redaktionelle Orientierung – von mild bis norddeutsch herb, mit Auswahlkriterien.
 category: Bestenlisten und Zahlen
 language: de

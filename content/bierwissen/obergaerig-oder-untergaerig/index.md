@@ -2,7 +2,6 @@
 title: 'Obergäriges und untergäriges Bier: der Unterschied'
 slug: /bierwissen/obergaerig-oder-untergaerig/
 canonical: https://bierdurst.org/bierwissen/obergaerig-oder-untergaerig/
-meta_title: 'Obergäriges und untergäriges Bier: der Unte… | BierDurst.org'
 meta_description: 'Obergärig oder untergärig: Unterschiede bei Hefe, Temperatur, Geschmack und typische Beispiele wie Weizen, Kölsch, Pils und Helles.'
 category: Bierwissen
 language: de

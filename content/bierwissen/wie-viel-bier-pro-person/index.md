@@ -6,7 +6,7 @@ meta_title: Wie viel Bier pro Person für eine Feier? | BierDurst.org
 meta_description: Biermenge für Party, Grillabend oder Hochzeit realistisch planen – mit Sicherheitsreserve und alkoholfreien Alternativen.
 category: Bierwissen
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-17'
 editorial_status: redaktioneller Entwurf
 keywords:
 - wie viel Bier pro Person Party
@@ -23,6 +23,7 @@ priority: high
 search_intent: utility
 review_cycle: 12 months
 index: true
+tool_id: party-beer-calculator
 ---
 
 # Wie viel Bier pro Person für eine Feier?

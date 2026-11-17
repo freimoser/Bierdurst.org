@@ -2,7 +2,6 @@
 title: 'Märzen oder Festbier: Was ist der Unterschied?'
 slug: /biervergleich/maerzen-oder-festbier/
 canonical: https://bierdurst.org/biervergleich/maerzen-oder-festbier/
-meta_title: 'Märzen oder Festbier: Was ist der Unterschi… | BierDurst.org'
 meta_description: 'Märzen oder Festbier: Was ist der Unterschied? Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Vergleich.'
 category: Biervergleich
 language: de

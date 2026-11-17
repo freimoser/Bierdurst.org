@@ -1,11 +1,13 @@
 ---
 const path = Astro.url.pathname;
+// Nur indexierbare Sektionen. /bierkompendium/ und /bierspiele/ sind noindex
+// und gehoeren deshalb nicht in die Hauptnavigation.
 const items = [
-  ['/bierkompendium/', 'Kompendium'],
+  ['/biersorten/', 'Biersorten'],
   ['/biervergleich/', 'Vergleich'],
   ['/bierwissen/', 'Bierwissen'],
+  ['/bestenlisten/', 'Bestenlisten'],
   ['/bier-rechner/', 'Rechner'],
-  ['/bierspiele/', 'Spiele'],
   ['/bierregionen/', 'Regionen'],
   ['/oktoberfest/', 'Oktoberfest']
 ];

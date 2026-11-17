@@ -2,7 +2,6 @@
 title: 'Die besten alkoholfreien Biere Deutschlands: 10 Einstiege'
 slug: /bestenlisten/beste-alkoholfreie-biere-deutschland/
 canonical: https://bierdurst.org/bestenlisten/beste-alkoholfreie-biere-deutschland/
-meta_title: Die besten alkoholfreien Biere Deutschlands… | BierDurst.org
 meta_description: Zehn bekannte alkoholfreie Biere und 0,0-Produkte als redaktionelle Orientierung von Pils bis Weizen und IPA.
 category: Bestenlisten und Zahlen
 language: de

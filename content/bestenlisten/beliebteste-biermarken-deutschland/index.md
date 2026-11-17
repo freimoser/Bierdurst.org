@@ -2,7 +2,6 @@
 title: Welche Biermarken sind in Deutschland am beliebtesten?
 slug: /bestenlisten/beliebteste-biermarken-deutschland/
 canonical: https://bierdurst.org/bestenlisten/beliebteste-biermarken-deutschland/
-meta_title: Welche Biermarken sind in Deutschland am be… | BierDurst.org
 meta_description: Beliebte Biermarken in Deutschland nach Bekanntheit, Kaufbereitschaft und Absatz – mit Erklärung, warum Rankings voneinander abweichen.
 category: Bestenlisten und Zahlen
 language: de

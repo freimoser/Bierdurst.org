@@ -3,7 +3,6 @@ title: 'Oktoberfest-Festzelt reservieren: Regeln und Öffnungszeiten'
 seo_title: 'Wiesn-Zelt reservieren: Regeln und Öffnungszeiten'
 slug: /oktoberfest/reservierung-oeffnungszeiten/
 canonical: https://bierdurst.org/oktoberfest/reservierung-oeffnungszeiten/
-meta_title: 'Oktoberfest-Festzelt reservieren: Regeln un… | BierDurst.org'
 meta_description: 'Festzelt auf dem Oktoberfest reservieren: offizielle Buchung, Gutscheine, Plätze ohne Reservierung und die üblichen Öffnungszeiten.'
 category: Oktoberfest
 language: de

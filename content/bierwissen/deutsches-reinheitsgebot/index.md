@@ -2,7 +2,6 @@
 title: 'Deutsches Reinheitsgebot: Was steht wirklich darin?'
 slug: /bierwissen/deutsches-reinheitsgebot/
 canonical: https://bierdurst.org/bierwissen/deutsches-reinheitsgebot/
-meta_title: 'Deutsches Reinheitsgebot: Was steht wirklic… | BierDurst.org'
 meta_description: 'Das Reinheitsgebot verständlich erklärt: Ursprung 1516, erlaubte Zutaten, Unterschiede nach Gärung und häufige Missverständnisse.'
 category: Bierwissen
 language: de
