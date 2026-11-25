@@ -6,7 +6,7 @@ meta_title: 'Lager oder Helles: Was ist der Unterschied? | BierDurst.org'
 meta_description: 'Lager oder Helles: Was ist der Unterschied? Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Vergleich.'
 category: Biervergleich
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-25'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Lager oder Helles
@@ -74,6 +74,8 @@ Lagerbier wird als Sammelbegriff für untergärige, kühl vergorene Biere eingeo
 Das lässt sich nicht sicher allein am Stil erkennen. Alkohol und Restextrakt sind die wichtigsten Faktoren. Bei ähnlichem Alkoholgehalt liegen die Werte häufig nah beieinander.
 
 ### Welches Bier ist für Einsteiger leichter?
+
+Helles, weil es berechenbar ist. Es liegt mild bis moderat in der Bittere, weich und rund mit leichter Malzsüße. „Lagerbier“ ist dagegen ein Sammelbegriff: Die Bittere reicht von mild bis deutlich, je nachdem welcher Unterstil im Glas ist. Für den Einstieg ist das konkrete Helles verlässlicher als die Kategorie.
 
 ### Kann man beide Biere aus demselben Glas trinken?
 

@@ -6,7 +6,7 @@ meta_title: 'Pils oder Lager: Was ist der Unterschied? | BierDurst.org'
 meta_description: 'Pils oder Lager: Was ist der Unterschied? Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Vergleich.'
 category: Biervergleich
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-25'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Pils oder Lager
@@ -74,6 +74,8 @@ Pils wird als untergäriges Vollbier eingeordnet. Lagerbier ist Sammelbegriff f�
 Das lässt sich nicht sicher allein am Stil erkennen. Alkohol und Restextrakt sind die wichtigsten Faktoren. Bei ähnlichem Alkoholgehalt liegen die Werte häufig nah beieinander.
 
 ### Welches Bier ist für Einsteiger leichter?
+
+Eher ein Lagerbier. Pils ist deutlich bis kräftig hopfenherb und damit geschmacklich fordernder. „Lagerbier“ ist allerdings ein Sammelbegriff, dessen Bittere von mild bis deutlich reicht — verlässlich milde Vertreter sind etwa Helles oder Dunkelbier. Der Alkoholgehalt unterscheidet sich kaum; „leichter“ meint hier allein den Geschmack.
 
 ### Kann man beide Biere aus demselben Glas trinken?
 

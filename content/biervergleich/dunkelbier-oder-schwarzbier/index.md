@@ -6,7 +6,7 @@ meta_title: 'Dunkelbier oder Schwarzbier: der Unterschied | BierDurst.org'
 meta_description: 'Dunkelbier oder Schwarzbier: der Unterschied Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Vergleich.'
 category: Biervergleich
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-25'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Dunkelbier oder Schwarzbier
@@ -74,6 +74,8 @@ Dunkelbier wird als untergäriges dunkles Lagerbier eingeordnet. Schwarzbier ist
 Das lässt sich nicht sicher allein am Stil erkennen. Alkohol und Restextrakt sind die wichtigsten Faktoren. Bei ähnlichem Alkoholgehalt liegen die Werte häufig nah beieinander.
 
 ### Welches Bier ist für Einsteiger leichter?
+
+Bei der Bittere nehmen die beiden sich wenig: Dunkelbier liegt niedrig bis moderat, Schwarzbier mild bis moderat. Den Unterschied macht der Röstcharakter. Dunkelbier wirkt weich und malzig mit Karamell und Nuss, Schwarzbier bringt Kaffee, Kakao und dunkle Schokolade mit — Aromen, die ungewohnt sein können. Für den Einstieg ist Dunkelbier deshalb meist das zugänglichere.
 
 ### Kann man beide Biere aus demselben Glas trinken?
 

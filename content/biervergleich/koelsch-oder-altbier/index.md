@@ -6,7 +6,7 @@ meta_title: 'Kölsch oder Altbier: der große Vergleich | BierDurst.org'
 meta_description: 'Kölsch oder Altbier: der große Vergleich Geschmack, Alkohol, Gärung, Herkunft, Essen und eine einfache Entscheidungshilfe im direkten Vergleich.'
 category: Biervergleich
 language: de
-last_updated: '2026-08-03'
+last_updated: '2026-11-25'
 editorial_status: redaktioneller Entwurf
 keywords:
 - Kölsch oder Altbier
@@ -74,6 +74,8 @@ Kölsch wird als obergäriges, helles Vollbier eingeordnet. Altbier ist obergär
 Das lässt sich nicht sicher allein am Stil erkennen. Alkohol und Restextrakt sind die wichtigsten Faktoren. Bei ähnlichem Alkoholgehalt liegen die Werte häufig nah beieinander.
 
 ### Welches Bier ist für Einsteiger leichter?
+
+Meist Kölsch. Es ist moderat und fein in der Bittere, schlank und frisch mit dezenten fruchtigen Noten. Altbier wirkt moderat bis deutlich hopfenherb und bringt zusätzlich Karamell und leichte Röstaromen mit. Wer wenig Schwere und wenig Bittere möchte, fährt mit Kölsch einfacher.
 
 ### Kann man beide Biere aus demselben Glas trinken?
 
