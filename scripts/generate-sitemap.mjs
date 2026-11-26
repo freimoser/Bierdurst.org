@@ -48,6 +48,10 @@ function gitDate(file, which) {
 const pages = [];
 const pageDates = {};
 const manifest = JSON.parse(await readFile('data/url-manifest.json', 'utf8'));
+// Die Artikelgrafik gehoert zum Inhalt der Seite. Wird sie ergaenzt oder
+// geaendert, hat sich die Seite geaendert, auch wenn das Markdown gleich
+// blieb -- sonst behauptet die Sitemap einen Stand, den es nicht mehr gibt.
+const figures = JSON.parse(await readFile('data/page-figures.json', 'utf8').catch(() => '{}'));
 const launchSlugs = new Set(manifest.filter((page) => page.launch_status === 'publish').map((page) => page.slug));
 let gitAvailable = false;
 
@@ -62,7 +66,9 @@ for (const file of await markdownFiles('content')) {
   const created = gitDate(file, 'first');
   if (modified) gitAvailable = true;
 
-  const candidates = [declared, modified].filter((date) => date && W3C_DATE.test(date));
+  const figureFile = figures[slug] ? `public${figures[slug].src}` : null;
+  const figureChanged = figureFile ? gitDate(figureFile, 'last') : undefined;
+  const candidates = [declared, modified, figureChanged].filter((date) => date && W3C_DATE.test(date));
   const lastmod = candidates.sort().at(-1);
   if (!lastmod) throw new Error(`Kein gueltiges lastmod fuer ${slug} (${file})`);
   if (!slug.endsWith('/')) throw new Error(`Slug ohne abschliessenden Schraegstrich: ${slug}`);

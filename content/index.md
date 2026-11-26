@@ -25,7 +25,7 @@ BierDurst.org beantwortet verständlich und nachvollziehbar Fragen zu Biersorten
 - [Praktisches Bierwissen](/bierwissen/)
 - [Bierrechner nutzen](/bier-rechner/)
 - [Bierregionen in Deutschland](/bierregionen/)
-- [Oktoberfest 2026](/oktoberfest/)
+- [Oktoberfest 2027](/oktoberfest/)
 
 ## Häufig gesucht
 

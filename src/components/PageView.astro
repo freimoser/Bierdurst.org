@@ -13,6 +13,9 @@ import { extractFaqItems } from '../utils/structured-data';
 import manifest from '../../data/url-manifest.json';
 // Von scripts/generate-sitemap.mjs im prebuild aus der Git-Historie erzeugt.
 import pageDates from '../../data/page-dates.json';
+// Von scripts/generate-figures.mjs erzeugt; der Rehype-Schritt in
+// astro.config.mjs setzt dieselbe Grafik in den Fliesstext.
+import pageFigures from '../../data/page-figures.json';
 
 const { entry } = Astro.props as { entry: CollectionEntry<'pages'> };
 const { Content, headings } = await render(entry);
@@ -59,6 +62,13 @@ const children = isSectionHub
       .sort((a, b) => a.data.title.localeCompare(b.data.title, 'de'))
   : [];
 const ogImage = new URL(`/og${entry.data.slug}index.png`, 'https://bierdurst.org').href;
+const figure = (pageFigures as Record<string, { src: string; width: number; height: number; alt: string; caption: string }>)[entry.data.slug];
+// Die Artikelgrafik gehoert neben das OG-Bild ins Schema: Sie ist die einzige
+// Abbildung, die wirklich auf der Seite steht.
+const articleImages = [
+  { '@type': 'ImageObject', url: ogImage, width: 1200, height: 630 },
+  ...(figure ? [{ '@type': 'ImageObject', url: new URL(figure.src, 'https://bierdurst.org').href, width: figure.width, height: figure.height, caption: figure.caption, representativeOfPage: true }] : [])
+];
 const faqItems = extractFaqItems(entry.body);
 
 const ORG_ID = 'https://bierdurst.org/#organization';
@@ -93,7 +103,7 @@ if (articleTypes.has(entry.data.page_type)) {
     description: entry.data.meta_description,
     ...(published ? { datePublished: published } : {}),
     dateModified: updated,
-    image: { '@type': 'ImageObject', url: ogImage, width: 1200, height: 630 },
+    image: articleImages,
     inLanguage: 'de-DE',
     mainEntityOfPage: { '@type': 'WebPage', '@id': entry.data.canonical },
     author: { '@type': 'Organization', name: 'Redaktion BierDurst.org', url: 'https://bierdurst.org/ueber-uns/' },

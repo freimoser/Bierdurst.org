@@ -7,6 +7,10 @@ import beerBrands from '../../../data/beer-brands.json';
 import marketStatistics from '../../../data/beer-market-statistics.json';
 const families = [...new Set(beerStyles.map((beer) => beer.family))].sort((a, b) => a.localeCompare(b, 'de'));
 const brandProfiles = beerBrands.map((brand) => ({ ...brand, styleData: beerStyles.find((style) => style.slug === brand.style)! }));
+// Die Markenzahl stand hier fest im Text und lief dadurch gegen die Angabe in
+// data/beer-market-statistics.json. Jetzt kommt sie aus derselben Quelle wie
+// ueberall sonst.
+const brandCount = marketStatistics.find((statistic) => statistic.slug === 'biermarken-deutschland')?.value ?? '';
 ---
 <BaseLayout title="Bierkompendium: Biermarken & Bierstile | BierDurst.org" description={`${beerBrands.length} verifizierte Biermarken und ${beerStyles.length} Bierstile mit Brauerei, Herkunft, Stilwerten und belegten Unternehmenskennzahlen.`} canonical="https://bierdurst.org/bierkompendium/" robots="noindex, follow">
   <main id="inhalt">
@@ -14,7 +18,7 @@ const brandProfiles = beerBrands.map((brand) => ({ ...brand, styleData: beerStyl
     <ExperienceHero eyebrow="Echte Marken · echte Quellen" title="Bierkompendium" description={`${beerBrands.length} einzeln verifizierte deutsche Biermarken und ${beerStyles.length} Bierstile – als gemeinsamer Datenbestand für Vergleiche, Spiele und das geplante Bierquartett.`} />
     <section class="compendium-wrap">
       <div class="market-facts">{marketStatistics.map((stat) => <a href={`/bierkompendium/statistik/${stat.slug}/`}><b>{stat.value}</b><span>{stat.unit}</span><strong>{stat.shortLabel} →</strong></a>)}</div>
-      <p class="market-source">*Beschäftigte in Braubetrieben mit mehr als 20 Beschäftigten. Marktstand 2025 laut <a href="https://brauer-bund.de/wp-content/uploads/2026/04/STATIST-2025.pdf" rel="noopener noreferrer">Deutschem Brauer-Bund</a>. Die Zahl von rund 7.000 Marken ist eine Branchenschätzung, keine amtliche Produktdatenbank.</p>
+      <p class="market-source">*Beschäftigte in Braubetrieben mit mehr als 20 Beschäftigten. Marktstand 2025 laut <a href="https://brauer-bund.de/wp-content/uploads/2026/04/STATIST-2025.pdf" rel="noopener noreferrer">Deutschem Brauer-Bund</a>. Die Zahl von {brandCount} Marken ist eine Branchenangabe, keine amtliche Produktdatenbank.</p>
       <a class="statistics-cta" href="/bierkompendium/statistik/"><span><b>Alle Zahlen im Zeitverlauf</b><small>Bierabsatz, Braustätten, Beschäftigte, Marken und Sorten mit Methodik und Primärquellen</small></span><strong>Gesamte Statistik ansehen →</strong></a>
       <div class="compendium-explainer">
         <div><p class="eyebrow">Zwei sauber getrennte Ebenen</p><h2>Marke ist nicht gleich Biersorte</h2></div>
@@ -47,7 +51,7 @@ const brandProfiles = beerBrands.map((brand) => ({ ...brand, styleData: beerStyl
         </a>)}
       </div>
       <p class="empty-filter" data-empty-filter hidden>Keine Einträge passen zu dieser Auswahl.</p>
-      <section class="method-note"><h2>Was „alle“ bei Biermarken bedeutet</h2><p>Der Deutsche Brauer-Bund schätzt den deutschen Markt auf rund 7.000 Marken. Es gibt jedoch kein öffentliches amtliches Register mit allen Produkten, Varianten und aktuellen Herstellerzuordnungen. Dieses Kompendium veröffentlicht deshalb nur einzeln überprüfte Profile mit Herstellerquelle und wächst redaktionell weiter. Eine rechnerische Vollständigkeit wird nicht behauptet.</p><p>Stilwerte basieren unter anderem auf den <a href="https://styles.bjcp.org/bjcp-2021-beer" rel="noopener noreferrer">BJCP Style Guidelines</a>, den <a href="https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/" rel="noopener noreferrer">Brewers Association Guidelines</a>, dem <a href="https://brauer-bund.de/biervielfalt/" rel="noopener noreferrer">Deutschen Brauer-Bund</a> und der <a href="https://www.gesetze-im-internet.de/bierv/" rel="noopener noreferrer">Bierverordnung</a>.</p></section>
+      <section class="method-note"><h2>Was „alle“ bei Biermarken bedeutet</h2><p>Der Deutsche Brauer-Bund nennt für den deutschen Markt {brandCount} Marken. Es gibt jedoch kein öffentliches amtliches Register mit allen Produkten, Varianten und aktuellen Herstellerzuordnungen. Dieses Kompendium veröffentlicht deshalb nur einzeln überprüfte Profile mit Herstellerquelle und wächst redaktionell weiter. Eine rechnerische Vollständigkeit wird nicht behauptet.</p><p>Stilwerte basieren unter anderem auf den <a href="https://styles.bjcp.org/bjcp-2021-beer" rel="noopener noreferrer">BJCP Style Guidelines</a>, den <a href="https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/" rel="noopener noreferrer">Brewers Association Guidelines</a>, dem <a href="https://brauer-bund.de/biervielfalt/" rel="noopener noreferrer">Deutschen Brauer-Bund</a> und der <a href="https://www.gesetze-im-internet.de/bierv/" rel="noopener noreferrer">Bierverordnung</a>.</p></section>
     </section>
   </main>
 </BaseLayout>

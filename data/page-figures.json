@@ -1,0 +1,554 @@
+{
+  "/biersorten/pils/": {
+    "src": "/grafik/biersorten-pils.png",
+    "width": 1400,
+    "height": 1062,
+    "alt": "Steckbrief-Grafik zu Pils: ein Bierglas in der Farbe hellgelb bis goldgelb, daneben Balken für Alkoholgehalt 4,5 bis 5,2 Prozent, Bitterkeit deutlich und Trinktemperatur 5 bis 8 Grad.",
+    "caption": "Pils auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/helles/": {
+    "src": "/grafik/biersorten-helles.png",
+    "width": 1400,
+    "height": 1062,
+    "alt": "Steckbrief-Grafik zu Helles Bier: ein Bierglas in der Farbe strohgelb bis goldgelb, daneben Balken für Alkoholgehalt 4,7 bis 5,4 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 6 bis 8 Grad.",
+    "caption": "Helles Bier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/weizenbier/": {
+    "src": "/grafik/biersorten-weizenbier.png",
+    "width": 1400,
+    "height": 1094,
+    "alt": "Steckbrief-Grafik zu Weizenbier: ein Bierglas in der Farbe hellgold bis dunkelbraun, daneben Balken für Alkoholgehalt 4,8 bis 5,6 Prozent, Bitterkeit mild und Trinktemperatur 7 bis 9 Grad.",
+    "caption": "Weizenbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/dunkelbier/": {
+    "src": "/grafik/biersorten-dunkelbier.png",
+    "width": 1400,
+    "height": 1094,
+    "alt": "Steckbrief-Grafik zu Dunkelbier: ein Bierglas in der Farbe bernsteinfarben bis dunkelbraun, daneben Balken für Alkoholgehalt 4,5 bis 5,5 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 8 bis 10 Grad.",
+    "caption": "Dunkelbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/schwarzbier/": {
+    "src": "/grafik/biersorten-schwarzbier.png",
+    "width": 1400,
+    "height": 1094,
+    "alt": "Steckbrief-Grafik zu Schwarzbier: ein Bierglas in der Farbe dunkelbraun bis nahezu schwarz, daneben Balken für Alkoholgehalt 4,5 bis 5,4 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 7 bis 10 Grad.",
+    "caption": "Schwarzbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/koelsch/": {
+    "src": "/grafik/biersorten-koelsch.png",
+    "width": 1400,
+    "height": 1094,
+    "alt": "Steckbrief-Grafik zu Kölsch: ein Bierglas in der Farbe sehr hell bis goldgelb und klar, daneben Balken für Alkoholgehalt 4,4 bis 5,2 Prozent, Bitterkeit moderat und Trinktemperatur 6 bis 8 Grad.",
+    "caption": "Kölsch auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/altbier/": {
+    "src": "/grafik/biersorten-altbier.png",
+    "width": 1400,
+    "height": 1100,
+    "alt": "Steckbrief-Grafik zu Altbier: ein Bierglas in der Farbe kupferrot bis dunkelbraun, daneben Balken für Alkoholgehalt 4,5 bis 5,2 Prozent, Bitterkeit moderat bis deutlich und Trinktemperatur 7 bis 9 Grad.",
+    "caption": "Altbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/lagerbier/": {
+    "src": "/grafik/biersorten-lagerbier.png",
+    "width": 1400,
+    "height": 1100,
+    "alt": "Steckbrief-Grafik zu Lagerbier: ein Bierglas in der Farbe von sehr hell bis dunkel, daneben Balken für Alkoholgehalt 4,5 bis 5,5 Prozent, Bitterkeit mild bis deutlich und Trinktemperatur 5 bis 9 Grad.",
+    "caption": "Lagerbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/kellerbier-zwickelbier/": {
+    "src": "/grafik/biersorten-kellerbier-zwickelbier.png",
+    "width": 1400,
+    "height": 1094,
+    "alt": "Steckbrief-Grafik zu Kellerbier und Zwickelbier: ein Bierglas in der Farbe hellgold bis bernsteinfarben und naturtrüb, daneben Balken für Alkoholgehalt 4,5 bis 5,5 Prozent, Bitterkeit mild bis deutlich und Trinktemperatur 7 bis 10 Grad.",
+    "caption": "Kellerbier und Zwickelbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/festbier-oktoberfestbier/": {
+    "src": "/grafik/biersorten-festbier-oktoberfestbier.png",
+    "width": 1400,
+    "height": 1094,
+    "alt": "Steckbrief-Grafik zu Festbier: ein Bierglas in der Farbe meist goldgelb bis bernsteinfarben, daneben Balken für Alkoholgehalt 5,8 bis 6,3 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 7 bis 9 Grad.",
+    "caption": "Festbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biersorten/alkoholfreies-bier/": {
+    "src": "/grafik/biersorten-alkoholfreies-bier.png",
+    "width": 1400,
+    "height": 1062,
+    "alt": "Steckbrief-Grafik zu Alkoholfreies Bier: ein Bierglas in der Farbe abhängig vom Ausgangsstil, daneben Balken für Alkoholgehalt 0,0 bis 0,5 Prozent, Bitterkeit ohne Angabe und Trinktemperatur 4 bis 7 Grad.",
+    "caption": "Alkoholfreies Bier auf einen Blick: Farbe, Restalkohol, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
+    "template": "steckbrief"
+  },
+  "/biervergleich/pils-oder-helles/": {
+    "src": "/grafik/biervergleich-pils-oder-helles.png",
+    "width": 1400,
+    "height": 1378,
+    "alt": "Vergleichsgrafik Pils gegen Helles: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Pils liegt bei 4,5 bis 5,2 Prozent Alkohol, Helles bei 4,7 bis 5,4 Prozent.",
+    "caption": "Pils und Helles auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
+    "template": "duell"
+  },
+  "/biervergleich/pils-oder-lager/": {
+    "src": "/grafik/biervergleich-pils-oder-lager.png",
+    "width": 1400,
+    "height": 1378,
+    "alt": "Vergleichsgrafik Pils gegen Lagerbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Pils liegt bei 4,5 bis 5,2 Prozent Alkohol, Lagerbier bei 4,5 bis 5,5 Prozent.",
+    "caption": "Pils und Lagerbier auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
+    "template": "duell"
+  },
+  "/biervergleich/lager-oder-helles/": {
+    "src": "/grafik/biervergleich-lager-oder-helles.png",
+    "width": 1400,
+    "height": 1418,
+    "alt": "Vergleichsgrafik Lagerbier gegen Helles: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Lagerbier liegt bei 4,5 bis 5,5 Prozent Alkohol, Helles bei 4,7 bis 5,4 Prozent.",
+    "caption": "Lagerbier und Helles auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
+    "template": "duell"
+  },
+  "/biervergleich/koelsch-oder-altbier/": {
+    "src": "/grafik/biervergleich-koelsch-oder-altbier.png",
+    "width": 1400,
+    "height": 1378,
+    "alt": "Vergleichsgrafik Kölsch gegen Altbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Kölsch liegt bei 4,4 bis 5,2 Prozent Alkohol, Altbier bei 4,5 bis 5,2 Prozent.",
+    "caption": "Kölsch und Altbier auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
+    "template": "duell"
+  },
+  "/biervergleich/dunkelbier-oder-schwarzbier/": {
+    "src": "/grafik/biervergleich-dunkelbier-oder-schwarzbier.png",
+    "width": 1400,
+    "height": 1378,
+    "alt": "Vergleichsgrafik Dunkelbier gegen Schwarzbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Dunkelbier liegt bei 4,5 bis 5,5 Prozent Alkohol, Schwarzbier bei 4,5 bis 5,4 Prozent.",
+    "caption": "Dunkelbier und Schwarzbier auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
+    "template": "duell"
+  },
+  "/bierwissen/ibu-beim-bier/": {
+    "src": "/grafik/bierwissen-ibu-skala.png",
+    "width": 1400,
+    "height": 730,
+    "alt": "Fünfstufige IBU-Skala von unter 15 für sehr milde Biere über 25 bis 40 für klar wahrnehmbare Bittere bis über 60 für sehr stark gehopfte Biere wie IPA, mit Beispielen je Stufe.",
+    "caption": "Die IBU-Skala als grobe Orientierung. Ein kräftiger Malzkörper kann hohe Werte ausgleichen — gleiche IBU bedeutet deshalb nicht gleicher Geschmack.",
+    "template": "skala"
+  },
+  "/bierwissen/ebc-beim-bier/": {
+    "src": "/grafik/bierwissen-ebc-farbskala.png",
+    "width": 1400,
+    "height": 730,
+    "alt": "EBC-Farbskala in fünf Feldern: 4 bis 8 strohgelb für Helles, 8 bis 16 goldgelb für Pils, 16 bis 30 bernsteinfarben für Märzen, 30 bis 60 kupfer bis braun für Altbier und über 60 dunkelbraun bis schwarz für Schwarzbier und Stout.",
+    "caption": "Die EBC-Werte als Farbflächen. Farbe verrät weder Alkoholgehalt noch Süße: Ein dunkles Bier kann leicht und trocken sein.",
+    "template": "skala"
+  },
+  "/bierwissen/optimale-trinktemperatur-bier/": {
+    "src": "/grafik/bierwissen-trinktemperatur.png",
+    "width": 1400,
+    "height": 730,
+    "alt": "Temperaturskala für Bier in sechs Stufen: 5 bis 7 Grad für Pils, 6 bis 8 Grad für Helles, Kölsch und Export, 7 bis 9 Grad für Weizenbier, 8 bis 10 Grad für Kellerbier, Dunkel und Schwarzbier, 9 bis 12 Grad für Bock sowie 11 bis 14 Grad für Doppelbock, Eisbock und Imperial Stout.",
+    "caption": "Startwerte, keine festen Regeln. Ein Bier, das im Glas wärmer wird, zeigt oft mehr Aroma; eiskaltes Bier wirkt milder und weniger bitter.",
+    "template": "skala"
+  },
+  "/bierwissen/stammwuerze-beim-bier/": {
+    "src": "/grafik/bierwissen-stammwuerze.png",
+    "width": 1400,
+    "height": 872,
+    "alt": "Drei Kennzahlen zur Stammwürze: 12 Grad Plato entsprechen ungefähr 12 Gramm gelösten Stoffen je 100 Gramm Würze, viele Vollbiere liegen bei 11 bis 14 Grad Plato, und ab 16 Prozent darf ein Bier Starkbier oder Bockbier heißen.",
+    "caption": "Die Stammwürze entscheidet über die Bezeichnung, nicht der Alkoholgehalt. Für Starkbier sind mindestens 16 Prozent vorgesehen.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/obergaerig-oder-untergaerig/": {
+    "src": "/grafik/bierwissen-gaerung.png",
+    "width": 1400,
+    "height": 1196,
+    "alt": "Gegenüberstellung von obergäriger und untergäriger Gärung: links Hefe bei höheren Temperaturen mit fruchtigen Estern und Beispielen wie Weizenbier und Kölsch, rechts kühler arbeitende Hefe mit klaren, sauberen Aromen und Beispielen wie Pils und Helles.",
+    "caption": "Hefe, Arbeitstemperatur und Reifedauer trennen die beiden Familien. Farbe und Stärke gehören nicht dazu.",
+    "template": "zweiwege"
+  },
+  "/bierwissen/wie-viele-brauereien-gibt-es/": {
+    "src": "/grafik/bierwissen-brauereien-zeitreihe.png",
+    "width": 1400,
+    "height": 914,
+    "alt": "Balkendiagramm der betriebenen Braustätten in Deutschland von 2015 bis 2025. Der Höchststand liegt 2019 bei 1.552, danach sinkt die Zahl auf 1.415 im Jahr 2025.",
+    "caption": "Nach dem Höchststand 2019 ist die Zahl der Braustätten um 8,8 Prozent gesunken. Die Achse beginnt bei null, die Säulen sind damit direkt vergleichbar.",
+    "template": "zeitreihe"
+  },
+  "/bestenlisten/wie-viel-bier-wird-getrunken/": {
+    "src": "/grafik/bestenlisten-bierabsatz-zeitreihe.png",
+    "width": 1400,
+    "height": 914,
+    "alt": "Balkendiagramm des Bierabsatzes in Deutschland von 2015 bis 2025 mit einem Rückgang auf 77,7 Millionen Hektoliter im Jahr 2025, dem niedrigsten Wert der Reihe.",
+    "caption": "Der steuerlich erfasste Bierabsatz liegt 2025 um 19 Prozent unter dem Wert von 2015. Alkoholfreies Bier und Malztrunk sind in dieser Reihe nicht enthalten.",
+    "template": "zeitreihe"
+  },
+  "/bestenlisten/beliebteste-biersorten-deutschland/": {
+    "src": "/grafik/bestenlisten-beliebteste-biersorten.png",
+    "width": 1400,
+    "height": 840,
+    "alt": "Balkendiagramm der drei größten Biersorten in Deutschland: Pils mit knapp 50 Prozent Marktanteil, Helles mit etwa 12 Prozent und alkoholfreies Bier mit 9,5 Prozent.",
+    "caption": "Pils hat rund viermal so viel Marktanteil wie Helles. Die Balken beginnen bei null und sind deshalb direkt vergleichbar.",
+    "template": "balken"
+  },
+  "/oktoberfest/bierpreise/": {
+    "src": "/grafik/oktoberfest-masspreise.png",
+    "width": 1400,
+    "height": 1368,
+    "alt": "Punktdiagramm der Maßpreise auf dem Oktoberfest 2026: elf große Festzelte liegen zwischen 15,75 und 15,90 Euro, die Augustiner-Festhalle bei 14,90 Euro und Kufflers Weinzelt mit Weißbier bei 18,40 Euro.",
+    "caption": "Dreizehn der vierzehn großen Zelte lagen 2026 innerhalb von einem Euro. Die Achse ist bewusst beschnitten und beginnt bei 14,50 Euro.",
+    "template": "punkte"
+  },
+  "/bierwissen/wie-wird-bier-gebraut/": {
+    "src": "/grafik/bierwissen-brauprozess.png",
+    "width": 1400,
+    "height": 880,
+    "alt": "Ablaufgrafik des Bierbrauens in fünf nummerierten Schritten: Mälzen, Maischen, Läutern, Würzekochen sowie Gären und Reifen, jeweils mit kurzer Erklärung.",
+    "caption": "Fünf Schritte vom Korn zum Bier. Die Darrtemperatur beim Mälzen entscheidet über die Farbe, das Würzekochen über die Bitterkeit.",
+    "template": "ablauf"
+  },
+  "/bierwissen/bier-richtig-einschenken/": {
+    "src": "/grafik/bierwissen-einschenken.png",
+    "width": 1400,
+    "height": 778,
+    "alt": "Ablaufgrafik zum Einschenken von Bier in vier Schritten: sauberes Glas spülen, Glas schräg ansetzen, beim Einschenken aufrichten und den Schaum absetzen lassen.",
+    "caption": "Vier Schritte zu einer stabilen Schaumkrone. Ein fettfreies Glas ist dabei wichtiger als das Tempo.",
+    "template": "ablauf"
+  },
+  "/bierwissen/wie-viele-flaschen-bierkasten/": {
+    "src": "/grafik/bierwissen-bierkasten.png",
+    "width": 1400,
+    "height": 802,
+    "alt": "Drei Kastenformate: 20 Flaschen à 0,5 Liter als klassischer deutscher Bierkasten mit zusammen 10 Litern, 24 Flaschen à 0,33 Liter als zweites verbreitetes Format und weitere Kästen mit 11 bis 30 Flaschen.",
+    "caption": "Zwei Formate decken den Großteil ab. Die Flaschenzahl allein sagt wenig — erst mit der Flaschengröße ergibt sie eine Menge.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/wie-viele-glaeser-aus-bierfass/": {
+    "src": "/grafik/bierwissen-fass-glaeser.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Drei Kennzahlen zum Bierfass: 60 Gläser zu 0,5 Litern aus einem 30-Liter-Fass, 100 Gläser aus einem 50-Liter-Fass und 5 bis 10 Prozent Verlust durch Schaum und Restmenge.",
+    "caption": "Die rechnerische Zahl ist die Obergrenze. Wer eine Feier plant, sollte 5 bis 10 Prozent Verlust einkalkulieren.",
+    "template": "kennzahlen"
+  },
+  "/oktoberfest/sechs-oktoberfestbrauereien/": {
+    "src": "/grafik/oktoberfest-brauereien.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Drei Kennzahlen zu den Oktoberfestbrauereien: sechs zugelassene Münchner Brauereien, Brauort im Münchner Stadtgebiet als Voraussetzung und rund 6 Prozent Alkohol im Festbier.",
+    "caption": "Sechs Brauereien, ein Brauort: Nur im Münchner Stadtgebiet gebrautes Bier darf auf der Wiesn ausgeschenkt werden.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/wie-viele-kalorien-hat-bier/": {
+    "src": "/grafik/bierwissen-kalorien.png",
+    "width": 1400,
+    "height": 730,
+    "alt": "Skala der groben Kalorienbereiche je 100 Milliliter Bier: alkoholfreies Bier 15 bis 30 Kilokalorien, Pils oder Helles 35 bis 45, Weizenbier 40 bis 50 und Bock- oder Starkbier 50 und mehr.",
+    "caption": "Die Farbe sagt nichts über Kalorien: Ein trockenes Schwarzbier kann weniger enthalten als ein helles, stärkeres Festbier.",
+    "template": "skala"
+  },
+  "/bierwissen/wie-viel-alkohol-hat-bier/": {
+    "src": "/grafik/bierwissen-alkoholgehalt.png",
+    "width": 1400,
+    "height": 760,
+    "alt": "Skala des Alkoholgehalts von Bier nach der Tabelle der Seite: bis 0,5 Prozent alkoholfrei, 2 bis 3 Prozent Radler, 4,4 bis 5,4 Prozent Pils, Helles, Kölsch und Alt, 5,0 bis 6,0 Prozent Export, 5,5 bis 6,3 Prozent Festbier und Märzen sowie 6,3 bis 7,5 Prozent Bockbier.",
+    "caption": "Der größte Teil des deutschen Biermarkts liegt zwischen 4,4 und 5,4 Prozent. Doppelbock und Eisbock reichen bis über 10 Prozent.",
+    "template": "skala"
+  },
+  "/bierwissen/wie-lange-ist-bier-haltbar/": {
+    "src": "/grafik/bierwissen-haltbarkeit.png",
+    "width": 1400,
+    "height": 1257,
+    "alt": "Gegenüberstellung guter und schlechter Bierlagerung: links kühl, dunkel und stehend mit monatelanger Trinkbarkeit nach dem Mindesthaltbarkeitsdatum, rechts warm, sonnig und liegend mit pappigen Fehlaromen.",
+    "caption": "Lagerung entscheidet mehr über die Haltbarkeit als das aufgedruckte Datum. Wärme und Licht sind die beiden größten Risiken.",
+    "template": "zweiwege"
+  },
+  "/bierwissen/welches-bierglas/": {
+    "src": "/grafik/bierwissen-bierglaeser.png",
+    "width": 1400,
+    "height": 880,
+    "alt": "Übersicht von fünf Bierglasformen mit Zuordnung: Pilstulpe für Pils, Willi-Becher für Helles und Lager, Weizenglas für Weizenbier, Stange für Kölsch und Altbier sowie Pokal für Bock und Starkbier.",
+    "caption": "Fünf Formen decken fast alle deutschen Bierstile ab. Die Sauberkeit des Glases wirkt sich stärker aus als die Form.",
+    "template": "ablauf"
+  },
+  "/bierwissen/deutsches-reinheitsgebot/": {
+    "src": "/grafik/bierwissen-reinheitsgebot.png",
+    "width": 1400,
+    "height": 802,
+    "alt": "Drei Kennzahlen zum Reinheitsgebot: erlassen 1516 in Ingolstadt, heute vier zugelassene Zutaten mit Wasser, Malz, Hopfen und Hefe, im Urtext dagegen nur drei.",
+    "caption": "Hefe fehlte im Urtext, weil man sie noch nicht kannte. Maßgeblich ist heute ohnehin das Vorläufige Biergesetz, nicht der Text von 1516.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/bier-richtig-lagern/": {
+    "src": "/grafik/bierwissen-lagern.png",
+    "width": 1400,
+    "height": 862,
+    "alt": "Drei Regeln zur Bierlagerung: dunkel lagern, weil grünes und klares Glas schlechter schützt, die Temperatur gleichmäßig kühl halten und Flaschen stehend aufbewahren.",
+    "caption": "Dunkel, gleichmäßig kühl, stehend. Eine feste Gradzahl nennt die Seite bewusst nicht — Schwankungen schaden mehr als ein paar Grad.",
+    "template": "kennzahlen"
+  },
+  "/bestenlisten/was-kostet-bier-in-deutschland/": {
+    "src": "/grafik/bestenlisten-bierpreise.png",
+    "width": 1400,
+    "height": 730,
+    "alt": "Skala der Bierpreise je halbem Liter in Deutschland: 0,70 bis 1,30 Euro im Supermarkt, 1,50 bis 4 Euro für Spezial- oder Craftbier, 4 bis 6 Euro in Kneipe oder Restaurant und darüber in touristischer Spitzenlage.",
+    "caption": "Zwischen Supermarkt und Kneipe liegt oft das Vier- bis Sechsfache. Für den Vergleich hilft nur der Preis je Liter.",
+    "template": "skala"
+  },
+  "/bierwissen/abgelaufenes-bier-trinken/": {
+    "src": "/grafik/bierwissen-abgelaufenes-bier.png",
+    "width": 1400,
+    "height": 818,
+    "alt": "Ablaufgrafik zum Prüfen von abgelaufenem Bier in vier Schritten: Flasche ansehen, beim Öffnen auf das Zischen hören, am Bier riechen und eine kleine Menge probieren.",
+    "caption": "Vier Prüfungen in einer Minute. Pappige Noten bedeuten gealtert, essigsaurer Geruch bedeutet weg damit.",
+    "template": "ablauf"
+  },
+  "/bierregionen/bier-in-bayern/": {
+    "src": "/grafik/bierregionen-bayern.png",
+    "width": 1400,
+    "height": 862,
+    "alt": "Drei Kennzahlen zu Bier in Bayern: 588 Braustätten im Jahr 2025, das sind 41,6 Prozent aller deutschen vor Baden-Württemberg mit 190 und Nordrhein-Westfalen mit 131, und Franken als besonders dichte Brauereiregion.",
+    "caption": "Gut vier von zehn deutschen Braustätten liegen in Bayern. Viele davon sind kleine Betriebe mit regionaler Reichweite.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/wie-viel-bier-pro-person/": {
+    "src": "/grafik/bierwissen-biermenge-pro-person.png",
+    "width": 1400,
+    "height": 872,
+    "alt": "Drei Planungsgrößen für den Bierbedarf: ein bis zwei Liter je tatsächlich biertrinkender erwachsener Person, 30 Liter im Beispiel aus 20 Biertrinkern mal 1,5 Litern, und etwa 10 Prozent Reserve.",
+    "caption": "Entscheidend ist die Zahl der Biertrinker, nicht die der Gäste. Zehn Prozent Reserve fangen Schwankungen ab.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/bier-einfrieren/": {
+    "src": "/grafik/bierwissen-einfrieren.png",
+    "width": 1400,
+    "height": 1287,
+    "alt": "Gegenüberstellung von kurzem Kühlen im Gefrierfach mit Timer und dem vergessenen Bier: links Kontrolle und das Eiswasserbad als Alternative, rechts Druck durch gefrierendes Wasser, geplatzte Flaschen und Aromaverlust.",
+    "caption": "Ohne Timer wird aus Schnellkühlen eine geplatzte Flasche. Alkohol senkt den Gefrierpunkt, schützt aber nicht vor dem Gefrierfach.",
+    "template": "zweiwege"
+  },
+  "/bierwissen/wie-viele-biersorten-gibt-es/": {
+    "src": "/grafik/bierwissen-sorten-marken.png",
+    "width": 1400,
+    "height": 862,
+    "alt": "Drei Kennzahlen zur Frage nach der Zahl der Biersorten: keine exakte Zahl, weil sich Stildefinitionen unterscheiden, 14 Sorten für einen guten Überblick über den deutschen Markt und mehr als 7.500 Biermarken, die aber nicht ebenso viele Stile sind.",
+    "caption": "Wer eine feste Zahl nennt, hat sich auf einen Stilführer festgelegt. Für den deutschen Alltag reichen rund 14 Sorten als Einstieg.",
+    "template": "kennzahlen"
+  },
+  "/bestenlisten/": {
+    "src": "/grafik/bestenlisten-beschaeftigte.png",
+    "width": 1400,
+    "height": 874,
+    "alt": "Balkendiagramm der Beschäftigten in der deutschen Brauindustrie von 2015 bis 2025 mit einem Höchstwert von 28.133 im Jahr 2019 und 27.380 Beschäftigten im Jahr 2025.",
+    "caption": "Die Beschäftigung ist deutlich stabiler als der Bierabsatz: gegenüber 2024 sogar ein leichtes Plus von 0,3 Prozent.",
+    "template": "zeitreihe"
+  },
+  "/oktoberfest/": {
+    "src": "/grafik/oktoberfest-ueberblick.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Drei Kennzahlen zum Oktoberfest 2027: 16 Festtage vom 18. September bis 3. Oktober, sechs zugelassene Münchner Brauereien und 14 große Festzelte.",
+    "caption": "Sechzehn Tage, sechs Brauereien, vierzehn große Zelte. Die Maßpreise für 2027 stehen noch nicht fest.",
+    "template": "kennzahlen"
+  },
+  "/biersorten/": {
+    "src": "/grafik/biersorten-familien.png",
+    "width": 1400,
+    "height": 1166,
+    "alt": "Die deutsche Bierwelt in zwei Familien: links untergärige Biere wie Pils, Helles und Bock mit meist 4,5 bis 5,5 Prozent Alkohol, rechts obergärige Biere wie Weizenbier, Kölsch und Altbier mit meist 4,8 bis 5,6 Prozent.",
+    "caption": "Zwei Gärungsarten ordnen fast die gesamte deutsche Biervielfalt. Alkoholfreies Bier gibt es in beiden Familien.",
+    "template": "zweiwege"
+  },
+  "/": {
+    "src": "/grafik/start-stile-karte.png",
+    "width": 1400,
+    "height": 1117,
+    "alt": "Streudiagramm der deutschen Bierstile: waagerecht die Farbe von strohgelb bis schwarz, senkrecht die Bitterkeit von sehr mild bis kräftig. Helles und Weizenbier liegen hell und mild, Pils hell und deutlich bitter, Schwarzbier und Dunkelbier dunkel und moderat.",
+    "caption": "Farbe und Bitterkeit hängen nicht zusammen: Pils ist hell und herb, Dunkelbier dunkel und mild. Die Linien zeigen, wie weit jeder Stil reicht.",
+    "template": "streudiagramm"
+  },
+  "/bierwissen/": {
+    "src": "/grafik/bierwissen-hub-kennzahlen.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Drei Kennzahlen des Bier-Steckbriefs: IBU für die Bitterkeit aus dem Hopfen, EBC für die Farbtiefe und Grad Plato für die Stammwürze vor der Gärung.",
+    "caption": "IBU, EBC und Grad Plato messen Bitterkeit, Farbe und Stammwürze — drei unabhängige Größen, die oft miteinander verwechselt werden.",
+    "template": "kennzahlen"
+  },
+  "/biervergleich/": {
+    "src": "/grafik/biervergleich-hub-stil-marke.png",
+    "width": 1400,
+    "height": 1257,
+    "alt": "Gegenüberstellung: Der Bierstil gibt Gärung, Farbbereich, typische Spanne und Erwartung vor, die einzelne Marke entscheidet über genauen Alkoholgehalt, Rezeptur, Frische und Preis.",
+    "caption": "Deshalb stehen in den Vergleichstabellen Spannen: Der Stil steckt den Rahmen ab, das einzelne Produkt füllt ihn aus.",
+    "template": "zweiwege"
+  },
+  "/bier-rechner/": {
+    "src": "/grafik/bier-rechner-hub.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Vier Bierrechner im Überblick: Menge für eine Feier, Gläser aus einem Fass, Preis je Liter und geschätzte Kühlzeit, jeweils mit der Frage, die sie beantworten.",
+    "caption": "Vier Rechner für vier Fragen. Alle arbeiten im Browser und geben bewusst Bereiche statt scheingenauer Einzelwerte aus.",
+    "template": "kennzahlen"
+  },
+  "/bierregionen/": {
+    "src": "/grafik/bierregionen-nord-sued.png",
+    "width": 1400,
+    "height": 1164,
+    "alt": "Gegenüberstellung der deutschen Bierregionen: Nord und West mit hopfenherbem Pils, Kölsch, Altbier und Export, Süd und Ost mit malzbetontem Hellem, Weizen, Kellerbier, Rauchbier, Schwarzbier und Gose.",
+    "caption": "Die Trennlinie ist historisch gewachsen. Erhältlich ist heute fast alles überall — die regionalen Vorlieben sind trotzdem geblieben.",
+    "template": "zweiwege"
+  },
+  "/bierwissen/was-ist-bier/": {
+    "src": "/grafik/bierwissen-vier-zutaten.png",
+    "width": 1400,
+    "height": 892,
+    "alt": "Die vier Grundzutaten des Biers mit ihren Aufgaben: Wasser als größter Anteil, Malz für Zucker und Farbe, Hopfen für Bitterkeit und Aroma, Hefe für die Gärung.",
+    "caption": "Vier Zutaten, vier Aufgaben. Welche Hopfensorte wann zugegeben wird, verändert das Ergebnis oft stärker als die reine Menge.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/wie-viele-biermarken-gibt-es/": {
+    "src": "/grafik/bierwissen-biermarken.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Drei Kennzahlen zu Biermarken in Deutschland: mehr als 7.500 Marken aus rund 1.400 Brauereien, und drei Begriffe — Marke, Produkt und Biersorte — die nicht dasselbe zählen.",
+    "caption": "Mehr als 7.500 Marken aus rund 1.400 Brauereien. Die meisten davon stehen in keinem Supermarktregal.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/wie-schwer-ist-bierkasten/": {
+    "src": "/grafik/bierwissen-kastengewicht.png",
+    "width": 1400,
+    "height": 871,
+    "alt": "Balkendiagramm zur Zusammensetzung eines Bierkastens im Rechenbeispiel: rund 10 Kilogramm Bier, rund 7 Kilogramm leere Glasflaschen und rund 1,5 Kilogramm Kunststoffkasten, zusammen etwa 18,5 Kilogramm.",
+    "caption": "Gut die Hälfte des Gewichts ist Bier, der Rest ist Verpackung. Deshalb wiegt ein Kasten mit kleineren Flaschen nicht automatisch weniger.",
+    "template": "balken"
+  },
+  "/bierwissen/wie-viele-liter-bierkasten/": {
+    "src": "/grafik/bierwissen-kastenliter.png",
+    "width": 1400,
+    "height": 906,
+    "alt": "Balkendiagramm der Füllmengen gängiger Bierkästen: 20 mal 0,5 Liter ergeben 10 Liter, 24 mal 0,33 Liter ergeben 7,92 Liter, 20 mal 0,33 Liter ergeben 6,6 Liter und 11 mal 0,5 Liter ergeben 5,5 Liter.",
+    "caption": "Der größte und der kleinste Kasten unterscheiden sich fast um das Doppelte. Die Flaschenzahl auf der Vorderseite verrät das nicht.",
+    "template": "balken"
+  },
+  "/bierwissen/bier-im-kuehlschrank-kuehlen/": {
+    "src": "/grafik/bierwissen-kuehlzeiten.png",
+    "width": 1400,
+    "height": 862,
+    "alt": "Drei Kühlmethoden für Bier mit ihren groben Zeitfenstern: Kühlschrank 6 bis 8 Stunden, Gefrierfach 30 bis 60 Minuten und Eiswasser mit Salz 5 bis 10 Minuten.",
+    "caption": "Eiswasser mit Salz ist um ein Vielfaches schneller als der Kühlschrank. Beim Gefrierfach entscheidet der Timer, ob die Flasche heil bleibt.",
+    "template": "kennzahlen"
+  },
+  "/bierwissen/bier-kalorien-tabelle/": {
+    "src": "/grafik/bierwissen-kalorien-produkte.png",
+    "width": 1400,
+    "height": 1189,
+    "alt": "Balkendiagramm der Kalorien je 0,5 Liter in sechs konkreten Produkten: alkoholfreies Helles 120, Radler 185, Helles 190, Pils 200, Weizen 210 und Festbier 235 Kilokalorien.",
+    "caption": "Alkoholfrei heißt nicht kalorienfrei: 120 Kilokalorien je halbem Liter stehen 235 beim Festbier gegenüber.",
+    "template": "balken"
+  },
+  "/biervergleich/alkoholfrei-oder-null-komma-null/": {
+    "src": "/grafik/biervergleich-alkoholfrei-null.png",
+    "width": 1400,
+    "height": 1166,
+    "alt": "Gegenüberstellung von alkoholfreiem Bier und 0,0-Prozent-Bier: alkoholfrei darf bis zu 0,5 Prozent Restalkohol enthalten, 0,0 Prozent sagt keinen messbaren Alkohol zu.",
+    "caption": "Der Unterschied liegt in der Zusicherung, nicht im Geschmack. Wer Alkohol vollständig vermeiden will, greift zur 0,0-Kennzeichnung.",
+    "template": "zweiwege"
+  },
+  "/biervergleich/radler-oder-alsterwasser/": {
+    "src": "/grafik/biervergleich-radler-alster.png",
+    "width": 1400,
+    "height": 1076,
+    "alt": "Gegenüberstellung von Radler und Alsterwasser: Radler ist im Süden und Westen geläufig und basiert oft auf Hellem, Alsterwasser im Norden und häufig auf Pils, beide mit etwa 2 bis 3 Prozent Alkohol.",
+    "caption": "Der Unterschied ist vor allem sprachlich. Spürbar wird er über das Basisbier: Pils bringt Bitterkeit, Helles Malzsüße.",
+    "template": "zweiwege"
+  },
+  "/oktoberfest/festzelte/": {
+    "src": "/grafik/oktoberfest-zelte-zahlen.png",
+    "width": 1400,
+    "height": 862,
+    "alt": "Drei Kennzahlen zur Wiesn-Zeltlandschaft: 14 große Festzelte, 21 kleinere Betriebe und rund 10.000 Plätze im Hofbräu-Festzelt einschließlich Außenbereich.",
+    "caption": "Die kleineren Betriebe sind keine Nebenrolle: Sie bieten oft spezialisierte Küche und kürzere Wege als die großen Hallen.",
+    "template": "kennzahlen"
+  },
+  "/oktoberfest/bier-in-welchem-festzelt/": {
+    "src": "/grafik/oktoberfest-zelte-je-brauerei.png",
+    "width": 1400,
+    "height": 1117,
+    "alt": "Balkendiagramm der Verteilung der 14 großen Oktoberfestzelte auf die sechs Münchner Brauereien, angeführt von Paulaner mit vier Zelten, gefolgt von Spaten mit drei.",
+    "caption": "Paulaner stellt das Bier in vier der vierzehn großen Zelte, Hofbräu nur in einem — dem größten von allen.",
+    "template": "balken"
+  },
+  "/oktoberfest/welches-bier-gibt-es/": {
+    "src": "/grafik/oktoberfest-wiesnbiere.png",
+    "width": 1400,
+    "height": 936,
+    "alt": "Punktdiagramm des Alkoholgehalts der sechs Wiesnbiere: Augustiner mit 6,3 Prozent am stärksten, Hofbräu 6,2, Löwenbräu 6,1, Hacker-Pschorr und Paulaner je 6,0 und Spaten mit etwa 5,9 Prozent.",
+    "caption": "Alle sechs liegen zwischen 5,9 und 6,3 Prozent — deutlich über einem normalen Hellen mit 4,7 bis 5,4 Prozent.",
+    "template": "punkte"
+  },
+  "/oktoberfest/reservierung-oeffnungszeiten/": {
+    "src": "/grafik/oktoberfest-oeffnungszeiten.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Öffnungszeiten der Oktoberfestzelte: montags bis freitags 10 bis 23.30 Uhr, samstags und sonntags ab 9 Uhr, und als Ausnahme Käfer Wiesn-Schänke sowie Kufflers Weinzelt bis 1 Uhr.",
+    "caption": "Freie Plätze sind werktags am Vormittag am wahrscheinlichsten. Abends und am Wochenende können Zelte wegen Überfüllung schließen.",
+    "template": "kennzahlen"
+  },
+  "/oktoberfest/karte-anreise/": {
+    "src": "/grafik/oktoberfest-anreise.png",
+    "width": 1400,
+    "height": 1136,
+    "alt": "Anreisevergleich zum Oktoberfest: direkt am Gelände die Station Theresienwiese mit U4 und U5, als ruhigere Alternative Goetheplatz oder Poccistraße mit U3 und U6, die S-Bahn-Station Hackerbrücke sowie 15 bis 25 Minuten Fußweg vom Hauptbahnhof.",
+    "caption": "Die nächstgelegene Station ist zu Spitzenzeiten die vollste. Je nach Zelt ist der Weg von Goetheplatz oder Poccistraße sogar kürzer.",
+    "template": "zweiwege"
+  },
+  "/oktoberfest/bands-musik/": {
+    "src": "/grafik/oktoberfest-musik.png",
+    "width": 1400,
+    "height": 1196,
+    "alt": "Gegenüberstellung des Musikprogramms auf dem Oktoberfest: vormittags traditionelle Blasmusik, Märsche und Walzer bei moderater Lautstärke, nachmittags und abends Wiesnhits, Schlager und Rockklassiker deutlich lauter.",
+    "caption": "Wer das Zelt und das Essen erleben will, kommt vormittags. Wer feiern will, abends. Das Programm wechselt in fast jedem großen Zelt.",
+    "template": "zweiwege"
+  },
+  "/bierregionen/bier-in-muenchen/": {
+    "src": "/grafik/bierregionen-muenchen.png",
+    "width": 1400,
+    "height": 862,
+    "alt": "Drei Jahreszahlen zur Münchner Bierkultur: Augustiner als älteste der sechs Oktoberfestbrauereien mit Brautradition seit 1328, Spaten mit einem frühen Münchner Hell ab 1894 und sechs zugelassene Wiesnbrauereien.",
+    "caption": "Das Helle ist jünger als die Brauereien, die es brauen. Erst Ende des 19. Jahrhunderts wurde der Stil populär.",
+    "template": "kennzahlen"
+  },
+  "/bier-rechner/bierpreis-pro-liter/": {
+    "src": "/grafik/rechner-bierpreis.png",
+    "width": 1400,
+    "height": 840,
+    "alt": "Balkendiagramm dreier Bierangebote nach Preis je Liter: 20 mal 0,5 Liter für 18 Euro ergeben 1,80 Euro je Liter, 24 mal 0,33 Liter für 16 Euro rund 2,02 Euro und ein Sixpack rund 2,77 Euro je Liter.",
+    "caption": "Mehr Flaschen heißt nicht mehr Bier. Der Kasten mit 24 kleinen Flaschen ist je Liter teurer als der mit 20 großen.",
+    "template": "balken"
+  },
+  "/bier-rechner/fassbier/": {
+    "src": "/grafik/rechner-fassbier.png",
+    "width": 1400,
+    "height": 901,
+    "alt": "Balkendiagramm der Glaszahl aus einem 50-Liter-Fass: 100 halbe Liter ohne Verlust, 95 bei 5 Prozent Ausschankverlust und 90 bei 10 Prozent.",
+    "caption": "Zehn Prozent Verlust kosten zehn Gläser. Für die Planung einer Feier ist die untere Zahl die ehrlichere.",
+    "template": "balken"
+  },
+  "/bier-rechner/bier-kuehlzeit/": {
+    "src": "/grafik/rechner-kuehlzeit.png",
+    "width": 1400,
+    "height": 862,
+    "alt": "Drei Einflussgrößen auf die geschätzte Kühlzeit: die Temperaturdifferenz zwischen Start und Ziel, das Gebinde aus Dose oder Glas und die Menge von einzelner Flasche bis ganzem Kasten.",
+    "caption": "Deshalb gibt der Rechner Zeitbereiche aus. Eine minutengenaue Zahl wäre ohne Temperaturmessung erfunden.",
+    "template": "kennzahlen"
+  },
+  "/bier-rechner/biermenge-party/": {
+    "src": "/grafik/rechner-biermenge.png",
+    "width": 1400,
+    "height": 832,
+    "alt": "Drei Planungsszenarien des Biermengenrechners: knapp mit wenig Reserve, normal als ausgewogene Annahme und großzügig mit Puffer für längere Feiern.",
+    "caption": "Das mittlere Szenario ist ein Einkaufsvorschlag, keine richtige Trinkmenge. Deshalb nennt der Rechner alle drei.",
+    "template": "kennzahlen"
+  }
+}
