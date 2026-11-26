@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Zoiglbier?
 
-Hefefrisch, malzig und regional unterschiedlich mit spürbarer hopfennote. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Hefefrisch, malzig und regional unterschiedlich mit spürbarer Hopfennote. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

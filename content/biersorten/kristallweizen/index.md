@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Kristallweizen?
 
-Spritzig, klar und fruchtig, aber meist weniger hefig und cremig als hefeweizen. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Spritzig, klar und fruchtig, aber meist weniger hefig und cremig als Hefeweizen. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

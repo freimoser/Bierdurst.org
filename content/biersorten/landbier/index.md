@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Landbier?
 
-Häufig malzig, ausgewogen und regional geprägt; konkrete eigenschaften hängen von der brauerei ab. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Häufig malzig, ausgewogen und regional geprägt; konkrete Eigenschaften hängen von der Brauerei ab. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

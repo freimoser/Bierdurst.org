@@ -45,7 +45,7 @@ index: true
 
 ## Wie schmeckt Festbier und Oktoberfestbier?
 
-Vollmundig, weich, malzig und trotzdem auf hohe trinkbarkeit ausgelegt. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Vollmundig, weich, malzig und trotzdem auf hohe Trinkbarkeit ausgelegt. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

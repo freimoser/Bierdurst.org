@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt IPA und Pale Ale?
 
-Hopfenaromatisch mit zitrus, tropenfrucht, harz, kräutern oder steinfrucht; im hintergrund oft leichte malzsüße. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Hopfenaromatisch mit Zitrus, Tropenfrucht, Harz, Kräutern oder Steinfrucht; im Hintergrund oft leichte Malzsüße. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

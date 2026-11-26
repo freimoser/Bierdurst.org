@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Dunkles Weizenbier?
 
-Fruchtig und hefig mit karamell, brotkruste, reifer banane und gelegentlich leichten röstnoten. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Fruchtig und hefig mit Karamell, Brotkruste, reifer Banane und gelegentlich leichten Röstnoten. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

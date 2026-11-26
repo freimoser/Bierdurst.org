@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Porter und Stout?
 
-Kaffee, kakao, dunkle schokolade, geröstetes brot, nüsse und je nach variante trockenfrüchte oder vanille. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Kaffee, Kakao, dunkle Schokolade, geröstetes Brot, Nüsse und je nach Variante Trockenfrüchte oder Vanille. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

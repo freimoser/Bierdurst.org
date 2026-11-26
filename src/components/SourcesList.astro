@@ -33,17 +33,48 @@ const interested = new Set([
   'brauer-bund.de', 'oktoberfest.de'
 ]);
 
+// Dokumenttitel je Quelle, von Hand gepflegt. Aus einem URL-Slug laesst sich
+// deutsche Gross- und Kleinschreibung nicht rekonstruieren: Die Ableitung
+// machte aus "bierstile-in-deutschland" ein "Bierstile in deutschland" und aus
+// einer Pressemitteilung "Deutscher brauer bund zieht bilanz zum tag des
+// deutschen bieres". Steht eine Quelle nicht in der Liste, nennen wir nur den
+// Herausgeber -- lieber knapp als falsch geschrieben.
+const documents: Record<string, string> = {
+  'brauer-bund.de/biervielfalt/bierstile-in-deutschland': 'Bierstile in Deutschland',
+  'brauer-bund.de/biervielfalt/bierstile-in-deutschland/bierregionen': 'Bierregionen in Deutschland',
+  'brauer-bund.de/genuss/food-pairing': 'Food-Pairing: Bier und Essen',
+  'brauer-bund.de/reinheitsgebot/fragen-und-antworten': 'Reinheitsgebot: Fragen und Antworten',
+  'brauer-bund.de/pressemitteilungen/deutscher-brauer-bund-zieht-bilanz-zum-tag-des-deutschen-bieres': 'Bilanz zum Tag des Deutschen Bieres',
+  'brauer-bund.de/pressemitteilungen/alkoholfreie-biere-klettern-auf-10-prozent': 'Alkoholfreie Biere klettern auf 10 Prozent',
+  'gesetze-im-internet.de/bierv': 'Bierverordnung',
+  'genesis.destatis.de/datenbank/online/statistic/73421/table/73421-0001': 'Tabelle 73421-0001, Biersteuerstatistik',
+  'destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/Tabellen/Verbraucherpreise-12Kategorien.html': 'Verbraucherpreisindex nach Kategorien',
+  'lebensmittelklarheit.de/fragen-antworten/warum-darf-bier-mit-alkohol-als-alkoholfrei-bezeichnet-werden': 'Warum darf Bier mit Alkohol als alkoholfrei bezeichnet werden?',
+  'oktoberfest.de/magazin/essen-und-trinken/die-sechs-muenchner-brauereien-auf-der-wiesn': 'Die sechs Münchner Brauereien auf der Wiesn',
+  'oktoberfest.de/bierzelte': 'Bierzelte',
+  'oktoberfest.de/bierzelte/grosse-zelte': 'Große Zelte',
+  'oktoberfest.de/bierzelte/reservieren/reservieren-auf-dem-oktoberfest': 'Reservieren auf dem Oktoberfest',
+  'oktoberfest.de/informationen/bierpreis': 'Bierpreise',
+  'oktoberfest.de/informationen/termine': 'Termine',
+  'oktoberfest.de/informationen/die-oeffnungszeiten-des-oktoberfests': 'Öffnungszeiten des Oktoberfests',
+  'oktoberfest.de/gelaendeplan': 'Geländeplan',
+  'muenchen.de/veranstaltungen/oktoberfest': 'Oktoberfest',
+  'coronadobrewing.com/blogs/news/beer-cooling-times-fridge-vs-freezer': 'Beer Cooling Times: Fridge vs. Freezer',
+  'bitburger.com/beers/premium-classics/premium-pils': 'Premium Pils',
+  'paulaner.de/produkte/hellbiere/muenchner-hell': 'Münchner Hell',
+  'paulaner.de/produkte/hellbiere/muenchner-hell-alkoholfrei': 'Münchner Hell Alkoholfrei',
+  'paulaner.de/produkte/hellbiere/natur-radler': 'Natur Radler',
+  'paulaner.de/produkte/weissbiere/hefe-weissbier-naturtrueb': 'Hefe-Weißbier Naturtrüb',
+  'paulaner.com/our-products/oktoberfest-bier': 'Oktoberfest Bier'
+};
+
 const describe = (source: string) => {
   try {
     const url = new URL(source);
     const host = url.hostname.replace(/^www\./, '');
-    const parts = url.pathname.split('/').filter(Boolean);
     const publisher = publishers[host] ?? host;
-    const raw = parts.length ? parts.at(-1)!.replace(/\.[a-z]+$/i, '') : '';
-    // Aktenzeichen wie "PD26_037_73" oder "73421-0001" sagen dem Leser nichts.
-    // Lieber nur den Herausgeber nennen als eine Dateinummer als Titel ausgeben.
-    const opaque = !raw || /^\d/.test(raw) || !/[a-z]{4}/i.test(raw.replace(/[^a-z]/gi, ''));
-    const document = opaque ? '' : raw.replace(/[-_]+/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
+    const key = `${host}${url.pathname.replace(/\/+$/, '')}`;
+    const document = documents[key] ?? '';
     return { publisher, document, host, selfInterested: interested.has(host) };
   } catch {
     return { publisher: source, document: '', host: '', selfInterested: false };

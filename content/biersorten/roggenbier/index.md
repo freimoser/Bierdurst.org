@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Roggenbier?
 
-Würzig, getreidig und leicht erdig mit cremigem mundgefühl; je nach hefe zusätzlich fruchtig. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Würzig, getreidig und leicht erdig mit cremigem Mundgefühl; je nach Hefe zusätzlich fruchtig. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

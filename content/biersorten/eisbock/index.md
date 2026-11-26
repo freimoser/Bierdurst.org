@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Eisbock?
 
-Sehr konzentriert, malzig und wärmend mit trockenfrüchten, karamell, dunklem brot und alkoholischen noten. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Sehr konzentriert, malzig und wärmend mit Trockenfrüchten, Karamell, dunklem Brot und alkoholischen Noten. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

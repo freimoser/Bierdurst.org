@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Kellerbier und Zwickelbier?
 
-Frisch, hefig, malzig und oft weich; je nach grundbier zusätzlich hopfenbetont oder brotig. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Frisch, hefig, malzig und oft weich; je nach Grundbier zusätzlich hopfenbetont oder brotig. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

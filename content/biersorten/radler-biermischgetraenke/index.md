@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Radler und Biermischgetränke?
 
-Süß-säuerlich, zitronig und erfrischend; je nach mischung auch mit cola, grapefruit oder anderen aromen. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Süß-säuerlich, zitronig und erfrischend; je nach Mischung auch mit Cola, Grapefruit oder anderen Aromen. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

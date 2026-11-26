@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Rauchbier?
 
-Malzig mit rauch, holz, lagerfeuer und je nach ausprägung anklängen an geräucherten speck. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Malzig mit Rauch, Holz, Lagerfeuer und je nach Ausprägung Anklängen an geräucherten Speck. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 

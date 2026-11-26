@@ -44,7 +44,7 @@ index: true
 
 ## Wie schmeckt Bockbier?
 
-Kräftig und malzbetont mit brot, karamell, dörrobst und bei dunklen varianten leichten röstaromen. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
+Kräftig und malzbetont mit Brot, Karamell, Dörrobst und bei dunklen Varianten leichten Röstaromen. Ob ein konkretes Bier eher trocken oder süß, leicht oder vollmundig wirkt, hängt von Malz, Hopfen, Hefe, Wasser und Vergärung ab. Auch Frische, Lagerung und Trinktemperatur verändern den Eindruck deutlich.
 
 Ein Bier sollte deshalb nicht allein nach Farbe oder Alkoholgehalt beurteilt werden. Zwei Biere desselben Stils können sich merklich unterscheiden, obwohl beide stiltypisch sind.
 
