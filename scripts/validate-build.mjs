@@ -28,6 +28,11 @@ for (const [path, file] of expectedFiles) {
   if (!htmlFiles.includes(file)) errors.push(`Sitemap-URL ohne HTML: ${path}`);
 }
 
+// Zuordnung aus scripts/generate-figures.mjs. Fehlt eine Grafik im HTML,
+// ist der Rehype-Schritt in astro.config.mjs stillschweigend ausgefallen.
+const figureIndex = JSON.parse(await readFile('data/page-figures.json', 'utf8'));
+const figureSlugs = new Set(Object.keys(figureIndex));
+
 const titles = new Map();
 const canonicals = new Map();
 for (const file of htmlFiles) {
@@ -55,6 +60,19 @@ for (const file of htmlFiles) {
     if (ogImage !== expectedOgImage) errors.push(`Falsches OG-Bild in ${path}: ${ogImage}`);
     if (!allFiles.includes(`dist/og${path}index.png`)) errors.push(`OG-Bild fehlt für ${path}`);
   }
+  // Artikelgrafiken: Jedes <img> braucht einen tragfaehigen Alt-Text sowie
+  // Breite und Hoehe, sonst springt das Layout beim Laden. Die Datei selbst
+  // wird weiter unten ueber die allgemeine Dateipruefung erfasst.
+  for (const tag of html.matchAll(/<img\b[^>]*>/g)) {
+    const markup = tag[0];
+    const src = markup.match(/\bsrc="([^"]*)"/)?.[1] ?? '(ohne src)';
+    const alt = markup.match(/\balt="([^"]*)"/)?.[1];
+    if (alt === undefined) errors.push(`Bild ohne alt-Attribut in ${path}: ${src}`);
+    else if (alt.trim().length < 40) errors.push(`Zu knapper Alt-Text in ${path} (${alt.length} Zeichen): ${src}`);
+    if (!/\bwidth="\d+"/.test(markup) || !/\bheight="\d+"/.test(markup)) errors.push(`Bild ohne width/height in ${path}: ${src}`);
+    if (src.startsWith('/') && !allFiles.includes(`dist${src}`)) errors.push(`Bilddatei fehlt: ${src} (${path})`);
+  }
+  if (figureSlugs.has(path) && !html.includes('class="article-figure"')) errors.push(`Artikelgrafik fehlt im HTML von ${path}`);
   if (/lorem ipsum/i.test(html)) errors.push(`Lorem Ipsum in ${path}`);
   if (/Werbefläche|derzeit deaktiviert|Für das MVP|Prüfrhythmus: (?:6|12|18) months|before and during each Oktoberfest season/i.test(html)) errors.push(`Sichtbarer Baustellen- oder englischer Redaktionstext in ${path}`);
   const hasVisibleFaq = />Häufige Fragen<\/h2>/.test(html) || html.includes('class="stat-faq"');
@@ -84,6 +102,11 @@ for (const file of htmlFiles) {
 
 for (const [path, count] of incoming) {
   if (path !== '/' && count === 0) errors.push(`Verwaiste Launch-Seite ohne internen Eingang: ${path}`);
+}
+
+// Jede erzeugte Grafik muss auch ausgeliefert werden.
+for (const [slug, figure] of Object.entries(figureIndex)) {
+  if (!allFiles.includes(`dist${figure.src}`)) errors.push(`Grafikdatei fehlt im Build: ${figure.src} (${slug})`);
 }
 
 if (allFiles.includes('dist/sitemap-full.xml') || allFiles.includes('dist/ads.txt.template')) errors.push('Roadmap- oder Template-Datei wurde versehentlich veröffentlicht.');

@@ -24,6 +24,54 @@ function launchLinksOnly() {
   };
 }
 
+const figures = JSON.parse(readFileSync(new URL('./data/page-figures.json', import.meta.url), 'utf8'));
+
+// Setzt die Uebersichtsgrafik der Seite hinter den ersten Absatz, also hinter
+// das "Kurz gesagt". Davor waere sie das LCP-Element und wuerde den Text
+// nach unten druecken; dahinter steht sie an der Stelle, an der die Seite
+// ihre Zusammenfassung ohnehin bebildert.
+// Die Zuordnung kommt aus data/page-figures.json, das scripts/generate-figures.mjs
+// schreibt. Steht dort nichts, bleibt die Seite unveraendert.
+function articleFigure() {
+  return (tree, file) => {
+    const path = file?.history?.[0] ?? file?.path ?? '';
+    const match = path.replace(/\\/g, '/').match(/\/content\/(.+)\/index\.md$/);
+    const slug = match ? `/${match[1]}/` : (path.endsWith('/content/index.md') ? '/' : null);
+    const figure = slug ? figures[slug] : null;
+    if (!figure || !Array.isArray(tree.children)) return;
+
+    const index = tree.children.findIndex((node) => node.type === 'element' && node.tagName === 'p');
+    if (index === -1) return;
+
+    tree.children.splice(index + 1, 0, {
+      type: 'element',
+      tagName: 'figure',
+      properties: { className: ['article-figure'] },
+      children: [
+        {
+          type: 'element',
+          tagName: 'img',
+          properties: {
+            src: figure.src,
+            alt: figure.alt,
+            width: figure.width,
+            height: figure.height,
+            loading: 'lazy',
+            decoding: 'async'
+          },
+          children: []
+        },
+        {
+          type: 'element',
+          tagName: 'figcaption',
+          properties: {},
+          children: [{ type: 'text', value: figure.caption }]
+        }
+      ]
+    });
+  };
+}
+
 function removeMarkdownH1() {
   return (tree) => {
     const walk = (node) => {
@@ -43,7 +91,7 @@ export default defineConfig({
   markdown: {
     processor: unified({
       syntaxHighlight: false,
-      rehypePlugins: [launchLinksOnly, removeMarkdownH1]
+      rehypePlugins: [launchLinksOnly, removeMarkdownH1, articleFigure]
     })
   },
   build: {

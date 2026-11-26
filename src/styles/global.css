@@ -43,3 +43,13 @@
 
 /* iOS zoomt beim Fokus in Felder unter 16px hinein. */
 .calculator input, .calculator select { font-size: 16px; }
+
+/* Uebersichtsgrafiken im Artikel. Breite und Hoehe stehen im img-Tag, damit
+   beim Laden kein Layoutsprung entsteht. */
+.article-figure{margin:1.75rem 0 1.9rem;padding:0}
+.article-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px;background:var(--cream)}
+/* Kein Amber-Balken links: den traegt auf dieser Seite schon der
+   Kurz-gesagt-Kasten und das Zitat. Eine Bildunterschrift ist weder das
+   eine noch das andere und bleibt deshalb schlicht kleiner und leiser. */
+.article-figure figcaption{margin-top:.55rem;font-size:.89rem;line-height:1.5;color:var(--ink-soft);max-width:62ch}
+@media(min-width:900px){.article-figure{margin:2.1rem 0 2.2rem}}
