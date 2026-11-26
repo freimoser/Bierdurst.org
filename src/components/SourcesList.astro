@@ -1,5 +1,5 @@
 ---
-const { sources = [], updated } = Astro.props as { sources?: string[]; updated?: string };
+const { sources = [], edited } = Astro.props as { sources?: string[]; edited?: string };
 
 // Herausgebername je Host. Ein aus dem URL-Pfad abgeleitetes Label macht aus
 // einer Destatis-Pressemitteilung "PD26 037 73.html" und nennt den Herausgeber
@@ -57,7 +57,10 @@ const uniqueSources = [...new Set(sources)];
     <h2 id="sources-heading">Quellen und Einordnung</h2>
     <p>
       Die Inhalte stützen sich auf die folgenden Ausgangsquellen.
-      {updated ? ` Redaktionell geprüft zum Stand ${updated}.` : ''}
+      {/* Nicht "redaktionell geprueft": Eine Durchsicht ist nirgends erfasst,
+          und eine neue Abbildung ist keine. Genannt wird nur, was die
+          Git-Historie des Textes belegt. */}
+      {edited ? ` Zuletzt am Text gearbeitet: ${edited}.` : ''}
     </p>
     <ul>
       {uniqueSources.map((source) => {

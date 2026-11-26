@@ -69,6 +69,11 @@ for (const file of await markdownFiles('content')) {
   const figureFile = figures[slug] ? `public${figures[slug].src}` : null;
   const figureChanged = figureFile ? gitDate(figureFile, 'last') : undefined;
   const candidates = [declared, modified, figureChanged].filter((date) => date && W3C_DATE.test(date));
+  // Zweites, engeres Datum: wann zuletzt am TEXT gearbeitet wurde. Eine neue
+  // Abbildung aendert die Seite, ist aber keine Durchsicht des Textes. Den
+  // Unterschied braucht der Quellenblock, der sonst eine Pruefung behauptet,
+  // die nicht stattgefunden hat.
+  const edited = [declared, modified].filter((date) => date && W3C_DATE.test(date)).sort().at(-1);
   const lastmod = candidates.sort().at(-1);
   if (!lastmod) throw new Error(`Kein gueltiges lastmod fuer ${slug} (${file})`);
   if (!slug.endsWith('/')) throw new Error(`Slug ohne abschliessenden Schraegstrich: ${slug}`);
@@ -80,6 +85,7 @@ for (const file of await markdownFiles('content')) {
   const published = created ? (created > SITE_LAUNCH ? created : SITE_LAUNCH) : undefined;
   pageDates[slug] = {
     modified: lastmod,
+    ...(edited ? { edited } : {}),
     ...(published && published <= lastmod ? { published } : {})
   };
 }

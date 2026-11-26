@@ -44,9 +44,13 @@ const title = entry.data.seo_title
 // das spaetere aus Frontmatter und Git-Historie, vorberechnet im prebuild.
 // Das Frontmatter allein liefert auf 68 Seiten den 3.8.2026 -- 20 Tage vor der
 // Registrierung der Domain, und damit auch vor jedem datePublished.
-const dates = (pageDates as Record<string, { modified?: string; published?: string }>)[entry.data.slug];
+const dates = (pageDates as Record<string, { modified?: string; edited?: string; published?: string }>)[entry.data.slug];
 const updated = dates?.modified ?? entry.data.last_updated.toISOString().slice(0, 10);
 const updatedLabel = new Date(`${updated}T00:00:00Z`).toLocaleDateString('de-DE', { timeZone: 'UTC' });
+// Wann zuletzt am Text gearbeitet wurde -- ohne die Abbildung. Der
+// Quellenblock darf nur dieses Datum nennen.
+const edited = dates?.edited;
+const editedLabel = edited ? new Date(`${edited}T00:00:00Z`).toLocaleDateString('de-DE', { timeZone: 'UTC' }) : undefined;
 const articleTypes = new Set(['article', 'comparison', 'tool', 'pillar']);
 const isHome = entry.data.slug === '/';
 const isTool = entry.data.page_type === 'tool' && entry.data.tool_id;
@@ -159,7 +163,7 @@ const pageHeadings = headings.filter((heading) => heading.depth === 2 || heading
         )}
         {isHome && <AdSlot position="homepage" />}
         {!isHome && !hasCalculator && !isLegalOrStatic && <ResponsibleNotice />}
-        {!isHome && <SourcesList sources={entry.data.sources} updated={updatedLabel} />}
+        {!isHome && <SourcesList sources={entry.data.sources} edited={editedLabel} />}
         {!isHome && !isTool && <AdSlot position="after-content" />}
       </article>
       {!isHome && <div class="article-aside"><TableOfContents headings={pageHeadings} />{!isTool && <div class="aside-note"><span>Unabhängig erklärt</span><p>Keine erfundenen Bewertungen, keine Community-Zahlen, keine bezahlten Ranglisten.</p><a href="/quellen-methodik/">So arbeiten wir</a></div>}</div>}
