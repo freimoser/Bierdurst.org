@@ -1,76 +1,95 @@
 // Grafik-Vorlagen. Jede Vorlage bekommt fertige Werte und gibt SVG zurueck.
 // Keine Vorlage erfindet Zahlen; alles kommt aus content.mjs oder aus den
 // gepflegten Datensaetzen in data/.
+//
+// Alle Vorlagen rechnen auf einer 820 Einheiten breiten Flaeche (svg.mjs).
+// Auf dem Handy steht die Abbildung in einer 343 Pixel breiten Spalte, auf dem
+// Schreibtisch in einer 600 Pixel breiten. Damit die kleinste Schrift auf dem
+// Handy ueber 10 Pixel bleibt, steht alles untereinander, was frueher
+// nebeneinander stand: zwei Karten, Ablaufschritte, die Bitterkeitsskala.
 
-import { T, WIDTH, text, paragraph, paragraphHeight, rect, line, round, ebcColor, glass, rangeBar, header, footer, footerHeight, document_, wrap, textWidth, niceMax } from './svg.mjs';
+import { T, WIDTH, M, INNER, TYPE, text, paragraph, paragraphHeight, rect, line, round, ebcColor, glass, rangeBar, header, footer, footerHeight, document_, wrap, textWidth, niceMax } from './svg.mjs';
 
 const dec = (value) => String(value).replace('.', ',');
 
-function metricRow(y, label, valueLabel, bar) {
-  return [
-    text(label, 70, y, { size: 26, weight: 600, fill: T.inkSoft }),
-    text(valueLabel, WIDTH - 70, y, { size: 29, weight: 700, fill: T.ink, anchor: 'end' }),
-    bar
-  ].join('');
+// Achsenbeschriftung. Die aeusseren Werte haengen an der Achsenkante statt
+// mittig darunter, sonst ragen sie bei 820 Einheiten aus dem Bild. Stossen die
+// Beschriftungen aneinander, faellt jede zweite weg -- gezaehlt vom Ende her,
+// damit der letzte Wert immer stehen bleibt.
+function axisTicks(x, y, w, min, max, ticks = [], suffix = '') {
+  if (!ticks.length) return '';
+  const span = max - min || 1;
+  const widest = Math.max(...ticks.map((tick) => textWidth(`${dec(tick)}${suffix}`, TYPE.foot, 400)));
+  const fits = ticks.length < 2 || w / (ticks.length - 1) >= widest + 14;
+  const shown = fits ? ticks : ticks.filter((_, index) => (ticks.length - 1 - index) % 2 === 0);
+  return shown.map((tick) => {
+    const px = x + ((tick - min) / span) * w;
+    const anchor = tick === ticks[0] ? 'start' : tick === ticks.at(-1) ? 'end' : 'middle';
+    return text(`${dec(tick)}${suffix}`, px, y, { size: TYPE.foot, fill: T.inkFaint, anchor });
+  }).join('');
 }
 
-function scaleTicks(x, y, w, min, max, ticks, suffix = '') {
-  return ticks.map((tick) => {
-    const px = x + ((tick - min) / (max - min)) * w;
-    return text(`${dec(tick)}${suffix}`, px, y, { size: 21, fill: T.inkFaint, anchor: 'middle' });
-  }).join('');
+// Kleine Versalzeile ueber einem Block. Sie darf umbrechen: Eine Achsen-
+// angabe wie "Achse von 14,50 Euro bis 18,50 Euro -- kein Nullpunkt" passt in
+// Versalien nicht in eine Zeile von 724 Einheiten.
+const SPACING = 1.4;
+function kicker(label, x, y, maxWidth = INNER) {
+  const content = String(label).toUpperCase();
+  // wrap() kennt die Laufweite nicht; sie kommt hier vom Umbruchmass ab.
+  const rows = wrap(content, maxWidth - content.length * SPACING, TYPE.label, 700, 2);
+  return {
+    markup: rows.map((row, index) => text(row, x, y + index * 32, {
+      size: TYPE.label, weight: 700, fill: T.amberDark, spacing: SPACING
+    })).join(''),
+    height: rows.length * 32
+  };
 }
 
 // ---------------------------------------------------------------- Steckbrief
 export function steckbrief({ profile, eyebrow = 'Biersorte', source }) {
   const head = header(eyebrow, `${profile.name} im Steckbrief`, profile.classification);
   const body = [];
-  let y = head.bottom + 20;
+  let y = head.bottom;
 
-  const glassX = 86;
-  const glassW = 230;
-  const glassH = 330;
-  body.push(glass(glassX, y + 10, glassW, glassH, profile.colorRange, { id: profile.slug.replace(/\W/g, '') }));
-  body.push(text('Farbe laut Steckbrief', glassX + glassW / 2, y + glassH + 72, { size: 22, fill: T.inkFaint, anchor: 'middle' }));
-  const colorRows = wrap(profile.colorWords, 330, 24, 600, 2);
+  // Glas links, Farbwoerter daneben. Darunter laufen die Spannen ueber die
+  // volle Breite -- nebeneinander blieben fuer die Achse keine 300 Einheiten.
+  const glassW = 132;
+  const glassH = 196;
+  body.push(glass(M, y, glassW, glassH, profile.colorRange, { id: profile.slug.replace(/\W/g, '') }));
+  const cx = M + glassW + 38;
+  const cw = WIDTH - M - cx;
+  body.push(kicker('Farbe laut Steckbrief', cx, y + 36, cw).markup);
+  const colorRows = wrap(profile.colorWords, cw, TYPE.strong, 600, 4);
   colorRows.forEach((row, index) => {
-    body.push(text(row, glassX + glassW / 2, y + glassH + 106 + index * 32, { size: 24, weight: 600, fill: T.ink, anchor: 'middle' }));
+    body.push(text(row, cx, y + 80 + index * 36, { size: TYPE.strong, weight: 600, fill: T.ink }));
   });
-  // Untere Kante der Farbbeschriftung; der Trennstrich darunter richtet sich
-  // danach, sonst schneidet er bei zweizeiliger Farbe durch den Text.
-  const colorBottom = y + glassH + 106 + colorRows.length * 32;
+  y += Math.max(glassH + 56, 80 + colorRows.length * 36 + 34);
 
-  const colX = 430;
-  const colW = WIDTH - colX - 70;
-  let rowY = y + 44;
-
+  body.push(line(M, y - 22, WIDTH - M, y - 22, { stroke: T.line }));
   for (const metric of profile.metrics) {
-    body.push(text(metric.label, colX, rowY, { size: 26, weight: 600, fill: T.inkSoft }));
-    body.push(text(metric.value, WIDTH - 70, rowY, { size: 30, weight: 700, fill: T.ink, anchor: 'end' }));
+    body.push(text(metric.label, M, y + 26, { size: TYPE.strong, weight: 600, fill: T.inkSoft }));
+    body.push(text(metric.value, WIDTH - M, y + 26, { size: TYPE.value, weight: 700, fill: T.ink, anchor: 'end' }));
     if (metric.range) {
-      body.push(rangeBar(colX, rowY + 20, colW, 22, metric.min, metric.max, metric.range[0], metric.range[1], { fill: metric.fill ?? T.amber }));
-      body.push(scaleTicks(colX, rowY + 76, colW, metric.min, metric.max, metric.ticks, metric.suffix ?? ''));
+      body.push(rangeBar(M, y + 48, INNER, 20, metric.min, metric.max, metric.range[0], metric.range[1], { fill: metric.fill ?? T.amber }));
+      body.push(axisTicks(M, y + 102, INNER, metric.min, metric.max, metric.ticks, metric.suffix ?? ''));
     } else {
-      body.push(rect(colX, rowY + 20, colW, 22, { fill: T.lineSoft, radius: 11 }));
-      body.push(text(metric.note ?? 'keine Spanne angegeben', colX, rowY + 76, { size: 21, fill: T.inkFaint }));
+      body.push(rect(M, y + 48, INNER, 20, { fill: T.lineSoft, radius: 10 }));
+      body.push(text(metric.note ?? 'keine Spanne angegeben', M, y + 102, { size: TYPE.foot, fill: T.inkFaint }));
     }
-    rowY += 128;
+    y += 138;
   }
 
-  const factY = rowY + 6;
-  const facts = [['Gärung', profile.fermentation ?? 'je nach Ausgangsstil'], ['Passendes Glas', profile.glass], ['Region', profile.region]];
-  const factW = (WIDTH - 140 - 36) / 2;
-  let fx = 70;
-  let fy = Math.max(factY, colorBottom + 46);
-  body.push(line(70, fy - 34, WIDTH - 70, fy - 34, { stroke: T.line }));
+  body.push(line(M, y - 14, WIDTH - M, y - 14, { stroke: T.line }));
+  const facts = [['Gärung', profile.fermentation ?? 'je nach Ausgangsstil'], ['Passendes Glas', profile.glass]];
+  const factW = (INNER - 32) / 2;
   let factLines = 1;
-  facts.slice(0, 2).forEach(([label, value], index) => {
-    const cx = 70 + index * (factW + 36);
-    body.push(text(label, cx, fy + 24, { size: 22, weight: 700, fill: T.amberDark, spacing: 1.6 }));
-    body.push(paragraph(value, cx, fy + 62, factW, { size: 26, weight: 500, fill: T.ink, maxLines: 2 }));
-    factLines = Math.max(factLines, wrap(value, factW, 26, 500, 2).length);
+  facts.forEach(([label, value], index) => {
+    const fx = M + index * (factW + 32);
+    body.push(kicker(label, fx, y + 30, factW).markup);
+    body.push(paragraph(value, fx, y + 72, factW, { size: TYPE.body, weight: 500, fill: T.ink, maxLines: 4 }));
+    factLines = Math.max(factLines, wrap(value, factW, TYPE.body, 500, 4).length);
   });
-  const height = fy + 62 + factLines * 38 + 36 + footerHeight(source);
+  const height = y + 72 + factLines * 39 + 26 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
@@ -78,83 +97,80 @@ export function steckbrief({ profile, eyebrow = 'Biersorte', source }) {
 export function duell({ title, left, right, metrics, source, note }) {
   const head = header('Direktvergleich', title, note);
   const body = [];
-  let y = head.bottom + 10;
+  let y = head.bottom;
 
   const sides = [left, right];
   const colors = [T.amber, T.green];
+  const glassW = 118;
+  const glassH = 168;
   sides.forEach((side, index) => {
-    const cx = index === 0 ? 150 : WIDTH - 150 - 150;
-    body.push(glass(cx, y, 150, 215, side.colorRange, { id: `${title.replace(/\W/g, '')}${index}`, bubbles: false }));
-    body.push(text(side.name, cx + 75, y + 272, { size: 34, weight: 800, fill: T.ink, anchor: 'middle' }));
-    body.push(`<rect x="${round(cx + 75 - 60)}" y="${round(y + 288)}" width="120" height="6" rx="3" fill="${colors[index]}"/>`);
+    const gx = index === 0 ? M + 46 : WIDTH - M - 46 - glassW;
+    body.push(glass(gx, y, glassW, glassH, side.colorRange, { id: `${title.replace(/\W/g, '')}${index}`, bubbles: false }));
+    const nameSize = textWidth(side.name, 30, 800) > 330 ? 26 : 30;
+    body.push(text(side.name, gx + glassW / 2, y + glassH + 62, { size: nameSize, weight: 800, fill: T.ink, anchor: 'middle' }));
+    body.push(`<rect x="${round(gx + glassW / 2 - 44)}" y="${round(y + glassH + 78)}" width="88" height="6" rx="3" fill="${colors[index]}"/>`);
   });
-  body.push(text('vs.', WIDTH / 2, y + 140, { size: 44, weight: 800, fill: T.inkFaint, anchor: 'middle' }));
+  body.push(text('vs.', WIDTH / 2, y + glassH / 2 + 14, { size: 36, weight: 800, fill: T.inkFaint, anchor: 'middle' }));
+  y += glassH + 126;
 
-  let rowY = y + 360;
+  // Je Kennzahl eine Ueberschrift, darunter beide Seiten mit eigenem Balken
+  // ueber die volle Breite. Nebeneinander blieben fuer jeden Balken 300
+  // Einheiten, und die Werte haetten sich mit den Namen ueberschnitten.
   for (const metric of metrics) {
-    body.push(text(metric.label, 70, rowY, { size: 27, weight: 700, fill: T.ink }));
-    const barX = 70;
-    const barW = WIDTH - 140;
+    body.push(text(metric.label, M, y, { size: TYPE.strong, weight: 700, fill: T.ink }));
+    let rowY = y + 44;
     sides.forEach((side, index) => {
       const value = metric.values[index];
-      const lineY = rowY + 30 + index * 52;
-      body.push(text(side.name, barX, lineY + 16, { size: 22, weight: 600, fill: T.inkSoft }));
-      const trackX = barX + 180;
-      const trackW = barW - 180 - 230;
+      body.push(text(side.name, M, rowY, { size: TYPE.label, weight: 600, fill: T.inkSoft }));
+      body.push(text(value.label, WIDTH - M, rowY, { size: TYPE.strong, weight: 700, fill: T.ink, anchor: 'end' }));
       if (value.range) {
-        body.push(rangeBar(trackX, lineY, trackW, 20, metric.min, metric.max, value.range[0], value.range[1], { fill: colors[index] }));
+        body.push(rangeBar(M, rowY + 16, INNER, 18, metric.min, metric.max, value.range[0], value.range[1], { fill: colors[index] }));
       } else {
-        body.push(rect(trackX, lineY, trackW, 20, { fill: T.lineSoft, radius: 10 }));
+        body.push(rect(M, rowY + 16, INNER, 18, { fill: T.lineSoft, radius: 9 }));
       }
-      body.push(text(value.label, WIDTH - 70, lineY + 17, { size: 25, weight: 700, fill: T.ink, anchor: 'end' }));
+      rowY += 70;
     });
-    body.push(scaleTicks(barX + 180, rowY + 162, barW - 180 - 230, metric.min, metric.max, metric.ticks, metric.suffix ?? ''));
-    rowY += 212;
+    body.push(axisTicks(M, rowY + 20, INNER, metric.min, metric.max, metric.ticks, metric.suffix ?? ''));
+    y = rowY + 78;
   }
-  const height = rowY - 20 + footerHeight(source);
+  const height = y - 20 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
 // --------------------------------------------------------------------- Skala
+// Die Skala laeuft von oben nach unten. Quer ueber die Breite blieben je Stufe
+// 140 Einheiten; eine Beschriftung wie "klar wahrnehmbare Bittere" braucht das
+// Dreifache und wurde auf dem Handy 5 Pixel gross.
 export function skala({ eyebrow, title, subtitle, bands, axisLabel, source, swatchFromEbc = false }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const x = 70;
-  const w = WIDTH - 140;
-  let y = head.bottom + 24;
+  let y = head.bottom;
+  const kick = kicker(axisLabel, M, y);
+  body.push(kick.markup);
+  y += kick.height + 12;
 
-  const total = bands.reduce((sum, band) => sum + (band.weight ?? 1), 0);
-  let cursor = x;
-  const bandH = 96;
-  bands.forEach((band, index) => {
-    const bw = (w * (band.weight ?? 1)) / total;
+  const chipW = 176;
+  const textX = M + chipW + 26;
+  const textW = WIDTH - M - textX;
+  for (const band of bands) {
     const fill = swatchFromEbc ? ebcColor(band.ebc) : band.fill;
-    const first = index === 0;
-    const last = index === bands.length - 1;
-    body.push(`<path d="M ${round(cursor + (first ? 14 : 0))} ${round(y)} h ${round(bw - (first ? 14 : 0) - (last ? 14 : 0))} ${last ? `a 14 14 0 0 1 14 14 v ${bandH - 28} a 14 14 0 0 1 -14 14` : `v ${bandH}`} h ${round(-(bw - (first ? 14 : 0) - (last ? 14 : 0)))} ${first ? `a 14 14 0 0 1 -14 -14 v ${-(bandH - 28)} a 14 14 0 0 1 14 -14` : `v ${-bandH}`} z" fill="${fill}"/>`);
-    const textFill = band.dark ? T.cream : T.ink;
-    body.push(text(band.value, cursor + bw / 2, y + 44, { size: 28, weight: 800, fill: textFill, anchor: 'middle' }));
-    wrap(band.label, bw - 18, 21, 500, 2).forEach((row, line_) => {
-      body.push(text(row, cursor + bw / 2, y + 70 + line_ * 24, { size: 21, weight: 500, fill: textFill, anchor: 'middle', opacity: 0.88 }));
+    const labelRows = wrap(band.label, textW, TYPE.strong, 700, 2);
+    const exampleRows = band.examples ? wrap(band.examples, textW, TYPE.body, 400, 3) : [];
+    const rowH = Math.max(66, 12 + labelRows.length * 36 + exampleRows.length * 34 + 12);
+    body.push(rect(M, y, chipW, rowH, { fill, radius: 12 }));
+    const valueSize = textWidth(band.value, 30, 800) > chipW - 24 ? 26 : 30;
+    body.push(text(band.value, M + chipW / 2, y + rowH / 2 + valueSize * 0.36, {
+      size: valueSize, weight: 800, fill: band.dark ? T.cream : T.ink, anchor: 'middle'
+    }));
+    labelRows.forEach((row, index) => {
+      body.push(text(row, textX, y + 36 + index * 36, { size: TYPE.strong, weight: 700, fill: T.ink }));
     });
-    cursor += bw;
-  });
-  y += bandH + 30;
-  body.push(text(axisLabel, x, y + 10, { size: 22, weight: 600, fill: T.amberDark, spacing: 1.4 }));
-  y += 52;
-
-  cursor = x;
-  bands.forEach((band) => {
-    const bw = (w * (band.weight ?? 1)) / total;
-    if (band.examples) {
-      wrap(band.examples, bw - 20, 23, 400, 3).forEach((row, line_) => {
-        body.push(text(row, cursor + bw / 2, y + 22 + line_ * 30, { size: 23, fill: T.inkSoft, anchor: 'middle' }));
-      });
-    }
-    cursor += bw;
-  });
-  const exampleLines = Math.max(...bands.map((band) => (band.examples ? wrap(band.examples, (w / total) * (band.weight ?? 1) - 20, 23, 400, 3).length : 0)), 0);
-  const height = y + exampleLines * 30 + 36 + footerHeight(source);
+    exampleRows.forEach((row, index) => {
+      body.push(text(row, textX, y + 36 + labelRows.length * 36 + index * 34, { size: TYPE.body, fill: T.inkSoft }));
+    });
+    y += rowH + 16;
+  }
+  const height = y + 22 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
@@ -162,71 +178,82 @@ export function skala({ eyebrow, title, subtitle, bands, axisLabel, source, swat
 export function zeitreihe({ eyebrow, title, subtitle, series, unit, valueFormat, source, highlight = [] }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const x = 110;
-  const w = WIDTH - 180;
-  const top = head.bottom + 50;
-  const chartH = 330;
+  const format = valueFormat ?? ((value) => value.toLocaleString('de-DE'));
   const max = Math.max(...series.map((point) => point.value));
   const axisMax = niceMax(max);
-  const format = valueFormat ?? ((value) => value.toLocaleString('de-DE'));
+  // Linker Rand nach der breitesten Achsenzahl, nicht nach einer geratenen Zahl.
+  const gutter = Math.max(...[0, 1, 2, 3, 4].map((step) => textWidth(format((axisMax / 4) * step), TYPE.foot, 400))) + 18;
+  const x = M + gutter;
+  const w = WIDTH - M - x;
+  const top = head.bottom + 46;
+  const chartH = 300;
 
+  body.push(text(unit, M, top - 24, { size: TYPE.label, weight: 600, fill: T.amberDark }));
   for (let i = 0; i <= 4; i += 1) {
     const value = (axisMax / 4) * i;
     const gy = top + chartH - (value / axisMax) * chartH;
     body.push(line(x, gy, x + w, gy, { stroke: i === 0 ? T.inkFaint : T.lineSoft, width: i === 0 ? 2 : 1.5 }));
-    body.push(text(format(value), x - 18, gy + 8, { size: 21, fill: T.inkFaint, anchor: 'end' }));
+    body.push(text(format(value), x - 14, gy + 9, { size: TYPE.foot, fill: T.inkFaint, anchor: 'end' }));
   }
 
   const slot = w / series.length;
-  const barW = Math.min(64, slot * 0.58);
+  const barW = Math.min(46, slot * 0.62);
+  // Jahreszahlen duennen, wenn sie sonst aneinanderstossen. Gezaehlt vom Ende,
+  // damit das juengste Jahr immer beschriftet ist.
+  const step = Math.max(1, Math.ceil((textWidth('2026', TYPE.foot, 400) + 12) / slot));
   series.forEach((point, index) => {
     const bx = x + slot * index + (slot - barW) / 2;
     const bh = (point.value / axisMax) * chartH;
     const isMarked = highlight.includes(point.year);
-    body.push(rect(bx, top + chartH - bh, barW, bh, { fill: isMarked ? T.amber : T.green, radius: 6, opacity: isMarked ? 1 : 0.82 }));
+    body.push(rect(bx, top + chartH - bh, barW, bh, { fill: isMarked ? T.amber : T.green, radius: 5, opacity: isMarked ? 1 : 0.82 }));
     if (isMarked) {
-      body.push(text(format(point.value), bx + barW / 2, top + chartH - bh - 16, { size: 24, weight: 800, fill: T.ink, anchor: 'middle' }));
+      body.push(text(format(point.value), bx + barW / 2, top + chartH - bh - 16, { size: TYPE.strong, weight: 800, fill: T.ink, anchor: 'middle' }));
     }
-    body.push(text(String(point.year), bx + barW / 2, top + chartH + 36, { size: 21, fill: T.inkSoft, anchor: 'middle' }));
+    if ((series.length - 1 - index) % step === 0) {
+      body.push(text(String(point.year), bx + barW / 2, top + chartH + 38, { size: TYPE.foot, fill: T.inkSoft, anchor: 'middle' }));
+    }
   });
-  body.push(text(unit, x, top - 22, { size: 22, weight: 600, fill: T.amberDark }));
-  body.push(text('Achse beginnt bei null', x + w, top - 22, { size: 21, fill: T.inkFaint, anchor: 'end' }));
-  const height = top + chartH + 72 + footerHeight(source);
+  const height = top + chartH + 104 + footerHeight(source);
+  body.push(text('Achse beginnt bei null', M, top + chartH + 74, { size: TYPE.foot, fill: T.inkFaint }));
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
 // ------------------------------------------------------------------- Balken
+// Beschriftung ueber dem Balken statt in einer Spalte daneben: Eine Spalte
+// haette bei 820 Einheiten entweder den Balken oder die Beschriftung erdrueckt.
 export function balken({ eyebrow, title, subtitle, items, unit, source, note }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  // Breite Beschriftungsspalte, damit die Unterzeilen vollstaendig hineinpassen
-  // statt in Auslassungspunkten zu enden.
-  const labelW = 430;
-  const x = 70 + labelW;
-  // Platz fuer die laengste Wertebeschriftung reservieren, sonst laeuft der
-  // laengste Balken darunter.
-  const valueGutter = Math.max(...items.map((item) => textWidth(item.valueLabel, 30, 800))) + 40;
-  const w = WIDTH - x - valueGutter - 70;
-  let y = head.bottom + 36;
+  let y = head.bottom;
+  const kick = kicker(unit, M, y);
+  body.push(kick.markup);
+  y += kick.height + 10;
+  const gutter = Math.max(...items.map((item) => textWidth(item.valueLabel, TYPE.value, 800))) + 24;
+  const barMax = INNER - gutter;
   const max = Math.max(...items.map((item) => item.value));
-  body.push(text(unit, x, y - 14, { size: 22, weight: 600, fill: T.amberDark }));
   for (const item of items) {
-    const bh = 52;
-    body.push(text(item.label, 70, y + 36, { size: 28, weight: 700, fill: T.ink }));
-    // Die Unterzeile muss in der Beschriftungsspalte bleiben, sonst laeuft sie
-    // unter den Balken.
-    if (item.sublabel) body.push(text(wrap(item.sublabel, labelW - 24, 20, 400, 1)[0], 70, y + 64, { size: 20, fill: T.inkFaint }));
-    body.push(rect(x, y + 8, w, bh, { fill: T.lineSoft, radius: 8 }));
-    body.push(rect(x, y + 8, Math.max(8, (item.value / max) * w), bh, { fill: item.fill ?? T.amber, radius: 8 }));
-    body.push(text(item.valueLabel, WIDTH - 70, y + 44, { size: 30, weight: 800, fill: T.ink, anchor: 'end' }));
-    y += item.sublabel ? 96 : 84;
+    const labelRows = wrap(item.label, INNER, TYPE.strong, 700, 2);
+    labelRows.forEach((row, index) => {
+      body.push(text(row, M, y + 26 + index * 36, { size: TYPE.strong, weight: 700, fill: T.ink }));
+    });
+    let barY = y + 26 + labelRows.length * 36;
+    if (item.sublabel) {
+      const subRows = wrap(item.sublabel, INNER, TYPE.foot, 400, 2);
+      subRows.forEach((row, index) => body.push(text(row, M, barY + 16 + index * 32, { size: TYPE.foot, fill: T.inkFaint })));
+      barY += 30 + (subRows.length - 1) * 32;
+    }
+    barY += 12;
+    body.push(rect(M, barY, barMax, 40, { fill: T.lineSoft, radius: 8 }));
+    body.push(rect(M, barY, Math.max(10, (item.value / max) * barMax), 40, { fill: item.fill ?? T.amber, radius: 8 }));
+    body.push(text(item.valueLabel, WIDTH - M, barY + 29, { size: TYPE.value, weight: 800, fill: T.ink, anchor: 'end' }));
+    y = barY + 40 + 26;
   }
   if (note) {
-    y += 14;
-    body.push(paragraph(note, 70, y + 20, WIDTH - 140, { size: 23, fill: T.inkSoft, maxLines: 2 }));
-    y += 40;
+    y += 22;
+    body.push(paragraph(note, M, y + 20, INNER, { size: TYPE.foot, fill: T.inkSoft, maxLines: 5 }));
+    y += paragraphHeight(note, INNER, TYPE.foot, 400, 1.45, 5);
   }
-  const height = y + 30 + footerHeight(source);
+  const height = y + 26 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
@@ -236,70 +263,69 @@ export function balken({ eyebrow, title, subtitle, items, unit, source, note }) 
 export function punkte({ eyebrow, title, subtitle, items, min, max, ticks, suffix, source, note }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const labelW = 420;
-  const x = 70 + labelW;
-  const w = WIDTH - x - 180;
-  let y = head.bottom + 40;
-  // Der Hinweis gehoert nur dorthin, wo die Achse tatsaechlich beschnitten ist.
+  let y = head.bottom;
   const axisNote = min > 0
     ? `Achse von ${dec(min)}${suffix} bis ${dec(max)}${suffix} — kein Nullpunkt`
     : `Achse von null bis ${dec(max)}${suffix}`;
-  body.push(text(axisNote, 70, y - 16, { size: 22, weight: 600, fill: T.amberDark }));
-  const rowH = 54;
-  const chartTop = y + 10;
-  const chartBottom = chartTop + items.length * rowH;
-  ticks.forEach((tick) => {
-    const tx = x + ((tick - min) / (max - min)) * w;
-    body.push(line(tx, chartTop, tx, chartBottom, { stroke: T.lineSoft, width: 1.5 }));
-    body.push(text(`${dec(tick)}${suffix}`, tx, chartBottom + 36, { size: 21, fill: T.inkFaint, anchor: 'middle' }));
-  });
+  const kick = kicker(axisNote, M, y);
+  body.push(kick.markup);
+  y += kick.height + 8;
+
+  const valueGutter = Math.max(...items.map((item) => textWidth(item.valueLabel, TYPE.strong, 800))) + 22;
+  const w = INNER - valueGutter;
+  const rowH = 74;
+  const chartTop = y + 8;
   items.forEach((item, index) => {
-    const cy = chartTop + index * rowH + rowH / 2;
-    body.push(text(item.label, 70, cy + 9, { size: 26, weight: item.emphasis ? 800 : 500, fill: item.emphasis ? T.ink : T.inkSoft }));
-    body.push(line(x, cy, x + w, cy, { stroke: T.lineSoft, width: 1 }));
-    const px = x + ((item.value - min) / (max - min)) * w;
-    body.push(`<circle cx="${round(px)}" cy="${round(cy)}" r="${item.emphasis ? 15 : 12}" fill="${item.fill ?? T.green}"/>`);
-    body.push(text(item.valueLabel, WIDTH - 70, cy + 9, { size: 25, weight: item.emphasis ? 800 : 600, fill: T.ink, anchor: 'end' }));
+    const ly = chartTop + index * rowH + 26;
+    body.push(text(item.label, M, ly, { size: TYPE.body, weight: item.emphasis ? 800 : 500, fill: item.emphasis ? T.ink : T.inkSoft }));
+    body.push(text(item.valueLabel, WIDTH - M, ly, { size: TYPE.strong, weight: item.emphasis ? 800 : 600, fill: T.ink, anchor: 'end' }));
+    const cy = ly + 24;
+    body.push(line(M, cy, M + w, cy, { stroke: T.lineSoft, width: 1.5 }));
+    const px = M + ((item.value - min) / (max - min)) * w;
+    body.push(`<circle cx="${round(px)}" cy="${round(cy)}" r="${item.emphasis ? 14 : 11}" fill="${item.fill ?? T.green}"/>`);
   });
-  y = chartBottom + 60;
+  const chartBottom = chartTop + items.length * rowH;
+  body.push(axisTicks(M, chartBottom + 30, w, min, max, ticks, suffix));
+  y = chartBottom + 62;
   if (note) {
-    body.push(paragraph(note, 70, y + 20, WIDTH - 140, { size: 23, fill: T.inkSoft, maxLines: 3 }));
-    y += 40;
+    body.push(paragraph(note, M, y + 20, INNER, { size: TYPE.foot, fill: T.inkSoft, maxLines: 5 }));
+    y += paragraphHeight(note, INNER, TYPE.foot, 400, 1.45, 5);
   }
-  const height = y + 30 + footerHeight(source);
+  const height = y + 26 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
 // -------------------------------------------------------------------- Ablauf
+// Schritte untereinander. Nebeneinander blieben je Schritt rund 180 Einheiten
+// und damit zwoelf Zeichen pro Zeile.
 export function ablauf({ eyebrow, title, subtitle, steps, source }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const x = 70;
-  const w = WIDTH - 140;
-  let y = head.bottom + 36;
-  const colW = w / steps.length;
-  const circleY = y + 46;
-  body.push(line(x + colW / 2, circleY, x + w - colW / 2, circleY, { stroke: T.line, width: 3 }));
-  // Titel und Fliesstext beginnen in allen Spalten auf derselben Grundlinie,
-  // auch wenn ein Titel zweizeilig wird.
-  const titleRows = steps.map((step) => wrap(step.title, colW - 30, 27, 800, 2));
-  const maxTitleLines = Math.max(...titleRows.map((rows) => rows.length));
-  // maxLines ist grosszuegig: lieber eine Zeile mehr als ein Satz, der mit
-  // Auslassungspunkten endet.
-  const bodyRows = steps.map((step) => wrap(step.body, colW - 30, 23, 400, 9));
-  const maxBodyLines = Math.max(...bodyRows.map((rows) => rows.length));
-  steps.forEach((step, index) => {
-    const cx = x + colW * index + colW / 2;
-    body.push(`<circle cx="${round(cx)}" cy="${round(circleY)}" r="34" fill="${T.amber}"/>`);
-    body.push(text(String(index + 1), cx, circleY + 13, { size: 34, weight: 800, fill: T.ink, anchor: 'middle' }));
-    titleRows[index].forEach((row, li) => {
-      body.push(text(row, cx, circleY + 86 + li * 34, { size: 27, weight: 800, fill: T.ink, anchor: 'middle' }));
+  let y = head.bottom;
+  const r = 27;
+  const textX = M + 2 * r + 26;
+  const textW = WIDTH - M - textX;
+  const blocks = steps.map((step) => ({
+    titleRows: wrap(step.title, textW, TYPE.strong, 800, 2),
+    bodyRows: wrap(step.body, textW, TYPE.body, 400, 9)
+  }));
+  blocks.forEach((block, index) => {
+    const blockH = Math.max(2 * r + 16, 6 + block.titleRows.length * 36 + 8 + block.bodyRows.length * 36 + 10);
+    const cy = y + r + 2;
+    if (index < blocks.length - 1) {
+      body.push(line(M + r, cy + r + 10, M + r, y + blockH + 24, { stroke: T.line, width: 3 }));
+    }
+    body.push(`<circle cx="${M + r}" cy="${round(cy)}" r="${r}" fill="${T.amber}"/>`);
+    body.push(text(String(index + 1), M + r, cy + 11, { size: TYPE.strong, weight: 800, fill: T.ink, anchor: 'middle' }));
+    block.titleRows.forEach((row, li) => {
+      body.push(text(row, textX, y + 30 + li * 36, { size: TYPE.strong, weight: 800, fill: T.ink }));
     });
-    bodyRows[index].forEach((row, li) => {
-      body.push(text(row, cx, circleY + 86 + maxTitleLines * 34 + 14 + li * 31, { size: 23, fill: T.inkSoft, anchor: 'middle' }));
+    block.bodyRows.forEach((row, li) => {
+      body.push(text(row, textX, y + 30 + block.titleRows.length * 36 + 12 + li * 36, { size: TYPE.body, fill: T.inkSoft }));
     });
+    y += blockH + 20;
   });
-  const height = circleY + 86 + maxTitleLines * 34 + 14 + maxBodyLines * 31 + 46 + footerHeight(source);
+  const height = y + 16 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
@@ -307,163 +333,135 @@ export function ablauf({ eyebrow, title, subtitle, steps, source }) {
 export function kennzahlen({ eyebrow, title, subtitle, tiles, source, note }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const x = 70;
-  const w = WIDTH - 140;
-  const gap = 28;
-  const tileW = (w - gap * (tiles.length - 1)) / tiles.length;
-  let y = head.bottom + 30;
-  // Die Kachel waechst mit dem laengsten Text. Vorher endete eine vierte
-  // Zeile in Auslassungspunkten.
-  const labelLines = Math.max(...tiles.map((tile) => wrap(tile.label, tileW - 50, 23, 400, 5).length));
-  const tileH = 190 + labelLines * 30 + 14;
+  let y = head.bottom;
+  const gap = 24;
+  // Hoechstens zwei Kacheln nebeneinander. Bei vier blieben je 170 Einheiten,
+  // die Zahl haette auf 26 schrumpfen muessen und waere kleiner gewesen als
+  // ihre Beschriftung.
+  const cols = tiles.length === 1 ? 1 : 2;
+  const colW = (INNER - gap * (cols - 1)) / cols;
+  const labelLines = Math.max(...tiles.map((tile) => wrap(tile.label, colW - 40, TYPE.body, 400, 6).length));
+  const tileH = 156 + labelLines * 34;
+  const rows = Math.ceil(tiles.length / cols);
   tiles.forEach((tile, index) => {
-    const tx = x + (tileW + gap) * index;
-    body.push(rect(tx, y, tileW, tileH, { fill: T.paper, radius: 20, stroke: T.line, strokeWidth: 2 }));
-    body.push(rect(tx, y, tileW, 8, { fill: index === 0 ? T.amber : T.green, radius: 4 }));
-    // Mit vier Kacheln wird es eng: die Schriftgroesse faellt so weit, bis der
-    // Wert hineinpasst, statt ueber den Rand zu laufen.
-    const valueSize = [68, 58, 50, 42, 36, 30].find((size) => textWidth(tile.value, size, 800) <= tileW - 46) ?? 30;
-    body.push(text(tile.value, tx + tileW / 2, y + 108, { size: valueSize, weight: 800, fill: T.ink, anchor: 'middle' }));
-    body.push(text(tile.unit, tx + tileW / 2, y + 146, { size: 24, weight: 600, fill: T.amberDark, anchor: 'middle' }));
-    wrap(tile.label, tileW - 50, 23, 400, 5).forEach((row, li) => {
-      body.push(text(row, tx + tileW / 2, y + 190 + li * 30, { size: 23, fill: T.inkSoft, anchor: 'middle' }));
+    // Eine ungerade letzte Kachel nimmt die ganze Breite, statt eine Luecke zu
+    // lassen.
+    const alone = cols === 2 && tiles.length % 2 === 1 && index === tiles.length - 1;
+    const tw = alone ? INNER : colW;
+    const tx = alone ? M : M + (colW + gap) * (index % cols);
+    const ty = y + (tileH + gap) * Math.floor(index / cols);
+    body.push(rect(tx, ty, tw, tileH, { fill: T.paper, radius: 18, stroke: T.line, strokeWidth: 2 }));
+    body.push(rect(tx, ty, tw, 7, { fill: index === 0 ? T.amber : T.green, radius: 4 }));
+    const valueSize = [TYPE.hero, 46, 40, 34, 30, 26].find((size) => textWidth(tile.value, size, 800) <= tw - 36) ?? 26;
+    body.push(text(tile.value, tx + tw / 2, ty + 92, { size: valueSize, weight: 800, fill: T.ink, anchor: 'middle' }));
+    body.push(text(tile.unit, tx + tw / 2, ty + 128, { size: TYPE.label, weight: 600, fill: T.amberDark, anchor: 'middle' }));
+    wrap(tile.label, tw - 40, TYPE.body, 400, 6).forEach((row, li) => {
+      body.push(text(row, tx + tw / 2, ty + 166 + li * 34, { size: TYPE.body, fill: T.inkSoft, anchor: 'middle' }));
     });
   });
-  y += tileH + 36;
+  y += rows * tileH + (rows - 1) * gap + 34;
   if (note) {
-    body.push(paragraph(note, x, y + 20, w, { size: 24, fill: T.inkSoft, maxLines: 3 }));
-    y += 40;
+    body.push(paragraph(note, M, y + 18, INNER, { size: TYPE.foot, fill: T.inkSoft, maxLines: 5 }));
+    y += paragraphHeight(note, INNER, TYPE.foot, 400, 1.45, 5);
   }
-  const height = y + 30 + footerHeight(source);
+  const height = y + 26 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
 // ------------------------------------------------------------------ Zwei Wege
+// Zwei Karten untereinander. Nebeneinander hatte jede Karte 330 Einheiten
+// Innenbreite: Fliesstext in 24 Einheiten wurde auf dem Handy 6 Pixel gross.
 export function zweiwege({ eyebrow, title, subtitle, columns, source, note }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const x = 70;
-  const w = WIDTH - 140;
-  const gap = 36;
-  const colW = (w - gap) / 2;
-  let y = head.bottom + 30;
+  let y = head.bottom;
   const colors = [T.amber, T.green];
-  // Beide Karten bekommen die Hoehe der laengeren Spalte, sonst enden sie
-  // auf unterschiedlicher Hoehe und das Bild wirkt schief.
-  const boxH = Math.max(...columns.map((column) => {
-    const rowsHeight = column.rows.reduce((sum, row) => sum + 44 + wrap(row[1], colW - 68, 24, 500, 2).length * 30, 0);
-    const tagsHeight = column.examples ? wrap(column.examples, colW - 68, 24, 500, 3).length * 32 + 70 : 0;
-    return 72 + rowsHeight + tagsHeight + 36;
-  }));
-  let maxBottom = y + boxH;
+  const pad = 28;
+  const innerW = INNER - 2 * pad;
   columns.forEach((column, index) => {
-    const cx = x + (colW + gap) * index;
-    let cy = y + 72;
-    body.push(rect(cx, y, colW, boxH, { fill: T.paper, radius: 20, stroke: T.line, strokeWidth: 2 }));
-    body.push(rect(cx, y, colW, 8, { fill: colors[index], radius: 4 }));
-    body.push(text(column.title, cx + 34, y + 56, { size: 36, weight: 800, fill: T.ink }));
-    cy = y + 104;
-    for (const [label, value] of column.rows) {
-      body.push(text(label, cx + 34, cy, { size: 23, weight: 700, fill: T.amberDark }));
-      const lines = wrap(value, colW - 68, 24, 500, 2);
-      lines.forEach((row, li) => body.push(text(row, cx + 34, cy + 32 + li * 30, { size: 24, weight: 500, fill: T.ink })));
-      cy += 44 + lines.length * 30;
+    const blocks = column.rows.map(([label, value]) => ({ label, lines: wrap(value, innerW, TYPE.body, 500, 4) }));
+    const exampleRows = column.examples ? wrap(column.examples, innerW, TYPE.body, 500, 4) : [];
+    const rowsH = blocks.reduce((sum, block) => sum + 38 + block.lines.length * 34, 0);
+    const tagsH = exampleRows.length ? 54 + exampleRows.length * 34 : 0;
+    const cardH = 104 + rowsH + tagsH + 20;
+    body.push(rect(M, y, INNER, cardH, { fill: T.paper, radius: 18, stroke: T.line, strokeWidth: 2 }));
+    body.push(rect(M, y, INNER, 7, { fill: colors[index], radius: 4 }));
+    body.push(text(column.title, M + pad, y + 62, { size: 34, weight: 800, fill: T.ink }));
+    let cy = y + 108;
+    for (const block of blocks) {
+      body.push(text(block.label, M + pad, cy, { size: TYPE.label, weight: 700, fill: T.amberDark, spacing: 1.2 }));
+      block.lines.forEach((row, li) => {
+        body.push(text(row, M + pad, cy + 34 + li * 34, { size: TYPE.body, weight: 500, fill: T.ink }));
+      });
+      cy += 38 + block.lines.length * 34;
     }
-    if (column.examples) {
-      body.push(line(cx + 34, cy + 2, cx + colW - 34, cy + 2, { stroke: T.lineSoft }));
-      body.push(text('Typische Vertreter', cx + 34, cy + 38, { size: 22, weight: 700, fill: T.inkFaint, spacing: 1.2 }));
-      wrap(column.examples, colW - 68, 24, 500, 3).forEach((row, li) => {
-        body.push(text(row, cx + 34, cy + 74 + li * 32, { size: 24, weight: 500, fill: T.ink }));
+    if (exampleRows.length) {
+      body.push(line(M + pad, cy + 2, WIDTH - M - pad, cy + 2, { stroke: T.lineSoft }));
+      body.push(text('Typische Vertreter', M + pad, cy + 40, { size: TYPE.label, weight: 700, fill: T.inkFaint, spacing: 1.2 }));
+      exampleRows.forEach((row, li) => {
+        body.push(text(row, M + pad, cy + 76 + li * 34, { size: TYPE.body, weight: 500, fill: T.ink }));
       });
     }
+    y += cardH + 24;
   });
-  y = maxBottom + 30;
+  y += 6;
   if (note) {
-    body.push(paragraph(note, x, y + 20, w, { size: 24, fill: T.inkSoft, maxLines: 3 }));
-    y += 46;
+    body.push(paragraph(note, M, y + 18, INNER, { size: TYPE.foot, fill: T.inkSoft, maxLines: 5 }));
+    y += paragraphHeight(note, INNER, TYPE.foot, 400, 1.45, 5);
   }
-  const height = y + 30 + footerHeight(source);
+  const height = y + 26 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }
 
-// ------------------------------------------------------------ Streudiagramm
-// Bierstile in zwei Dimensionen: Farbe auf der Waagerechten, Bitterkeit auf
-// der Senkrechten. Beide Angaben sind auf den Seiten Spannen, keine Punkte;
-// deshalb zeigt jede Marke ihre Mitte UND ihre Spannweite.
-export function streudiagramm({ eyebrow, title, subtitle, points, xTicks, yTicks, xLabel, yLabel, source, note }) {
+// -------------------------------------------------------------- Stilkarte
+// Farbe und Bitterkeit fuer jeden Stil, Zeile fuer Zeile.
+//
+// Vorher war das ein Streudiagramm. Auf 820 Einheiten geht das nicht auf: Elf
+// Namen an elf Punkten, von denen fuenf dicht beieinanderliegen, schieben sich
+// uebereinander, und die Farbwoerter unter der Waagerechten verschmelzen zu
+// Brei. Zwei Spannen je Zeile zeigen dieselben beiden Groessen, und beide
+// Spalten enthalten nur Balken -- Text steht allein in der vollen Breite.
+export function stilkarte({ eyebrow, title, subtitle, points, xTicks, yTicks, xLabel, yLabel, source, note }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const left = 120;
-  const right = WIDTH - 70;
-  const top = head.bottom + 40;
-  const plotH = 440;
-  const bottom = top + plotH;
-  const plotW = right - left;
-  // Ticks duerfen Zahlen oder {value,label} sein; fuer die Achsengrenzen
-  // zaehlt immer der Wert.
+  let y = head.bottom;
   const at = (tick) => (typeof tick === 'object' ? tick.value : tick);
+  const name = (tick) => (typeof tick === 'object' ? tick.label : String(tick));
   const xMin = at(xTicks[0]);
   const xMax = at(xTicks.at(-1));
   const yMin = at(yTicks[0]);
   const yMax = at(yTicks.at(-1));
-  const px = (value) => left + ((value - xMin) / (xMax - xMin)) * plotW;
-  const py = (value) => bottom - ((value - yMin) / (yMax - yMin)) * plotH;
 
-  for (const tick of yTicks) {
-    const value = at(tick);
-    const isBase = value === yMin;
-    body.push(line(left, py(value), right, py(value), { stroke: isBase ? T.inkFaint : T.lineSoft, width: isBase ? 2 : 1.5 }));
-    const label = typeof tick === 'object' ? tick.label : String(tick);
-    if (label) body.push(text(label, left - 16, py(value) + 8, { size: 21, fill: T.inkFaint, anchor: 'end' }));
-  }
-  for (const tick of xTicks) {
-    const value = at(tick);
-    body.push(line(px(value), top, px(value), bottom, { stroke: T.lineSoft, width: 1.5 }));
-    const label = typeof tick === 'object' ? tick.label : String(tick);
-    if (label) body.push(text(label, px(value), bottom + 36, { size: 21, fill: T.inkFaint, anchor: 'middle' }));
-  }
-  body.push(text(xLabel, right, bottom + 74, { size: 22, weight: 600, fill: T.amberDark, anchor: 'end' }));
-  body.push(text(yLabel, 70, top - 24, { size: 22, weight: 600, fill: T.amberDark }));
+  const gap = 40;
+  const colW = (INNER - gap) / 2;
+  const colX = [M, M + colW + gap];
+  const axes = [
+    { label: xLabel, from: name(xTicks[0]), to: name(xTicks.at(-1)) },
+    { label: yLabel, from: name(yTicks[0]), to: name(yTicks.at(-1)) }
+  ];
+  axes.forEach((axis, index) => {
+    body.push(kicker(axis.label, colX[index], y, colW).markup);
+    body.push(text(axis.from, colX[index], y + 34, { size: TYPE.foot, fill: T.inkFaint }));
+    body.push(text(axis.to, colX[index] + colW, y + 34, { size: TYPE.foot, fill: T.inkFaint, anchor: 'end' }));
+  });
+  y += 56;
 
-  // Reihenfolge ist wichtig: erst die Spannweiten, dann die Punkte, zuletzt
-  // die Beschriftungen -- sonst zeichnet eine Linie quer durch den Namen.
-  const clampX = (value) => Math.max(xMin, Math.min(xMax, value));
-  const clampY = (value) => Math.max(yMin, Math.min(yMax, value));
-  for (const point of points) {
-    if (point.xSpan) body.push(line(px(clampX(point.xSpan[0])), py(point.y), px(clampX(point.xSpan[1])), py(point.y), { stroke: T.inkFaint, width: 2.5 }));
-    if (point.ySpan) body.push(line(px(point.x), py(clampY(point.ySpan[0])), px(point.x), py(clampY(point.ySpan[1])), { stroke: T.inkFaint, width: 2.5 }));
-  }
-  for (const point of points) {
-    body.push(`<circle cx="${round(px(point.x))}" cy="${round(py(point.y))}" r="13" fill="${point.fill}" stroke="${T.ink}" stroke-width="2.5"/>`);
-  }
-
-  // Beschriftungen stapeln sich bei elf Stilen schnell uebereinander. Sie
-  // werden der Reihe nach gesetzt und nach unten geschoben, bis sie frei
-  // stehen; rechts aussen steht der Name links vom Punkt.
-  const placed = [];
-  const ordered = [...points].sort((a, b) => py(a.y) - py(b.y));
+  // Von hell nach dunkel: So wird die linke Spalte von oben nach unten zu
+  // einem Farbverlauf, und die Sortierung traegt selbst eine Aussage.
+  const ordered = [...points].sort((a, b) => a.x - b.x);
   for (const point of ordered) {
-    const cx = px(point.x);
-    const cy = py(point.y);
-    const width = textWidth(point.label, 23, 600) + 26;
-    const side = cx + width < right - 10 ? 1 : -1;
-    let ly = cy + 8;
-    let guard = 0;
-    while (placed.some((other) => Math.abs(other.y - ly) < 27 && Math.abs(other.x - cx) < (other.width + width) / 2 + 30) && guard < 16) {
-      ly += 27;
-      guard += 1;
-    }
-    placed.push({ x: cx + (side * width) / 2, y: ly, width });
-    body.push(text(point.label, side > 0 ? cx + 22 : cx - 22, ly, {
-      size: 23, weight: 600, fill: T.ink, anchor: side > 0 ? 'start' : 'end', halo: T.cream
-    }));
+    body.push(text(point.label, M, y + 26, { size: TYPE.strong, weight: 700, fill: T.ink }));
+    const xSpan = point.xSpan ?? [point.x, point.x];
+    const ySpan = point.ySpan ?? [point.y, point.y];
+    body.push(rangeBar(colX[0], y + 42, colW, 22, xMin, xMax, xSpan[0], xSpan[1], { fill: point.fill }));
+    body.push(rangeBar(colX[1], y + 42, colW, 22, yMin, yMax, ySpan[0], ySpan[1], { fill: T.green }));
+    y += 82;
   }
-
-  let y = bottom + 108;
+  y += 8;
   if (note) {
-    body.push(paragraph(note, 70, y, WIDTH - 140, { size: 23, fill: T.inkSoft, maxLines: 3 }));
-    y += paragraphHeight(note, WIDTH - 140, 23, 400, 1.45, 3);
+    body.push(paragraph(note, M, y + 18, INNER, { size: TYPE.foot, fill: T.inkSoft, maxLines: 5 }));
+    y += paragraphHeight(note, INNER, TYPE.foot, 400, 1.45, 5);
   }
-  const height = y + 30 + footerHeight(source);
+  const height = y + 26 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
 }

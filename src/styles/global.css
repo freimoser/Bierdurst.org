@@ -46,7 +46,7 @@
 
 /* Uebersichtsgrafiken im Artikel. Breite und Hoehe stehen im img-Tag, damit
    beim Laden kein Layoutsprung entsteht. */
-.article-figure{margin:1.75rem 0 1.9rem;padding:0}
+.article-figure{margin:1.75rem 0 1.9rem;padding:0;max-width:600px}
 .article-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px;background:var(--cream)}
 /* Kein Amber-Balken links: den traegt auf dieser Seite schon der
    Kurz-gesagt-Kasten und das Zitat. Eine Bildunterschrift ist weder das

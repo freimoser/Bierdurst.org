@@ -18,7 +18,31 @@ export const T = {
   font: '"Helvetica Neue", Helvetica, Arial, "DejaVu Sans", sans-serif'
 };
 
-export const WIDTH = 1400;
+// Zeichenflaeche. 820 statt der frueheren 1400 Einheiten: Die Abbildung steht
+// auf dem Handy in einer 343 CSS-Pixel breiten Spalte. Bei 1400 Einheiten
+// schrumpfte eine 23 Einheiten grosse Beschriftung dort auf 5,6 Pixel -- lesbar
+// war nur noch die Ueberschrift. Massgeblich ist allein das Verhaeltnis von
+// Schriftgrad zu Zeichenflaeche; 26 von 820 ergeben auf dem Handy 10,9 Pixel.
+// Dafuer wird jede Grafik schmaler und hoeher, und was nebeneinander stand,
+// steht jetzt untereinander.
+export const WIDTH = 820;
+export const M = 48;
+export const INNER = WIDTH - 2 * M;
+
+// Schriftgrade. Der kleinste Grad ist 26 und damit die Untergrenze fuer die
+// Lesbarkeit auf dem Handy; alles Kleinere gehoert nicht in eine Grafik.
+export const TYPE = {
+  eyebrow: 25,
+  title: 46,
+  titleLong: 39,
+  sub: 27,
+  label: 26,
+  body: 27,
+  strong: 29,
+  value: 32,
+  hero: 54,
+  foot: 26
+};
 
 export function esc(value = '') {
   return String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' })[c]);
@@ -201,7 +225,7 @@ export function glass(x, y, w, h, ebcRange, { id = 'g', bubbles = true } = {}) {
 
 // Balken fuer einen Wertebereich auf einer gemeinsamen Achse. Zeigt eine
 // Spanne, keinen Scheinpunktwert.
-export function rangeBar(x, y, w, h, scaleMin, scaleMax, from, to, { fill = T.amber, track = T.lineSoft, label = null, labelSize = 26 } = {}) {
+export function rangeBar(x, y, w, h, scaleMin, scaleMax, from, to, { fill = T.amber, track = T.lineSoft, label = null, labelSize = TYPE.strong } = {}) {
   const span = scaleMax - scaleMin || 1;
   const clamp = (v) => Math.max(0, Math.min(1, (v - scaleMin) / span));
   const a = clamp(from);
@@ -211,7 +235,7 @@ export function rangeBar(x, y, w, h, scaleMin, scaleMax, from, to, { fill = T.am
   return [
     rect(x, y, w, h, { fill: track, radius: h / 2 }),
     rect(barX, y, barW, h, { fill, radius: h / 2 }),
-    label ? text(label, x + w + 22, y + h * 0.78, { size: labelSize, weight: 600, fill: T.ink }) : ''
+    label ? text(label, x + w + 18, y + h * 0.78, { size: labelSize, weight: 600, fill: T.ink }) : ''
   ].join('');
 }
 
@@ -224,48 +248,53 @@ export function document_(height, inner, { background = T.cream } = {}) {
 
 // Kopf- und Fusszeile sind auf allen Grafiken gleich aufgebaut: Augenbrauen-
 // Zeile, Titel, optionaler Vorspann, unten die Quelle und die Marke.
-export function header(eyebrow, title, subtitle, { x = 70, y = 86, maxWidth = WIDTH - 140 } = {}) {
+export function header(eyebrow, title, subtitle, { x = M, y = 78, maxWidth = INNER } = {}) {
   let cursor = y;
-  const out = [rect(x, cursor - 34, 64, 7, { fill: T.amber, radius: 4 })];
-  out.push(text(eyebrow.toUpperCase(), x, cursor, { size: 24, weight: 700, fill: T.amberDark, spacing: 2.6 }));
-  cursor += 56;
-  const titleSize = textWidth(title, 52, 800) > maxWidth * 2 ? 44 : 52;
+  const out = [rect(x, cursor - 32, 56, 7, { fill: T.amber, radius: 4 })];
+  out.push(text(eyebrow.toUpperCase(), x, cursor, { size: TYPE.eyebrow, weight: 700, fill: T.amberDark, spacing: 2.2 }));
+  cursor += 54;
+  // Lange Titel eine Stufe kleiner, damit sie nicht vier Zeilen fuellen.
+  const titleSize = textWidth(title, TYPE.title, 800) > maxWidth * 1.9 ? TYPE.titleLong : TYPE.title;
   const titleLines = wrap(title, maxWidth, titleSize, 800, 3);
   titleLines.forEach((row, index) => {
-    out.push(text(row, x, cursor + index * titleSize * 1.18, { size: titleSize, weight: 800, fill: T.ink }));
+    out.push(text(row, x, cursor + index * titleSize * 1.16, { size: titleSize, weight: 800, fill: T.ink }));
   });
-  cursor += (titleLines.length - 1) * titleSize * 1.18 + 20;
+  cursor += (titleLines.length - 1) * titleSize * 1.16 + 16;
   if (subtitle) {
-    cursor += 34;
-    const subLines = wrap(subtitle, maxWidth, 28, 400, 3);
+    cursor += 32;
+    const subLines = wrap(subtitle, maxWidth, TYPE.sub, 400, 5);
     subLines.forEach((row, index) => {
-      out.push(text(row, x, cursor + index * 40, { size: 28, weight: 400, fill: T.inkSoft }));
+      out.push(text(row, x, cursor + index * 38, { size: TYPE.sub, weight: 400, fill: T.inkSoft }));
     });
-    cursor += (subLines.length - 1) * 40;
+    cursor += (subLines.length - 1) * 38;
   }
-  return { markup: out.join(''), bottom: cursor + 42 };
+  return { markup: out.join(''), bottom: cursor + 52 };
 }
 
 // Hoehe, die die Fusszeile am unteren Rand belegt. Jede Vorlage rechnet sie
 // auf ihren Inhalt drauf, statt eine Zahl zu raten -- sonst schneidet der
 // Trennstrich durch den Text, sobald die Quelle zweizeilig wird.
 export function footerHeight(source) {
-  const lines = source ? wrap(source, WIDTH - 460, 23, 400, 3).length : 1;
-  return 94 + lines * 30;
+  const lines = source ? wrap(source, INNER, TYPE.foot, 400, 5).length : 0;
+  return 100 + lines * 34;
 }
 
-export function footer(height, source, { x = 70 } = {}) {
-  const lines = source ? wrap(source, WIDTH - 460, 23, 400, 3) : [];
+// Die Wortmarke steht auf einer eigenen Zeile unter der Quelle. Teilte sie
+// sich die letzte Zeile, muesste die Quelle auf 514 statt 724 Einheiten
+// umbrechen -- und eine Quellenangabe wie die der Stilkarte endete dann in
+// Auslassungspunkten.
+export function footer(height, source, { x = M } = {}) {
+  const lines = source ? wrap(source, INNER, TYPE.foot, 400, 5) : [];
   const space = footerHeight(source);
-  const out = [line(x, height - space, WIDTH - x, height - space, { stroke: T.line, width: 2 })];
-  const lastBaseline = height - 54;
+  const top = height - space;
+  const out = [line(x, top, WIDTH - x, top, { stroke: T.line, width: 2 })];
   lines.forEach((row, index) => {
-    out.push(text(row, x, lastBaseline - (lines.length - 1 - index) * 30, { size: 23, fill: T.inkFaint }));
+    out.push(text(row, x, top + 44 + index * 34, { size: TYPE.foot, fill: T.inkFaint }));
   });
-  out.push(`<g transform="translate(${WIDTH - x - 230} ${height - 88})">
-    <rect x="0" y="0" width="26" height="32" rx="4" fill="${T.amber}"/>
-    <rect x="4" y="4" width="18" height="5" rx="2.5" fill="${T.foam}"/>
-    ${text('BierDurst.org', 40, 24, { size: 26, weight: 800, fill: T.ink })}
+  out.push(`<g transform="translate(${WIDTH - x - 186} ${height - 56})">
+    <rect x="0" y="0" width="24" height="30" rx="4" fill="${T.amber}"/>
+    <rect x="4" y="4" width="16" height="5" rx="2.5" fill="${T.foam}"/>
+    ${text('BierDurst.org', 36, 23, { size: TYPE.foot, weight: 800, fill: T.ink })}
   </g>`);
   return out.join('');
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-og-images.mjs",
-    "figures": "node scripts/generate-figures.mjs && node scripts/figures/check-numbers.mjs",
+    "figures": "node scripts/generate-figures.mjs && node scripts/figures/check-numbers.mjs && node scripts/figures/check-layout.mjs",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/prepare-dist.mjs && node scripts/validate-build.mjs",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && node scripts/test-calculators.mjs && node scripts/test-beer-data.mjs",

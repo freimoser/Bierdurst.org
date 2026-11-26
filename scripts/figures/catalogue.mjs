@@ -805,10 +805,10 @@ function waveTwoFigures() {
     {
       slug: '/',
       file: 'start-stile-karte',
-      template: 'streudiagramm',
+      template: 'stilkarte',
       props: {
         eyebrow: 'Überblick', title: 'Deutsche Bierstile nach Farbe und Bitterkeit',
-        subtitle: 'Zwei Fragen beantworten die meisten: Wie dunkel ist es, und wie herb? Jeder Punkt sitzt in der Mitte seiner Spanne, die Linien zeigen, wie weit der Stil reicht.',
+        subtitle: 'Zwei Fragen beantworten die meisten: Wie dunkel ist es, und wie herb? Jeder Balken zeigt die ganze Spanne des Stils, nicht einen einzelnen Wert.',
         points,
         xTicks: [
           { value: 4, label: 'strohgelb' },
@@ -825,11 +825,11 @@ function waveTwoFigures() {
           { value: 5, label: 'kräftig' }
         ],
         xLabel: 'FARBE', yLabel: 'BITTERKEIT',
-        note: 'Alkoholfreies Bier fehlt bewusst: Es gibt den Stil in fast jeder Farbe und jeder Bitterkeit, ein einzelner Punkt wäre irreführend.',
+        note: 'Alkoholfreies Bier fehlt bewusst: Es gibt den Stil in fast jeder Farbe und jeder Bitterkeit, eine einzelne Spanne wäre irreführend.',
         source: 'Farb- und Bitterkeitsangaben aus den Steckbriefen der elf Sortenseiten. Einzelne Marken können außerhalb ihrer Stilspanne liegen.'
       },
-      alt: 'Streudiagramm der deutschen Bierstile: waagerecht die Farbe von strohgelb bis schwarz, senkrecht die Bitterkeit von sehr mild bis kräftig. Helles und Weizenbier liegen hell und mild, Pils hell und deutlich bitter, Schwarzbier und Dunkelbier dunkel und moderat.',
-      caption: 'Farbe und Bitterkeit hängen nicht zusammen: Pils ist hell und herb, Dunkelbier dunkel und mild. Die Linien zeigen, wie weit jeder Stil reicht.'
+      alt: 'Die elf deutschen Bierstile, sortiert von hell nach dunkel: je Stil links die Farbspanne von strohgelb bis schwarz, rechts die Bitterkeit von sehr mild bis kräftig. Helles und Weizenbier liegen hell und mild, Pils hell und deutlich bitter, Schwarzbier und Dunkelbier dunkel und moderat.',
+      caption: 'Farbe und Bitterkeit hängen nicht zusammen: Pils ist hell und herb, Dunkelbier dunkel und mild. Die Balken zeigen, wie weit jeder Stil reicht.'
     },
     {
       slug: '/bierwissen/',

@@ -11,6 +11,19 @@ import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import { catalogue } from './figures/catalogue.mjs';
 import { WIDTH } from './figures/svg.mjs';
+
+// Ausgabebreite in echten Bildpunkten. Die Abbildung steht auf dem Handy 343
+// und am Schreibtisch hoechstens 600 CSS-Pixel breit; 1100 sind das Doppelte
+// der groesseren Flaeche und das Dreifache der kleineren.
+//
+// Frueher gab es diese Zahl gar nicht: Der Aufruf setzte density 96 auf eine
+// 1400 Einheiten breite Zeichenflaeche, und sharp rechnet density/72 -- heraus
+// kamen 1867 Bildpunkte, waehrend width="1400" im <img> und im Schema stand.
+// Das Seitenverhaeltnis stimmte, die absoluten Angaben nicht. Jetzt gibt die
+// density die Ausgabebreite vor, und uebernommen werden die Masse, die die
+// fertige Datei wirklich hat.
+const PIXEL_WIDTH = 1100;
+const DENSITY = (72 * PIXEL_WIDTH) / WIDTH;
 import * as templates from './figures/templates.mjs';
 
 const OUT_DIR = 'public/grafik';
@@ -52,22 +65,23 @@ for (const figure of figures) {
     failed += 1;
     continue;
   }
-  const buffer = await sharp(Buffer.from(rendered.svg), { density: 96 })
+  const buffer = await sharp(Buffer.from(rendered.svg), { density: DENSITY })
     .png({ compressionLevel: 9, palette: true, quality: 92 })
     .toBuffer();
   const name = contentName(figure.file, buffer);
   await writeFile(`${OUT_DIR}/${name}`, buffer);
   written.add(name);
   const bytes = buffer.length;
+  const { width, height } = await sharp(buffer).metadata();
   index[figure.slug] = {
     src: `/grafik/${name}`,
-    width: WIDTH,
-    height: Math.round(rendered.height),
+    width,
+    height,
     alt: figure.alt,
     caption: figure.caption,
     template: figure.template
   };
-  report.push({ file: figure.file, slug: figure.slug, kb: Math.round(bytes / 1024), height: Math.round(rendered.height) });
+  report.push({ file: figure.file, slug: figure.slug, kb: Math.round(bytes / 1024), width, height });
 }
 
 // Vorgaengerfassungen entfernen. Ohne das sammeln sich mit jeder Aenderung
@@ -95,6 +109,8 @@ report.sort((a, b) => b.kb - a.kb);
 const total = report.reduce((sum, row) => sum + row.kb, 0);
 console.log(`${report.length} Grafiken erzeugt in ${OUT_DIR}/ (${total} KB gesamt, Durchschnitt ${Math.round(total / Math.max(1, report.length))} KB).`);
 console.log(`Groesste: ${report.slice(0, 3).map((row) => `${row.file} ${row.kb} KB`).join(', ')}`);
+const tallest = [...report].sort((a, b) => b.height - a.height)[0];
+if (tallest) console.log(`Masse: ${tallest.width} Bildpunkte breit, hoechste Grafik ${tallest.height} hoch (${tallest.file}).`);
 if (removed) console.log(`${removed} ueberholte Datei(en) entfernt.`);
 if (dropped.length) console.log(`Uebersprungen, Seite nicht veroeffentlicht: ${dropped.map((row) => row.slug).join(', ')}`);
 if (failed) {
