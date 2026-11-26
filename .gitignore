@@ -4,3 +4,8 @@ dist/
 .DS_Store
 .env
 public/og/
+
+# macOS und iCloud legen beim Synchronisieren Kopien wie "svg 2.mjs" an.
+# scripts/validate-build.mjs faengt sie im Build ab; hier verhindern wir,
+# dass sie ueberhaupt erst versehentlich eingecheckt werden.
+* [0-9].*
