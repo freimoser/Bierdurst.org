@@ -147,7 +147,7 @@
     "src": "/grafik/bierwissen-trinktemperatur.png",
     "width": 1400,
     "height": 730,
-    "alt": "Temperaturskala für Bier in fünf Stufen von 5 bis 7 Grad für Pils und leichtes Lager über 8 bis 10 Grad für Kellerbier und Dunkel bis 12 bis 15 Grad für sehr starke Stouts und Spezialbiere.",
+    "alt": "Temperaturskala für Bier in sechs Stufen: 5 bis 7 Grad für Pils, 6 bis 8 Grad für Helles, Kölsch und Export, 7 bis 9 Grad für Weizenbier, 8 bis 10 Grad für Kellerbier, Dunkel und Schwarzbier, 9 bis 12 Grad für Bock sowie 11 bis 14 Grad für Doppelbock, Eisbock und Imperial Stout.",
     "caption": "Startwerte, keine festen Regeln. Ein Bier, das im Glas wärmer wird, zeigt oft mehr Aroma; eiskaltes Bier wirkt milder und weniger bitter.",
     "template": "skala"
   },

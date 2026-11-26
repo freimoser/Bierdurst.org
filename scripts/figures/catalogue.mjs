@@ -185,17 +185,18 @@ function manualFigures() {
       props: {
         eyebrow: 'Bierwissen', title: 'Trinktemperatur nach Bierstil',
         subtitle: 'Leichte, erfrischende Biere schmecken kühler. Aromatische, dunkle und starke Biere dürfen wärmer sein, weil Kälte Geruch und Geschmack dämpft.',
-        axisLabel: 'GUTE AUSGANGSTEMPERATUR IN GRAD CELSIUS',
+        axisLabel: 'GUTE STARTTEMPERATUR IN GRAD CELSIUS',
         bands: [
-          { value: '5 – 7 °C', label: 'Pils und leichtes Lager', fill: '#cfe6ef', examples: 'auch alkoholfreies Pils' },
-          { value: '6 – 9 °C', label: 'Helles, Kölsch und Weizen', fill: '#f8dc8a', examples: 'Export und Kristallweizen' },
-          { value: '8 – 10 °C', label: 'Kellerbier, Dunkel und Märzen', fill: '#f3a712', examples: 'Zwickel und Rotbier' },
-          { value: '10 – 13 °C', label: 'Bockbier und kräftige Ales', fill: '#c77700', dark: true, examples: 'Maibock und Doppelbock' },
-          { value: '12 – 15 °C', label: 'sehr starke Stouts und Spezialbiere', fill: '#21493e', dark: true, examples: 'Eisbock, Imperial Stout' }
+          { value: '5 – 7 °C', label: 'Pils, auch alkoholfrei', fill: '#cfe6ef', examples: 'der kühlste Bereich' },
+          { value: '6 – 8 °C', label: 'Helles, Kölsch, Export', fill: '#f8dc8a', examples: 'die Alltagsbiere' },
+          { value: '7 – 9 °C', label: 'Weizenbier', fill: '#f0c650', examples: 'hell wie dunkel' },
+          { value: '8 – 10 °C', label: 'Kellerbier, Dunkel, Schwarzbier', fill: '#f3a712', examples: 'malzbetonte Lager' },
+          { value: '9 – 12 °C', label: 'Bock und kräftige Ales', fill: '#c77700', dark: true, examples: 'Maibock und Weizenbock' },
+          { value: '11 – 14 °C', label: 'Doppelbock, Eisbock, Stout', fill: '#21493e', dark: true, examples: 'Imperial Stout' }
         ],
         source: 'Startwerte aus der Tabelle dieser Seite. Bier erwärmt sich im Glas, darf also etwas kühler eingeschenkt werden.'
       },
-      alt: 'Temperaturskala für Bier in fünf Stufen von 5 bis 7 Grad für Pils und leichtes Lager über 8 bis 10 Grad für Kellerbier und Dunkel bis 12 bis 15 Grad für sehr starke Stouts und Spezialbiere.',
+      alt: 'Temperaturskala für Bier in sechs Stufen: 5 bis 7 Grad für Pils, 6 bis 8 Grad für Helles, Kölsch und Export, 7 bis 9 Grad für Weizenbier, 8 bis 10 Grad für Kellerbier, Dunkel und Schwarzbier, 9 bis 12 Grad für Bock sowie 11 bis 14 Grad für Doppelbock, Eisbock und Imperial Stout.',
       caption: 'Startwerte, keine festen Regeln. Ein Bier, das im Glas wärmer wird, zeigt oft mehr Aroma; eiskaltes Bier wirkt milder und weniger bitter.'
     },
     {
@@ -675,7 +676,7 @@ function manualFigures() {
           { value: '> 7.500', unit: 'BIERMARKEN', label: 'aber bei Weitem nicht ebenso viele grundlegend verschiedene Stile' }
         ],
         note: 'Viele Marken führen Pils, Helles, Weizen und eine alkoholfreie Variante zugleich. Umgekehrt kann ein einzelner Stil unzählige Marken umfassen — Sorte und Marke zählen nicht dasselbe.',
-        source: 'Einordnung aus dem Text dieser Seite. Markenzahl nach Angaben des Deutschen Brauer-Bundes für 2026.'
+        source: 'Einordnung aus dem Text dieser Seite. Markenzahl nach der Pressemitteilung des Deutschen Brauer-Bundes vom 22. April 2026.'
       },
       alt: 'Drei Kennzahlen zur Frage nach der Zahl der Biersorten: keine exakte Zahl, weil sich Stildefinitionen unterscheiden, 14 Sorten für einen guten Überblick über den deutschen Markt und mehr als 7.500 Biermarken, die aber nicht ebenso viele Stile sind.',
       caption: 'Wer eine feste Zahl nennt, hat sich auf einen Stilführer festgelegt. Für den deutschen Alltag reichen rund 14 Sorten als Einstieg.'
@@ -969,7 +970,7 @@ function waveTwoFigures() {
           { value: '3', unit: 'BEGRIFFE', label: 'Marke, Produkt und Biersorte zählen nicht dasselbe' }
         ],
         note: 'Ein großer Teil der Marken ist nur regional oder direkt bei der Brauerei erhältlich. Das Supermarktregal zeigt davon nur einen kleinen Ausschnitt.',
-        source: 'Deutscher Brauer-Bund, Stand 2026. Je nach Quelle werden Marken, einzelne Produkte oder Sorten unterschiedlich gezählt.'
+        source: 'Deutscher Brauer-Bund, Pressemitteilung vom 22. April 2026. Je nach Quelle werden Marken, einzelne Produkte oder Sorten unterschiedlich gezählt.'
       },
       alt: 'Drei Kennzahlen zu Biermarken in Deutschland: mehr als 7.500 Marken aus rund 1.400 Brauereien, und drei Begriffe — Marke, Produkt und Biersorte — die nicht dasselbe zählen.',
       caption: 'Mehr als 7.500 Marken aus rund 1.400 Brauereien. Die meisten davon stehen in keinem Supermarktregal.'

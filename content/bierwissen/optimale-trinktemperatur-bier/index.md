@@ -39,6 +39,9 @@ index: true
 | Kellerbier, Dunkel und Schwarzbier | 8 bis 10 °C |
 | Bock und kräftige Ales | 9 bis 12 °C |
 | Doppelbock, Eisbock und Imperial Stout | 11 bis 14 °C |
+
+Das sind Startwerte. Wer ein Bier wärmer werden lässt, nimmt häufig mehr Aroma wahr; sehr kaltes Bier wirkt dagegen oft milder und weniger bitter.
+
 ## Warum zu kalt problematisch ist
 
 Bei sehr niedrigen Temperaturen riechen und schmecken wir weniger. Malz, Hopfen und Hefe wirken flacher. Das kann bei einem einfachen Durstlöscher angenehm sein, nimmt komplexen Bieren aber ihren Charakter.
@@ -48,19 +51,6 @@ Kohlensäure entweicht schneller, Alkohol tritt stärker hervor und das Bier wir
 ## Praktische Regel
 
 Bier darf etwas kühler eingeschenkt werden als die Zieltemperatur, weil es sich im Glas erwärmt. Ein starkes Bier kann zehn bis zwanzig Minuten vor dem Trinken aus dem Kühlschrank genommen werden.
-
-
-## Trinktemperaturen nach Bierstil
-
-| Bierstil | Gute Ausgangstemperatur |
-|---|---:|
-| Pils und leichtes Lager | 5–7 °C |
-| Helles, Kölsch und Weizen | 6–9 °C |
-| Kellerbier, Dunkel und Märzen | 8–10 °C |
-| Bockbier und kräftige Ales | 10–13 °C |
-| sehr starke Stouts und Spezialbiere | 12–15 °C |
-
-Das sind Startwerte. Wer ein Bier wärmer werden lässt, nimmt häufig mehr Aroma wahr; sehr kaltes Bier wirkt dagegen oft milder und weniger bitter.
 
 ## Häufige Fragen
 
