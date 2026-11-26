@@ -65,7 +65,7 @@ export function wrap(text, maxWidth, size, weight = 400, maxLines = 99) {
   return kept;
 }
 
-export function text(content, x, y, { size = 28, weight = 400, fill = T.ink, anchor = 'start', spacing = 0, opacity = 1 } = {}) {
+export function text(content, x, y, { size = 28, weight = 400, fill = T.ink, anchor = 'start', spacing = 0, opacity = 1, halo = null } = {}) {
   const attrs = [
     `x="${round(x)}"`,
     `y="${round(y)}"`,
@@ -73,6 +73,9 @@ export function text(content, x, y, { size = 28, weight = 400, fill = T.ink, anc
     `font-size="${size}"`,
     `font-weight="${weight}"`,
     `fill="${fill}"`,
+    // Halo: ein breiter Rand in Hintergrundfarbe, unter die Glyphen gelegt.
+    // So bleibt eine Beschriftung lesbar, die ueber einer Linie liegt.
+    halo ? `stroke="${halo}" stroke-width="6" stroke-linejoin="round" paint-order="stroke fill"` : '',
     anchor !== 'start' ? `text-anchor="${anchor}"` : '',
     spacing ? `letter-spacing="${spacing}"` : '',
     opacity !== 1 ? `opacity="${opacity}"` : ''

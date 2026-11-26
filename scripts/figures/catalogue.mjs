@@ -4,8 +4,8 @@
 // ausgeschrieben und nennt seine Quelle.
 
 import { readFileSync } from 'node:fs';
-import { styleProfile, duelProfile, publishedSlugs } from './content.mjs';
-import { colorRangeFromWords, T } from './svg.mjs';
+import { styleProfile, duelProfile, publishedSlugs, pageFile, readBody, tables } from './content.mjs';
+import { colorRangeFromWords, ebcColor as ebcColorOf, T } from './svg.mjs';
 
 const stats = JSON.parse(readFileSync('data/beer-market-statistics.json', 'utf8'));
 const stat = (slug) => stats.find((entry) => entry.slug === slug);
@@ -758,9 +758,623 @@ function manualFigures() {
   ];
 }
 
+
+// ------------------------------------------------- Zweite Welle: der Rest
+// Alles, was nach den Steckbriefen und Vergleichen noch ohne Abbildung war,
+// ohne die sieben Rechtstexte.
+
+// Wie viele der 14 grossen Zelte je Brauerei -- aus der Tabelle der Seite
+// gezaehlt, damit die Grafik einer Aenderung dort folgt.
+function tentsPerBrewery() {
+  const file = pageFile('/oktoberfest/bier-in-welchem-festzelt/');
+  if (!file) return [];
+  const table = tables(readBody(file))[0];
+  if (!table) return [];
+  const counts = new Map();
+  for (const row of table.slice(1)) {
+    if (row.length < 2) continue;
+    const brewery = row[1].trim();
+    if (!brewery) continue;
+    counts.set(brewery, (counts.get(brewery) ?? 0) + 1);
+  }
+  return [...counts.entries()]
+    .map(([label, value]) => ({ label, value }))
+    .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label, 'de'));
+}
+
+// Die Stile der Startseiten-Grafik: Mitte und Spannweite aus den Steckbriefen.
+function stylePoints() {
+  const points = [];
+  for (const name of STYLE_PAGES) {
+    const profile = styleProfile(`/biersorten/${name}/`);
+    if (!profile || !profile.bitterness) continue;
+    const color = colorRangeFromWords(profile.colorWords);
+    const x = (color[0] + color[1]) / 2;
+    const y = (profile.bitterness[0] + profile.bitterness[1]) / 2;
+    points.push({
+      label: profile.name,
+      x, y,
+      xSpan: color[0] === color[1] ? null : color,
+      ySpan: profile.bitterness[0] === profile.bitterness[1] ? null : profile.bitterness,
+      fill: ebcColorOf(x)
+    });
+  }
+  return points;
+}
+
+function waveTwoFigures() {
+  const tents = tentsPerBrewery();
+  const points = stylePoints();
+
+  return [
+    {
+      slug: '/',
+      file: 'start-stile-karte',
+      template: 'streudiagramm',
+      props: {
+        eyebrow: 'Überblick', title: 'Deutsche Bierstile nach Farbe und Bitterkeit',
+        subtitle: 'Zwei Fragen beantworten die meisten: Wie dunkel ist es, und wie herb? Jeder Punkt sitzt in der Mitte seiner Spanne, die Linien zeigen, wie weit der Stil reicht.',
+        points,
+        xTicks: [
+          { value: 4, label: 'strohgelb' },
+          { value: 14, label: 'goldgelb' },
+          { value: 30, label: 'bernstein' },
+          { value: 55, label: 'braun' },
+          { value: 80, label: 'schwarz' }
+        ],
+        yTicks: [
+          { value: 1, label: 'sehr mild' },
+          { value: 2, label: 'mild' },
+          { value: 3, label: 'moderat' },
+          { value: 4, label: 'deutlich' },
+          { value: 5, label: 'kräftig' }
+        ],
+        xLabel: 'FARBE', yLabel: 'BITTERKEIT',
+        note: 'Alkoholfreies Bier fehlt bewusst: Es gibt den Stil in fast jeder Farbe und jeder Bitterkeit, ein einzelner Punkt wäre irreführend.',
+        source: 'Farb- und Bitterkeitsangaben aus den Steckbriefen der elf Sortenseiten. Einzelne Marken können außerhalb ihrer Stilspanne liegen.'
+      },
+      alt: 'Streudiagramm der deutschen Bierstile: waagerecht die Farbe von strohgelb bis schwarz, senkrecht die Bitterkeit von sehr mild bis kräftig. Helles und Weizenbier liegen hell und mild, Pils hell und deutlich bitter, Schwarzbier und Dunkelbier dunkel und moderat.',
+      caption: 'Farbe und Bitterkeit hängen nicht zusammen: Pils ist hell und herb, Dunkelbier dunkel und mild. Die Linien zeigen, wie weit jeder Stil reicht.'
+    },
+    {
+      slug: '/bierwissen/',
+      file: 'bierwissen-hub-kennzahlen',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierwissen', title: 'Die drei Zahlen auf einem Bier-Steckbrief',
+        subtitle: 'Wer diese drei Kürzel kennt, versteht fast jede Produktbeschreibung. Sie messen drei verschiedene Dinge und sagen nichts übereinander aus.',
+        tiles: [
+          { value: 'IBU', unit: 'BITTERKEIT', label: 'Bitterstoffe aus dem Hopfen, etwa 5 bis über 60' },
+          { value: 'EBC', unit: 'FARBE', label: 'Farbtiefe über die Lichtabsorption, 4 bis über 60' },
+          { value: '°P', unit: 'STAMMWÜRZE', label: 'Extraktgehalt vor der Gärung, entscheidet über die Biergattung' }
+        ],
+        note: 'Ein hoher EBC-Wert bedeutet nicht viel Alkohol, und gleiche IBU bedeuten nicht gleichen Geschmack. Die drei Werte sind voneinander unabhängig.',
+        source: 'Einordnung aus den Erklärseiten zu IBU, EBC und Stammwürze in diesem Bereich.'
+      },
+      alt: 'Drei Kennzahlen des Bier-Steckbriefs: IBU für die Bitterkeit aus dem Hopfen, EBC für die Farbtiefe und Grad Plato für die Stammwürze vor der Gärung.',
+      caption: 'IBU, EBC und Grad Plato messen Bitterkeit, Farbe und Stammwürze — drei unabhängige Größen, die oft miteinander verwechselt werden.'
+    },
+    {
+      slug: '/biervergleich/',
+      file: 'biervergleich-hub-stil-marke',
+      template: 'zweiwege',
+      props: {
+        eyebrow: 'Biervergleich', title: 'Was der Stil vorgibt und was die Marke entscheidet',
+        subtitle: 'Jeder Vergleich auf dieser Seite arbeitet mit Spannen. Das ist kein Ausweichen: Ein Bierstil legt einen Rahmen fest, das konkrete Produkt füllt ihn aus.',
+        columns: [
+          {
+            title: 'Der Stil gibt vor',
+            rows: [
+              ['GÄRUNG', 'obergärig oder untergärig, das ändert keine Brauerei im Nachhinein'],
+              ['FARBBEREICH', 'ein Schwarzbier wird nicht strohgelb'],
+              ['TYPISCHE SPANNE', 'Alkohol und Bitterkeit bewegen sich in einem bekannten Rahmen'],
+              ['ERWARTUNG', 'wonach das Bier ungefähr schmecken sollte']
+            ],
+            examples: 'Darum stehen in unseren Tabellen Bereiche und keine festen Werte'
+          },
+          {
+            title: 'Die Marke entscheidet',
+            rows: [
+              ['GENAUER ALKOHOL', 'nur das Etikett ist verbindlich'],
+              ['REZEPTUR', 'Hopfensorte, Malzmischung und Vergärungsgrad'],
+              ['FRISCHE', 'Alter und Lagerung verändern den Eindruck deutlich'],
+              ['PREIS', 'sagt für sich genommen nichts über den Stil aus']
+            ],
+            examples: 'Zwei Pils derselben Stilspanne können spürbar verschieden schmecken'
+          }
+        ],
+        note: 'Ein Vergleich zweier Stile beantwortet deshalb die Frage „welche Richtung passt mir?“ und nicht „welches Bier soll ich kaufen?“.',
+        source: 'Redaktionelle Einordnung, wie sie allen Vergleichsseiten in diesem Bereich zugrunde liegt.'
+      },
+      alt: 'Gegenüberstellung: Der Bierstil gibt Gärung, Farbbereich, typische Spanne und Erwartung vor, die einzelne Marke entscheidet über genauen Alkoholgehalt, Rezeptur, Frische und Preis.',
+      caption: 'Deshalb stehen in den Vergleichstabellen Spannen: Der Stil steckt den Rahmen ab, das einzelne Produkt füllt ihn aus.'
+    },
+    {
+      slug: '/bier-rechner/',
+      file: 'bier-rechner-hub',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierrechner', title: 'Welcher Rechner welche Frage beantwortet',
+        subtitle: 'Alle vier laufen vollständig im Browser, ohne Konto und ohne gespeicherte Daten. Sie geben Bereiche aus, keine Scheingenauigkeit.',
+        tiles: [
+          { value: 'Menge', unit: 'FÜR EINE FEIER', label: 'Wie viele Liter, Flaschen und Kästen brauche ich?' },
+          { value: 'Fass', unit: 'IN GLÄSER', label: 'Wie viele Gläser ergibt ein Fass nach Ausschankverlust?' },
+          { value: 'Preis', unit: 'JE LITER', label: 'Welches Gebinde ist wirklich günstiger?' },
+          { value: 'Kühlzeit', unit: 'SCHÄTZUNG', label: 'Wie lange braucht das Bier bis zur Trinktemperatur?' }
+        ],
+        note: 'Der Mengenrechner ist ausdrücklich eine Einkaufshilfe und keine empfohlene Trinkmenge. Wasser und alkoholfreie Getränke gehören in jede Planung.',
+        source: 'Die Rechner rufen keine Händlerpreise ab und speichern nichts.'
+      },
+      alt: 'Vier Bierrechner im Überblick: Menge für eine Feier, Gläser aus einem Fass, Preis je Liter und geschätzte Kühlzeit, jeweils mit der Frage, die sie beantworten.',
+      caption: 'Vier Rechner für vier Fragen. Alle arbeiten im Browser und geben bewusst Bereiche statt scheingenauer Einzelwerte aus.'
+    },
+    {
+      slug: '/bierregionen/',
+      file: 'bierregionen-nord-sued',
+      template: 'zweiwege',
+      props: {
+        eyebrow: 'Bierregionen', title: 'Nord und West gegen Süd und Ost',
+        subtitle: 'Pils führt bundesweit, doch die regionalen Stile verlaufen entlang einer erkennbaren Linie. Heute ist fast alles überall zu bekommen — die Vorlieben sind geblieben.',
+        columns: [
+          {
+            title: 'Nord und West',
+            rows: [
+              ['LEITSTIL', 'hopfenherbes Pils, besonders sichtbar im Norden'],
+              ['STADTSTILE', 'Kölsch in Köln, Altbier in Düsseldorf — zwei klar abgegrenzte obergärige Stile'],
+              ['BESONDERES', 'Berliner Weisse als säuerlicher historischer Stadtstil'],
+              ['EXPORT', 'Baden-Württemberg mit Export, Pils und Kristallweizen']
+            ],
+            examples: 'Pils, Kölsch, Altbier, Export, Berliner Weisse'
+          },
+          {
+            title: 'Süd und Ost',
+            rows: [
+              ['LEITSTIL', 'malzbetonte Lagerbiere und Weizen'],
+              ['BAYERN', 'Helles, Weizen, Dunkel, Bock und Festbier'],
+              ['FRANKEN', 'Kellerbier, Rauchbier und Landbier aus dichter Dorfbrauereikultur'],
+              ['MITTELDEUTSCHLAND', 'Schwarzbier in Sachsen und Thüringen, Gose aus Leipzig']
+            ],
+            examples: 'Helles, Weizen, Kellerbier, Rauchbier, Schwarzbier, Gose'
+          }
+        ],
+        note: 'Die Grenze ist historisch gewachsen: Vor der modernen Logistik wurde Bier vor allem nahe der Brauerei getrunken, und lokale Gewohnheiten konnten sich festigen.',
+        source: 'Einordnung aus der Regionentabelle dieser Seite.'
+      },
+      alt: 'Gegenüberstellung der deutschen Bierregionen: Nord und West mit hopfenherbem Pils, Kölsch, Altbier und Export, Süd und Ost mit malzbetontem Hellem, Weizen, Kellerbier, Rauchbier, Schwarzbier und Gose.',
+      caption: 'Die Trennlinie ist historisch gewachsen. Erhältlich ist heute fast alles überall — die regionalen Vorlieben sind trotzdem geblieben.'
+    },
+    {
+      slug: '/bierwissen/was-ist-bier/',
+      file: 'bierwissen-vier-zutaten',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierwissen', title: 'Die vier Grundzutaten und ihre Aufgabe',
+        subtitle: 'Bier entsteht im Kern aus vier Zutaten. Jede übernimmt eine eigene Aufgabe, und schon kleine Änderungen führen zu deutlich verschiedenen Ergebnissen.',
+        tiles: [
+          { value: 'Wasser', unit: 'DER GRÖSSTE ANTEIL', label: 'bildet den mengenmäßig größten Teil des fertigen Biers' },
+          { value: 'Malz', unit: 'ZUCKER UND FARBE', label: 'liefert vergärbare Zucker, Farbe und Geschmacksstoffe' },
+          { value: 'Hopfen', unit: 'BITTERE UND AROMA', label: 'steuert Bitterkeit, Aroma und Haltbarkeit bei' },
+          { value: 'Hefe', unit: 'DIE GÄRUNG', label: 'wandelt Zucker in Alkohol und Kohlensäure um, prägt das Aroma' }
+        ],
+        note: 'Helles Malz ergibt nicht automatisch ein mildes Bier, und viel Hopfen bedeutet nicht zwingend extreme Bitterkeit: Sorte und Zeitpunkt der Hopfengabe sind ebenso wichtig.',
+        source: 'Zuordnung aus dem Text dieser Seite. Für obergäriges Bier sind nach dem Vorläufigen Biergesetz weitere Malze und Zucker zulässig.'
+      },
+      alt: 'Die vier Grundzutaten des Biers mit ihren Aufgaben: Wasser als größter Anteil, Malz für Zucker und Farbe, Hopfen für Bitterkeit und Aroma, Hefe für die Gärung.',
+      caption: 'Vier Zutaten, vier Aufgaben. Welche Hopfensorte wann zugegeben wird, verändert das Ergebnis oft stärker als die reine Menge.'
+    },
+    {
+      slug: '/bierwissen/wie-viele-biermarken-gibt-es/',
+      file: 'bierwissen-biermarken',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierwissen', title: 'Biermarken in Deutschland',
+        subtitle: 'Die Zahl der Marken liegt deutlich über der Zahl der Brauereien, weil eine Brauerei mehrere Marken und unter jeder Marke mehrere Sorten führen kann.',
+        tiles: [
+          { value: '> 7.500', unit: 'BIERMARKEN', label: 'Angabe des Deutschen Brauer-Bundes für 2026' },
+          { value: '≈ 1.400', unit: 'BRAUEREIEN', label: 'aus denen diese Marken stammen' },
+          { value: '3', unit: 'BEGRIFFE', label: 'Marke, Produkt und Biersorte zählen nicht dasselbe' }
+        ],
+        note: 'Ein großer Teil der Marken ist nur regional oder direkt bei der Brauerei erhältlich. Das Supermarktregal zeigt davon nur einen kleinen Ausschnitt.',
+        source: 'Deutscher Brauer-Bund, Stand 2026. Je nach Quelle werden Marken, einzelne Produkte oder Sorten unterschiedlich gezählt.'
+      },
+      alt: 'Drei Kennzahlen zu Biermarken in Deutschland: mehr als 7.500 Marken aus rund 1.400 Brauereien, und drei Begriffe — Marke, Produkt und Biersorte — die nicht dasselbe zählen.',
+      caption: 'Mehr als 7.500 Marken aus rund 1.400 Brauereien. Die meisten davon stehen in keinem Supermarktregal.'
+    },
+    {
+      slug: '/bierwissen/wie-schwer-ist-bierkasten/',
+      file: 'bierwissen-kastengewicht',
+      template: 'balken',
+      props: {
+        eyebrow: 'Bierwissen', title: 'Woraus sich das Gewicht eines Bierkastens ergibt',
+        subtitle: 'Ein voller Kasten wiegt häufig 16 bis 20 Kilogramm. Die Beispielrechnung unten zeigt, wie sich das auf Bier, Glas und Kasten verteilt.',
+        unit: 'KILOGRAMM IM RECHENBEISPIEL',
+        items: [
+          { label: 'Bier', sublabel: '10 Liter, rund ein Kilo je Liter', value: 10, valueLabel: 'ca. 10 kg' },
+          { label: 'Leere Glasflaschen', sublabel: '20 Stück, je nach Mehrwegsystem', value: 7, valueLabel: 'ca. 7 kg', fill: T.green },
+          { label: 'Kunststoffkasten', sublabel: 'häufig ein bis zwei Kilogramm', value: 1.5, valueLabel: 'ca. 1,5 kg', fill: T.green }
+        ],
+        note: 'Zusammen ergibt das rund 18,5 Kilogramm. Das ist ein Rechenbeispiel und kein Standardwert: Flaschenform, Glasstärke und Kastenmaterial verschieben es spürbar.',
+        source: 'Beispielrechnung aus dem Text dieser Seite.'
+      },
+      alt: 'Balkendiagramm zur Zusammensetzung eines Bierkastens im Rechenbeispiel: rund 10 Kilogramm Bier, rund 7 Kilogramm leere Glasflaschen und rund 1,5 Kilogramm Kunststoffkasten, zusammen etwa 18,5 Kilogramm.',
+      caption: 'Gut die Hälfte des Gewichts ist Bier, der Rest ist Verpackung. Deshalb wiegt ein Kasten mit kleineren Flaschen nicht automatisch weniger.'
+    },
+    {
+      slug: '/bierwissen/wie-viele-liter-bierkasten/',
+      file: 'bierwissen-kastenliter',
+      template: 'balken',
+      props: {
+        eyebrow: 'Bierwissen', title: 'Wie viel Bier in den gängigen Kästen steckt',
+        subtitle: 'Die Flaschenzahl allein sagt wenig. Erst Flaschenzahl mal Flascheninhalt ergibt die Menge, die sich vergleichen lässt.',
+        unit: 'LITER JE KASTEN',
+        items: [
+          { label: '20 × 0,5 l', sublabel: 'der verbreitetste Kasten', value: 10, valueLabel: '10,0 l' },
+          { label: '24 × 0,33 l', sublabel: 'häufig bei Spezialitäten', value: 7.92, valueLabel: '7,92 l', fill: T.green },
+          { label: '20 × 0,33 l', sublabel: 'kleineres Gebinde', value: 6.6, valueLabel: '6,6 l', fill: T.green },
+          { label: '11 × 0,5 l', sublabel: 'kleiner Kasten', value: 5.5, valueLabel: '5,5 l', fill: T.green }
+        ],
+        note: 'Zwei Kästen können ähnlich teuer aussehen und doch fast doppelt so viel enthalten. Für Preisvergleiche taugt deshalb nur der Preis je Liter.',
+        source: 'Werte aus der Tabelle dieser Seite.'
+      },
+      alt: 'Balkendiagramm der Füllmengen gängiger Bierkästen: 20 mal 0,5 Liter ergeben 10 Liter, 24 mal 0,33 Liter ergeben 7,92 Liter, 20 mal 0,33 Liter ergeben 6,6 Liter und 11 mal 0,5 Liter ergeben 5,5 Liter.',
+      caption: 'Der größte und der kleinste Kasten unterscheiden sich fast um das Doppelte. Die Flaschenzahl auf der Vorderseite verrät das nicht.'
+    },
+    {
+      slug: '/bierwissen/bier-im-kuehlschrank-kuehlen/',
+      file: 'bierwissen-kuehlzeiten',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierwissen', title: 'Drei Wege, Bier kalt zu bekommen',
+        subtitle: 'Die Zeitfenster sind Orientierungswerte einer Brauerei, kein kontrollierter Methodenvergleich. Gebindegröße und Beladung verschieben sie deutlich.',
+        tiles: [
+          { value: '6 – 8', unit: 'STUNDEN', label: 'Kühlschrank, ab Raumtemperatur bis zur vollständigen Kühlung' },
+          { value: '30 – 60', unit: 'MINUTEN', label: 'Gefrierfach — nur mit Timer, das Bier kann gefrieren' },
+          { value: '5 – 10', unit: 'MINUTEN', label: 'Eiswasser mit Salz, regelmäßig kontrollieren' }
+        ],
+        note: 'Für einen ganzen warmen Kasten lässt sich aus den Zeitfenstern für einzelne Gebinde keine feste Dauer ableiten. Plane Vorlauf ein und miss nach.',
+        source: 'Coronado Brewing: Beer Cooling Times, geprüft am 29. September 2026. Die Brauerei nennt keine einheitliche Gebindegröße.'
+      },
+      alt: 'Drei Kühlmethoden für Bier mit ihren groben Zeitfenstern: Kühlschrank 6 bis 8 Stunden, Gefrierfach 30 bis 60 Minuten und Eiswasser mit Salz 5 bis 10 Minuten.',
+      caption: 'Eiswasser mit Salz ist um ein Vielfaches schneller als der Kühlschrank. Beim Gefrierfach entscheidet der Timer, ob die Flasche heil bleibt.'
+    },
+    {
+      slug: '/bierwissen/bier-kalorien-tabelle/',
+      file: 'bierwissen-kalorien-produkte',
+      template: 'balken',
+      props: {
+        eyebrow: 'Bierwissen', title: 'Kalorien je 0,5 Liter in sechs Produktbeispielen',
+        subtitle: 'Diese Werte gelten für die unten verlinkten Produkte, nicht pauschal für die ganze Biersorte. Bei geänderter Rezeptur gilt die aktuelle Kennzeichnung.',
+        unit: 'KILOKALORIEN JE 0,5 LITER',
+        items: [
+          { label: 'Alkoholfrei', sublabel: 'Paulaner Münchner Hell alkoholfrei', value: 120, valueLabel: '120 kcal', fill: T.green },
+          { label: 'Radler', sublabel: 'Paulaner Natur Radler', value: 185, valueLabel: '185 kcal', fill: T.green },
+          { label: 'Helles', sublabel: 'Paulaner Münchner Hell', value: 190, valueLabel: '190 kcal' },
+          { label: 'Pils', sublabel: 'Bitburger Premium Pils', value: 200, valueLabel: '200 kcal' },
+          { label: 'Weizen', sublabel: 'Paulaner Hefe-Weißbier Naturtrüb', value: 210, valueLabel: '210 kcal' },
+          { label: 'Festbier', sublabel: 'Paulaner Oktoberfest Bier', value: 235, valueLabel: '235 kcal', fill: T.amberDark }
+        ],
+        note: 'Zwischen Pils und Weizen liegen hier 10 Kilokalorien je halbem Liter. Daraus lässt sich keine allgemeine Regel für jedes Weizen und jedes Pils ableiten.',
+        source: 'Herstellerangaben je 100 ml, Stand 29. September 2026. Portionswerte daraus berechnet und auf ganze Kilokalorien gerundet.'
+      },
+      alt: 'Balkendiagramm der Kalorien je 0,5 Liter in sechs konkreten Produkten: alkoholfreies Helles 120, Radler 185, Helles 190, Pils 200, Weizen 210 und Festbier 235 Kilokalorien.',
+      caption: 'Alkoholfrei heißt nicht kalorienfrei: 120 Kilokalorien je halbem Liter stehen 235 beim Festbier gegenüber.'
+    },
+    {
+      slug: '/biervergleich/alkoholfrei-oder-null-komma-null/',
+      file: 'biervergleich-alkoholfrei-null',
+      template: 'zweiwege',
+      props: {
+        eyebrow: 'Direktvergleich', title: 'Alkoholfrei oder 0,0 Prozent',
+        subtitle: 'Die beiden Angaben sind nicht dasselbe. Der Unterschied liegt nicht im Geschmack, sondern in dem, was die Kennzeichnung zusichert.',
+        columns: [
+          {
+            title: 'Alkoholfrei',
+            rows: [
+              ['RESTALKOHOL', 'geringe Restmengen bis 0,5 Prozent sind zulässig'],
+              ['IN DER PRAXIS', 'viele Produkte liegen deutlich darunter'],
+              ['VERBINDLICH', 'nur die konkrete Angabe auf dem Produkt'],
+              ['GEEIGNET', 'wenn minimale Restmengen in Ordnung sind']
+            ],
+            examples: 'Auch natürlich fermentierte Lebensmittel enthalten Alkoholspuren'
+          },
+          {
+            title: '0,0 Prozent',
+            rows: [
+              ['RESTALKOHOL', 'kein messbarer Alkohol in der angegebenen Größenordnung'],
+              ['IN DER PRAXIS', 'ausdrücklich so gekennzeichnet'],
+              ['VERBINDLICH', 'die Kennzeichnung selbst ist die Zusage'],
+              ['GEEIGNET', 'wenn Alkohol vollständig vermieden werden soll']
+            ],
+            examples: 'Die einfachere Wahl aus medizinischen, religiösen oder persönlichen Gründen'
+          }
+        ],
+        note: 'In Schwangerschaft, bei Erkrankungen, Medikamenteneinnahme oder Suchterkrankungen sollte die eigene Situation mit medizinischem Fachpersonal geklärt werden.',
+        source: 'Einordnung aus dem Text dieser Seite. Alkoholreduziertes Bier enthält mehr als alkoholfreies, aber weniger als das Ausgangsbier.'
+      },
+      alt: 'Gegenüberstellung von alkoholfreiem Bier und 0,0-Prozent-Bier: alkoholfrei darf bis zu 0,5 Prozent Restalkohol enthalten, 0,0 Prozent sagt keinen messbaren Alkohol zu.',
+      caption: 'Der Unterschied liegt in der Zusicherung, nicht im Geschmack. Wer Alkohol vollständig vermeiden will, greift zur 0,0-Kennzeichnung.'
+    },
+    {
+      slug: '/biervergleich/radler-oder-alsterwasser/',
+      file: 'biervergleich-radler-alster',
+      template: 'zweiwege',
+      props: {
+        eyebrow: 'Direktvergleich', title: 'Radler oder Alsterwasser',
+        subtitle: 'Beide Namen bezeichnen meist dieselbe Grundidee: Bier mit Zitronenlimonade. Der wichtigste Unterschied ist die regionale Sprache.',
+        columns: [
+          {
+            title: 'Radler',
+            rows: [
+              ['WO GELÄUFIG', 'Süd- und Westdeutschland'],
+              ['BASISBIER', 'oft Helles oder ein anderes helles Lagerbier'],
+              ['GESCHMACK', 'mehr Malzsüße durch das hellere Lager'],
+              ['ALKOHOL', 'bei halb und halb etwa 2 bis 3 Prozent']
+            ],
+            examples: 'Ein Russ ist Weizenbier mit Limonade und damit etwas anderes'
+          },
+          {
+            title: 'Alsterwasser',
+            rows: [
+              ['WO GELÄUFIG', 'Norddeutschland, kurz auch Alster'],
+              ['BASISBIER', 'häufig Pils, aber nicht zwingend'],
+              ['GESCHMACK', 'mehr Bitterkeit durch das Pils'],
+              ['ALKOHOL', 'bei halb und halb etwa 2 bis 3 Prozent']
+            ],
+            examples: 'Der Name allein garantiert keine festgelegte Rezeptur'
+          }
+        ],
+        note: 'Es gibt kein überall identisches Mischungsverhältnis. Fertig abgefüllte Produkte können süßer, saurer oder bierbetonter schmecken.',
+        source: 'Einordnung aus dem Text dieser Seite.'
+      },
+      alt: 'Gegenüberstellung von Radler und Alsterwasser: Radler ist im Süden und Westen geläufig und basiert oft auf Hellem, Alsterwasser im Norden und häufig auf Pils, beide mit etwa 2 bis 3 Prozent Alkohol.',
+      caption: 'Der Unterschied ist vor allem sprachlich. Spürbar wird er über das Basisbier: Pils bringt Bitterkeit, Helles Malzsüße.'
+    },
+    {
+      slug: '/oktoberfest/festzelte/',
+      file: 'oktoberfest-zelte-zahlen',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Oktoberfest', title: 'Die Zeltlandschaft der Wiesn in Zahlen',
+        subtitle: 'Die offizielle Wiesn besteht aus deutlich mehr als den bekannten großen Hallen. Dazu kommen die Angebote auf der Oidn Wiesn.',
+        tiles: [
+          { value: '14', unit: 'GROSSE FESTZELTE', label: 'von sehr groß bis mittelgroß, mit festem Brauereibezug' },
+          { value: '21', unit: 'KLEINERE BETRIEBE', label: 'oft spezialisierte Küche, kürzere Wege, ruhigere Atmosphäre' },
+          { value: '≈ 10.000', unit: 'PLÄTZE', label: 'im Hofbräu-Festzelt einschließlich Außenbereich, dem größten Zelt' }
+        ],
+        note: 'Kapazitäten und Zeltkonzepte können sich zwischen den Jahren verändern. Für Reservierungen gelten die aktuellen Angaben des jeweiligen Festwirts.',
+        source: 'Zeltverzeichnis dieser Seite nach Angaben der Landeshauptstadt München. Abruf November 2026.'
+      },
+      alt: 'Drei Kennzahlen zur Wiesn-Zeltlandschaft: 14 große Festzelte, 21 kleinere Betriebe und rund 10.000 Plätze im Hofbräu-Festzelt einschließlich Außenbereich.',
+      caption: 'Die kleineren Betriebe sind keine Nebenrolle: Sie bieten oft spezialisierte Küche und kürzere Wege als die großen Hallen.'
+    },
+    {
+      slug: '/oktoberfest/bier-in-welchem-festzelt/',
+      file: 'oktoberfest-zelte-je-brauerei',
+      template: 'balken',
+      props: {
+        eyebrow: 'Oktoberfest', title: 'Wie sich die 14 großen Zelte auf die Brauereien verteilen',
+        subtitle: 'Sechs Brauereien teilen sich die großen Festzelte. Die Zuordnungen sind über Jahre hinweg stabil.',
+        unit: 'ANZAHL DER GROSSEN FESTZELTE',
+        items: tents.map((row, index) => ({
+          label: row.label,
+          value: row.value,
+          valueLabel: `${row.value} ${row.value === 1 ? 'Zelt' : 'Zelte'}`,
+          fill: index === 0 ? T.amber : T.green
+        })),
+        note: 'Kufflers Weinzelt zählt hier bei Paulaner mit, schenkt in der Maß aber Weißbier aus und wird beim Preisvergleich getrennt betrachtet.',
+        source: 'Gezählt aus der Zelttabelle dieser Seite. Quelle der Zuordnungen: offizielle Übersicht von Oktoberfest.de, geprüft am 29. September 2026.'
+      },
+      alt: 'Balkendiagramm der Verteilung der 14 großen Oktoberfestzelte auf die sechs Münchner Brauereien, angeführt von Paulaner mit vier Zelten, gefolgt von Spaten mit drei.',
+      caption: 'Paulaner stellt das Bier in vier der vierzehn großen Zelte, Hofbräu nur in einem — dem größten von allen.'
+    },
+    {
+      slug: '/oktoberfest/welches-bier-gibt-es/',
+      file: 'oktoberfest-wiesnbiere',
+      template: 'punkte',
+      props: {
+        eyebrow: 'Oktoberfest', title: 'Alkoholgehalt der sechs Wiesnbiere',
+        subtitle: 'Festbier ist stärker eingebraut als ein normales Helles. Zwischen dem stärksten und dem mildesten Wiesnbier liegt knapp ein halbes Prozent.',
+        min: 5.8, max: 6.4, ticks: [5.8, 6.0, 6.2, 6.4], suffix: ' %',
+        items: [
+          { label: 'Augustiner Wiesnbier', value: 6.3, valueLabel: '6,3 % vol', emphasis: true, fill: T.amber },
+          { label: 'Hofbräu Oktoberfestbier', value: 6.2, valueLabel: '6,2 % vol' },
+          { label: 'Löwenbräu Oktoberfestbier', value: 6.1, valueLabel: '6,1 % vol' },
+          { label: 'Hacker-Pschorr Oktoberfestbier', value: 6.0, valueLabel: '6,0 % vol' },
+          { label: 'Paulaner Oktoberfestbier', value: 6.0, valueLabel: '6,0 % vol' },
+          { label: 'Spaten Oktoberfestbier', value: 5.9, valueLabel: 'etwa 5,9 % vol', emphasis: true, fill: T.inkSoft }
+        ],
+        note: 'Ein normales Helles liegt meist bei 4,7 bis 5,4 Prozent. Eine Maß Wiesnbier enthält deshalb spürbar mehr Alkohol als eine Maß Helles.',
+        source: 'Offizielle Übersicht der sechs Wiesn-Brauereien, geprüft am 29. September 2026. Für ein konkretes Produkt gilt die aktuelle Herstellerangabe.'
+      },
+      alt: 'Punktdiagramm des Alkoholgehalts der sechs Wiesnbiere: Augustiner mit 6,3 Prozent am stärksten, Hofbräu 6,2, Löwenbräu 6,1, Hacker-Pschorr und Paulaner je 6,0 und Spaten mit etwa 5,9 Prozent.',
+      caption: 'Alle sechs liegen zwischen 5,9 und 6,3 Prozent — deutlich über einem normalen Hellen mit 4,7 bis 5,4 Prozent.'
+    },
+    {
+      slug: '/oktoberfest/reservierung-oeffnungszeiten/',
+      file: 'oktoberfest-oeffnungszeiten',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Oktoberfest', title: 'Wann die Festzelte geöffnet sind',
+        subtitle: 'Die großen Zelte folgen einem festen Rhythmus. Letzter Bierausschank und Musikende liegen jeweils eine Stunde vor Schluss.',
+        tiles: [
+          { value: '10 – 23.30', unit: 'MONTAG BIS FREITAG', label: 'letzter Ausschank und Musikende gewöhnlich um 22.30 Uhr' },
+          { value: '9 – 23.30', unit: 'SAMSTAG UND SONNTAG', label: 'auch an Feiertagen öffnen die großen Zelte früher' },
+          { value: 'bis 1 Uhr', unit: 'ZWEI AUSNAHMEN', label: 'Käfer Wiesn-Schänke und Kufflers Weinzelt, letzter Ausschank 0.30 Uhr' }
+        ],
+        note: 'Am ersten Samstag öffnen die Zelte um 9 Uhr, Bier gibt es erst nach dem offiziellen Anstich um 12 Uhr. Eine Reservierung ist für den Zeltbesuch nicht grundsätzlich nötig.',
+        source: 'Angaben der Landeshauptstadt München zum Oktoberfest. Abruf November 2026.'
+      },
+      alt: 'Öffnungszeiten der Oktoberfestzelte: montags bis freitags 10 bis 23.30 Uhr, samstags und sonntags ab 9 Uhr, und als Ausnahme Käfer Wiesn-Schänke sowie Kufflers Weinzelt bis 1 Uhr.',
+      caption: 'Freie Plätze sind werktags am Vormittag am wahrscheinlichsten. Abends und am Wochenende können Zelte wegen Überfüllung schließen.'
+    },
+    {
+      slug: '/oktoberfest/karte-anreise/',
+      file: 'oktoberfest-anreise',
+      template: 'zweiwege',
+      props: {
+        eyebrow: 'Oktoberfest', title: 'Die naheliegende Anreise und die ruhigere',
+        subtitle: 'Die Theresienwiese liegt südwestlich der Münchner Innenstadt. Vier Stationen kommen infrage — die nächstgelegene ist nicht immer die beste.',
+        columns: [
+          {
+            title: 'Direkt am Gelände',
+            rows: [
+              ['STATION', 'Theresienwiese, U4 und U5'],
+              ['WEG', 'unmittelbar am Festgelände'],
+              ['NACHTEIL', 'zu Spitzenzeiten sehr voll'],
+              ['GEEIGNET', 'außerhalb der Stoßzeiten']
+            ],
+            examples: 'Die naheliegendste Verbindung, aber selten die entspannteste'
+          },
+          {
+            title: 'Kurzer Fußweg, dafür ruhiger',
+            rows: [
+              ['U-BAHN', 'Goetheplatz oder Poccistraße, U3 und U6'],
+              ['S-BAHN', 'Hackerbrücke, ausgeschilderter Fußweg, mehrere Linien'],
+              ['VOM HAUPTBAHNHOF', 'zu Fuß etwa 15 bis 25 Minuten je nach Eingang'],
+              ['VORTEIL', 'je nach Zelt kann der Weg sogar kürzer sein']
+            ],
+            examples: 'Besonders für Reisende aus dem Umland und vom Hauptbahnhof'
+          }
+        ],
+        note: 'Mit dem Auto ist die direkte Anreise unpraktisch: Sperrungen, Zufahrtsbeschränkungen und kaum Parkplätze. Wer Alkohol trinkt, fährt ohnehin nicht selbst — das gilt auch für Fahrrad und E-Scooter.',
+        source: 'Einordnung aus dem Text dieser Seite. Den verbindlichen Geländeplan veröffentlicht die Landeshauptstadt München.'
+      },
+      alt: 'Anreisevergleich zum Oktoberfest: direkt am Gelände die Station Theresienwiese mit U4 und U5, als ruhigere Alternative Goetheplatz oder Poccistraße mit U3 und U6, die S-Bahn-Station Hackerbrücke sowie 15 bis 25 Minuten Fußweg vom Hauptbahnhof.',
+      caption: 'Die nächstgelegene Station ist zu Spitzenzeiten die vollste. Je nach Zelt ist der Weg von Goetheplatz oder Poccistraße sogar kürzer.'
+    },
+    {
+      slug: '/oktoberfest/bands-musik/',
+      file: 'oktoberfest-musik',
+      template: 'zweiwege',
+      props: {
+        eyebrow: 'Oktoberfest', title: 'Wie sich die Musik über den Tag verändert',
+        subtitle: 'Jedes Festzelt organisiert sein Programm selbst. Der Tagesverlauf folgt trotzdem in fast allen großen Zelten demselben Muster.',
+        columns: [
+          {
+            title: 'Vormittag und früher Nachmittag',
+            rows: [
+              ['REPERTOIRE', 'traditionelle Blasmusik, Märsche, Walzer und bayerische Stücke'],
+              ['LAUTSTÄRKE', 'gedämpfter, Gespräche am Tisch sind möglich'],
+              ['PUBLIKUM', 'ruhiger, häufig Familien und Gäste ohne Reservierung'],
+              ['OIDE WIESN', 'setzt den ganzen Tag stärker auf traditionelle Volksmusik']
+            ],
+            examples: 'Gute Zeit, wenn es um Essen und das Zelt selbst gehen soll'
+          },
+          {
+            title: 'Nachmittag und Abend',
+            rows: [
+              ['REPERTOIRE', 'bekannte Wiesnhits, Schlager, Rockklassiker und internationale Partylieder'],
+              ['LAUTSTÄRKE', 'deutlich lauter, ausgerichtet aufs Mitsingen'],
+              ['PUBLIKUM', 'volle Zelte, Bänke werden zur Bühne'],
+              ['ZELTSCHLUSS', 'Musikende gewöhnlich eine Stunde vor Schluss']
+            ],
+            examples: 'Große Partyzelte richten ihr Programm hierauf aus'
+          }
+        ],
+        note: 'Bandpläne ändern sich kurzfristig. Verbindlich sind immer die offiziellen Programmseiten der einzelnen Festzelte.',
+        source: 'Einordnung aus dem Text dieser Seite. Einen vollständigen zentralen Spielplan für alle Zelte und Tage gibt es nicht.'
+      },
+      alt: 'Gegenüberstellung des Musikprogramms auf dem Oktoberfest: vormittags traditionelle Blasmusik, Märsche und Walzer bei moderater Lautstärke, nachmittags und abends Wiesnhits, Schlager und Rockklassiker deutlich lauter.',
+      caption: 'Wer das Zelt und das Essen erleben will, kommt vormittags. Wer feiern will, abends. Das Programm wechselt in fast jedem großen Zelt.'
+    },
+    {
+      slug: '/bierregionen/bier-in-muenchen/',
+      file: 'bierregionen-muenchen',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierregionen', title: 'München in drei Jahreszahlen',
+        subtitle: 'Die Münchner Bierkultur ist älter als das Oktoberfest und hat mit dem Hellen einen Stil hervorgebracht, der heute weit über Bayern hinaus erfolgreich ist.',
+        tiles: [
+          { value: '1328', unit: 'ÄLTESTE DER SECHS', label: 'Brautradition bei Augustiner, der ältesten Oktoberfestbrauerei' },
+          { value: '1894', unit: 'DAS HELLE KOMMT', label: 'Spaten bringt ein frühes Münchner Hell auf den Markt' },
+          { value: '6', unit: 'WIESNBRAUEREIEN', label: 'nur ihr Bier darf als Oktoberfestbier ausgeschenkt werden' }
+        ],
+        note: 'Die Münchner Szene besteht nicht nur aus den sechs Großen: Kleinere und neuere Brauereien bringen Kellerbier, IPA und alkoholfreie Biere dazu.',
+        source: 'Brauereitabelle dieser Seite. Für eine Stadtübersicht ist zwischen Stadtgebiet, Landkreis und Münchner Marken zu unterscheiden.'
+      },
+      alt: 'Drei Jahreszahlen zur Münchner Bierkultur: Augustiner als älteste der sechs Oktoberfestbrauereien mit Brautradition seit 1328, Spaten mit einem frühen Münchner Hell ab 1894 und sechs zugelassene Wiesnbrauereien.',
+      caption: 'Das Helle ist jünger als die Brauereien, die es brauen. Erst Ende des 19. Jahrhunderts wurde der Stil populär.'
+    },
+    {
+      slug: '/bier-rechner/bierpreis-pro-liter/',
+      file: 'rechner-bierpreis',
+      template: 'balken',
+      props: {
+        eyebrow: 'Bierrechner', title: 'Warum der Kastenpreis in die Irre führt',
+        subtitle: 'Drei Angebote, die im Regal ähnlich aussehen. Erst der Preis je Liter zeigt, welches wirklich günstiger ist.',
+        unit: 'PREIS JE LITER, OHNE PFAND',
+        items: [
+          { label: '20 × 0,5 l für 18 €', sublabel: '10 Liter Getränkemenge', value: 1.8, valueLabel: '1,80 €', fill: T.green },
+          { label: '24 × 0,33 l für 16 €', sublabel: '7,92 Liter, also weniger Bier', value: 2.02, valueLabel: 'ca. 2,02 €' },
+          { label: 'Sixpack 6 × 0,33 l für 5,49 €', sublabel: '1,98 Liter', value: 2.77, valueLabel: 'ca. 2,77 €', fill: T.amberDark }
+        ],
+        note: 'Der Kasten mit mehr Flaschen ist hier der teurere: 24 kleine Flaschen enthalten weniger Bier als 20 große. Das Sixpack kostet je Liter gut die Hälfte mehr als der große Kasten.',
+        source: 'Rechenbeispiele aus der Tabelle dieser Seite. Pfand bleibt außen vor, weil es bei Rückgabe erstattet wird.'
+      },
+      alt: 'Balkendiagramm dreier Bierangebote nach Preis je Liter: 20 mal 0,5 Liter für 18 Euro ergeben 1,80 Euro je Liter, 24 mal 0,33 Liter für 16 Euro rund 2,02 Euro und ein Sixpack rund 2,77 Euro je Liter.',
+      caption: 'Mehr Flaschen heißt nicht mehr Bier. Der Kasten mit 24 kleinen Flaschen ist je Liter teurer als der mit 20 großen.'
+    },
+    {
+      slug: '/bier-rechner/fassbier/',
+      file: 'rechner-fassbier',
+      template: 'balken',
+      props: {
+        eyebrow: 'Bierrechner', title: 'Was der Ausschankverlust aus einem Fass macht',
+        subtitle: 'Die rechnerische Glaszahl ist eine Obergrenze. Schaum, Anstich und Restmengen gehen davon ab — der Rechner weist beides getrennt aus.',
+        unit: 'HALBE LITER AUS EINEM 50-LITER-FASS',
+        items: [
+          { label: 'ohne Verlust', sublabel: 'die rechnerische Obergrenze', value: 100, valueLabel: '100 Gläser' },
+          { label: '5 Prozent Verlust', sublabel: 'gut eingestellte Anlage', value: 95, valueLabel: '95 Gläser', fill: T.green },
+          { label: '10 Prozent Verlust', sublabel: 'realistisch im laufenden Betrieb', value: 90, valueLabel: '90 Gläser', fill: T.green }
+        ],
+        note: 'Die Glaszahl wird immer abgerundet, weil ein Rest kein volles Getränk ergibt. Für die Planung lohnt es sich, mit der unteren Zahl zu rechnen.',
+        source: 'Rechenweg dieser Seite: nutzbare Liter = Fassgröße × (1 − Verlust ÷ 100), geteilt durch die Glasgröße.'
+      },
+      alt: 'Balkendiagramm der Glaszahl aus einem 50-Liter-Fass: 100 halbe Liter ohne Verlust, 95 bei 5 Prozent Ausschankverlust und 90 bei 10 Prozent.',
+      caption: 'Zehn Prozent Verlust kosten zehn Gläser. Für die Planung einer Feier ist die untere Zahl die ehrlichere.'
+    },
+    {
+      slug: '/bier-rechner/bier-kuehlzeit/',
+      file: 'rechner-kuehlzeit',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierrechner', title: 'Was die geschätzte Kühlzeit verschiebt',
+        subtitle: 'Hinter dem Rechner stehen konservativ gewählte Zeitbereiche, keine physikalische Simulation. Drei Größen verändern das Ergebnis am stärksten.',
+        tiles: [
+          { value: 'Differenz', unit: 'START ZU ZIEL', label: 'je weiter Start- und Wunschtemperatur auseinanderliegen, desto länger' },
+          { value: 'Gebinde', unit: 'DOSE ODER GLAS', label: 'Dose kühlt schneller als Glas, 0,33 l schneller als 0,5 l' },
+          { value: 'Menge', unit: 'EINZELN ODER KASTEN', label: 'mehrere Gebinde wärmen sich gegenseitig, dafür gibt es einen Aufschlag' }
+        ],
+        note: 'Der Rechner gibt „ungefähr 2 bis 4 Stunden“ aus statt „2 Stunden 17 Minuten“. Ohne Messung der tatsächlichen Wärmeübertragung wäre eine minutengenaue Zahl irreführend.',
+        source: 'Rechenlogik dieser Seite. Das Gefrierfach bieten wir bewusst nicht als Standardmethode an.'
+      },
+      alt: 'Drei Einflussgrößen auf die geschätzte Kühlzeit: die Temperaturdifferenz zwischen Start und Ziel, das Gebinde aus Dose oder Glas und die Menge von einzelner Flasche bis ganzem Kasten.',
+      caption: 'Deshalb gibt der Rechner Zeitbereiche aus. Eine minutengenaue Zahl wäre ohne Temperaturmessung erfunden.'
+    },
+    {
+      slug: '/bier-rechner/biermenge-party/',
+      file: 'rechner-biermenge',
+      template: 'kennzahlen',
+      props: {
+        eyebrow: 'Bierrechner', title: 'Drei Szenarien statt einer Zahl',
+        subtitle: 'Der Rechner gibt nicht ein Ergebnis aus, sondern drei. Das macht sichtbar, dass es sich um eine Schätzung für den Einkauf handelt.',
+        tiles: [
+          { value: 'knapp', unit: 'WENIG RESERVE', label: 'wenn viele andere Getränke im Angebot sind' },
+          { value: 'normal', unit: 'AUSGEWOGEN', label: 'die mittlere Annahme — kein Richtwert für den Konsum' },
+          { value: 'großzügig', unit: 'MIT PUFFER', label: 'längere Veranstaltung oder unsichere Gästezahl' }
+        ],
+        note: 'Die Zahlen gelten der Einkaufsplanung für erwachsene Gäste und sind kein Konsumziel. Wasser und alkoholfreie Getränke gehören in jede Planung.',
+        source: 'Rechenlogik dieser Seite. Das Ergebnis wird auf ganze Flaschen und anschließend auf ganze Kästen aufgerundet.'
+      },
+      alt: 'Drei Planungsszenarien des Biermengenrechners: knapp mit wenig Reserve, normal als ausgewogene Annahme und großzügig mit Puffer für längere Feiern.',
+      caption: 'Das mittlere Szenario ist ein Einkaufsvorschlag, keine richtige Trinkmenge. Deshalb nennt der Rechner alle drei.'
+    }
+  ];
+}
+
 export function catalogue() {
   const published = publishedSlugs();
-  const all = [...styleFigures(), ...duelFigures(), ...manualFigures()];
+  const all = [...styleFigures(), ...duelFigures(), ...manualFigures(), ...waveTwoFigures()];
   const kept = all.filter((figure) => published.has(figure.slug));
   const dropped = all.filter((figure) => !published.has(figure.slug));
   return { figures: kept, dropped };

@@ -2,7 +2,7 @@
 // Keine Vorlage erfindet Zahlen; alles kommt aus content.mjs oder aus den
 // gepflegten Datensaetzen in data/.
 
-import { T, WIDTH, text, paragraph, rect, line, round, ebcColor, glass, rangeBar, header, footer, footerHeight, document_, wrap, textWidth, niceMax } from './svg.mjs';
+import { T, WIDTH, text, paragraph, paragraphHeight, rect, line, round, ebcColor, glass, rangeBar, header, footer, footerHeight, document_, wrap, textWidth, niceMax } from './svg.mjs';
 
 const dec = (value) => String(value).replace('.', ',');
 
@@ -199,7 +199,9 @@ export function zeitreihe({ eyebrow, title, subtitle, series, unit, valueFormat,
 export function balken({ eyebrow, title, subtitle, items, unit, source, note }) {
   const head = header(eyebrow, title, subtitle);
   const body = [];
-  const labelW = 340;
+  // Breite Beschriftungsspalte, damit die Unterzeilen vollstaendig hineinpassen
+  // statt in Auslassungspunkten zu enden.
+  const labelW = 430;
   const x = 70 + labelW;
   // Platz fuer die laengste Wertebeschriftung reservieren, sonst laeuft der
   // laengste Balken darunter.
@@ -211,7 +213,9 @@ export function balken({ eyebrow, title, subtitle, items, unit, source, note }) 
   for (const item of items) {
     const bh = 52;
     body.push(text(item.label, 70, y + 36, { size: 28, weight: 700, fill: T.ink }));
-    if (item.sublabel) body.push(text(item.sublabel, 70, y + 64, { size: 21, fill: T.inkFaint }));
+    // Die Unterzeile muss in der Beschriftungsspalte bleiben, sonst laeuft sie
+    // unter den Balken.
+    if (item.sublabel) body.push(text(wrap(item.sublabel, labelW - 24, 20, 400, 1)[0], 70, y + 64, { size: 20, fill: T.inkFaint }));
     body.push(rect(x, y + 8, w, bh, { fill: T.lineSoft, radius: 8 }));
     body.push(rect(x, y + 8, Math.max(8, (item.value / max) * w), bh, { fill: item.fill ?? T.amber, radius: 8 }));
     body.push(text(item.valueLabel, WIDTH - 70, y + 44, { size: 30, weight: 800, fill: T.ink, anchor: 'end' }));
@@ -308,15 +312,20 @@ export function kennzahlen({ eyebrow, title, subtitle, tiles, source, note }) {
   const gap = 28;
   const tileW = (w - gap * (tiles.length - 1)) / tiles.length;
   let y = head.bottom + 30;
-  const tileH = 260;
+  // Die Kachel waechst mit dem laengsten Text. Vorher endete eine vierte
+  // Zeile in Auslassungspunkten.
+  const labelLines = Math.max(...tiles.map((tile) => wrap(tile.label, tileW - 50, 23, 400, 5).length));
+  const tileH = 190 + labelLines * 30 + 14;
   tiles.forEach((tile, index) => {
     const tx = x + (tileW + gap) * index;
     body.push(rect(tx, y, tileW, tileH, { fill: T.paper, radius: 20, stroke: T.line, strokeWidth: 2 }));
     body.push(rect(tx, y, tileW, 8, { fill: index === 0 ? T.amber : T.green, radius: 4 }));
-    const valueSize = textWidth(tile.value, 68, 800) > tileW - 60 ? 50 : 68;
+    // Mit vier Kacheln wird es eng: die Schriftgroesse faellt so weit, bis der
+    // Wert hineinpasst, statt ueber den Rand zu laufen.
+    const valueSize = [68, 58, 50, 42, 36, 30].find((size) => textWidth(tile.value, size, 800) <= tileW - 46) ?? 30;
     body.push(text(tile.value, tx + tileW / 2, y + 108, { size: valueSize, weight: 800, fill: T.ink, anchor: 'middle' }));
     body.push(text(tile.unit, tx + tileW / 2, y + 146, { size: 24, weight: 600, fill: T.amberDark, anchor: 'middle' }));
-    wrap(tile.label, tileW - 50, 23, 400, 3).forEach((row, li) => {
+    wrap(tile.label, tileW - 50, 23, 400, 5).forEach((row, li) => {
       body.push(text(row, tx + tileW / 2, y + 190 + li * 30, { size: 23, fill: T.inkSoft, anchor: 'middle' }));
     });
   });
@@ -372,6 +381,88 @@ export function zweiwege({ eyebrow, title, subtitle, columns, source, note }) {
   if (note) {
     body.push(paragraph(note, x, y + 20, w, { size: 24, fill: T.inkSoft, maxLines: 3 }));
     y += 46;
+  }
+  const height = y + 30 + footerHeight(source);
+  return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };
+}
+
+// ------------------------------------------------------------ Streudiagramm
+// Bierstile in zwei Dimensionen: Farbe auf der Waagerechten, Bitterkeit auf
+// der Senkrechten. Beide Angaben sind auf den Seiten Spannen, keine Punkte;
+// deshalb zeigt jede Marke ihre Mitte UND ihre Spannweite.
+export function streudiagramm({ eyebrow, title, subtitle, points, xTicks, yTicks, xLabel, yLabel, source, note }) {
+  const head = header(eyebrow, title, subtitle);
+  const body = [];
+  const left = 120;
+  const right = WIDTH - 70;
+  const top = head.bottom + 40;
+  const plotH = 440;
+  const bottom = top + plotH;
+  const plotW = right - left;
+  // Ticks duerfen Zahlen oder {value,label} sein; fuer die Achsengrenzen
+  // zaehlt immer der Wert.
+  const at = (tick) => (typeof tick === 'object' ? tick.value : tick);
+  const xMin = at(xTicks[0]);
+  const xMax = at(xTicks.at(-1));
+  const yMin = at(yTicks[0]);
+  const yMax = at(yTicks.at(-1));
+  const px = (value) => left + ((value - xMin) / (xMax - xMin)) * plotW;
+  const py = (value) => bottom - ((value - yMin) / (yMax - yMin)) * plotH;
+
+  for (const tick of yTicks) {
+    const value = at(tick);
+    const isBase = value === yMin;
+    body.push(line(left, py(value), right, py(value), { stroke: isBase ? T.inkFaint : T.lineSoft, width: isBase ? 2 : 1.5 }));
+    const label = typeof tick === 'object' ? tick.label : String(tick);
+    if (label) body.push(text(label, left - 16, py(value) + 8, { size: 21, fill: T.inkFaint, anchor: 'end' }));
+  }
+  for (const tick of xTicks) {
+    const value = at(tick);
+    body.push(line(px(value), top, px(value), bottom, { stroke: T.lineSoft, width: 1.5 }));
+    const label = typeof tick === 'object' ? tick.label : String(tick);
+    if (label) body.push(text(label, px(value), bottom + 36, { size: 21, fill: T.inkFaint, anchor: 'middle' }));
+  }
+  body.push(text(xLabel, right, bottom + 74, { size: 22, weight: 600, fill: T.amberDark, anchor: 'end' }));
+  body.push(text(yLabel, 70, top - 24, { size: 22, weight: 600, fill: T.amberDark }));
+
+  // Reihenfolge ist wichtig: erst die Spannweiten, dann die Punkte, zuletzt
+  // die Beschriftungen -- sonst zeichnet eine Linie quer durch den Namen.
+  const clampX = (value) => Math.max(xMin, Math.min(xMax, value));
+  const clampY = (value) => Math.max(yMin, Math.min(yMax, value));
+  for (const point of points) {
+    if (point.xSpan) body.push(line(px(clampX(point.xSpan[0])), py(point.y), px(clampX(point.xSpan[1])), py(point.y), { stroke: T.inkFaint, width: 2.5 }));
+    if (point.ySpan) body.push(line(px(point.x), py(clampY(point.ySpan[0])), px(point.x), py(clampY(point.ySpan[1])), { stroke: T.inkFaint, width: 2.5 }));
+  }
+  for (const point of points) {
+    body.push(`<circle cx="${round(px(point.x))}" cy="${round(py(point.y))}" r="13" fill="${point.fill}" stroke="${T.ink}" stroke-width="2.5"/>`);
+  }
+
+  // Beschriftungen stapeln sich bei elf Stilen schnell uebereinander. Sie
+  // werden der Reihe nach gesetzt und nach unten geschoben, bis sie frei
+  // stehen; rechts aussen steht der Name links vom Punkt.
+  const placed = [];
+  const ordered = [...points].sort((a, b) => py(a.y) - py(b.y));
+  for (const point of ordered) {
+    const cx = px(point.x);
+    const cy = py(point.y);
+    const width = textWidth(point.label, 23, 600) + 26;
+    const side = cx + width < right - 10 ? 1 : -1;
+    let ly = cy + 8;
+    let guard = 0;
+    while (placed.some((other) => Math.abs(other.y - ly) < 27 && Math.abs(other.x - cx) < (other.width + width) / 2 + 30) && guard < 16) {
+      ly += 27;
+      guard += 1;
+    }
+    placed.push({ x: cx + (side * width) / 2, y: ly, width });
+    body.push(text(point.label, side > 0 ? cx + 22 : cx - 22, ly, {
+      size: 23, weight: 600, fill: T.ink, anchor: side > 0 ? 'start' : 'end', halo: T.cream
+    }));
+  }
+
+  let y = bottom + 108;
+  if (note) {
+    body.push(paragraph(note, 70, y, WIDTH - 140, { size: 23, fill: T.inkSoft, maxLines: 3 }));
+    y += paragraphHeight(note, WIDTH - 140, 23, 400, 1.45, 3);
   }
   const height = y + 30 + footerHeight(source);
   return { height, svg: document_(height, head.markup + body.join('') + footer(height, source)) };

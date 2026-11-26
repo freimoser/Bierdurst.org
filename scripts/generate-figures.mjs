@@ -59,6 +59,16 @@ for (const figure of figures) {
 
 await writeFile('data/page-figures.json', `${JSON.stringify(index, null, 2)}\n`, 'utf8');
 
+// Astro merkt sich gerenderte Markdown-Seiten im Content-Store und erneuert
+// sie nur, wenn sich die Markdown-Datei oder die Konfiguration aendert. Von
+// data/page-figures.json weiss der Store nichts: Ohne diesen Schritt baut der
+// naechste Build die Seiten mit der alten Abbildung oder ganz ohne. Der Store
+// liegt je nach Astro-Version an einer von zwei Stellen.
+// scripts/validate-build.mjs faengt den Fall zusaetzlich ab.
+for (const store of ['.astro/data-store.json', 'node_modules/.astro/data-store.json']) {
+  await rm(store, { force: true });
+}
+
 report.sort((a, b) => b.kb - a.kb);
 const total = report.reduce((sum, row) => sum + row.kb, 0);
 console.log(`${report.length} Grafiken erzeugt in ${OUT_DIR}/ (${total} KB gesamt, Durchschnitt ${Math.round(total / Math.max(1, report.length))} KB).`);
