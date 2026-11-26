@@ -6,8 +6,8 @@
 // Schriften; eine Neuerzeugung dort saehe anders aus als das abgenommene Bild.
 // Aufruf: npm run figures
 
-import { mkdir, writeFile, rm } from 'node:fs/promises';
-import { statSync } from 'node:fs';
+import { mkdir, writeFile, rm, readdir, unlink } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import { catalogue } from './figures/catalogue.mjs';
 import { WIDTH } from './figures/svg.mjs';
@@ -15,7 +15,16 @@ import * as templates from './figures/templates.mjs';
 
 const OUT_DIR = 'public/grafik';
 // PNG mit Palette: bei Flaechengrafiken kleiner als WebP und ohne
-// Artefakte an den Buchstabenkanten. Geprueft mit scripts/figures/_sizetest.
+// Artefakte an den Buchstabenkanten.
+//
+// Der Dateiname traegt eine Kennung aus dem Bildinhalt. Cloudflare liefert
+// die Dateien mit Edge-Cache aus; unter festem Namen saehen Besucher eine
+// ueberarbeitete Grafik erst Stunden spaeter. Mit der Kennung ist jede neue
+// Fassung eine neue URL und sofort sichtbar.
+function contentName(file, buffer) {
+  const hash = createHash('sha256').update(buffer).digest('hex').slice(0, 8);
+  return `${file}.${hash}.png`;
+}
 
 const fresh = process.argv.includes('--clean');
 if (fresh) await rm(OUT_DIR, { recursive: true, force: true });
@@ -23,6 +32,8 @@ await mkdir(OUT_DIR, { recursive: true });
 
 const { figures, dropped } = catalogue();
 const index = {};
+// Namen dieses Laufs; alles andere im Ordner ist eine alte Fassung.
+const written = new Set();
 const report = [];
 let failed = 0;
 
@@ -41,13 +52,15 @@ for (const figure of figures) {
     failed += 1;
     continue;
   }
-  const file = `${OUT_DIR}/${figure.file}.png`;
-  await sharp(Buffer.from(rendered.svg), { density: 96 })
+  const buffer = await sharp(Buffer.from(rendered.svg), { density: 96 })
     .png({ compressionLevel: 9, palette: true, quality: 92 })
-    .toFile(file);
-  const bytes = statSync(file).size;
+    .toBuffer();
+  const name = contentName(figure.file, buffer);
+  await writeFile(`${OUT_DIR}/${name}`, buffer);
+  written.add(name);
+  const bytes = buffer.length;
   index[figure.slug] = {
-    src: `/grafik/${figure.file}.png`,
+    src: `/grafik/${name}`,
     width: WIDTH,
     height: Math.round(rendered.height),
     alt: figure.alt,
@@ -55,6 +68,15 @@ for (const figure of figures) {
     template: figure.template
   };
   report.push({ file: figure.file, slug: figure.slug, kb: Math.round(bytes / 1024), height: Math.round(rendered.height) });
+}
+
+// Vorgaengerfassungen entfernen. Ohne das sammeln sich mit jeder Aenderung
+// alte Dateien an, die niemand mehr ausliefert.
+let removed = 0;
+for (const entry of await readdir(OUT_DIR)) {
+  if (!entry.endsWith('.png') || written.has(entry)) continue;
+  await unlink(`${OUT_DIR}/${entry}`);
+  removed += 1;
 }
 
 await writeFile('data/page-figures.json', `${JSON.stringify(index, null, 2)}\n`, 'utf8');
@@ -73,6 +95,7 @@ report.sort((a, b) => b.kb - a.kb);
 const total = report.reduce((sum, row) => sum + row.kb, 0);
 console.log(`${report.length} Grafiken erzeugt in ${OUT_DIR}/ (${total} KB gesamt, Durchschnitt ${Math.round(total / Math.max(1, report.length))} KB).`);
 console.log(`Groesste: ${report.slice(0, 3).map((row) => `${row.file} ${row.kb} KB`).join(', ')}`);
+if (removed) console.log(`${removed} ueberholte Datei(en) entfernt.`);
 if (dropped.length) console.log(`Uebersprungen, Seite nicht veroeffentlicht: ${dropped.map((row) => row.slug).join(', ')}`);
 if (failed) {
   console.error(`${failed} Grafik(en) fehlgeschlagen.`);
