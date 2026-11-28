@@ -15,6 +15,9 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/13/13c-english-porter
+- https://styles.bjcp.org/bjcp-2021-beer/15/15b-irish-stout
+- https://styles.bjcp.org/bjcp-2021-beer/20/20c-imperial-stout
 article_id: 30
 page_type: article
 cluster: biersorten
@@ -28,7 +31,7 @@ index: true
 
 # Was sind Porter und Stout?
 
-**Kurz gesagt:** Porter und Stout ist dunkle, meist obergärige Bierfamilien. Typisch sind dunkelbraun bis schwarz, von etwa 4 % vol bei leichten Varianten bis über 10 % vol bei Imperial Stout und ein Geschmacksbild, das sich als Kaffee, Kakao, dunkle Schokolade, geröstetes Brot, Nüsse und je nach Variante Trockenfrüchte oder Vanille beschreiben lässt.
+**Kurz gesagt:** Porter und Stout ist dunkle, meist obergärige Bierfamilien. Typisch sind dunkelbraun bis schwarz, von etwa 4 % vol bei leichten Varianten bis über 12 % vol bei Imperial Stout und ein Geschmacksbild, das sich als Kaffee, Kakao, dunkle Schokolade, geröstetes Brot, Nüsse und je nach Variante Trockenfrüchte oder Vanille beschreiben lässt.
 
 ## Porter und Stout im Überblick
 
@@ -36,7 +39,7 @@ index: true
 |---|---|
 | Einordnung | dunkle, meist obergärige Bierfamilien |
 | Farbe | dunkelbraun bis schwarz |
-| Alkohol | von etwa 4 % vol bei leichten Varianten bis über 10 % vol bei Imperial Stout |
+| Alkohol | von etwa 4 % vol bei leichten Varianten bis 12 % vol bei Imperial Stout |
 | Bitterkeit | moderat bis kräftig, häufig durch Röstmalz ergänzt |
 | Trinktemperatur | 9 bis 13 °C |
 | Passendes Glas | Pintglas, Kelch oder Teku |
@@ -80,7 +83,7 @@ Porter und Stout ist eine gute Wahl, wenn Du Kaffee-, Kakao- und Röstaromen in 
 
 ### Ist Porter und Stout immer gleich stark?
 
-Nein. Typisch sind von etwa 4 % vol bei leichten Varianten bis über 10 % vol bei Imperial Stout, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind von etwa 4 % vol bei leichten Varianten bis über 12 % vol bei Imperial Stout, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Porter und Stout eher bitter oder süß?
 

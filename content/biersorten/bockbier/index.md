@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/6/6c-dunkles-bock
 article_id: 17
 page_type: article
 cluster: biersorten

@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | obergäriges, kupferfarbenes Vollbier | untergäriges Vollbier |
 | Farbe | kupferrot bis dunkelbraun | hellgelb bis goldgelb |
-| Alkohol | meist etwa 4,5 bis 5,2 % vol | meist etwa 4,5 bis 5,2 % vol |
+| Alkohol | meist etwa 4,3 bis 5,5 % vol | meist etwa 4,4 bis 5,2 % vol |
 | Bitterkeit | moderat bis deutlich | deutlich bis kräftig hopfenherb |
 | Geschmack | hopfenherb und frisch mit Karamell, Brotkruste und leichten Röstaromen | schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten |
 | Typische Region | Düsseldorf und der Niederrhein | bundesweit verbreitet, historisch besonders stark in Nord- und Westdeutschland |
@@ -48,7 +48,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Altbier liegt typischerweise bei **meist etwa 4,5 bis 5,2 % vol**. Pils liegt meist bei **meist etwa 4,5 bis 5,2 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Altbier liegt typischerweise bei **meist etwa 4,3 bis 5,5 % vol**. Pils liegt meist bei **meist etwa 4,3 bis 5,5 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

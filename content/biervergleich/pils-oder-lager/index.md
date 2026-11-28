@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | untergäriges Vollbier | Sammelbegriff für untergärige, kühl vergorene Biere |
 | Farbe | hellgelb bis goldgelb | von sehr hell bis dunkel |
-| Alkohol | meist etwa 4,5 bis 5,2 % vol | häufig etwa 4,5 bis 5,5 % vol |
+| Alkohol | meist etwa 4,4 bis 5,2 % vol | häufig etwa 4,5 bis 5,5 % vol |
 | Bitterkeit | deutlich bis kräftig hopfenherb | von mild bis deutlich |
 | Geschmack | schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten | sauber vergoren, klar und je nach Unterstil malzbetont, ausgewogen oder hopfenherb |
 | Typische Region | bundesweit verbreitet, historisch besonders stark in Nord- und Westdeutschland | weltweit verbreitet; in Deutschland gehören unter anderem Helles, Pils, Export und Dunkel zur Lagerfamilie |
@@ -48,7 +48,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Pils liegt typischerweise bei **meist etwa 4,5 bis 5,2 % vol**. Lagerbier liegt meist bei **häufig etwa 4,5 bis 5,5 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Pils liegt typischerweise bei **meist etwa 4,4 bis 5,2 % vol**. Lagerbier liegt meist bei **häufig etwa 4,4 bis 5,5 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

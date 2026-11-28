@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/9/9a-doppelbock
 article_id: 18
 page_type: article
 cluster: biersorten

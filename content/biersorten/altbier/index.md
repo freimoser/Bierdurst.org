@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/7/7b-altbier
 article_id: 11
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Altbier?
 
-**Kurz gesagt:** Altbier ist obergäriges, kupferfarbenes Vollbier. Typisch sind kupferrot bis dunkelbraun, meist etwa 4,5 bis 5,2 % vol und ein Geschmacksbild, das sich als hopfenherb und frisch mit Karamell, Brotkruste und leichten Röstaromen beschreiben lässt.
+**Kurz gesagt:** Altbier ist obergäriges, kupferfarbenes Vollbier. Typisch sind kupferrot bis dunkelbraun, meist etwa 4,3 bis 5,5 % vol und ein Geschmacksbild, das sich als hopfenherb und frisch mit Karamell, Brotkruste und leichten Röstaromen beschreiben lässt.
 
 ## Altbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | obergäriges, kupferfarbenes Vollbier |
 | Farbe | kupferrot bis dunkelbraun |
-| Alkohol | meist etwa 4,5 bis 5,2 % vol |
+| Alkohol | meist etwa 4,3 bis 5,5 % vol |
 | Bitterkeit | moderat bis deutlich |
 | Trinktemperatur | 7 bis 9 °C |
 | Passendes Glas | zylindrisches Altbierglas, häufig 0,2 oder 0,25 Liter |
@@ -80,7 +81,7 @@ Altbier ist eine gute Wahl, wenn Du ein herbes, kupferfarbenes Bier mit Karamell
 
 ### Ist Altbier immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,5 bis 5,2 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,3 bis 5,5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Altbier eher bitter oder süß?
 

@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | untergäriges Vollbier | untergäriges Vollbier |
 | Farbe | hellgelb bis goldgelb | goldgelb bis bernsteinfarben |
-| Alkohol | meist etwa 4,5 bis 5,2 % vol | typisch etwa 5,0 bis 6,0 % vol |
+| Alkohol | meist etwa 4,4 bis 5,2 % vol | typisch etwa 4,8 bis 6,0 % vol |
 | Bitterkeit | deutlich bis kräftig hopfenherb | dezent bis moderat |
 | Geschmack | schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten | würzig, rund und malzbetont mit angenehmer Süße und zurückhaltender Hopfennote |
 | Typische Region | bundesweit verbreitet, historisch besonders stark in Nord- und Westdeutschland | in ganz Deutschland bekannt, traditionell besonders stark in Dortmund und Teilen Baden-Württembergs |
@@ -48,7 +48,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Pils liegt typischerweise bei **meist etwa 4,5 bis 5,2 % vol**. Exportbier liegt meist bei **typisch etwa 5,0 bis 6,0 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Pils liegt typischerweise bei **meist etwa 4,4 bis 5,2 % vol**. Exportbier liegt meist bei **typisch etwa 5,0 bis 6,0 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

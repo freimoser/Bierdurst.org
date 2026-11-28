@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/
 article_id: 22
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Gose?
 
-**Kurz gesagt:** Gose ist obergäriges, säuerliches Weizenbier mit Gewürztradition. Typisch sind hellgold und häufig trüb, meist etwa 4 bis 5 % vol und ein Geschmacksbild, das sich als säuerlich, spritzig und leicht salzig; traditionell können Koriandernoten hinzukommen beschreiben lässt.
+**Kurz gesagt:** Gose ist obergäriges, säuerliches Weizenbier mit Gewürztradition. Typisch sind hellgold und häufig trüb, meist etwa 4,2 bis 4,8 % vol und ein Geschmacksbild, das sich als säuerlich, spritzig und leicht salzig; traditionell können Koriandernoten hinzukommen beschreiben lässt.
 
 ## Gose im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | obergäriges, säuerliches Weizenbier mit Gewürztradition |
 | Farbe | hellgold und häufig trüb |
-| Alkohol | meist etwa 4 bis 5 % vol |
+| Alkohol | meist etwa 4,2 bis 4,8 % vol |
 | Bitterkeit | sehr niedrig |
 | Trinktemperatur | 6 bis 8 °C |
 | Passendes Glas | Kelch oder schlankes Degustationsglas |
@@ -80,7 +81,7 @@ Gose ist eine gute Wahl, wenn Du erfrischende Sauerbiere mit ungewöhnlicher Wü
 
 ### Ist Gose immer gleich stark?
 
-Nein. Typisch sind meist etwa 4 bis 5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,2 bis 4,8 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Gose eher bitter oder süß?
 

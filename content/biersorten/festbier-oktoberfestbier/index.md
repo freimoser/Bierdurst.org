@@ -16,6 +16,7 @@ sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
 - https://www.oktoberfest.de/magazin/essen-und-trinken/die-sechs-muenchner-brauereien-auf-der-wiesn
+- https://styles.bjcp.org/bjcp-2021-beer/4/4b-festbier
 article_id: 16
 page_type: article
 cluster: biersorten

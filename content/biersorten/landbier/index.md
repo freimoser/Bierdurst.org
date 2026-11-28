@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://brauer-bund.de/biervielfalt/
 article_id: 26
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Landbier?
 
-**Kurz gesagt:** Landbier ist kein einheitlich definierter Bierstil, sondern eine traditionelle Produktbezeichnung. Typisch sind von hellgold bis dunkelbraun, häufig etwa 4,5 bis 5,5 % vol und ein Geschmacksbild, das sich als häufig malzig, ausgewogen und regional geprägt; konkrete Eigenschaften hängen von der Brauerei ab beschreiben lässt.
+**Kurz gesagt:** Landbier ist kein einheitlich definierter Bierstil, sondern eine traditionelle Produktbezeichnung. Typisch sind von hellgold bis dunkelbraun, häufig etwa 4,5 bis 5,6 % vol und ein Geschmacksbild, das sich als häufig malzig, ausgewogen und regional geprägt; konkrete Eigenschaften hängen von der Brauerei ab beschreiben lässt.
 
 ## Landbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | kein einheitlich definierter Bierstil, sondern eine traditionelle Produktbezeichnung |
 | Farbe | von hellgold bis dunkelbraun |
-| Alkohol | häufig etwa 4,5 bis 5,5 % vol |
+| Alkohol | häufig etwa 4,5 bis 5,6 % vol |
 | Bitterkeit | von mild bis deutlich |
 | Trinktemperatur | 7 bis 10 °C |
 | Passendes Glas | Seidel, Krug oder Willi-Becher |
@@ -80,7 +81,7 @@ Landbier ist eine gute Wahl, wenn Du regionale Biere entdecken möchtest und dic
 
 ### Ist Landbier immer gleich stark?
 
-Nein. Typisch sind häufig etwa 4,5 bis 5,5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind häufig etwa 4,5 bis 5,6 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Landbier eher bitter oder süß?
 

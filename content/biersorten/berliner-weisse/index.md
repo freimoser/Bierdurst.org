@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/23/23a-berliner-weisse
 article_id: 21
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Berliner Weisse?
 
-**Kurz gesagt:** Berliner Weisse ist obergäriges, säuerliches Schankbier. Typisch sind sehr hell und oft leicht trüb, häufig etwa 2,5 bis 3,5 % vol und ein Geschmacksbild, das sich als leicht, prickelnd und deutlich säuerlich mit Zitrus- und Getreidenoten beschreiben lässt.
+**Kurz gesagt:** Berliner Weisse ist obergäriges, säuerliches Schankbier. Typisch sind sehr hell und oft leicht trüb, häufig etwa 2,8 bis 3,8 % vol und ein Geschmacksbild, das sich als leicht, prickelnd und deutlich säuerlich mit Zitrus- und Getreidenoten beschreiben lässt.
 
 ## Berliner Weisse im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | obergäriges, säuerliches Schankbier |
 | Farbe | sehr hell und oft leicht trüb |
-| Alkohol | häufig etwa 2,5 bis 3,5 % vol |
+| Alkohol | häufig etwa 2,8 bis 3,8 % vol |
 | Bitterkeit | sehr niedrig |
 | Trinktemperatur | 6 bis 8 °C |
 | Passendes Glas | breites Berliner-Weisse-Glas oder Kelch |
@@ -80,7 +81,7 @@ Berliner Weisse ist eine gute Wahl, wenn Du leichte, erfrischende und säuerlich
 
 ### Ist Berliner Weisse immer gleich stark?
 
-Nein. Typisch sind häufig etwa 2,5 bis 3,5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind häufig etwa 2,8 bis 3,8 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Berliner Weisse eher bitter oder süß?
 

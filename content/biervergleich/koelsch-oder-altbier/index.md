@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | obergäriges, helles Vollbier | obergäriges, kupferfarbenes Vollbier |
 | Farbe | sehr hell bis goldgelb und klar | kupferrot bis dunkelbraun |
-| Alkohol | meist etwa 4,4 bis 5,2 % vol | meist etwa 4,5 bis 5,2 % vol |
+| Alkohol | meist etwa 4,4 bis 5,2 % vol | meist etwa 4,3 bis 5,5 % vol |
 | Bitterkeit | moderat und fein | moderat bis deutlich |
 | Geschmack | schlank, frisch und feinherb mit dezenten fruchtigen oder zitrischen Noten | hopfenherb und frisch mit Karamell, Brotkruste und leichten Röstaromen |
 | Typische Region | Köln und das vertraglich definierte Umland | Düsseldorf und der Niederrhein |
@@ -48,7 +48,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Kölsch liegt typischerweise bei **meist etwa 4,4 bis 5,2 % vol**. Altbier liegt meist bei **meist etwa 4,5 bis 5,2 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Kölsch liegt typischerweise bei **meist etwa 4,4 bis 5,5 % vol**. Altbier liegt meist bei **meist etwa 4,3 bis 5,5 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

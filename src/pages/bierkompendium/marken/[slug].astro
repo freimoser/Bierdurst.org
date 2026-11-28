@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { de } from '../../../utils/format';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import beerBrands from '../../../../data/beer-brands.json';
 import beerStyles from '../../../../data/beer-styles.json';
@@ -32,7 +33,7 @@ const schemas = [
           {brand.employees && <div><small>Beschäftigte</small><b>{formatHl(brand.employees)}</b><span>Bezugsjahr {brand.employeesYear}</span></div>}
         </div><p class="metric-warning">Gruppenwerte gelten für das genannte Unternehmen und dürfen nicht als Absatz oder Beschäftigtenzahl einer einzelnen Produktvariante gelesen werden.</p></section>}
 
-        <section><p class="eyebrow">Typische Werte des Hauptstils</p><h2>{style.name}</h2><p>{style.description} Die folgenden Spannen beschreiben den Bierstil; das konkrete Markenprodukt kann davon abweichen.</p><div class="profile-stat-grid"><div><small>Alkohol</small><b>{style.alcohol[0]}–{style.alcohol[1]} % vol.</b></div><div><small>Bitterkeit</small><b>{style.ibu[0]}–{style.ibu[1]} IBU</b></div><div><small>Farbe</small><b>{style.ebc[0]}–{style.ebc[1]} EBC</b></div><div><small>Stammwürze</small><b>{style.plato[0]}–{style.plato[1]} °P</b></div><div><small>Gärung</small><b>{style.fermentation}</b></div><div><small>Trinktemperatur</small><b>{style.temperature[0]}–{style.temperature[1]} °C</b></div></div></section>
+        <section><p class="eyebrow">Typische Werte des Hauptstils</p><h2>{style.name}</h2><p>{style.description} Die folgenden Spannen beschreiben den Bierstil; das konkrete Markenprodukt kann davon abweichen.</p><div class="profile-stat-grid"><div><small>Alkohol</small><b>{de(style.alcohol[0])}–{de(style.alcohol[1])} % vol.</b></div><div><small>Bitterkeit</small><b>{de(style.ibu[0])}–{de(style.ibu[1])} IBU</b></div><div><small>Farbe</small><b>{de(style.ebc[0])}–{de(style.ebc[1])} EBC</b></div><div><small>Stammwürze</small><b>{de(style.plato[0])}–{de(style.plato[1])} °P</b></div><div><small>Gärung</small><b>{style.fermentation}</b></div><div><small>Trinktemperatur</small><b>{de(style.temperature[0])}–{de(style.temperature[1])} °C</b></div></div></section>
 
         <section class="source-box"><h2>Herstellerquelle</h2><p>Markenname, Zuordnung und Standort wurden anhand des offiziellen Hersteller- oder Gruppenauftritts geprüft.</p><a href={brand.source} rel="noopener noreferrer">Offizielle Quelle öffnen →</a></section>
       </article>

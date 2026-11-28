@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/5/5c-german-helles-exportbier
 article_id: 5
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Exportbier?
 
-**Kurz gesagt:** Exportbier ist untergäriges Vollbier. Typisch sind goldgelb bis bernsteinfarben, typisch etwa 5,0 bis 6,0 % vol und ein Geschmacksbild, das sich als würzig, rund und malzbetont mit angenehmer Süße und zurückhaltender Hopfennote beschreiben lässt.
+**Kurz gesagt:** Exportbier ist untergäriges Vollbier. Typisch sind goldgelb bis bernsteinfarben, typisch etwa 4,8 bis 6,0 % vol und ein Geschmacksbild, das sich als würzig, rund und malzbetont mit angenehmer Süße und zurückhaltender Hopfennote beschreiben lässt.
 
 ## Exportbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | untergäriges Vollbier |
 | Farbe | goldgelb bis bernsteinfarben |
-| Alkohol | typisch etwa 5,0 bis 6,0 % vol |
+| Alkohol | typisch etwa 4,8 bis 6,0 % vol |
 | Bitterkeit | dezent bis moderat |
 | Trinktemperatur | etwa 7 °C |
 | Passendes Glas | Willi-Becher oder Seidel |
@@ -80,7 +81,7 @@ Exportbier ist eine gute Wahl, wenn Du ein volleres, malzigeres Lagerbier mit we
 
 ### Ist Exportbier immer gleich stark?
 
-Nein. Typisch sind typisch etwa 5,0 bis 6,0 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind typisch etwa 4,8 bis 6,0 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Exportbier eher bitter oder süß?
 

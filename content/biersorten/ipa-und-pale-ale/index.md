@@ -15,6 +15,8 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/21/21a-american-ipa
+- https://styles.bjcp.org/bjcp-2021-beer/18/18b-american-pale-ale
 article_id: 29
 page_type: article
 cluster: biersorten
@@ -28,7 +30,7 @@ index: true
 
 # Was sind IPA und Pale Ale?
 
-**Kurz gesagt:** IPA und Pale Ale ist obergärige, hopfenbetonte Ale-Stile. Typisch sind hellgold bis kupferfarben, Pale Ale häufig 4,5 bis 6 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr und ein Geschmacksbild, das sich als hopfenaromatisch mit Zitrus, Tropenfrucht, Harz, Kräutern oder Steinfrucht; im Hintergrund oft leichte Malzsüße beschreiben lässt.
+**Kurz gesagt:** IPA und Pale Ale ist obergärige, hopfenbetonte Ale-Stile. Typisch sind hellgold bis kupferfarben, Pale Ale häufig 4,5 bis 6,2 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr und ein Geschmacksbild, das sich als hopfenaromatisch mit Zitrus, Tropenfrucht, Harz, Kräutern oder Steinfrucht; im Hintergrund oft leichte Malzsüße beschreiben lässt.
 
 ## IPA und Pale Ale im Überblick
 
@@ -36,7 +38,7 @@ index: true
 |---|---|
 | Einordnung | obergärige, hopfenbetonte Ale-Stile |
 | Farbe | hellgold bis kupferfarben |
-| Alkohol | Pale Ale häufig 4,5 bis 6 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr |
+| Alkohol | Pale Ale häufig 4,5 bis 6,2 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr |
 | Bitterkeit | moderat bis sehr kräftig |
 | Trinktemperatur | 7 bis 10 °C |
 | Passendes Glas | IPA-Glas, Teku oder kleiner Pokal |
@@ -80,7 +82,7 @@ IPA und Pale Ale ist eine gute Wahl, wenn Du intensive Hopfenaromen und deutlich
 
 ### Ist IPA und Pale Ale immer gleich stark?
 
-Nein. Typisch sind Pale Ale häufig 4,5 bis 6 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind Pale Ale häufig 4,5 bis 6,2 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist IPA und Pale Ale eher bitter oder süß?
 

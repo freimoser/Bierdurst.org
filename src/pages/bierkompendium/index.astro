@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { de } from '../../utils/format';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ExperienceHero from '../../components/ExperienceHero.astro';
 import beerStyles from '../../../data/beer-styles.json';
@@ -46,7 +47,7 @@ const brandCount = marketStatistics.find((statistic) => statistic.slug === 'bier
         {beerStyles.map((beer) => <a class="compendium-card" href={`/bierkompendium/${beer.slug}/`} data-type="style" data-family={beer.family} data-search={`${beer.name} ${beer.family} ${beer.region} ${beer.profile.join(' ')}`.toLocaleLowerCase('de')}>
           <div class="compendium-card-head"><span>Bierstil · {beer.family}</span><b>{beer.fermentation}</b></div>
           <h2>{beer.name}</h2><p>{beer.description}</p>
-          <div class="mini-stats"><span><small>Alkohol</small>{beer.alcohol[0]}–{beer.alcohol[1]} %</span><span><small>IBU</small>{beer.ibu[0]}–{beer.ibu[1]}</span><span><small>EBC</small>{beer.ebc[0]}–{beer.ebc[1]}</span></div>
+          <div class="mini-stats"><span><small>Alkohol</small>{de(beer.alcohol[0])}–{de(beer.alcohol[1])} %</span><span><small>IBU</small>{de(beer.ibu[0])}–{de(beer.ibu[1])}</span><span><small>EBC</small>{de(beer.ebc[0])}–{de(beer.ebc[1])}</span></div>
           <strong>Stilprofil öffnen →</strong>
         </a>)}
       </div>

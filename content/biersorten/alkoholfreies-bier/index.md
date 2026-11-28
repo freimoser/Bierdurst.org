@@ -17,6 +17,7 @@ sources:
 - https://brauer-bund.de/genuss/food-pairing/
 - https://www.lebensmittelklarheit.de/fragen-antworten/warum-darf-bier-mit-alkohol-als-alkoholfrei-bezeichnet-werden
 - https://brauer-bund.de/pressemitteilungen/alkoholfreie-biere-klettern-auf-10-prozent/
+- https://brauer-bund.de/biervielfalt/
 article_id: 27
 page_type: article
 cluster: biersorten

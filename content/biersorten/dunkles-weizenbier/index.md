@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/10/10b-dunkles-weissbier
 article_id: 9
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist dunkles Weizenbier?
 
-**Kurz gesagt:** Dunkles Weizenbier ist obergäriges dunkles Weizenbier. Typisch sind bernsteinfarben bis dunkelbraun und meist trüb, meist etwa 4,8 bis 5,8 % vol und ein Geschmacksbild, das sich als fruchtig und hefig mit Karamell, Brotkruste, reifer Banane und gelegentlich leichten Röstnoten beschreiben lässt.
+**Kurz gesagt:** Dunkles Weizenbier ist obergäriges dunkles Weizenbier. Typisch sind bernsteinfarben bis dunkelbraun und meist trüb, meist etwa 4,3 bis 5,6 % vol und ein Geschmacksbild, das sich als fruchtig und hefig mit Karamell, Brotkruste, reifer Banane und gelegentlich leichten Röstnoten beschreiben lässt.
 
 ## Dunkles Weizenbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | obergäriges dunkles Weizenbier |
 | Farbe | bernsteinfarben bis dunkelbraun und meist trüb |
-| Alkohol | meist etwa 4,8 bis 5,8 % vol |
+| Alkohol | meist etwa 4,3 bis 5,6 % vol |
 | Bitterkeit | niedrig |
 | Trinktemperatur | 8 bis 10 °C |
 | Passendes Glas | hohes Weizenbierglas |
@@ -80,7 +81,7 @@ Dunkles Weizenbier ist eine gute Wahl, wenn Du Weizenbier magst, aber mehr Malz,
 
 ### Ist Dunkles Weizenbier immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,8 bis 5,8 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,3 bis 5,6 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Dunkles Weizenbier eher bitter oder süß?
 

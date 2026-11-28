@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { de } from '../../utils/format';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import beerStyles from '../../../data/beer-styles.json';
 
@@ -16,12 +17,12 @@ const schemas = [{ '@context': 'https://schema.org', '@type': 'DefinedTerm', nam
     <div class="page-width"><Breadcrumbs items={[{ href: '/', label: 'Startseite' }, { href: '/bierkompendium/', label: 'Bierkompendium' }, { href: `/bierkompendium/${beer.slug}/`, label: beer.name }]} /></div>
     <header class="beer-profile-hero">
       <div><p class="eyebrow">{beer.family} · {beer.fermentation}</p><h1>{beer.name}</h1><p>{beer.description}</p><div class="profile-tags">{beer.profile.map((item: string) => <span>{item}</span>)}</div></div>
-      <div class="profile-scorecard"><p>Quartett-Werte</p><span><small>Alkohol-Mitte</small><b>{midpoint(beer.alcohol)} %</b></span><span><small>IBU-Mitte</small><b>{midpoint(beer.ibu)}</b></span><span><small>EBC-Mitte</small><b>{midpoint(beer.ebc)}</b></span><span><small>Stammwürze-Mitte</small><b>{midpoint(beer.plato)} °P</b></span></div>
+      <div class="profile-scorecard"><p>Quartett-Werte</p><span><small>Alkohol-Mitte</small><b>{de(midpoint(beer.alcohol))} %</b></span><span><small>IBU-Mitte</small><b>{de(midpoint(beer.ibu))}</b></span><span><small>EBC-Mitte</small><b>{de(midpoint(beer.ebc))}</b></span><span><small>Stammwürze-Mitte</small><b>{de(midpoint(beer.plato))} °P</b></span></div>
     </header>
     <div class="beer-profile-layout">
       <article>
         <section><p class="eyebrow">Typische Stilspanne</p><h2>Die wichtigsten Werte</h2><div class="profile-stat-grid">
-          <div><small>Alkohol</small><b>{beer.alcohol[0]}–{beer.alcohol[1]} % vol.</b></div><div><small>Bitterkeit</small><b>{beer.ibu[0]}–{beer.ibu[1]} IBU</b></div><div><small>Farbe</small><b>{beer.ebc[0]}–{beer.ebc[1]} EBC</b></div><div><small>Stammwürze</small><b>{beer.plato[0]}–{beer.plato[1]} °P</b></div><div><small>Trinktemperatur</small><b>{beer.temperature[0]}–{beer.temperature[1]} °C</b></div><div><small>Verbreitung</small><b>{beer.availability}</b></div>
+          <div><small>Alkohol</small><b>{de(beer.alcohol[0])}–{de(beer.alcohol[1])} % vol.</b></div><div><small>Bitterkeit</small><b>{de(beer.ibu[0])}–{de(beer.ibu[1])} IBU</b></div><div><small>Farbe</small><b>{de(beer.ebc[0])}–{de(beer.ebc[1])} EBC</b></div><div><small>Stammwürze</small><b>{de(beer.plato[0])}–{de(beer.plato[1])} °P</b></div><div><small>Trinktemperatur</small><b>{de(beer.temperature[0])}–{de(beer.temperature[1])} °C</b></div><div><small>Verbreitung</small><b>{beer.availability}</b></div>
         </div></section>
         <section><h2>Charakter und Herkunft</h2><dl class="profile-facts"><div><dt>Gärung</dt><dd>{beer.fermentation}</dd></div><div><dt>Ursprung</dt><dd>{beer.origin}</dd></div><div><dt>Region</dt><dd>{beer.region}</dd></div><div><dt>Typisches Glas</dt><dd>{beer.glass}</dd></div></dl></section>
         <section><h2>Was passt dazu?</h2><div class="food-tags">{beer.food.map((item: string) => <span>{item}</span>)}</div></section>

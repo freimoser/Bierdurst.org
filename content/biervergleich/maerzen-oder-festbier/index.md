@@ -35,7 +35,7 @@ index: true
 |---|---|---|
 | Einordnung | untergäriges, kräftiger eingebrautes Lagerbier | untergäriges, stärker eingebrautes Festlager |
 | Farbe | goldgelb bis bernsteinfarben | meist goldgelb bis bernsteinfarben |
-| Alkohol | meist etwa 5,5 bis 6,3 % vol | häufig etwa 5,8 bis 6,3 % vol |
+| Alkohol | meist etwa 5,6 bis 6,3 % vol | häufig etwa 5,8 bis 6,3 % vol |
 | Bitterkeit | mild bis moderat | mild bis moderat |
 | Geschmack | körperreich, malzig, leicht süßlich und häufig karamellbetont | vollmundig, weich, malzig und trotzdem auf hohe Trinkbarkeit ausgelegt |
 | Typische Region | Bayern, Österreich und traditionelle Festbierkultur | Festbiere werden vielerorts gebraut; die Bezeichnung Oktoberfestbier ist geschützt und mit München verbunden |
@@ -47,7 +47,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Märzenbier liegt typischerweise bei **meist etwa 5,5 bis 6,3 % vol**. Festbier und Oktoberfestbier liegt meist bei **häufig etwa 5,8 bis 6,3 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Märzenbier liegt typischerweise bei **meist etwa 5,6 bis 6,3 % vol**. Festbier und Oktoberfestbier liegt meist bei **häufig etwa 5,8 bis 6,3 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

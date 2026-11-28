@@ -1,35 +1,1460 @@
 [
-  {"slug":"pils","name":"Pils","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Nord- und Westdeutschland","alcohol":[4.4,5.2],"ibu":[25,45],"ebc":[4,12],"plato":[11,12.5],"temperature":[6,8],"profile":["herb","trocken","hopfenbetont"],"food":["Fisch","Schnitzel","milde Käse"],"glass":"schlanke Pilstulpe","availability":"weit verbreitet","description":"Schlankes, helles Lager mit deutlicher Hopfenbittere und trockenem Finish.","source":"https://styles.bjcp.org/bjcp-2021-beer/5/5d-german-pils"},
-  {"slug":"helles","name":"Helles","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Bayern","alcohol":[4.7,5.4],"ibu":[16,22],"ebc":[6,12],"plato":[11,13],"temperature":[7,9],"profile":["malzig","weich","ausgewogen"],"food":["Brotzeit","Brathähnchen","milde Speisen"],"glass":"Willi-Becher oder Krug","availability":"weit verbreitet","description":"Helles, malzbetontes Lager mit weicher Bittere und hoher Trinkbarkeit.","source":"https://styles.bjcp.org/bjcp-2021-beer/4/4a-munich-helles"},
-  {"slug":"dunkelbier","name":"Münchner Dunkel","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Bayern","alcohol":[4.5,5.6],"ibu":[18,28],"ebc":[28,56],"plato":[11,14],"temperature":[8,10],"profile":["brotig","malzig","nussig"],"food":["Braten","Knödel","Bergkäse"],"glass":"Krug","availability":"etabliert","description":"Braunes Lager mit brotiger Malztiefe, sanfter Röstung und zurückhaltendem Hopfen.","source":"https://styles.bjcp.org/bjcp-2021-beer/8/8a-munich-dunkel"},
-  {"slug":"schwarzbier","name":"Schwarzbier","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Thüringen und Sachsen","alcohol":[4.4,5.4],"ibu":[20,30],"ebc":[34,60],"plato":[11,13],"temperature":[8,10],"profile":["röstig","trocken","schokoladig"],"food":["Gegrilltes","Pilzgerichte","Schokoladendessert"],"glass":"Becher oder Pokal","availability":"etabliert","description":"Dunkles, überraschend schlankes Lager mit feiner Röstnote und trockenem Abschluss.","source":"https://styles.bjcp.org/bjcp-2021-beer/8/8b-schwarzbier"},
-  {"slug":"koelsch","name":"Kölsch","family":"Ale","fermentation":"obergärig","origin":"Deutschland","region":"Köln","alcohol":[4.4,5.2],"ibu":[18,30],"ebc":[4,10],"plato":[11,12.5],"temperature":[6,8],"profile":["feinfruchtig","trocken","mild"],"food":["Halver Hahn","Fisch","leichte Salate"],"glass":"Kölsch-Stange","availability":"regional geschützt","description":"Sehr helles, schlankes obergäriges Bier mit kühler Reifung und feiner Fruchtigkeit.","source":"https://styles.bjcp.org/bjcp-2021-beer/5/5b-kolsch"},
-  {"slug":"altbier","name":"Altbier","family":"Ale","fermentation":"obergärig","origin":"Deutschland","region":"Düsseldorf und Niederrhein","alcohol":[4.3,5.5],"ibu":[25,50],"ebc":[20,36],"plato":[11,13],"temperature":[7,9],"profile":["nussig","herb","malzig"],"food":["Rheinischer Sauerbraten","Flammkuchen","kräftiger Käse"],"glass":"Altbier-Becher","availability":"regional etabliert","description":"Kupferfarbenes, obergäriges Bier mit sauberer Kaltreifung, Malz und kräftigem Hopfen.","source":"https://styles.bjcp.org/bjcp-2021-beer/7/7b-altbier"},
-  {"slug":"weissbier","name":"Weißbier","family":"Weizenbier","fermentation":"obergärig","origin":"Deutschland","region":"Bayern","alcohol":[4.3,5.6],"ibu":[8,15],"ebc":[4,12],"plato":[11,14],"temperature":[7,9],"profile":["bananig","nelkig","spritzig"],"food":["Weißwurst","Salate","milde Currys"],"glass":"Weizenbierglas","availability":"weit verbreitet","description":"Hefetrübes Weizenbier mit hoher Kohlensäure und typischen Bananen- und Nelkennoten.","source":"https://styles.bjcp.org/bjcp-2021-beer/10/10a-weissbier"},
-  {"slug":"dunkelweizen","name":"Dunkelweizen","family":"Weizenbier","fermentation":"obergärig","origin":"Deutschland","region":"Bayern","alcohol":[4.3,5.6],"ibu":[8,15],"ebc":[28,46],"plato":[11,14],"temperature":[8,10],"profile":["bananig","brotig","karamellig"],"food":["Schweinebraten","Nussgebäck","Weichkäse"],"glass":"Weizenbierglas","availability":"etabliert","description":"Dunkles Weizenbier, das Hefearomen mit brotigen und karamelligen Malznoten verbindet.","source":"https://styles.bjcp.org/bjcp-2021-beer/10/10b-dunkles-weissbier"},
-  {"slug":"weizenbock","name":"Weizenbock","family":"Weizenbier","fermentation":"obergärig","origin":"Deutschland","region":"Bayern","alcohol":[6.5,9],"ibu":[15,30],"ebc":[12,50],"plato":[16,22],"temperature":[10,12],"profile":["kräftig","fruchtig","malzig"],"food":["Wild","Schmorgerichte","Desserts"],"glass":"Weizenbierglas","availability":"Spezialität","description":"Starkes Weizenbier mit dichter Malzstruktur, reifen Fruchtnoten und wärmendem Alkohol.","source":"https://styles.bjcp.org/bjcp-2021-beer/10/10c-weizenbock"},
-  {"slug":"kristallweizen","name":"Kristallweizen","family":"Weizenbier","fermentation":"obergärig","origin":"Deutschland","region":"Süddeutschland","alcohol":[4.3,5.6],"ibu":[8,15],"ebc":[4,12],"plato":[11,14],"temperature":[6,8],"profile":["klar","spritzig","fruchtig"],"food":["Fisch","Sommergerichte","milder Käse"],"glass":"Weizenbierglas","availability":"etabliert","description":"Filtrierte, klare Variante des Weißbiers mit lebhafter Kohlensäure und schlankem Eindruck.","source":"https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/"},
-  {"slug":"kellerbier","name":"Kellerbier","family":"Kellerbier","fermentation":"untergärig","origin":"Deutschland","region":"Franken","alcohol":[4.6,5.6],"ibu":[20,35],"ebc":[10,30],"plato":[11,14],"temperature":[8,10],"profile":["naturtrüb","malzig","weich"],"food":["Brotzeit","Bratwurst","kräftiger Käse"],"glass":"Seidla","availability":"regional etabliert","description":"Ungespundetes oder schwach gespundetes, naturtrübes Lager mit weichem Mundgefühl.","source":"https://styles.bjcp.org/bjcp-2021-beer/7/7c-kellerbier"},
-  {"slug":"zwickelbier","name":"Zwickelbier","family":"Kellerbier","fermentation":"untergärig","origin":"Deutschland","region":"Süddeutschland","alcohol":[4.5,5.5],"ibu":[18,35],"ebc":[8,28],"plato":[11,14],"temperature":[7,10],"profile":["hefetrüb","frisch","malzig"],"food":["Brotzeit","Geflügel","Käse"],"glass":"Becher oder Seidla","availability":"etabliert","description":"Unfiltriertes, jung abgefülltes Bier mit frischem Getreide- und Hefeeindruck.","source":"https://styles.bjcp.org/bjcp-2021-beer/7/7c-kellerbier"},
-  {"slug":"maerzen","name":"Märzen","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Bayern","alcohol":[5.6,6.3],"ibu":[18,24],"ebc":[16,34],"plato":[13,15],"temperature":[8,10],"profile":["malzig","toastig","vollmundig"],"food":["Brathendl","Brezn","Schweinebraten"],"glass":"Krug","availability":"saisonal etabliert","description":"Bernsteinfarbenes, kräftigeres Lager mit toastigem Malz und sauberem Finish.","source":"https://styles.bjcp.org/bjcp-2021-beer/6/6a-marzen"},
-  {"slug":"festbier","name":"Festbier","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Bayern","alcohol":[5.8,6.3],"ibu":[18,25],"ebc":[8,14],"plato":[13,15],"temperature":[7,9],"profile":["golden","weich","malzig"],"food":["Hendl","Brezn","Brotzeit"],"glass":"Maßkrug","availability":"saisonal","description":"Goldenes, kräftiges und weich malziges Lager, wie es auf großen Volksfesten ausgeschenkt wird.","source":"https://styles.bjcp.org/bjcp-2021-beer/4/4b-festbier"},
-  {"slug":"bockbier","name":"Bockbier","family":"Starkbier","fermentation":"untergärig","origin":"Deutschland","region":"Niedersachsen und Bayern","alcohol":[6.3,7.5],"ibu":[20,30],"ebc":[12,44],"plato":[16,18],"temperature":[9,12],"profile":["kräftig","malzig","wärmend"],"food":["Braten","Wild","gereifter Käse"],"glass":"Pokal","availability":"saisonal etabliert","description":"Malzbetontes Starkbier mit hoher Stammwürze und zurückhaltender Hopfenwirkung.","source":"https://styles.bjcp.org/bjcp-2021-beer/6/6c-dunkles-bock"},
-  {"slug":"doppelbock","name":"Doppelbock","family":"Starkbier","fermentation":"untergärig","origin":"Deutschland","region":"Bayern","alcohol":[7,10],"ibu":[16,26],"ebc":[12,60],"plato":[18,26],"temperature":[10,13],"profile":["sehr malzig","dunkelfruchtig","wärmend"],"food":["Wild","Blauschimmelkäse","Schokoladendessert"],"glass":"Pokal","availability":"Spezialität","description":"Sehr kräftiges, konzentriert malziges Lager mit wenig Hopfen und langem Nachhall.","source":"https://styles.bjcp.org/bjcp-2021-beer/9/9a-doppelbock"},
-  {"slug":"eisbock","name":"Eisbock","family":"Starkbier","fermentation":"untergärig","origin":"Deutschland","region":"Oberfranken","alcohol":[9,14],"ibu":[20,35],"ebc":[36,70],"plato":[25,35],"temperature":[12,14],"profile":["konzentriert","dunkelfruchtig","likörartig"],"food":["Dessert","Blauschimmelkäse","als Digestif"],"glass":"kleiner Pokal","availability":"seltene Spezialität","description":"Durch Gefrieren konzentrierter Doppelbock mit intensiver Frucht, Malzsüße und Alkoholwärme.","source":"https://styles.bjcp.org/bjcp-2021-beer/9/9b-eisbock"},
-  {"slug":"maibock","name":"Maibock","family":"Starkbier","fermentation":"untergärig","origin":"Deutschland","region":"Bayern","alcohol":[6.3,7.4],"ibu":[23,35],"ebc":[12,22],"plato":[16,18],"temperature":[8,10],"profile":["hell","kräftig","hopfig"],"food":["Brathähnchen","Spargel","kräftiger Käse"],"glass":"Pokal","availability":"saisonal","description":"Heller Bock mit kräftigem Malzkörper und deutlicherer Hopfenkontur als dunkler Bock.","source":"https://styles.bjcp.org/bjcp-2021-beer/4/4c-helles-bock"},
-  {"slug":"rauchbier","name":"Rauchbier","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Bamberg","alcohol":[4.8,6],"ibu":[20,30],"ebc":[24,44],"plato":[12,15],"temperature":[9,11],"profile":["rauchig","malzig","toastig"],"food":["Geräuchertes","Bratwurst","Bergkäse"],"glass":"Seidla","availability":"regionale Spezialität","description":"Lager mit charakteristischem Buchenrauchmalz, das an Speck oder Lagerfeuer erinnern kann.","source":"https://styles.bjcp.org/bjcp-2021-beer/6/6b-rauchbier"},
-  {"slug":"gose","name":"Gose","family":"Sauerbier","fermentation":"obergärig","origin":"Deutschland","region":"Leipzig","alcohol":[4.2,4.8],"ibu":[5,12],"ebc":[5,12],"plato":[10,12],"temperature":[6,8],"profile":["säuerlich","salzig","korianderwürzig"],"food":["Meeresfrüchte","Ziegenkäse","Salate"],"glass":"Becher","availability":"wiederbelebte Spezialität","description":"Spritziges, leicht säuerliches Weizenbier mit Salz und traditionell Koriander.","source":"https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/"},
-  {"slug":"berliner-weisse","name":"Berliner Weisse","family":"Sauerbier","fermentation":"obergärig","origin":"Deutschland","region":"Berlin","alcohol":[2.8,3.8],"ibu":[3,8],"ebc":[4,8],"plato":[7,9],"temperature":[5,7],"profile":["säuerlich","spritzig","leicht"],"food":["Sommergerichte","Ziegenkäse","Obst"],"glass":"Schale oder Kelch","availability":"regionale Spezialität","description":"Sehr helles, leichtes und lebhaft saures Weizenbier mit hoher Kohlensäure.","source":"https://styles.bjcp.org/bjcp-2021-beer/23/23a-berliner-weisse"},
-  {"slug":"roggenbier","name":"Roggenbier","family":"Ale","fermentation":"obergärig","origin":"Deutschland","region":"Bayern","alcohol":[4.5,6],"ibu":[10,25],"ebc":[12,40],"plato":[11,15],"temperature":[8,10],"profile":["würzig","brotig","fruchtig"],"food":["Roggenbrot","geräuchertes Fleisch","Käse"],"glass":"Weizenbierglas","availability":"Spezialität","description":"Obergäriges Bier mit hohem Roggenmalzanteil, würziger Brotnote und weizenähnlicher Hefe.","source":"https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/"},
-  {"slug":"dortmunder-export","name":"Dortmunder Export","family":"Lager","fermentation":"untergärig","origin":"Deutschland","region":"Dortmund","alcohol":[4.8,6],"ibu":[20,30],"ebc":[8,14],"plato":[12,14],"temperature":[7,9],"profile":["malzig","mineralisch","ausgewogen"],"food":["Frikadellen","Brathähnchen","milder Käse"],"glass":"Becher","availability":"etabliert","description":"Goldenes Lager zwischen Hellem und Pils: etwas kräftiger, malziger und ausgewogen gehopft.","source":"https://styles.bjcp.org/bjcp-2021-beer/5/5c-german-helles-exportbier"},
-  {"slug":"landbier","name":"Landbier","family":"Lager","fermentation":"meist untergärig","origin":"Deutschland","region":"regional","alcohol":[4.5,5.6],"ibu":[18,32],"ebc":[10,36],"plato":[11,14],"temperature":[8,10],"profile":["malzig","regional","unkompliziert"],"food":["Brotzeit","Bratwurst","Eintopf"],"glass":"Krug","availability":"regional verbreitet","description":"Nicht eng normierte regionale Bezeichnung für meist malzbetonte, unkomplizierte Lagerbiere.","source":"https://brauer-bund.de/biervielfalt/"},
-  {"slug":"rotbier","name":"Rotbier","family":"Lager","fermentation":"meist untergärig","origin":"Deutschland","region":"Nürnberg","alcohol":[4.5,5.6],"ibu":[18,30],"ebc":[24,40],"plato":[11,14],"temperature":[8,10],"profile":["karamellig","brotig","mildherb"],"food":["Bratwurst","Schweinebraten","Schnittkäse"],"glass":"Seidla","availability":"regionale Spezialität","description":"Kupferrotes fränkisches Bier mit toastigem Malz und ausgewogener Bittere.","source":"https://brauer-bund.de/biervielfalt/"},
-  {"slug":"zoigl","name":"Zoigl","family":"Kellerbier","fermentation":"untergärig","origin":"Deutschland","region":"Oberpfalz","alcohol":[4.5,5.5],"ibu":[18,32],"ebc":[16,34],"plato":[11,14],"temperature":[8,10],"profile":["naturtrüb","malzig","gemeinschaftlich gebraut"],"food":["Brotzeit","Hausmacher Wurst","Käse"],"glass":"Krug","availability":"lokale Tradition","description":"Kommunbrautradition der Oberpfalz; meist naturtrübes, malzbetontes untergäriges Bier.","source":"https://brauer-bund.de/biervielfalt/"},
-  {"slug":"leichtbier","name":"Leichtbier","family":"Biergattung","fermentation":"variabel","origin":"Deutschland","region":"deutschlandweit","alcohol":[2,3.5],"ibu":[10,30],"ebc":[4,35],"plato":[7,10],"temperature":[5,8],"profile":["leicht","schlank","erfrischend"],"food":["Salate","leichte Brotzeit","Fisch"],"glass":"stilabhängig","availability":"Nische","description":"Bier mit reduziertem Alkohol und schlankem Körper; die sensorische Ausprägung hängt vom Grundstil ab.","source":"https://www.gesetze-im-internet.de/bierv/__3.html"},
-  {"slug":"alkoholfreies-bier","name":"Alkoholfreies Bier","family":"Biergattung","fermentation":"variabel","origin":"Deutschland","region":"deutschlandweit","alcohol":[0,0.5],"ibu":[5,40],"ebc":[4,50],"plato":[3,12],"temperature":[5,8],"profile":["stilabhängig","leicht","erfrischend"],"food":["Sportliche Pause","Salate","Brotzeit"],"glass":"stilabhängig","availability":"weit verbreitet","description":"Sammelbezeichnung für Biere bis 0,5 Volumenprozent; Geschmack und Werte hängen vom Grundstil ab.","source":"https://brauer-bund.de/biervielfalt/"},
-  {"slug":"session-ipa","name":"Session IPA","family":"Ale","fermentation":"obergärig","origin":"international","region":"deutsche Craftbrauereien","alcohol":[3,5],"ibu":[35,60],"ebc":[6,20],"plato":[8,12],"temperature":[7,9],"profile":["hopfenaromatisch","leicht","trocken"],"food":["Burger","scharfe Speisen","Cheddar"],"glass":"Tulpe","availability":"Craftbier etabliert","description":"Leichteres IPA mit intensivem Hopfenaroma, trockener Basis und moderatem Alkohol.","source":"https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/"},
-  {"slug":"india-pale-ale","name":"India Pale Ale","family":"Ale","fermentation":"obergärig","origin":"Großbritannien","region":"deutsche Craftbrauereien","alcohol":[5.5,7.5],"ibu":[40,70],"ebc":[8,28],"plato":[13,18],"temperature":[8,11],"profile":["hopfenaromatisch","bitter","fruchtig"],"food":["Burger","Curry","kräftiger Käse"],"glass":"Tulpe","availability":"Craftbier verbreitet","description":"Hopfenbetontes Ale mit deutlicher Bittere und je nach Hopfensorte zitrischen oder harzigen Aromen.","source":"https://styles.bjcp.org/bjcp-2021-beer/21/21a-american-ipa"},
-  {"slug":"pale-ale","name":"Pale Ale","family":"Ale","fermentation":"obergärig","origin":"Großbritannien","region":"deutsche Craftbrauereien","alcohol":[4.5,6.2],"ibu":[25,50],"ebc":[10,28],"plato":[11,15],"temperature":[8,11],"profile":["fruchtig","hopfig","ausgewogen"],"food":["Burger","Pizza","Cheddar"],"glass":"Pint oder Tulpe","availability":"Craftbier verbreitet","description":"Obergäriges, bernsteinfarbenes bis goldenes Bier mit deutlichem Hopfen und tragendem Malz.","source":"https://styles.bjcp.org/bjcp-2021-beer/18/18b-american-pale-ale"},
-  {"slug":"porter","name":"Porter","family":"Ale","fermentation":"obergärig","origin":"Großbritannien","region":"deutsche Craftbrauereien","alcohol":[4.5,6.5],"ibu":[20,40],"ebc":[40,75],"plato":[11,16],"temperature":[10,13],"profile":["schokoladig","röstig","malzig"],"food":["Grillgerichte","Schokolade","Hartkäse"],"glass":"Pint oder Pokal","availability":"Craftbier etabliert","description":"Dunkles Ale mit Schokolade, Karamell und moderater Röstung, meist weicher als ein Stout.","source":"https://styles.bjcp.org/bjcp-2021-beer/13/13c-english-porter"},
-  {"slug":"stout","name":"Stout","family":"Ale","fermentation":"obergärig","origin":"Irland und Großbritannien","region":"deutsche Craftbrauereien","alcohol":[4,7],"ibu":[25,50],"ebc":[60,90],"plato":[10,17],"temperature":[10,13],"profile":["röstig","kaffeeartig","trocken"],"food":["Austern","Grillgerichte","Schokoladendessert"],"glass":"Pint","availability":"Craftbier etabliert","description":"Sehr dunkles Ale mit Kaffee- und Röstaromen; Stärke und Süße variieren je nach Unterstil.","source":"https://styles.bjcp.org/bjcp-2021-beer/15/15b-irish-stout"}
+  {
+    "slug": "pils",
+    "name": "Pils",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Nord- und Westdeutschland",
+    "alcohol": [
+      4.4,
+      5.2
+    ],
+    "ibu": [
+      25,
+      45
+    ],
+    "ebc": [
+      4,
+      12
+    ],
+    "plato": [
+      11,
+      12.5
+    ],
+    "temperature": [
+      5,
+      8
+    ],
+    "profile": [
+      "herb",
+      "trocken",
+      "hopfenbetont"
+    ],
+    "food": [
+      "Fisch",
+      "Schnitzel",
+      "milde Käse"
+    ],
+    "glass": "schlanke Pilstulpe",
+    "availability": "weit verbreitet",
+    "description": "Schlankes, helles Lager mit deutlicher Hopfenbittere und trockenem Finish.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/5/5d-german-pils",
+    "page": "pils"
+  },
+  {
+    "slug": "helles",
+    "name": "Helles",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      4.7,
+      5.4
+    ],
+    "ibu": [
+      16,
+      22
+    ],
+    "ebc": [
+      6,
+      12
+    ],
+    "plato": [
+      11,
+      13
+    ],
+    "temperature": [
+      6,
+      8
+    ],
+    "profile": [
+      "malzig",
+      "weich",
+      "ausgewogen"
+    ],
+    "food": [
+      "Brotzeit",
+      "Brathähnchen",
+      "milde Speisen"
+    ],
+    "glass": "Willi-Becher, Seidel oder schlanker Bierkrug",
+    "availability": "weit verbreitet",
+    "description": "Helles, malzbetontes Lager mit weicher Bittere und hoher Trinkbarkeit.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/4/4a-munich-helles",
+    "page": "helles"
+  },
+  {
+    "slug": "dunkelbier",
+    "name": "Münchner Dunkel",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      4.5,
+      5.6
+    ],
+    "ibu": [
+      18,
+      28
+    ],
+    "ebc": [
+      28,
+      56
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      8,
+      10
+    ],
+    "profile": [
+      "brotig",
+      "malzig",
+      "nussig"
+    ],
+    "food": [
+      "Braten",
+      "Knödel",
+      "Bergkäse"
+    ],
+    "glass": "Seidel, Krug oder Willi-Becher",
+    "availability": "etabliert",
+    "description": "Braunes Lager mit brotiger Malztiefe, sanfter Röstung und zurückhaltendem Hopfen.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/8/8a-munich-dunkel",
+    "page": "dunkelbier"
+  },
+  {
+    "slug": "schwarzbier",
+    "name": "Schwarzbier",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Thüringen und Sachsen",
+    "alcohol": [
+      4.4,
+      5.4
+    ],
+    "ibu": [
+      20,
+      30
+    ],
+    "ebc": [
+      34,
+      60
+    ],
+    "plato": [
+      11,
+      13
+    ],
+    "temperature": [
+      7,
+      10
+    ],
+    "profile": [
+      "röstig",
+      "trocken",
+      "schokoladig"
+    ],
+    "food": [
+      "Gegrilltes",
+      "Pilzgerichte",
+      "Schokoladendessert"
+    ],
+    "glass": "Kelch, Pokal oder Willi-Becher",
+    "availability": "etabliert",
+    "description": "Dunkles, überraschend schlankes Lager mit feiner Röstnote und trockenem Abschluss.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/8/8b-schwarzbier",
+    "page": "schwarzbier"
+  },
+  {
+    "slug": "koelsch",
+    "name": "Kölsch",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Köln",
+    "alcohol": [
+      4.4,
+      5.2
+    ],
+    "ibu": [
+      18,
+      30
+    ],
+    "ebc": [
+      4,
+      10
+    ],
+    "plato": [
+      11,
+      12.5
+    ],
+    "temperature": [
+      6,
+      8
+    ],
+    "profile": [
+      "feinfruchtig",
+      "trocken",
+      "mild"
+    ],
+    "food": [
+      "Halver Hahn",
+      "Fisch",
+      "leichte Salate"
+    ],
+    "glass": "schmale 0,2-Liter-Kölschstange",
+    "availability": "regional geschützt",
+    "description": "Sehr helles, schlankes obergäriges Bier mit kühler Reifung und feiner Fruchtigkeit.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/5/5b-kolsch",
+    "page": "koelsch"
+  },
+  {
+    "slug": "altbier",
+    "name": "Altbier",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Düsseldorf und Niederrhein",
+    "alcohol": [
+      4.3,
+      5.5
+    ],
+    "ibu": [
+      25,
+      50
+    ],
+    "ebc": [
+      20,
+      36
+    ],
+    "plato": [
+      11,
+      13
+    ],
+    "temperature": [
+      7,
+      9
+    ],
+    "profile": [
+      "nussig",
+      "herb",
+      "malzig"
+    ],
+    "food": [
+      "Rheinischer Sauerbraten",
+      "Flammkuchen",
+      "kräftiger Käse"
+    ],
+    "glass": "zylindrisches Altbierglas, häufig 0,2 oder 0,25 Liter",
+    "availability": "regional etabliert",
+    "description": "Kupferfarbenes, obergäriges Bier mit sauberer Kaltreifung, Malz und kräftigem Hopfen.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/7/7b-altbier",
+    "page": "altbier"
+  },
+  {
+    "slug": "weissbier",
+    "name": "Weißbier",
+    "family": "Weizenbier",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      4.3,
+      5.6
+    ],
+    "ibu": [
+      8,
+      15
+    ],
+    "ebc": [
+      4,
+      12
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      7,
+      9
+    ],
+    "profile": [
+      "bananig",
+      "nelkig",
+      "spritzig"
+    ],
+    "food": [
+      "Weißwurst",
+      "Salate",
+      "milde Currys"
+    ],
+    "glass": "hohes Weizenbierglas",
+    "availability": "weit verbreitet",
+    "description": "Hefetrübes Weizenbier mit hoher Kohlensäure und typischen Bananen- und Nelkennoten.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/10/10a-weissbier",
+    "page": "hefeweizen"
+  },
+  {
+    "slug": "dunkelweizen",
+    "name": "Dunkelweizen",
+    "family": "Weizenbier",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      4.3,
+      5.6
+    ],
+    "ibu": [
+      8,
+      15
+    ],
+    "ebc": [
+      28,
+      46
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      8,
+      10
+    ],
+    "profile": [
+      "bananig",
+      "brotig",
+      "karamellig"
+    ],
+    "food": [
+      "Schweinebraten",
+      "Nussgebäck",
+      "Weichkäse"
+    ],
+    "glass": "hohes Weizenbierglas",
+    "availability": "etabliert",
+    "description": "Dunkles Weizenbier, das Hefearomen mit brotigen und karamelligen Malznoten verbindet.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/10/10b-dunkles-weissbier",
+    "page": "dunkles-weizenbier"
+  },
+  {
+    "slug": "weizenbock",
+    "name": "Weizenbock",
+    "family": "Weizenbier",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      6.5,
+      9
+    ],
+    "ibu": [
+      15,
+      30
+    ],
+    "ebc": [
+      12,
+      50
+    ],
+    "plato": [
+      16,
+      22
+    ],
+    "temperature": [
+      9,
+      9
+    ],
+    "profile": [
+      "kräftig",
+      "fruchtig",
+      "malzig"
+    ],
+    "food": [
+      "Wild",
+      "Schmorgerichte",
+      "Desserts"
+    ],
+    "glass": "Weizenbockglas oder kleiner Weizenpokal",
+    "availability": "Spezialität",
+    "description": "Starkes Weizenbier mit dichter Malzstruktur, reifen Fruchtnoten und wärmendem Alkohol.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/10/10c-weizenbock",
+    "page": "weizenbock"
+  },
+  {
+    "slug": "kristallweizen",
+    "name": "Kristallweizen",
+    "family": "Weizenbier",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Süddeutschland",
+    "alcohol": [
+      4.3,
+      5.6
+    ],
+    "ibu": [
+      8,
+      15
+    ],
+    "ebc": [
+      4,
+      12
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      6,
+      8
+    ],
+    "profile": [
+      "klar",
+      "spritzig",
+      "fruchtig"
+    ],
+    "food": [
+      "Fisch",
+      "Sommergerichte",
+      "milder Käse"
+    ],
+    "glass": "hohes Weizenbierglas",
+    "availability": "etabliert",
+    "description": "Filtrierte, klare Variante des Weißbiers mit lebhafter Kohlensäure und schlankem Eindruck.",
+    "source": "https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/",
+    "page": "kristallweizen"
+  },
+  {
+    "slug": "kellerbier",
+    "name": "Kellerbier",
+    "family": "Kellerbier",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Franken",
+    "alcohol": [
+      4.6,
+      5.6
+    ],
+    "ibu": [
+      20,
+      35
+    ],
+    "ebc": [
+      10,
+      30
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      7,
+      10
+    ],
+    "profile": [
+      "naturtrüb",
+      "malzig",
+      "weich"
+    ],
+    "food": [
+      "Brotzeit",
+      "Bratwurst",
+      "kräftiger Käse"
+    ],
+    "glass": "Seidel oder Willi-Becher",
+    "availability": "regional etabliert",
+    "description": "Ungespundetes oder schwach gespundetes, naturtrübes Lager mit weichem Mundgefühl.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/7/7c-kellerbier",
+    "page": "kellerbier-zwickelbier"
+  },
+  {
+    "slug": "zwickelbier",
+    "name": "Zwickelbier",
+    "family": "Kellerbier",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Süddeutschland",
+    "alcohol": [
+      4.5,
+      5.5
+    ],
+    "ibu": [
+      18,
+      35
+    ],
+    "ebc": [
+      8,
+      28
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      7,
+      10
+    ],
+    "profile": [
+      "hefetrüb",
+      "frisch",
+      "malzig"
+    ],
+    "food": [
+      "Brotzeit",
+      "Geflügel",
+      "Käse"
+    ],
+    "glass": "Seidel oder Willi-Becher",
+    "availability": "etabliert",
+    "description": "Unfiltriertes, jung abgefülltes Bier mit frischem Getreide- und Hefeeindruck.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/7/7c-kellerbier",
+    "page": "kellerbier-zwickelbier"
+  },
+  {
+    "slug": "maerzen",
+    "name": "Märzen",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      5.6,
+      6.3
+    ],
+    "ibu": [
+      18,
+      24
+    ],
+    "ebc": [
+      16,
+      34
+    ],
+    "plato": [
+      13,
+      15
+    ],
+    "temperature": [
+      7,
+      9
+    ],
+    "profile": [
+      "malzig",
+      "toastig",
+      "vollmundig"
+    ],
+    "food": [
+      "Brathendl",
+      "Brezn",
+      "Schweinebraten"
+    ],
+    "glass": "Maßkrug, Seidel oder Willi-Becher",
+    "availability": "saisonal etabliert",
+    "description": "Bernsteinfarbenes, kräftigeres Lager mit toastigem Malz und sauberem Finish.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/6/6a-marzen",
+    "page": "maerzenbier"
+  },
+  {
+    "slug": "festbier",
+    "name": "Festbier",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      5.8,
+      6.3
+    ],
+    "ibu": [
+      18,
+      25
+    ],
+    "ebc": [
+      8,
+      14
+    ],
+    "plato": [
+      13,
+      15
+    ],
+    "temperature": [
+      7,
+      9
+    ],
+    "profile": [
+      "golden",
+      "weich",
+      "malzig"
+    ],
+    "food": [
+      "Hendl",
+      "Brezn",
+      "Brotzeit"
+    ],
+    "glass": "Maßkrug oder Seidel",
+    "availability": "saisonal",
+    "description": "Goldenes, kräftiges und weich malziges Lager, wie es auf großen Volksfesten ausgeschenkt wird.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/4/4b-festbier",
+    "page": "festbier-oktoberfestbier"
+  },
+  {
+    "slug": "bockbier",
+    "name": "Bockbier",
+    "family": "Starkbier",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Niedersachsen und Bayern",
+    "alcohol": [
+      6.3,
+      7.5
+    ],
+    "ibu": [
+      20,
+      30
+    ],
+    "ebc": [
+      12,
+      44
+    ],
+    "plato": [
+      16,
+      18
+    ],
+    "temperature": [
+      9,
+      12
+    ],
+    "profile": [
+      "kräftig",
+      "malzig",
+      "wärmend"
+    ],
+    "food": [
+      "Braten",
+      "Wild",
+      "gereifter Käse"
+    ],
+    "glass": "Bockbierpokal oder kleiner Kelch",
+    "availability": "saisonal etabliert",
+    "description": "Malzbetontes Starkbier mit hoher Stammwürze und zurückhaltender Hopfenwirkung.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/6/6c-dunkles-bock",
+    "page": "bockbier"
+  },
+  {
+    "slug": "doppelbock",
+    "name": "Doppelbock",
+    "family": "Starkbier",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      7,
+      10
+    ],
+    "ibu": [
+      16,
+      26
+    ],
+    "ebc": [
+      12,
+      60
+    ],
+    "plato": [
+      18,
+      26
+    ],
+    "temperature": [
+      10,
+      13
+    ],
+    "profile": [
+      "sehr malzig",
+      "dunkelfruchtig",
+      "wärmend"
+    ],
+    "food": [
+      "Wild",
+      "Blauschimmelkäse",
+      "Schokoladendessert"
+    ],
+    "glass": "kleiner Kelch oder Bockbierpokal",
+    "availability": "Spezialität",
+    "description": "Sehr kräftiges, konzentriert malziges Lager mit wenig Hopfen und langem Nachhall.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/9/9a-doppelbock",
+    "page": "doppelbock"
+  },
+  {
+    "slug": "eisbock",
+    "name": "Eisbock",
+    "family": "Starkbier",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Oberfranken",
+    "alcohol": [
+      9,
+      14
+    ],
+    "ibu": [
+      20,
+      35
+    ],
+    "ebc": [
+      36,
+      70
+    ],
+    "plato": [
+      25,
+      35
+    ],
+    "temperature": [
+      12,
+      14
+    ],
+    "profile": [
+      "konzentriert",
+      "dunkelfruchtig",
+      "likörartig"
+    ],
+    "food": [
+      "Dessert",
+      "Blauschimmelkäse",
+      "als Digestif"
+    ],
+    "glass": "kleines Degustationsglas oder Kelch",
+    "availability": "seltene Spezialität",
+    "description": "Durch Gefrieren konzentrierter Doppelbock mit intensiver Frucht, Malzsüße und Alkoholwärme.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/9/9b-eisbock",
+    "page": "eisbock"
+  },
+  {
+    "slug": "maibock",
+    "name": "Maibock",
+    "family": "Starkbier",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      6.3,
+      7.4
+    ],
+    "ibu": [
+      23,
+      35
+    ],
+    "ebc": [
+      12,
+      22
+    ],
+    "plato": [
+      16,
+      18
+    ],
+    "temperature": [
+      8,
+      10
+    ],
+    "profile": [
+      "hell",
+      "kräftig",
+      "hopfig"
+    ],
+    "food": [
+      "Brathähnchen",
+      "Spargel",
+      "kräftiger Käse"
+    ],
+    "glass": "Pokal",
+    "availability": "saisonal",
+    "description": "Heller Bock mit kräftigem Malzkörper und deutlicherer Hopfenkontur als dunkler Bock.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/4/4c-helles-bock"
+  },
+  {
+    "slug": "rauchbier",
+    "name": "Rauchbier",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Bamberg",
+    "alcohol": [
+      4.8,
+      6
+    ],
+    "ibu": [
+      20,
+      30
+    ],
+    "ebc": [
+      24,
+      44
+    ],
+    "plato": [
+      12,
+      15
+    ],
+    "temperature": [
+      8,
+      10
+    ],
+    "profile": [
+      "rauchig",
+      "malzig",
+      "toastig"
+    ],
+    "food": [
+      "Geräuchertes",
+      "Bratwurst",
+      "Bergkäse"
+    ],
+    "glass": "Seidel, Willi-Becher oder Krug",
+    "availability": "regionale Spezialität",
+    "description": "Lager mit charakteristischem Buchenrauchmalz, das an Speck oder Lagerfeuer erinnern kann.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/6/6b-rauchbier",
+    "page": "rauchbier"
+  },
+  {
+    "slug": "gose",
+    "name": "Gose",
+    "family": "Sauerbier",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Leipzig",
+    "alcohol": [
+      4.2,
+      4.8
+    ],
+    "ibu": [
+      5,
+      12
+    ],
+    "ebc": [
+      5,
+      12
+    ],
+    "plato": [
+      10,
+      12
+    ],
+    "temperature": [
+      6,
+      8
+    ],
+    "profile": [
+      "säuerlich",
+      "salzig",
+      "korianderwürzig"
+    ],
+    "food": [
+      "Meeresfrüchte",
+      "Ziegenkäse",
+      "Salate"
+    ],
+    "glass": "Kelch oder schlankes Degustationsglas",
+    "availability": "wiederbelebte Spezialität",
+    "description": "Spritziges, leicht säuerliches Weizenbier mit Salz und traditionell Koriander.",
+    "source": "https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/",
+    "page": "gose"
+  },
+  {
+    "slug": "berliner-weisse",
+    "name": "Berliner Weisse",
+    "family": "Sauerbier",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Berlin",
+    "alcohol": [
+      2.8,
+      3.8
+    ],
+    "ibu": [
+      3,
+      8
+    ],
+    "ebc": [
+      4,
+      8
+    ],
+    "plato": [
+      7,
+      9
+    ],
+    "temperature": [
+      6,
+      8
+    ],
+    "profile": [
+      "säuerlich",
+      "spritzig",
+      "leicht"
+    ],
+    "food": [
+      "Sommergerichte",
+      "Ziegenkäse",
+      "Obst"
+    ],
+    "glass": "breites Berliner-Weisse-Glas oder Kelch",
+    "availability": "regionale Spezialität",
+    "description": "Sehr helles, leichtes und lebhaft saures Weizenbier mit hoher Kohlensäure.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/23/23a-berliner-weisse",
+    "page": "berliner-weisse"
+  },
+  {
+    "slug": "roggenbier",
+    "name": "Roggenbier",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Deutschland",
+    "region": "Bayern",
+    "alcohol": [
+      4.5,
+      6
+    ],
+    "ibu": [
+      10,
+      25
+    ],
+    "ebc": [
+      12,
+      40
+    ],
+    "plato": [
+      11,
+      15
+    ],
+    "temperature": [
+      7,
+      9
+    ],
+    "profile": [
+      "würzig",
+      "brotig",
+      "fruchtig"
+    ],
+    "food": [
+      "Roggenbrot",
+      "geräuchertes Fleisch",
+      "Käse"
+    ],
+    "glass": "Weizenbierglas oder Kelch",
+    "availability": "Spezialität",
+    "description": "Obergäriges Bier mit hohem Roggenmalzanteil, würziger Brotnote und weizenähnlicher Hefe.",
+    "source": "https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/",
+    "page": "roggenbier"
+  },
+  {
+    "slug": "dortmunder-export",
+    "name": "Dortmunder Export",
+    "family": "Lager",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Dortmund",
+    "alcohol": [
+      4.8,
+      6
+    ],
+    "ibu": [
+      20,
+      30
+    ],
+    "ebc": [
+      8,
+      14
+    ],
+    "plato": [
+      12,
+      14
+    ],
+    "temperature": [
+      7,
+      7
+    ],
+    "profile": [
+      "malzig",
+      "mineralisch",
+      "ausgewogen"
+    ],
+    "food": [
+      "Frikadellen",
+      "Brathähnchen",
+      "milder Käse"
+    ],
+    "glass": "Willi-Becher oder Seidel",
+    "availability": "etabliert",
+    "description": "Goldenes Lager zwischen Hellem und Pils: etwas kräftiger, malziger und ausgewogen gehopft.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/5/5c-german-helles-exportbier",
+    "page": "exportbier"
+  },
+  {
+    "slug": "landbier",
+    "name": "Landbier",
+    "family": "Lager",
+    "fermentation": "meist untergärig",
+    "origin": "Deutschland",
+    "region": "regional",
+    "alcohol": [
+      4.5,
+      5.6
+    ],
+    "ibu": [
+      18,
+      32
+    ],
+    "ebc": [
+      10,
+      36
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      7,
+      10
+    ],
+    "profile": [
+      "malzig",
+      "regional",
+      "unkompliziert"
+    ],
+    "food": [
+      "Brotzeit",
+      "Bratwurst",
+      "Eintopf"
+    ],
+    "glass": "Seidel, Krug oder Willi-Becher",
+    "availability": "regional verbreitet",
+    "description": "Nicht eng normierte regionale Bezeichnung für meist malzbetonte, unkomplizierte Lagerbiere.",
+    "source": "https://brauer-bund.de/biervielfalt/",
+    "page": "landbier"
+  },
+  {
+    "slug": "rotbier",
+    "name": "Rotbier",
+    "family": "Lager",
+    "fermentation": "meist untergärig",
+    "origin": "Deutschland",
+    "region": "Nürnberg",
+    "alcohol": [
+      4.5,
+      5.6
+    ],
+    "ibu": [
+      18,
+      30
+    ],
+    "ebc": [
+      24,
+      40
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      8,
+      10
+    ],
+    "profile": [
+      "karamellig",
+      "brotig",
+      "mildherb"
+    ],
+    "food": [
+      "Bratwurst",
+      "Schweinebraten",
+      "Schnittkäse"
+    ],
+    "glass": "Seidla",
+    "availability": "regionale Spezialität",
+    "description": "Kupferrotes fränkisches Bier mit toastigem Malz und ausgewogener Bittere.",
+    "source": "https://brauer-bund.de/biervielfalt/"
+  },
+  {
+    "slug": "zoigl",
+    "name": "Zoigl",
+    "family": "Kellerbier",
+    "fermentation": "untergärig",
+    "origin": "Deutschland",
+    "region": "Oberpfalz",
+    "alcohol": [
+      4.5,
+      5.5
+    ],
+    "ibu": [
+      18,
+      32
+    ],
+    "ebc": [
+      16,
+      34
+    ],
+    "plato": [
+      11,
+      14
+    ],
+    "temperature": [
+      7,
+      10
+    ],
+    "profile": [
+      "naturtrüb",
+      "malzig",
+      "gemeinschaftlich gebraut"
+    ],
+    "food": [
+      "Brotzeit",
+      "Hausmacher Wurst",
+      "Käse"
+    ],
+    "glass": "Seidel oder Krug",
+    "availability": "lokale Tradition",
+    "description": "Kommunbrautradition der Oberpfalz; meist naturtrübes, malzbetontes untergäriges Bier.",
+    "source": "https://brauer-bund.de/biervielfalt/",
+    "page": "zoiglbier"
+  },
+  {
+    "slug": "leichtbier",
+    "name": "Leichtbier",
+    "family": "Biergattung",
+    "fermentation": "variabel",
+    "origin": "Deutschland",
+    "region": "deutschlandweit",
+    "alcohol": [
+      2,
+      3.5
+    ],
+    "ibu": [
+      10,
+      30
+    ],
+    "ebc": [
+      4,
+      35
+    ],
+    "plato": [
+      7,
+      10
+    ],
+    "temperature": [
+      5,
+      8
+    ],
+    "profile": [
+      "leicht",
+      "schlank",
+      "erfrischend"
+    ],
+    "food": [
+      "Salate",
+      "leichte Brotzeit",
+      "Fisch"
+    ],
+    "glass": "stilabhängig",
+    "availability": "Nische",
+    "description": "Bier mit reduziertem Alkohol und schlankem Körper; die sensorische Ausprägung hängt vom Grundstil ab.",
+    "source": "https://www.gesetze-im-internet.de/bierv/__3.html"
+  },
+  {
+    "slug": "alkoholfreies-bier",
+    "name": "Alkoholfreies Bier",
+    "family": "Biergattung",
+    "fermentation": "variabel",
+    "origin": "Deutschland",
+    "region": "deutschlandweit",
+    "alcohol": [
+      0,
+      0.5
+    ],
+    "ibu": [
+      5,
+      40
+    ],
+    "ebc": [
+      4,
+      50
+    ],
+    "plato": [
+      3,
+      12
+    ],
+    "temperature": [
+      4,
+      7
+    ],
+    "profile": [
+      "stilabhängig",
+      "leicht",
+      "erfrischend"
+    ],
+    "food": [
+      "Sportliche Pause",
+      "Salate",
+      "Brotzeit"
+    ],
+    "glass": "passend zum Ausgangsstil",
+    "availability": "weit verbreitet",
+    "description": "Sammelbezeichnung für Biere bis 0,5 Volumenprozent; Geschmack und Werte hängen vom Grundstil ab.",
+    "source": "https://brauer-bund.de/biervielfalt/",
+    "page": "alkoholfreies-bier"
+  },
+  {
+    "slug": "session-ipa",
+    "name": "Session IPA",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "international",
+    "region": "deutsche Craftbrauereien",
+    "alcohol": [
+      3,
+      5
+    ],
+    "ibu": [
+      35,
+      60
+    ],
+    "ebc": [
+      6,
+      20
+    ],
+    "plato": [
+      8,
+      12
+    ],
+    "temperature": [
+      7,
+      9
+    ],
+    "profile": [
+      "hopfenaromatisch",
+      "leicht",
+      "trocken"
+    ],
+    "food": [
+      "Burger",
+      "scharfe Speisen",
+      "Cheddar"
+    ],
+    "glass": "Tulpe",
+    "availability": "Craftbier etabliert",
+    "description": "Leichteres IPA mit intensivem Hopfenaroma, trockener Basis und moderatem Alkohol.",
+    "source": "https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/"
+  },
+  {
+    "slug": "india-pale-ale",
+    "name": "India Pale Ale",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Großbritannien",
+    "region": "deutsche Craftbrauereien",
+    "alcohol": [
+      5.5,
+      7.5
+    ],
+    "ibu": [
+      40,
+      70
+    ],
+    "ebc": [
+      8,
+      28
+    ],
+    "plato": [
+      13,
+      18
+    ],
+    "temperature": [
+      7,
+      10
+    ],
+    "profile": [
+      "hopfenaromatisch",
+      "bitter",
+      "fruchtig"
+    ],
+    "food": [
+      "Burger",
+      "Curry",
+      "kräftiger Käse"
+    ],
+    "glass": "IPA-Glas, Teku oder kleiner Pokal",
+    "availability": "Craftbier verbreitet",
+    "description": "Hopfenbetontes Ale mit deutlicher Bittere und je nach Hopfensorte zitrischen oder harzigen Aromen.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/21/21a-american-ipa",
+    "page": "ipa-und-pale-ale"
+  },
+  {
+    "slug": "pale-ale",
+    "name": "Pale Ale",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Großbritannien",
+    "region": "deutsche Craftbrauereien",
+    "alcohol": [
+      4.5,
+      6.2
+    ],
+    "ibu": [
+      25,
+      50
+    ],
+    "ebc": [
+      10,
+      28
+    ],
+    "plato": [
+      11,
+      15
+    ],
+    "temperature": [
+      7,
+      10
+    ],
+    "profile": [
+      "fruchtig",
+      "hopfig",
+      "ausgewogen"
+    ],
+    "food": [
+      "Burger",
+      "Pizza",
+      "Cheddar"
+    ],
+    "glass": "IPA-Glas, Teku oder kleiner Pokal",
+    "availability": "Craftbier verbreitet",
+    "description": "Obergäriges, bernsteinfarbenes bis goldenes Bier mit deutlichem Hopfen und tragendem Malz.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/18/18b-american-pale-ale",
+    "page": "ipa-und-pale-ale"
+  },
+  {
+    "slug": "porter",
+    "name": "Porter",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Großbritannien",
+    "region": "deutsche Craftbrauereien",
+    "alcohol": [
+      4.5,
+      6.5
+    ],
+    "ibu": [
+      20,
+      40
+    ],
+    "ebc": [
+      40,
+      75
+    ],
+    "plato": [
+      11,
+      16
+    ],
+    "temperature": [
+      9,
+      13
+    ],
+    "profile": [
+      "schokoladig",
+      "röstig",
+      "malzig"
+    ],
+    "food": [
+      "Grillgerichte",
+      "Schokolade",
+      "Hartkäse"
+    ],
+    "glass": "Pintglas, Kelch oder Teku",
+    "availability": "Craftbier etabliert",
+    "description": "Dunkles Ale mit Schokolade, Karamell und moderater Röstung, meist weicher als ein Stout.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/13/13c-english-porter",
+    "page": "porter-und-stout"
+  },
+  {
+    "slug": "stout",
+    "name": "Stout",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Irland und Großbritannien",
+    "region": "deutsche Craftbrauereien",
+    "alcohol": [
+      4,
+      7
+    ],
+    "ibu": [
+      25,
+      50
+    ],
+    "ebc": [
+      60,
+      90
+    ],
+    "plato": [
+      10,
+      17
+    ],
+    "temperature": [
+      9,
+      13
+    ],
+    "profile": [
+      "röstig",
+      "kaffeeartig",
+      "trocken"
+    ],
+    "food": [
+      "Austern",
+      "Grillgerichte",
+      "Schokoladendessert"
+    ],
+    "glass": "Pintglas, Kelch oder Teku",
+    "availability": "Craftbier etabliert",
+    "description": "Sehr dunkles Ale mit Kaffee- und Röstaromen; Stärke und Süße variieren je nach Unterstil.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/15/15b-irish-stout",
+    "page": "porter-und-stout"
+  },
+  {
+    "slug": "imperial-stout",
+    "name": "Imperial Stout",
+    "family": "Ale",
+    "fermentation": "obergärig",
+    "origin": "Großbritannien",
+    "region": "international",
+    "alcohol": [
+      8,
+      12
+    ],
+    "ibu": [
+      50,
+      90
+    ],
+    "ebc": [
+      59,
+      79
+    ],
+    "plato": [
+      18.2,
+      26.8
+    ],
+    "temperature": [
+      9,
+      13
+    ],
+    "profile": [
+      "röstig",
+      "vollmundig",
+      "intensiv"
+    ],
+    "food": [
+      "Schokoladendessert",
+      "kräftiger Käse",
+      "Schmorgerichte"
+    ],
+    "glass": "Pintglas, Kelch oder Teku",
+    "availability": "Spezialitätenhandel",
+    "description": "Sehr starkes, dunkles Ale mit intensiven Röst- und Schokoladennoten.",
+    "source": "https://styles.bjcp.org/bjcp-2021-beer/20/20c-imperial-stout",
+    "page": "porter-und-stout"
+  }
 ]

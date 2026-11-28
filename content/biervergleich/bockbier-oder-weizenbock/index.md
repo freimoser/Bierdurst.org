@@ -35,7 +35,7 @@ index: true
 |---|---|---|
 | Einordnung | meist untergäriges Starkbier | obergäriges Weizen-Starkbier |
 | Farbe | hellgold bis dunkelbraun | hellgold bis dunkelbraun und häufig trüb |
-| Alkohol | häufig etwa 6,3 bis 7,5 % vol | typisch etwa 6,5 bis 7,5 % vol |
+| Alkohol | häufig etwa 6,3 bis 7,5 % vol | typisch etwa 6,5 bis 9,0 % vol |
 | Bitterkeit | meist zurückhaltend | niedrig bis moderat |
 | Geschmack | kräftig und malzbetont mit Brot, Karamell, Dörrobst und bei dunklen Varianten leichten Röstaromen | kräftig, fruchtig und würzig; helle Varianten erinnern an reife Banane, dunkle zusätzlich an Pflaume, Karamell und Schokolade |
 | Typische Region | bundesweit gebraut, historisch unter anderem mit Einbeck und Bayern verbunden | vor allem Bayern und süddeutsche Weizenbierkultur |
@@ -47,7 +47,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Bockbier liegt typischerweise bei **häufig etwa 6,3 bis 7,5 % vol**. Weizenbock liegt meist bei **typisch etwa 6,5 bis 7,5 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Bockbier liegt typischerweise bei **häufig etwa 6,3 bis 9 % vol**. Weizenbock liegt meist bei **typisch etwa 6,5 bis 9 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

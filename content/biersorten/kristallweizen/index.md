@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/
 article_id: 8
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Kristallweizen?
 
-**Kurz gesagt:** Kristallweizen ist filtriertes, obergäriges Weizenbier. Typisch sind hell und klar, meist etwa 4,8 bis 5,5 % vol und ein Geschmacksbild, das sich als spritzig, klar und fruchtig, aber meist weniger hefig und cremig als Hefeweizen beschreiben lässt.
+**Kurz gesagt:** Kristallweizen ist filtriertes, obergäriges Weizenbier. Typisch sind hell und klar, meist etwa 4,3 bis 5,6 % vol und ein Geschmacksbild, das sich als spritzig, klar und fruchtig, aber meist weniger hefig und cremig als Hefeweizen beschreiben lässt.
 
 ## Kristallweizen im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | filtriertes, obergäriges Weizenbier |
 | Farbe | hell und klar |
-| Alkohol | meist etwa 4,8 bis 5,5 % vol |
+| Alkohol | meist etwa 4,3 bis 5,6 % vol |
 | Bitterkeit | niedrig |
 | Trinktemperatur | 6 bis 8 °C |
 | Passendes Glas | hohes Weizenbierglas |
@@ -80,7 +81,7 @@ Kristallweizen ist eine gute Wahl, wenn Du die Fruchtigkeit und Spritzigkeit ein
 
 ### Ist Kristallweizen immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,8 bis 5,5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,3 bis 5,6 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Kristallweizen eher bitter oder süß?
 

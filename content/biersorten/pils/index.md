@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/5/5d-german-pils
 article_id: 2
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Pils?
 
-**Kurz gesagt:** Pils ist untergäriges Vollbier. Typisch sind hellgelb bis goldgelb, meist etwa 4,5 bis 5,2 % vol und ein Geschmacksbild, das sich als schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten beschreiben lässt.
+**Kurz gesagt:** Pils ist untergäriges Vollbier. Typisch sind hellgelb bis goldgelb, meist etwa 4,4 bis 5,2 % vol und ein Geschmacksbild, das sich als schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten beschreiben lässt.
 
 ## Pils im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | untergäriges Vollbier |
 | Farbe | hellgelb bis goldgelb |
-| Alkohol | meist etwa 4,5 bis 5,2 % vol |
+| Alkohol | meist etwa 4,4 bis 5,2 % vol |
 | Bitterkeit | deutlich bis kräftig hopfenherb |
 | Trinktemperatur | 5 bis 8 °C |
 | Passendes Glas | schlanke Pilstulpe |
@@ -80,7 +81,7 @@ Pils ist eine gute Wahl, wenn Du gern ein trockenes, erfrischendes und deutlich 
 
 ### Ist Pils immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,5 bis 5,2 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,4 bis 5,2 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Pils eher bitter oder süß?
 

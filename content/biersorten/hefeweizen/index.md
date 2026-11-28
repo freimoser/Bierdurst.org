@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/10/10a-weissbier
 article_id: 7
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Hefeweizen?
 
-**Kurz gesagt:** Hefeweizen ist naturtrübes, obergäriges Weizenbier. Typisch sind hellgold bis bernsteinfarben und trüb, meist etwa 4,8 bis 5,6 % vol und ein Geschmacksbild, das sich als fruchtig, hefig und spritzig; typische Eindrücke sind Banane, Nelke, Vanille oder Zitrus beschreiben lässt.
+**Kurz gesagt:** Hefeweizen ist naturtrübes, obergäriges Weizenbier. Typisch sind hellgold bis bernsteinfarben und trüb, meist etwa 4,3 bis 5,6 % vol und ein Geschmacksbild, das sich als fruchtig, hefig und spritzig; typische Eindrücke sind Banane, Nelke, Vanille oder Zitrus beschreiben lässt.
 
 ## Hefeweizen im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | naturtrübes, obergäriges Weizenbier |
 | Farbe | hellgold bis bernsteinfarben und trüb |
-| Alkohol | meist etwa 4,8 bis 5,6 % vol |
+| Alkohol | meist etwa 4,3 bis 5,6 % vol |
 | Bitterkeit | niedrig |
 | Trinktemperatur | 7 bis 9 °C |
 | Passendes Glas | hohes Weizenbierglas |
@@ -80,7 +81,7 @@ Hefeweizen ist eine gute Wahl, wenn Du ein aromatisches, naturtrübes Bier mit v
 
 ### Ist Hefeweizen immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,8 bis 5,6 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,3 bis 5,6 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Hefeweizen eher bitter oder süß?
 

@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | obergärige, hopfenbetonte Ale-Stile | untergäriges Vollbier |
 | Farbe | hellgold bis kupferfarben | hellgelb bis goldgelb |
-| Alkohol | Pale Ale häufig 4,5 bis 6 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr | meist etwa 4,5 bis 5,2 % vol |
+| Alkohol | Pale Ale häufig 4,5 bis 6,2 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr | meist etwa 4,4 bis 5,2 % vol |
 | Bitterkeit | moderat bis sehr kräftig | deutlich bis kräftig hopfenherb |
 | Geschmack | hopfenaromatisch mit Zitrus, Tropenfrucht, Harz, Kräutern oder Steinfrucht; im Hintergrund oft leichte Malzsüße | schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten |
 | Typische Region | historisch Großbritannien, modern weltweit und auch bei deutschen Craftbrauereien | bundesweit verbreitet, historisch besonders stark in Nord- und Westdeutschland |
@@ -48,7 +48,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-IPA und Pale Ale liegt typischerweise bei **Pale Ale häufig 4,5 bis 6 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr**. Pils liegt meist bei **meist etwa 4,5 bis 5,2 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+IPA und Pale Ale liegt typischerweise bei **Pale Ale häufig 4,4 bis 6,2 % vol, IPA oft 5,5 bis 7,5 % vol oder mehr**. Pils liegt meist bei **meist etwa 4,4 bis 5,2 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/6/6a-marzen
 article_id: 15
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Märzenbier?
 
-**Kurz gesagt:** Märzenbier ist untergäriges, kräftiger eingebrautes Lagerbier. Typisch sind goldgelb bis bernsteinfarben, meist etwa 5,5 bis 6,3 % vol und ein Geschmacksbild, das sich als körperreich, malzig, leicht süßlich und häufig karamellbetont beschreiben lässt.
+**Kurz gesagt:** Märzenbier ist untergäriges, kräftiger eingebrautes Lagerbier. Typisch sind goldgelb bis bernsteinfarben, meist etwa 5,6 bis 6,3 % vol und ein Geschmacksbild, das sich als körperreich, malzig, leicht süßlich und häufig karamellbetont beschreiben lässt.
 
 ## Märzenbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | untergäriges, kräftiger eingebrautes Lagerbier |
 | Farbe | goldgelb bis bernsteinfarben |
-| Alkohol | meist etwa 5,5 bis 6,3 % vol |
+| Alkohol | meist etwa 5,6 bis 6,3 % vol |
 | Bitterkeit | mild bis moderat |
 | Trinktemperatur | 7 bis 9 °C |
 | Passendes Glas | Maßkrug, Seidel oder Willi-Becher |
@@ -80,7 +81,7 @@ Märzenbier ist eine gute Wahl, wenn Du ein kräftigeres, malzbetontes Lagerbier
 
 ### Ist Märzenbier immer gleich stark?
 
-Nein. Typisch sind meist etwa 5,5 bis 6,3 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 5,6 bis 6,3 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Märzenbier eher bitter oder süß?
 

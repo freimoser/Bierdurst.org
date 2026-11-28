@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | untergäriges helles Lagerbier | untergäriges Vollbier |
 | Farbe | strohgelb bis goldgelb | goldgelb bis bernsteinfarben |
-| Alkohol | meist etwa 4,7 bis 5,4 % vol | typisch etwa 5,0 bis 6,0 % vol |
+| Alkohol | meist etwa 4,7 bis 5,4 % vol | typisch etwa 4,8 bis 6,0 % vol |
 | Bitterkeit | mild bis moderat | dezent bis moderat |
 | Geschmack | weich, rund und ausgewogen mit einer leichten Malzsüße und zurückhaltender Hopfenbittere | würzig, rund und malzbetont mit angenehmer Süße und zurückhaltender Hopfennote |
 | Typische Region | besonders mit Bayern und München verbunden, inzwischen bundesweit beliebt | in ganz Deutschland bekannt, traditionell besonders stark in Dortmund und Teilen Baden-Württembergs |

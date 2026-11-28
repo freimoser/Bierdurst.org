@@ -35,7 +35,7 @@ index: true
 |---|---|---|
 | Einordnung | naturtrübes, obergäriges Weizenbier | filtriertes, obergäriges Weizenbier |
 | Farbe | hellgold bis bernsteinfarben und trüb | hell und klar |
-| Alkohol | meist etwa 4,8 bis 5,6 % vol | meist etwa 4,8 bis 5,5 % vol |
+| Alkohol | meist etwa 4,3 bis 5,6 % vol | meist etwa 4,3 bis 5,6 % vol |
 | Bitterkeit | niedrig | niedrig |
 | Geschmack | fruchtig, hefig und spritzig; typische Eindrücke sind Banane, Nelke, Vanille oder Zitrus | spritzig, klar und fruchtig, aber meist weniger hefig und cremig als Hefeweizen |
 | Typische Region | besonders Bayern, inzwischen bundesweit | bundesweit erhältlich, traditionell besonders in Süddeutschland bekannt |
@@ -47,7 +47,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Hefeweizen liegt typischerweise bei **meist etwa 4,8 bis 5,6 % vol**. Kristallweizen liegt meist bei **meist etwa 4,8 bis 5,5 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Hefeweizen liegt typischerweise bei **meist etwa 4,3 bis 5,6 % vol**. Kristallweizen liegt meist bei **meist etwa 4,3 bis 5,6 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

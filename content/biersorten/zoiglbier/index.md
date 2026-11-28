@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://brauer-bund.de/biervielfalt/
 article_id: 24
 page_type: article
 cluster: biersorten

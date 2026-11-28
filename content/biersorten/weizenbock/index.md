@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/10/10c-weizenbock
 article_id: 19
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Weizenbock?
 
-**Kurz gesagt:** Weizenbock ist obergäriges Weizen-Starkbier. Typisch sind hellgold bis dunkelbraun und häufig trüb, typisch etwa 6,5 bis 7,5 % vol und ein Geschmacksbild, das sich als kräftig, fruchtig und würzig; helle Varianten erinnern an reife Banane, dunkle zusätzlich an Pflaume, Karamell und Schokolade beschreiben lässt.
+**Kurz gesagt:** Weizenbock ist obergäriges Weizen-Starkbier. Typisch sind hellgold bis dunkelbraun und häufig trüb, typisch etwa 6,5 bis 9 % vol und ein Geschmacksbild, das sich als kräftig, fruchtig und würzig; helle Varianten erinnern an reife Banane, dunkle zusätzlich an Pflaume, Karamell und Schokolade beschreiben lässt.
 
 ## Weizenbock im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | obergäriges Weizen-Starkbier |
 | Farbe | hellgold bis dunkelbraun und häufig trüb |
-| Alkohol | typisch etwa 6,5 bis 7,5 % vol |
+| Alkohol | typisch etwa 6,5 bis 9,0 % vol |
 | Bitterkeit | niedrig bis moderat |
 | Trinktemperatur | etwa 9 °C |
 | Passendes Glas | Weizenbockglas oder kleiner Weizenpokal |
@@ -80,7 +81,7 @@ Weizenbock ist eine gute Wahl, wenn Du die Fruchtigkeit eines Weizens mit der Kr
 
 ### Ist Weizenbock immer gleich stark?
 
-Nein. Typisch sind typisch etwa 6,5 bis 7,5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind typisch etwa 6,5 bis 9 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Weizenbock eher bitter oder süß?
 

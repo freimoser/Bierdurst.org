@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/8/8b-schwarzbier
 article_id: 12
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Schwarzbier?
 
-**Kurz gesagt:** Schwarzbier ist untergäriges dunkles Vollbier. Typisch sind dunkelbraun bis nahezu schwarz, meist etwa 4,5 bis 5,4 % vol und ein Geschmacksbild, das sich als trocken bis ausgewogen mit Kaffee, Kakao, dunkler Schokolade und feinen Röstaromen beschreiben lässt.
+**Kurz gesagt:** Schwarzbier ist untergäriges dunkles Vollbier. Typisch sind dunkelbraun bis nahezu schwarz, meist etwa 4,4 bis 5,4 % vol und ein Geschmacksbild, das sich als trocken bis ausgewogen mit Kaffee, Kakao, dunkler Schokolade und feinen Röstaromen beschreiben lässt.
 
 ## Schwarzbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | untergäriges dunkles Vollbier |
 | Farbe | dunkelbraun bis nahezu schwarz |
-| Alkohol | meist etwa 4,5 bis 5,4 % vol |
+| Alkohol | meist etwa 4,4 bis 5,4 % vol |
 | Bitterkeit | mild bis moderat |
 | Trinktemperatur | 7 bis 10 °C |
 | Passendes Glas | Kelch, Pokal oder Willi-Becher |
@@ -80,7 +81,7 @@ Schwarzbier ist eine gute Wahl, wenn Du Röstaromen magst, aber kein zwingend sc
 
 ### Ist Schwarzbier immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,5 bis 5,4 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,4 bis 5,4 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Schwarzbier eher bitter oder süß?
 

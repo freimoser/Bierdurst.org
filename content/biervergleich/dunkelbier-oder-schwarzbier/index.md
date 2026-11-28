@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | untergäriges dunkles Lagerbier | untergäriges dunkles Vollbier |
 | Farbe | bernsteinfarben bis dunkelbraun | dunkelbraun bis nahezu schwarz |
-| Alkohol | meist etwa 4,5 bis 5,5 % vol | meist etwa 4,5 bis 5,4 % vol |
+| Alkohol | meist etwa 4,5 bis 5,6 % vol | meist etwa 4,4 bis 5,4 % vol |
 | Bitterkeit | niedrig bis moderat | mild bis moderat |
 | Geschmack | malzig, rund und weich mit Brotkruste, Karamell, Nuss und sanften Röstaromen | trocken bis ausgewogen mit Kaffee, Kakao, dunkler Schokolade und feinen Röstaromen |
 | Typische Region | Bayern und Franken, inzwischen auch außerhalb Süddeutschlands | besonders mit Sachsen und Thüringen verbunden |
@@ -48,7 +48,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Dunkelbier liegt typischerweise bei **meist etwa 4,5 bis 5,5 % vol**. Schwarzbier liegt meist bei **meist etwa 4,5 bis 5,4 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Dunkelbier liegt typischerweise bei **meist etwa 4,4 bis 5,6 % vol**. Schwarzbier liegt meist bei **meist etwa 4,4 bis 5,4 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

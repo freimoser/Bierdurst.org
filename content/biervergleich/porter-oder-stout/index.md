@@ -35,7 +35,7 @@ index: true
 |---|---|---|
 | Typischer Eindruck | oft schokoladig, nussig und rund | oft röstiger, kaffeebetonter und trockener |
 | Farbe | dunkelbraun bis schwarz | dunkelbraun bis tiefschwarz |
-| Alkohol | häufig 4,5 bis 7 %, starke Varianten mehr | von leichten Dry Stouts bis zu sehr starken Imperial Stouts |
+| Alkohol | häufig 4,5 bis 6,5 %, starke Varianten mehr | von leichten Dry Stouts bis zu sehr starken Imperial Stouts |
 | Malzcharakter | Kakao, Karamell, dunkle Früchte | Kaffee, Röstmalz, Kakao, teils verbrannte Noten |
 | Unterstile | Brown Porter, Robust Porter, Baltic Porter | Dry Stout, Sweet Stout, Oatmeal Stout, Imperial Stout |
 

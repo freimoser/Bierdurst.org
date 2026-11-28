@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/8/8a-munich-dunkel
 article_id: 13
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was ist Dunkelbier?
 
-**Kurz gesagt:** Dunkelbier ist untergäriges dunkles Lagerbier. Typisch sind bernsteinfarben bis dunkelbraun, meist etwa 4,5 bis 5,5 % vol und ein Geschmacksbild, das sich als malzig, rund und weich mit Brotkruste, Karamell, Nuss und sanften Röstaromen beschreiben lässt.
+**Kurz gesagt:** Dunkelbier ist untergäriges dunkles Lagerbier. Typisch sind bernsteinfarben bis dunkelbraun, meist etwa 4,5 bis 5,6 % vol und ein Geschmacksbild, das sich als malzig, rund und weich mit Brotkruste, Karamell, Nuss und sanften Röstaromen beschreiben lässt.
 
 ## Dunkelbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | untergäriges dunkles Lagerbier |
 | Farbe | bernsteinfarben bis dunkelbraun |
-| Alkohol | meist etwa 4,5 bis 5,5 % vol |
+| Alkohol | meist etwa 4,5 bis 5,6 % vol |
 | Bitterkeit | niedrig bis moderat |
 | Trinktemperatur | 8 bis 10 °C |
 | Passendes Glas | Seidel, Krug oder Willi-Becher |
@@ -80,7 +81,7 @@ Dunkelbier ist eine gute Wahl, wenn Du ein weiches, malziges und wenig bitteres 
 
 ### Ist Dunkelbier immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,5 bis 5,5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,5 bis 5,6 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Dunkelbier eher bitter oder süß?
 

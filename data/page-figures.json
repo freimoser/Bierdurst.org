@@ -1,9 +1,9 @@
 {
   "/biersorten/pils/": {
-    "src": "/grafik/biersorten-pils.f4b64ece.png",
+    "src": "/grafik/biersorten-pils.db5ca7b5.png",
     "width": 1100,
     "height": 1614,
-    "alt": "Steckbrief-Grafik zu Pils: ein Bierglas in der Farbe hellgelb bis goldgelb, daneben Balken für Alkoholgehalt 4,5 bis 5,2 Prozent, Bitterkeit deutlich und Trinktemperatur 5 bis 8 Grad.",
+    "alt": "Steckbrief-Grafik zu Pils: ein Bierglas in der Farbe hellgelb bis goldgelb, daneben Balken für Alkoholgehalt 4,4 bis 5,2 Prozent, Bitterkeit deutlich und Trinktemperatur 5 bis 8 Grad.",
     "caption": "Pils auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
     "template": "steckbrief"
   },
@@ -24,18 +24,18 @@
     "template": "steckbrief"
   },
   "/biersorten/dunkelbier/": {
-    "src": "/grafik/biersorten-dunkelbier.7cefca38.png",
+    "src": "/grafik/biersorten-dunkelbier.3edf8114.png",
     "width": 1100,
     "height": 1666,
-    "alt": "Steckbrief-Grafik zu Dunkelbier: ein Bierglas in der Farbe bernsteinfarben bis dunkelbraun, daneben Balken für Alkoholgehalt 4,5 bis 5,5 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 8 bis 10 Grad.",
+    "alt": "Steckbrief-Grafik zu Dunkelbier: ein Bierglas in der Farbe bernsteinfarben bis dunkelbraun, daneben Balken für Alkoholgehalt 4,5 bis 5,6 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 8 bis 10 Grad.",
     "caption": "Dunkelbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
     "template": "steckbrief"
   },
   "/biersorten/schwarzbier/": {
-    "src": "/grafik/biersorten-schwarzbier.40c81b0d.png",
+    "src": "/grafik/biersorten-schwarzbier.ffa3ad74.png",
     "width": 1100,
     "height": 1666,
-    "alt": "Steckbrief-Grafik zu Schwarzbier: ein Bierglas in der Farbe dunkelbraun bis nahezu schwarz, daneben Balken für Alkoholgehalt 4,5 bis 5,4 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 7 bis 10 Grad.",
+    "alt": "Steckbrief-Grafik zu Schwarzbier: ein Bierglas in der Farbe dunkelbraun bis nahezu schwarz, daneben Balken für Alkoholgehalt 4,4 bis 5,4 Prozent, Bitterkeit mild bis moderat und Trinktemperatur 7 bis 10 Grad.",
     "caption": "Schwarzbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
     "template": "steckbrief"
   },
@@ -48,10 +48,10 @@
     "template": "steckbrief"
   },
   "/biersorten/altbier/": {
-    "src": "/grafik/biersorten-altbier.e623d43e.png",
+    "src": "/grafik/biersorten-altbier.9b6a1f2d.png",
     "width": 1100,
     "height": 1666,
-    "alt": "Steckbrief-Grafik zu Altbier: ein Bierglas in der Farbe kupferrot bis dunkelbraun, daneben Balken für Alkoholgehalt 4,5 bis 5,2 Prozent, Bitterkeit moderat bis deutlich und Trinktemperatur 7 bis 9 Grad.",
+    "alt": "Steckbrief-Grafik zu Altbier: ein Bierglas in der Farbe kupferrot bis dunkelbraun, daneben Balken für Alkoholgehalt 4,3 bis 5,5 Prozent, Bitterkeit moderat bis deutlich und Trinktemperatur 7 bis 9 Grad.",
     "caption": "Altbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
     "template": "steckbrief"
   },
@@ -64,10 +64,10 @@
     "template": "steckbrief"
   },
   "/biersorten/kellerbier-zwickelbier/": {
-    "src": "/grafik/biersorten-kellerbier-zwickelbier.aa9d3b72.png",
+    "src": "/grafik/biersorten-kellerbier-zwickelbier.a52ec2f6.png",
     "width": 1100,
     "height": 1685,
-    "alt": "Steckbrief-Grafik zu Kellerbier und Zwickelbier: ein Bierglas in der Farbe hellgold bis bernsteinfarben und naturtrüb, daneben Balken für Alkoholgehalt 4,5 bis 5,5 Prozent, Bitterkeit mild bis deutlich und Trinktemperatur 7 bis 10 Grad.",
+    "alt": "Steckbrief-Grafik zu Kellerbier und Zwickelbier: ein Bierglas in der Farbe hellgold bis bernsteinfarben und naturtrüb, daneben Balken für Alkoholgehalt 4,5 bis 5,6 Prozent, Bitterkeit mild bis deutlich und Trinktemperatur 7 bis 10 Grad.",
     "caption": "Kellerbier und Zwickelbier auf einen Blick: Farbe, Alkoholgehalt, Bitterkeit und Trinktemperatur. Die Werte sind Stilspannen aus der Tabelle unten — einzelne Marken können davon abweichen.",
     "template": "steckbrief"
   },
@@ -88,18 +88,18 @@
     "template": "steckbrief"
   },
   "/biervergleich/pils-oder-helles/": {
-    "src": "/grafik/biervergleich-pils-oder-helles.8be6df6c.png",
+    "src": "/grafik/biervergleich-pils-oder-helles.07724001.png",
     "width": 1100,
     "height": 2010,
-    "alt": "Vergleichsgrafik Pils gegen Helles: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Pils liegt bei 4,5 bis 5,2 Prozent Alkohol, Helles bei 4,7 bis 5,4 Prozent.",
+    "alt": "Vergleichsgrafik Pils gegen Helles: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Pils liegt bei 4,4 bis 5,2 Prozent Alkohol, Helles bei 4,7 bis 5,4 Prozent.",
     "caption": "Pils und Helles auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
     "template": "duell"
   },
   "/biervergleich/pils-oder-lager/": {
-    "src": "/grafik/biervergleich-pils-oder-lager.f38b7951.png",
+    "src": "/grafik/biervergleich-pils-oder-lager.94f3248f.png",
     "width": 1100,
     "height": 2010,
-    "alt": "Vergleichsgrafik Pils gegen Lagerbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Pils liegt bei 4,5 bis 5,2 Prozent Alkohol, Lagerbier bei 4,5 bis 5,5 Prozent.",
+    "alt": "Vergleichsgrafik Pils gegen Lagerbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Pils liegt bei 4,4 bis 5,2 Prozent Alkohol, Lagerbier bei 4,5 bis 5,5 Prozent.",
     "caption": "Pils und Lagerbier auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
     "template": "duell"
   },
@@ -112,18 +112,18 @@
     "template": "duell"
   },
   "/biervergleich/koelsch-oder-altbier/": {
-    "src": "/grafik/biervergleich-koelsch-oder-altbier.c3063dcc.png",
+    "src": "/grafik/biervergleich-koelsch-oder-altbier.7adddd20.png",
     "width": 1100,
     "height": 2010,
-    "alt": "Vergleichsgrafik Kölsch gegen Altbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Kölsch liegt bei 4,4 bis 5,2 Prozent Alkohol, Altbier bei 4,5 bis 5,2 Prozent.",
+    "alt": "Vergleichsgrafik Kölsch gegen Altbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Kölsch liegt bei 4,4 bis 5,2 Prozent Alkohol, Altbier bei 4,3 bis 5,5 Prozent.",
     "caption": "Kölsch und Altbier auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
     "template": "duell"
   },
   "/biervergleich/dunkelbier-oder-schwarzbier/": {
-    "src": "/grafik/biervergleich-dunkelbier-oder-schwarzbier.71e52915.png",
+    "src": "/grafik/biervergleich-dunkelbier-oder-schwarzbier.016e4fcb.png",
     "width": 1100,
     "height": 2010,
-    "alt": "Vergleichsgrafik Dunkelbier gegen Schwarzbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Dunkelbier liegt bei 4,5 bis 5,5 Prozent Alkohol, Schwarzbier bei 4,5 bis 5,4 Prozent.",
+    "alt": "Vergleichsgrafik Dunkelbier gegen Schwarzbier: zwei Biergläser in ihrer typischen Farbe, darunter Balken für Alkoholgehalt, Bitterkeit und Trinktemperatur. Dunkelbier liegt bei 4,5 bis 5,6 Prozent Alkohol, Schwarzbier bei 4,4 bis 5,4 Prozent.",
     "caption": "Dunkelbier und Schwarzbier auf denselben Skalen. Die Balken zeigen Spannen des Bierstils, nicht Werte einzelner Marken.",
     "template": "duell"
   },

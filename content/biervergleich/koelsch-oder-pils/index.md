@@ -36,7 +36,7 @@ index: true
 |---|---|---|
 | Einordnung | obergäriges, helles Vollbier | untergäriges Vollbier |
 | Farbe | sehr hell bis goldgelb und klar | hellgelb bis goldgelb |
-| Alkohol | meist etwa 4,4 bis 5,2 % vol | meist etwa 4,5 bis 5,2 % vol |
+| Alkohol | meist etwa 4,4 bis 5,2 % vol | meist etwa 4,4 bis 5,2 % vol |
 | Bitterkeit | moderat und fein | deutlich bis kräftig hopfenherb |
 | Geschmack | schlank, frisch und feinherb mit dezenten fruchtigen oder zitrischen Noten | schlank, trocken, spritzig und hopfenbetont; häufig mit kräuterigen oder fein würzigen Noten |
 | Typische Region | Köln und das vertraglich definierte Umland | bundesweit verbreitet, historisch besonders stark in Nord- und Westdeutschland |
@@ -48,7 +48,7 @@ Bei der wahrgenommenen Bitterkeit kommt es nicht nur auf die Hopfenmenge an. Mal
 
 ## Was ist stärker?
 
-Kölsch liegt typischerweise bei **meist etwa 4,4 bis 5,2 % vol**. Pils liegt meist bei **meist etwa 4,5 bis 5,2 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
+Kölsch liegt typischerweise bei **meist etwa 4,4 bis 5,2 % vol**. Pils liegt meist bei **meist etwa 4,4 bis 5,2 % vol**. Die Bereiche können sich überschneiden. Der konkrete Alkoholgehalt auf dem Etikett ist deshalb aussagekräftiger als der Stilname allein.
 
 ## Welches Bier passt besser zu welchem Essen?
 

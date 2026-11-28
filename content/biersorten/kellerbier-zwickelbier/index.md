@@ -15,6 +15,7 @@ keywords:
 sources:
 - https://brauer-bund.de/biervielfalt/bierstile-in-deutschland/
 - https://brauer-bund.de/genuss/food-pairing/
+- https://styles.bjcp.org/bjcp-2021-beer/7/7c-kellerbier
 article_id: 14
 page_type: article
 cluster: biersorten
@@ -28,7 +29,7 @@ index: true
 
 # Was sind Kellerbier und Zwickelbier?
 
-**Kurz gesagt:** Kellerbier und Zwickelbier ist meist unfiltrierte, häufig untergärige Lagerbiere. Typisch sind hellgold bis bernsteinfarben und naturtrüb, meist etwa 4,5 bis 5,5 % vol und ein Geschmacksbild, das sich als frisch, hefig, malzig und oft weich; je nach Grundbier zusätzlich hopfenbetont oder brotig beschreiben lässt.
+**Kurz gesagt:** Kellerbier und Zwickelbier ist meist unfiltrierte, häufig untergärige Lagerbiere. Typisch sind hellgold bis bernsteinfarben und naturtrüb, meist etwa 4,5 bis 5,6 % vol und ein Geschmacksbild, das sich als frisch, hefig, malzig und oft weich; je nach Grundbier zusätzlich hopfenbetont oder brotig beschreiben lässt.
 
 ## Kellerbier und Zwickelbier im Überblick
 
@@ -36,7 +37,7 @@ index: true
 |---|---|
 | Einordnung | meist unfiltrierte, häufig untergärige Lagerbiere |
 | Farbe | hellgold bis bernsteinfarben und naturtrüb |
-| Alkohol | meist etwa 4,5 bis 5,5 % vol |
+| Alkohol | meist etwa 4,5 bis 5,6 % vol |
 | Bitterkeit | von mild bis deutlich |
 | Trinktemperatur | 7 bis 10 °C |
 | Passendes Glas | Seidel oder Willi-Becher |
@@ -80,7 +81,7 @@ Kellerbier und Zwickelbier ist eine gute Wahl, wenn Du naturtrübe, frische und 
 
 ### Ist Kellerbier und Zwickelbier immer gleich stark?
 
-Nein. Typisch sind meist etwa 4,5 bis 5,5 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
+Nein. Typisch sind meist etwa 4,5 bis 5,6 % vol, aber die konkrete Angabe auf dem Etikett ist entscheidend.
 
 ### Ist Kellerbier und Zwickelbier eher bitter oder süß?
 
